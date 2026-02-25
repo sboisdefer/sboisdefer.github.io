@@ -180,6 +180,29 @@
         color: var(--charcoal);
     }
 
+    .limited-use-box {
+        background: var(--white);
+        border-left: 3px solid var(--sage);
+        padding: 1.25rem 1.5rem;
+        border-radius: 0 8px 8px 0;
+        margin: 1rem 0 1.5rem;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        font-size: 0.9rem;
+    }
+
+    .limited-use-box p {
+        margin-bottom: 0;
+    }
+
+    .limited-use-box a {
+        color: var(--sage);
+        border-bottom-color: rgba(122, 139, 111, 0.3);
+    }
+
+    .limited-use-box a:hover {
+        border-bottom-color: var(--sage);
+    }
+
     .badge {
         display: inline-block;
         background: var(--sage);
@@ -282,7 +305,7 @@
 <div id="lang-fr" class="lang-section active">
 
 ```
-<p class="last-updated">Dernière mise à jour : 17 février 2026</p>
+<p class="last-updated">Dernière mise à jour : 25 février 2026</p>
 
 <h2>Résumé</h2>
 
@@ -304,6 +327,10 @@ Site web : <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
 
 <h2>2.2 Connexion Gmail (newsletters)</h2>
 <p>Si vous choisissez de connecter votre compte Gmail, l'application utilise <strong>Google OAuth 2.0</strong> pour accéder en lecture seule à vos emails identifiés comme newsletters. L'authentification se fait directement entre votre appareil et Google — Techno&amp;Co n'a jamais accès à vos identifiants ni au contenu de vos emails. Les newsletters récupérées sont stockées <strong>localement sur votre appareil</strong>.</p>
+
+<div class="limited-use-box">
+    <p>L'utilisation par TechnoDaily des informations reçues depuis les API Google est conforme à la <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, y compris les exigences d'utilisation limitée (<em>Limited Use requirements</em>). En particulier : TechnoDaily n'utilise les données Gmail que pour vous afficher vos newsletters ; ne transfère ces données à aucun tiers ; ne les utilise pas à des fins publicitaires ; et ne les stocke que localement sur votre appareil. Vous pouvez révoquer cet accès à tout moment dans les Réglages de l'application ou via <a href="https://myaccount.google.com/permissions">les permissions de votre compte Google</a>.</p>
+</div>
 
 <h2>2.3 Connexion YouTube (abonnements)</h2>
 <p>Si vous choisissez de connecter votre compte YouTube, l'application utilise <strong>Google OAuth 2.0</strong> pour accéder en lecture seule à vos abonnements et vidéos récentes. Même principe : l'authentification se fait entre votre appareil et Google. Les données sont stockées <strong>localement</strong>.</p>
@@ -344,7 +371,7 @@ Site web : <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
 <ul>
     <li><strong>Supprimer vos données</strong> : désinstallez l'application. Toutes les données locales sont supprimées.</li>
     <li><strong>Révoquer l'accès Gmail/YouTube</strong> : dans les Réglages de l'application ou via <a href="https://myaccount.google.com/permissions">les permissions de votre compte Google</a>.</li>
-    <li><strong>Supprimer les données iCloud</strong> : dans les Réglages iOS > iCloud > Gérer le stockage.</li>
+    <li><strong>Supprimer les données iCloud</strong> : dans les Réglages iOS &gt; iCloud &gt; Gérer le stockage.</li>
 </ul>
 <p>Pour toute question, contactez-nous à <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a>.</p>
 
@@ -371,7 +398,7 @@ Site web : <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
 <div id="lang-en" class="lang-section">
 
 ```
-<p class="last-updated">Last updated: February 17, 2026</p>
+<p class="last-updated">Last updated: February 25, 2026</p>
 
 <h2>Summary</h2>
 
@@ -393,6 +420,10 @@ Website: <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
 
 <h2>2.2 Gmail connection (newsletters)</h2>
 <p>If you choose to connect your Gmail account, the application uses <strong>Google OAuth 2.0</strong> for read-only access to emails identified as newsletters. Authentication occurs directly between your device and Google — Techno&amp;Co never has access to your credentials or email content. Retrieved newsletters are stored <strong>locally on your device</strong>.</p>
+
+<div class="limited-use-box">
+    <p>TechnoDaily's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Specifically: TechnoDaily only uses Gmail data to display your newsletters; does not transfer this data to any third party; does not use it for advertising purposes; and only stores it locally on your device. You can revoke this access at any time in the app Settings or via <a href="https://myaccount.google.com/permissions">your Google account permissions</a>.</p>
+</div>
 
 <h2>2.3 YouTube connection (subscriptions)</h2>
 <p>If you choose to connect your YouTube account, the application uses <strong>Google OAuth 2.0</strong> for read-only access to your subscriptions and recent videos. Same principle: authentication occurs between your device and Google. Data is stored <strong>locally</strong>.</p>
@@ -433,7 +464,7 @@ Website: <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
 <ul>
     <li><strong>Delete your data</strong>: uninstall the application. All local data is deleted.</li>
     <li><strong>Revoke Gmail/YouTube access</strong>: in the application Settings or via <a href="https://myaccount.google.com/permissions">your Google account permissions</a>.</li>
-    <li><strong>Delete iCloud data</strong>: in iOS Settings > iCloud > Manage Storage.</li>
+    <li><strong>Delete iCloud data</strong>: in iOS Settings &gt; iCloud &gt; Manage Storage.</li>
 </ul>
 <p>For any questions, contact us at <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a>.</p>
 
