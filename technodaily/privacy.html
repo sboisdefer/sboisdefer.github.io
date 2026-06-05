@@ -19,13 +19,11 @@
             --text-light: #8E8E93;
             --white: #FFFFFF;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'DM Sans', -apple-system, sans-serif;
             background: var(--cream);
@@ -33,7 +31,6 @@
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
-
         /* Header */
         header {
             background: var(--charcoal);
@@ -42,7 +39,6 @@
             position: relative;
             overflow: hidden;
         }
-
         header::before {
             content: '';
             position: absolute;
@@ -54,14 +50,12 @@
                         radial-gradient(circle at 70% 80%, rgba(204, 120, 92, 0.06) 0%, transparent 40%);
             pointer-events: none;
         }
-
         .header-content {
             position: relative;
             z-index: 1;
             max-width: 720px;
             margin: 0 auto;
         }
-
         .app-icon {
             width: 72px;
             height: 72px;
@@ -74,7 +68,6 @@
             font-size: 2rem;
             box-shadow: 0 4px 20px rgba(212, 160, 83, 0.3);
         }
-
         header h1 {
             font-family: 'Source Serif 4', Georgia, serif;
             font-size: 1.8rem;
@@ -83,12 +76,10 @@
             margin-bottom: 0.25rem;
             letter-spacing: -0.02em;
         }
-
         header p {
             color: var(--text-light);
             font-size: 0.9rem;
         }
-
         /* Language toggle */
         .lang-toggle {
             display: flex;
@@ -96,7 +87,6 @@
             justify-content: center;
             margin-top: 1.25rem;
         }
-
         .lang-btn {
             padding: 0.4rem 1.2rem;
             border: 1px solid rgba(212, 160, 83, 0.4);
@@ -108,29 +98,24 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-
         .lang-btn:first-child {
             border-radius: 20px 0 0 20px;
         }
-
         .lang-btn:last-child {
             border-radius: 0 20px 20px 0;
             border-left: none;
         }
-
         .lang-btn.active {
             background: var(--amber);
             border-color: var(--amber);
             color: var(--charcoal);
         }
-
         /* Main */
         main {
             max-width: 720px;
             margin: 0 auto;
             padding: 2.5rem 1.5rem 4rem;
         }
-
         .last-updated {
             font-size: 0.8rem;
             color: var(--text-light);
@@ -138,7 +123,6 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--cream-dark);
         }
-
         h2 {
             font-family: 'Source Serif 4', Georgia, serif;
             font-size: 1.3rem;
@@ -147,16 +131,13 @@
             margin: 2rem 0 0.75rem;
             letter-spacing: -0.01em;
         }
-
         h2:first-of-type {
             margin-top: 0;
         }
-
         p {
             margin-bottom: 1rem;
             font-size: 0.95rem;
         }
-
         .highlight-box {
             background: var(--white);
             border-left: 3px solid var(--amber);
@@ -165,19 +146,15 @@
             margin: 1.5rem 0;
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
         }
-
         .highlight-box p {
             margin-bottom: 0.5rem;
         }
-
         .highlight-box p:last-child {
             margin-bottom: 0;
         }
-
         .highlight-box strong {
             color: var(--charcoal);
         }
-
         .limited-use-box {
             background: var(--white);
             border-left: 3px solid var(--sage);
@@ -187,24 +164,19 @@
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
             font-size: 0.9rem;
         }
-
         .limited-use-box p {
             margin-bottom: 0.5rem;
         }
-
         .limited-use-box p:last-child {
             margin-bottom: 0;
         }
-
         .limited-use-box a {
             color: var(--sage);
             border-bottom-color: rgba(122, 139, 111, 0.3);
         }
-
         .limited-use-box a:hover {
             border-bottom-color: var(--sage);
         }
-
         .badge {
             display: inline-block;
             background: var(--sage);
@@ -218,28 +190,23 @@
             vertical-align: middle;
             margin-left: 0.25rem;
         }
-
         ul {
             padding-left: 1.25rem;
             margin-bottom: 1rem;
         }
-
         li {
             font-size: 0.95rem;
             margin-bottom: 0.5rem;
         }
-
         a {
             color: var(--amber-dark);
             text-decoration: none;
             border-bottom: 1px solid rgba(184, 134, 58, 0.3);
             transition: border-color 0.2s;
         }
-
         a:hover {
             border-color: var(--amber-dark);
         }
-
         /* Footer */
         footer {
             text-align: center;
@@ -248,25 +215,20 @@
             max-width: 720px;
             margin: 0 auto;
         }
-
         footer p {
             font-size: 0.8rem;
             color: var(--text-light);
         }
-
         footer a {
             color: var(--amber-dark);
         }
-
         /* Language sections */
         .lang-section {
             display: none;
         }
-
         .lang-section.active {
             display: block;
         }
-
         /* Responsive */
         @media (max-width: 480px) {
             header {
@@ -285,7 +247,6 @@
     </style>
 </head>
 <body>
-
 <header>
     <div class="header-content">
         <div class="app-icon">📰</div>
@@ -297,54 +258,40 @@
         </div>
     </div>
 </header>
-
 <main>
-
 <!-- ==================== FRANÇAIS ==================== -->
-
 <div id="lang-fr" class="lang-section active">
-
-    <p class="last-updated">Dernière mise à jour : 26 mai 2026</p>
-
+    <p class="last-updated">Dernière mise à jour : 5 juin 2026</p>
     <h2>Résumé</h2>
-
     <div class="highlight-box">
         <p><strong>TechnoDaily ne collecte aucune donnée personnelle.</strong></p>
         <p>Toutes vos données restent sur votre appareil. Aucune information n'est envoyée vers nos serveurs — nous n'en avons pas. <span class="badge">Privacy-first</span></p>
     </div>
-
     <h2>1. Qui sommes-nous</h2>
     <p>TechnoDaily est une application iOS développée et éditée par <strong>Techno&amp;Co</strong>, société de conseil en transformation digitale basée en France.</p>
     <p>Contact : <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
     Site web : <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
-
     <h2>2. Données traitées</h2>
     <p>TechnoDaily est conçue selon le principe du <strong>traitement 100% on-device</strong> (sur l'appareil). Voici les données que l'application manipule et où elles sont stockées :</p>
-
     <h2>2.1 Flux RSS et articles</h2>
     <p>L'application récupère des flux RSS publics que vous configurez. Les articles et leurs métadonnées (titre, résumé, images) sont stockés <strong>localement sur votre appareil</strong> via SwiftData (la base de données native d'Apple).</p>
-
     <h2>2.2 Connexion Gmail (newsletters)</h2>
     <p>Si vous choisissez de connecter votre compte Gmail, l'application utilise <strong>Google OAuth 2.0</strong> pour accéder en lecture seule à vos emails identifiés comme newsletters. L'authentification se fait directement entre votre appareil et Google — Techno&amp;Co n'a jamais accès à vos identifiants ni au contenu de vos emails. Les newsletters récupérées sont stockées <strong>localement sur votre appareil</strong>.</p>
-
     <div class="limited-use-box">
         <p>L'utilisation par TechnoDaily des informations reçues depuis les API Google est conforme à la <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, y compris les exigences d'utilisation limitée (<em>Limited Use requirements</em>). En particulier : TechnoDaily n'utilise les données Gmail que pour vous afficher vos newsletters ; ne transfère ces données à aucun tiers ; ne les utilise pas à des fins publicitaires ; et ne les stocke que localement sur votre appareil. Vous pouvez révoquer cet accès à tout moment dans les Réglages de l'application ou via <a href="https://myaccount.google.com/permissions">les permissions de votre compte Google</a>.</p>
         <p><strong>Nous ne vendons aucune donnée utilisateur Google à quelque tiers que ce soit.</strong> Nous ne transférons aucune donnée utilisateur Google à des courtiers en données, à des régies publicitaires, à des revendeurs d'informations, ni à toute autre entité tierce, pour quelque finalité que ce soit autre que la fourniture des fonctionnalités de TechnoDaily à votre demande.</p>
     </div>
-
     <h2>2.3 Connexion YouTube (abonnements)</h2>
     <p>Si vous choisissez de connecter votre compte YouTube, l'application utilise <strong>Google OAuth 2.0</strong> pour accéder en lecture seule à vos abonnements et vidéos récentes. Même principe : l'authentification se fait entre votre appareil et Google. Les données sont stockées <strong>localement</strong>. Les engagements de non-vente, de non-transfert à des tiers et d'utilisation limitée décrits à la section 2.2 s'appliquent de manière identique aux données YouTube.</p>
-
     <h2>2.4 Préférences de lecture et scores</h2>
     <p>L'application analyse vos habitudes de lecture (articles lus, sources préférées, horaires de lecture) pour personnaliser vos recommandations via un algorithme de scoring. Ce traitement est effectué <strong>entièrement sur votre appareil</strong> par le processeur de votre iPhone/iPad. Aucune donnée de comportement n'est envoyée à un serveur externe.</p>
-
     <h2>2.5 Résumés intelligents (Apple Intelligence)</h2>
     <p>Si votre appareil le supporte, TechnoDaily utilise <strong>Apple Intelligence</strong> (le framework d'IA on-device d'Apple) pour générer des résumés d'articles. Ce traitement se fait <strong>entièrement sur votre appareil</strong>, sans envoi de données vers des serveurs tiers.</p>
     <p><strong>Apple Intelligence effectue uniquement de l'inférence — il n'entraîne, n'affine ni ne met à jour aucun modèle d'IA en utilisant vos données Gmail, YouTube, RSS ou toute autre donnée utilisateur Google.</strong> Les données utilisateur Google ne sont jamais utilisées pour entraîner un quelconque modèle d'intelligence artificielle ou de machine learning, ni par Techno&amp;Co, ni par Apple, ni par aucun tiers.</p>
-
     <h2>2.6 Synchronisation iCloud (CloudKit)</h2>
     <p>Si vous activez iCloud sur votre appareil, vos données TechnoDaily (articles, préférences, flux configurés) peuvent être synchronisées entre vos appareils Apple via <strong>CloudKit</strong>. Cette synchronisation est gérée par Apple selon sa propre <a href="https://www.apple.com/legal/privacy/">politique de confidentialité</a>. Techno&amp;Co n'a pas accès à votre compte iCloud ni aux données synchronisées.</p>
-
+    <h2>2.7 Achats et abonnements (App Store)</h2>
+    <p>TechnoDaily propose un abonnement annuel ainsi qu'un achat unique « à vie ». <strong>Tous les paiements sont traités par Apple via l'App Store.</strong> Techno&amp;Co ne reçoit, ne collecte et ne stocke aucune donnée de paiement (numéro de carte, coordonnées bancaires, adresse de facturation). La gestion de votre abonnement, son renouvellement et son annulation s'effectuent dans les réglages de votre compte App Store. Le traitement de ces données par Apple est régi par la <a href="https://www.apple.com/legal/privacy/">politique de confidentialité d'Apple</a>.</p>
     <h2>3. Données que nous ne collectons PAS</h2>
     <div class="highlight-box">
         <p>Techno&amp;Co <strong>ne collecte, ne stocke, ne transmet et ne vend</strong> aucune des données suivantes :</p>
@@ -354,20 +301,19 @@
             <li>Identifiants publicitaires</li>
             <li>Données d'utilisation ou de comportement</li>
             <li>Cookies ou traceurs</li>
-            <li>Données de santé ou financières</li>
+            <li>Données de santé, financières ou de paiement</li>
         </ul>
         <p>L'application <strong>ne contient aucune publicité</strong> et <strong>aucun outil d'analytics</strong> (pas de Google Analytics, Firebase, Mixpanel, etc.).</p>
         <p><strong>Nous ne vendons, ne transférons et ne divulguons aucune donnée utilisateur Google à des tiers</strong>, en particulier à des courtiers en données, à des régies publicitaires, à des revendeurs d'informations, à des fins de publicité ciblée, de retargeting, d'évaluation de solvabilité, ou pour toute autre finalité non strictement nécessaire à la fourniture des fonctionnalités utilisateur de TechnoDaily.</p>
     </div>
-
     <h2>4. Serveurs et transferts de données</h2>
     <p><strong>Techno&amp;Co ne possède et n'opère aucun serveur.</strong> L'application fonctionne intégralement sur votre appareil. Les seules connexions réseau sont :</p>
     <ul>
         <li>Récupération de flux RSS publics (connexion directe entre votre appareil et le site web source)</li>
         <li>API Google (Gmail/YouTube) si vous connectez ces services — connexion directe entre votre appareil et Google</li>
         <li>CloudKit Apple pour la synchronisation entre vos appareils — connexion directe entre votre appareil et iCloud</li>
+        <li>App Store Apple pour la gestion des achats et abonnements — connexion directe entre votre appareil et Apple</li>
     </ul>
-
     <h2>5. Vos droits (RGPD)</h2>
     <p>Puisque nous ne collectons aucune donnée personnelle, les droits d'accès, de rectification, de suppression et de portabilité s'exercent directement sur votre appareil :</p>
     <ul>
@@ -376,69 +322,51 @@
         <li><strong>Supprimer les données iCloud</strong> : dans les Réglages iOS &gt; iCloud &gt; Gérer le stockage.</li>
     </ul>
     <p>Pour toute question, contactez-nous à <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a>.</p>
-
     <h2>6. Sécurité</h2>
     <p>Vos données sont protégées par les mécanismes de sécurité natifs d'Apple : chiffrement du stockage iOS (iOS Data Protection, AES-256), Keychain matériel pour les jetons d'authentification (kSecAttrAccessibleWhenUnlockedThisDeviceOnly, adossé au Secure Enclave), et chiffrement de bout en bout CloudKit géré par Apple. L'architecture 100% on-device élimine les risques liés aux fuites de données serveur, puisqu'aucun serveur propriétaire n'existe.</p>
-
     <h2>7. Enfants</h2>
     <p>TechnoDaily n'est pas destinée aux enfants de moins de 13 ans et ne collecte sciemment aucune donnée relative aux enfants.</p>
-
     <h2>8. Modifications</h2>
     <p>Nous pouvons mettre à jour cette politique occasionnellement. La date de dernière mise à jour est indiquée en haut de cette page. Les modifications significatives seront signalées dans les notes de mise à jour de l'application sur l'App Store.</p>
-
     <h2>9. Contact</h2>
     <p>Pour toute question relative à cette politique de confidentialité :</p>
     <p><strong>Techno&amp;Co</strong><br>
     Email : <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
     Site web : <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
-
 </div>
-
 <!-- ==================== ENGLISH ==================== -->
-
 <div id="lang-en" class="lang-section">
-
-    <p class="last-updated">Last updated: May 26, 2026</p>
-
+    <p class="last-updated">Last updated: June 5, 2026</p>
     <h2>Summary</h2>
-
     <div class="highlight-box">
         <p><strong>TechnoDaily does not collect any personal data.</strong></p>
         <p>All your data stays on your device. No information is sent to our servers — we don't have any. <span class="badge">Privacy-first</span></p>
     </div>
-
     <h2>1. Who we are</h2>
     <p>TechnoDaily is an iOS application developed and published by <strong>Techno&amp;Co</strong>, a digital transformation consultancy based in France.</p>
     <p>Contact: <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
     Website: <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
-
     <h2>2. Data processing</h2>
     <p>TechnoDaily is designed with a <strong>100% on-device processing</strong> approach. Here is what data the application handles and where it is stored:</p>
-
     <h2>2.1 RSS feeds and articles</h2>
     <p>The application fetches public RSS feeds that you configure. Articles and their metadata (title, summary, images) are stored <strong>locally on your device</strong> using SwiftData (Apple's native database framework).</p>
-
     <h2>2.2 Gmail connection (newsletters)</h2>
     <p>If you choose to connect your Gmail account, the application uses <strong>Google OAuth 2.0</strong> for read-only access to emails identified as newsletters. Authentication occurs directly between your device and Google — Techno&amp;Co never has access to your credentials or email content. Retrieved newsletters are stored <strong>locally on your device</strong>.</p>
-
     <div class="limited-use-box">
         <p>TechnoDaily's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Specifically: TechnoDaily only uses Gmail data to display your newsletters; does not transfer this data to any third party; does not use it for advertising purposes; and only stores it locally on your device. You can revoke this access at any time in the app Settings or via <a href="https://myaccount.google.com/permissions">your Google account permissions</a>.</p>
         <p><strong>We do not sell Google user data to any third party.</strong> We do not transfer Google user data to data brokers, advertising networks, information resellers, or any other third-party entity, for any purpose other than providing the user-facing features of TechnoDaily at your request.</p>
     </div>
-
     <h2>2.3 YouTube connection (subscriptions)</h2>
     <p>If you choose to connect your YouTube account, the application uses <strong>Google OAuth 2.0</strong> for read-only access to your subscriptions and recent videos. Same principle: authentication occurs between your device and Google. Data is stored <strong>locally</strong>. The commitments of non-sale, non-transfer to third parties, and limited use described in section 2.2 apply identically to YouTube data.</p>
-
     <h2>2.4 Reading preferences and scores</h2>
     <p>The application analyzes your reading habits (articles read, preferred sources, reading times) to personalize your recommendations through a scoring algorithm. This processing is performed <strong>entirely on your device</strong> by your iPhone/iPad processor. No behavioral data is sent to any external server.</p>
-
     <h2>2.5 Smart summaries (Apple Intelligence)</h2>
     <p>If your device supports it, TechnoDaily uses <strong>Apple Intelligence</strong> (Apple's on-device AI framework) to generate article summaries. This processing happens <strong>entirely on your device</strong>, with no data sent to third-party servers.</p>
     <p><strong>Apple Intelligence performs inference only — it does not train, fine-tune, or update any AI model using your Gmail, YouTube, RSS, or any other Google user data.</strong> Google user data is never used to train any artificial intelligence or machine learning model, neither by Techno&amp;Co, nor by Apple, nor by any third party.</p>
-
     <h2>2.6 iCloud sync (CloudKit)</h2>
     <p>If you have iCloud enabled on your device, your TechnoDaily data (articles, preferences, configured feeds) may be synchronized across your Apple devices via <strong>CloudKit</strong>. This synchronization is managed by Apple according to their own <a href="https://www.apple.com/legal/privacy/">privacy policy</a>. Techno&amp;Co has no access to your iCloud account or synchronized data.</p>
-
+    <h2>2.7 Purchases and subscriptions (App Store)</h2>
+    <p>TechnoDaily offers an annual subscription as well as a one-time "lifetime" purchase. <strong>All payments are processed by Apple through the App Store.</strong> Techno&amp;Co does not receive, collect, or store any payment data (card number, banking details, billing address). Managing your subscription, its renewal, and cancellation happens in your App Store account settings. Apple's processing of this data is governed by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
     <h2>3. Data we do NOT collect</h2>
     <div class="highlight-box">
         <p>Techno&amp;Co <strong>does not collect, store, transmit, or sell</strong> any of the following:</p>
@@ -448,20 +376,19 @@
             <li>Advertising identifiers</li>
             <li>Usage or behavioral data</li>
             <li>Cookies or trackers</li>
-            <li>Health or financial data</li>
+            <li>Health, financial, or payment data</li>
         </ul>
         <p>The application <strong>contains no advertisements</strong> and <strong>no analytics tools</strong> (no Google Analytics, Firebase, Mixpanel, etc.).</p>
         <p><strong>We do not sell, transfer, or disclose any Google user data to third parties</strong>, in particular not to data brokers, advertising networks, information resellers, for targeted advertising, retargeting, creditworthiness assessment, or any other purpose that is not strictly necessary to provide the user-facing features of TechnoDaily.</p>
     </div>
-
     <h2>4. Servers and data transfers</h2>
     <p><strong>Techno&amp;Co does not own or operate any servers.</strong> The application runs entirely on your device. The only network connections are:</p>
     <ul>
         <li>Fetching public RSS feeds (direct connection between your device and the source website)</li>
         <li>Google APIs (Gmail/YouTube) if you connect these services — direct connection between your device and Google</li>
         <li>Apple CloudKit for synchronization between your devices — direct connection between your device and iCloud</li>
+        <li>Apple App Store for purchase and subscription management — direct connection between your device and Apple</li>
     </ul>
-
     <h2>5. Your rights (GDPR)</h2>
     <p>Since we do not collect any personal data, your rights of access, rectification, deletion, and portability are exercised directly on your device:</p>
     <ul>
@@ -470,30 +397,22 @@
         <li><strong>Delete iCloud data</strong>: in iOS Settings &gt; iCloud &gt; Manage Storage.</li>
     </ul>
     <p>For any questions, contact us at <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a>.</p>
-
     <h2>6. Security</h2>
     <p>Your data is protected by Apple's native security mechanisms: iOS storage encryption (iOS Data Protection, AES-256), hardware-backed Keychain for authentication tokens (kSecAttrAccessibleWhenUnlockedThisDeviceOnly, tied to the Secure Enclave), and CloudKit end-to-end encryption managed by Apple. The 100% on-device architecture eliminates risks associated with server data breaches, since no proprietary server exists.</p>
-
     <h2>7. Children</h2>
     <p>TechnoDaily is not intended for children under 13 years of age and does not knowingly collect any data from children.</p>
-
     <h2>8. Changes</h2>
     <p>We may update this policy occasionally. The last update date is shown at the top of this page. Significant changes will be noted in the application's App Store release notes.</p>
-
     <h2>9. Contact</h2>
     <p>For any questions regarding this privacy policy:</p>
     <p><strong>Techno&amp;Co</strong><br>
     Email: <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
     Website: <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
-
 </div>
-
 </main>
-
 <footer>
     <p>© 2026 Techno&amp;Co — <a href="https://www.technoandco.fr">technoandco.fr</a></p>
 </footer>
-
 <script>
     function switchLang(lang) {
         document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
@@ -503,6 +422,432 @@
         document.documentElement.lang = lang;
     }
 </script>
-
 </body>
 </html>
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoDaily — Politique de Confidentialité / Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F4F3EE;
+            --cream-dark: #EBE9E1;
+            --amber: #D4A053;
+            --amber-dark: #B8863A;
+            --terra: #CC785C;
+            --sage: #7A8B6F;
+            --charcoal: #2C2C2E;
+            --text: #3A3A3C;
+            --text-light: #8E8E93;
+            --white: #FFFFFF;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Header */
+        header {
+            background: var(--charcoal);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 160, 83, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(204, 120, 92, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--amber), var(--terra));
+            border-radius: 16px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(212, 160, 83, 0.3);
+        }
+        header h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--cream);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+        header p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        /* Language toggle */
+        .lang-toggle {
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            margin-top: 1.25rem;
+        }
+        .lang-btn {
+            padding: 0.4rem 1.2rem;
+            border: 1px solid rgba(212, 160, 83, 0.4);
+            background: transparent;
+            color: var(--text-light);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:first-child {
+            border-radius: 20px 0 0 20px;
+        }
+        .lang-btn:last-child {
+            border-radius: 0 20px 20px 0;
+            border-left: none;
+        }
+        .lang-btn.active {
+            background: var(--amber);
+            border-color: var(--amber);
+            color: var(--charcoal);
+        }
+        /* Main */
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+        .last-updated {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--cream-dark);
+        }
+        h2 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin: 2rem 0 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .highlight-box {
+            background: var(--white);
+            border-left: 3px solid var(--amber);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        }
+        .highlight-box p {
+            margin-bottom: 0.5rem;
+        }
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        .highlight-box strong {
+            color: var(--charcoal);
+        }
+        .limited-use-box {
+            background: var(--white);
+            border-left: 3px solid var(--sage);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0 1.5rem;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            font-size: 0.9rem;
+        }
+        .limited-use-box p {
+            margin-bottom: 0.5rem;
+        }
+        .limited-use-box p:last-child {
+            margin-bottom: 0;
+        }
+        .limited-use-box a {
+            color: var(--sage);
+            border-bottom-color: rgba(122, 139, 111, 0.3);
+        }
+        .limited-use-box a:hover {
+            border-bottom-color: var(--sage);
+        }
+        .badge {
+            display: inline-block;
+            background: var(--sage);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            vertical-align: middle;
+            margin-left: 0.25rem;
+        }
+        ul {
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        li {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        a {
+            color: var(--amber-dark);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(184, 134, 58, 0.3);
+            transition: border-color 0.2s;
+        }
+        a:hover {
+            border-color: var(--amber-dark);
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--cream-dark);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        footer p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        footer a {
+            color: var(--amber-dark);
+        }
+        /* Language sections */
+        .lang-section {
+            display: none;
+        }
+        .lang-section.active {
+            display: block;
+        }
+        /* Responsive */
+        @media (max-width: 480px) {
+            header {
+                padding: 1.5rem 1rem;
+            }
+            main {
+                padding: 2rem 1rem 3rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="app-icon">📰</div>
+        <h1>TechnoDaily</h1>
+        <p>Politique de Confidentialité / Privacy Policy</p>
+        <div class="lang-toggle">
+            <button class="lang-btn active" onclick="switchLang('fr')">Français</button>
+            <button class="lang-btn" onclick="switchLang('en')">English</button>
+        </div>
+    </div>
+</header>
+<main>
+<!-- ==================== FRANÇAIS ==================== -->
+<div id="lang-fr" class="lang-section active">
+    <p class="last-updated">Dernière mise à jour : 5 juin 2026</p>
+    <h2>Résumé</h2>
+    <div class="highlight-box">
+        <p><strong>TechnoDaily ne collecte aucune donnée personnelle.</strong></p>
+        <p>Toutes vos données restent sur votre appareil. Aucune information n'est envoyée vers nos serveurs — nous n'en avons pas. <span class="badge">Privacy-first</span></p>
+    </div>
+    <h2>1. Qui sommes-nous</h2>
+    <p>TechnoDaily est une application iOS développée et éditée par <strong>Techno&amp;Co</strong>, société de conseil en transformation digitale basée en France.</p>
+    <p>Contact : <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
+    Site web : <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
+    <h2>2. Données traitées</h2>
+    <p>TechnoDaily est conçue selon le principe du <strong>traitement 100% on-device</strong> (sur l'appareil). Voici les données que l'application manipule et où elles sont stockées :</p>
+    <h2>2.1 Flux RSS et articles</h2>
+    <p>L'application récupère des flux RSS publics que vous configurez. Les articles et leurs métadonnées (titre, résumé, images) sont stockés <strong>localement sur votre appareil</strong> via SwiftData (la base de données native d'Apple).</p>
+    <h2>2.2 Connexion Gmail (newsletters)</h2>
+    <p>Si vous choisissez de connecter votre compte Gmail, l'application utilise <strong>Google OAuth 2.0</strong> pour accéder en lecture seule à vos emails identifiés comme newsletters. L'authentification se fait directement entre votre appareil et Google — Techno&amp;Co n'a jamais accès à vos identifiants ni au contenu de vos emails. Les newsletters récupérées sont stockées <strong>localement sur votre appareil</strong>.</p>
+    <div class="limited-use-box">
+        <p>L'utilisation par TechnoDaily des informations reçues depuis les API Google est conforme à la <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, y compris les exigences d'utilisation limitée (<em>Limited Use requirements</em>). En particulier : TechnoDaily n'utilise les données Gmail que pour vous afficher vos newsletters ; ne transfère ces données à aucun tiers ; ne les utilise pas à des fins publicitaires ; et ne les stocke que localement sur votre appareil. Vous pouvez révoquer cet accès à tout moment dans les Réglages de l'application ou via <a href="https://myaccount.google.com/permissions">les permissions de votre compte Google</a>.</p>
+        <p><strong>Nous ne vendons aucune donnée utilisateur Google à quelque tiers que ce soit.</strong> Nous ne transférons aucune donnée utilisateur Google à des courtiers en données, à des régies publicitaires, à des revendeurs d'informations, ni à toute autre entité tierce, pour quelque finalité que ce soit autre que la fourniture des fonctionnalités de TechnoDaily à votre demande.</p>
+    </div>
+    <h2>2.3 Connexion YouTube (abonnements)</h2>
+    <p>Si vous choisissez de connecter votre compte YouTube, l'application utilise <strong>Google OAuth 2.0</strong> pour accéder en lecture seule à vos abonnements et vidéos récentes. Même principe : l'authentification se fait entre votre appareil et Google. Les données sont stockées <strong>localement</strong>. Les engagements de non-vente, de non-transfert à des tiers et d'utilisation limitée décrits à la section 2.2 s'appliquent de manière identique aux données YouTube.</p>
+    <h2>2.4 Préférences de lecture et scores</h2>
+    <p>L'application analyse vos habitudes de lecture (articles lus, sources préférées, horaires de lecture) pour personnaliser vos recommandations via un algorithme de scoring. Ce traitement est effectué <strong>entièrement sur votre appareil</strong> par le processeur de votre iPhone/iPad. Aucune donnée de comportement n'est envoyée à un serveur externe.</p>
+    <h2>2.5 Résumés intelligents (Apple Intelligence)</h2>
+    <p>Si votre appareil le supporte, TechnoDaily utilise <strong>Apple Intelligence</strong> (le framework d'IA on-device d'Apple) pour générer des résumés d'articles. Ce traitement se fait <strong>entièrement sur votre appareil</strong>, sans envoi de données vers des serveurs tiers.</p>
+    <p><strong>Apple Intelligence effectue uniquement de l'inférence — il n'entraîne, n'affine ni ne met à jour aucun modèle d'IA en utilisant vos données Gmail, YouTube, RSS ou toute autre donnée utilisateur Google.</strong> Les données utilisateur Google ne sont jamais utilisées pour entraîner un quelconque modèle d'intelligence artificielle ou de machine learning, ni par Techno&amp;Co, ni par Apple, ni par aucun tiers.</p>
+    <h2>2.6 Synchronisation iCloud (CloudKit)</h2>
+    <p>Si vous activez iCloud sur votre appareil, vos données TechnoDaily (articles, préférences, flux configurés) peuvent être synchronisées entre vos appareils Apple via <strong>CloudKit</strong>. Cette synchronisation est gérée par Apple selon sa propre <a href="https://www.apple.com/legal/privacy/">politique de confidentialité</a>. Techno&amp;Co n'a pas accès à votre compte iCloud ni aux données synchronisées.</p>
+    <h2>2.7 Achats et abonnements (App Store)</h2>
+    <p>TechnoDaily propose un abonnement annuel ainsi qu'un achat unique « à vie ». <strong>Tous les paiements sont traités par Apple via l'App Store.</strong> Techno&amp;Co ne reçoit, ne collecte et ne stocke aucune donnée de paiement (numéro de carte, coordonnées bancaires, adresse de facturation). La gestion de votre abonnement, son renouvellement et son annulation s'effectuent dans les réglages de votre compte App Store. Le traitement de ces données par Apple est régi par la <a href="https://www.apple.com/legal/privacy/">politique de confidentialité d'Apple</a>.</p>
+    <h2>3. Données que nous ne collectons PAS</h2>
+    <div class="highlight-box">
+        <p>Techno&amp;Co <strong>ne collecte, ne stocke, ne transmet et ne vend</strong> aucune des données suivantes :</p>
+        <ul>
+            <li>Identité, nom, email, numéro de téléphone</li>
+            <li>Données de localisation</li>
+            <li>Identifiants publicitaires</li>
+            <li>Données d'utilisation ou de comportement</li>
+            <li>Cookies ou traceurs</li>
+            <li>Données de santé, financières ou de paiement</li>
+        </ul>
+        <p>L'application <strong>ne contient aucune publicité</strong> et <strong>aucun outil d'analytics</strong> (pas de Google Analytics, Firebase, Mixpanel, etc.).</p>
+        <p><strong>Nous ne vendons, ne transférons et ne divulguons aucune donnée utilisateur Google à des tiers</strong>, en particulier à des courtiers en données, à des régies publicitaires, à des revendeurs d'informations, à des fins de publicité ciblée, de retargeting, d'évaluation de solvabilité, ou pour toute autre finalité non strictement nécessaire à la fourniture des fonctionnalités utilisateur de TechnoDaily.</p>
+    </div>
+    <h2>4. Serveurs et transferts de données</h2>
+    <p><strong>Techno&amp;Co ne possède et n'opère aucun serveur.</strong> L'application fonctionne intégralement sur votre appareil. Les seules connexions réseau sont :</p>
+    <ul>
+        <li>Récupération de flux RSS publics (connexion directe entre votre appareil et le site web source)</li>
+        <li>API Google (Gmail/YouTube) si vous connectez ces services — connexion directe entre votre appareil et Google</li>
+        <li>CloudKit Apple pour la synchronisation entre vos appareils — connexion directe entre votre appareil et iCloud</li>
+        <li>App Store Apple pour la gestion des achats et abonnements — connexion directe entre votre appareil et Apple</li>
+    </ul>
+    <h2>5. Vos droits (RGPD)</h2>
+    <p>Puisque nous ne collectons aucune donnée personnelle, les droits d'accès, de rectification, de suppression et de portabilité s'exercent directement sur votre appareil :</p>
+    <ul>
+        <li><strong>Supprimer vos données</strong> : désinstallez l'application. Toutes les données locales sont supprimées.</li>
+        <li><strong>Révoquer l'accès Gmail/YouTube</strong> : dans les Réglages de l'application ou via <a href="https://myaccount.google.com/permissions">les permissions de votre compte Google</a>. La déconnexion déclenche également la révocation immédiate des jetons OAuth auprès de Google.</li>
+        <li><strong>Supprimer les données iCloud</strong> : dans les Réglages iOS &gt; iCloud &gt; Gérer le stockage.</li>
+    </ul>
+    <p>Pour toute question, contactez-nous à <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a>.</p>
+    <h2>6. Sécurité</h2>
+    <p>Vos données sont protégées par les mécanismes de sécurité natifs d'Apple : chiffrement du stockage iOS (iOS Data Protection, AES-256), Keychain matériel pour les jetons d'authentification (kSecAttrAccessibleWhenUnlockedThisDeviceOnly, adossé au Secure Enclave), et chiffrement de bout en bout CloudKit géré par Apple. L'architecture 100% on-device élimine les risques liés aux fuites de données serveur, puisqu'aucun serveur propriétaire n'existe.</p>
+    <h2>7. Enfants</h2>
+    <p>TechnoDaily n'est pas destinée aux enfants de moins de 13 ans et ne collecte sciemment aucune donnée relative aux enfants.</p>
+    <h2>8. Modifications</h2>
+    <p>Nous pouvons mettre à jour cette politique occasionnellement. La date de dernière mise à jour est indiquée en haut de cette page. Les modifications significatives seront signalées dans les notes de mise à jour de l'application sur l'App Store.</p>
+    <h2>9. Contact</h2>
+    <p>Pour toute question relative à cette politique de confidentialité :</p>
+    <p><strong>Techno&amp;Co</strong><br>
+    Email : <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
+    Site web : <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
+</div>
+<!-- ==================== ENGLISH ==================== -->
+<div id="lang-en" class="lang-section">
+    <p class="last-updated">Last updated: June 5, 2026</p>
+    <h2>Summary</h2>
+    <div class="highlight-box">
+        <p><strong>TechnoDaily does not collect any personal data.</strong></p>
+        <p>All your data stays on your device. No information is sent to our servers — we don't have any. <span class="badge">Privacy-first</span></p>
+    </div>
+    <h2>1. Who we are</h2>
+    <p>TechnoDaily is an iOS application developed and published by <strong>Techno&amp;Co</strong>, a digital transformation consultancy based in France.</p>
+    <p>Contact: <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
+    Website: <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
+    <h2>2. Data processing</h2>
+    <p>TechnoDaily is designed with a <strong>100% on-device processing</strong> approach. Here is what data the application handles and where it is stored:</p>
+    <h2>2.1 RSS feeds and articles</h2>
+    <p>The application fetches public RSS feeds that you configure. Articles and their metadata (title, summary, images) are stored <strong>locally on your device</strong> using SwiftData (Apple's native database framework).</p>
+    <h2>2.2 Gmail connection (newsletters)</h2>
+    <p>If you choose to connect your Gmail account, the application uses <strong>Google OAuth 2.0</strong> for read-only access to emails identified as newsletters. Authentication occurs directly between your device and Google — Techno&amp;Co never has access to your credentials or email content. Retrieved newsletters are stored <strong>locally on your device</strong>.</p>
+    <div class="limited-use-box">
+        <p>TechnoDaily's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Specifically: TechnoDaily only uses Gmail data to display your newsletters; does not transfer this data to any third party; does not use it for advertising purposes; and only stores it locally on your device. You can revoke this access at any time in the app Settings or via <a href="https://myaccount.google.com/permissions">your Google account permissions</a>.</p>
+        <p><strong>We do not sell Google user data to any third party.</strong> We do not transfer Google user data to data brokers, advertising networks, information resellers, or any other third-party entity, for any purpose other than providing the user-facing features of TechnoDaily at your request.</p>
+    </div>
+    <h2>2.3 YouTube connection (subscriptions)</h2>
+    <p>If you choose to connect your YouTube account, the application uses <strong>Google OAuth 2.0</strong> for read-only access to your subscriptions and recent videos. Same principle: authentication occurs between your device and Google. Data is stored <strong>locally</strong>. The commitments of non-sale, non-transfer to third parties, and limited use described in section 2.2 apply identically to YouTube data.</p>
+    <h2>2.4 Reading preferences and scores</h2>
+    <p>The application analyzes your reading habits (articles read, preferred sources, reading times) to personalize your recommendations through a scoring algorithm. This processing is performed <strong>entirely on your device</strong> by your iPhone/iPad processor. No behavioral data is sent to any external server.</p>
+    <h2>2.5 Smart summaries (Apple Intelligence)</h2>
+    <p>If your device supports it, TechnoDaily uses <strong>Apple Intelligence</strong> (Apple's on-device AI framework) to generate article summaries. This processing happens <strong>entirely on your device</strong>, with no data sent to third-party servers.</p>
+    <p><strong>Apple Intelligence performs inference only — it does not train, fine-tune, or update any AI model using your Gmail, YouTube, RSS, or any other Google user data.</strong> Google user data is never used to train any artificial intelligence or machine learning model, neither by Techno&amp;Co, nor by Apple, nor by any third party.</p>
+    <h2>2.6 iCloud sync (CloudKit)</h2>
+    <p>If you have iCloud enabled on your device, your TechnoDaily data (articles, preferences, configured feeds) may be synchronized across your Apple devices via <strong>CloudKit</strong>. This synchronization is managed by Apple according to their own <a href="https://www.apple.com/legal/privacy/">privacy policy</a>. Techno&amp;Co has no access to your iCloud account or synchronized data.</p>
+    <h2>2.7 Purchases and subscriptions (App Store)</h2>
+    <p>TechnoDaily offers an annual subscription as well as a one-time "lifetime" purchase. <strong>All payments are processed by Apple through the App Store.</strong> Techno&amp;Co does not receive, collect, or store any payment data (card number, banking details, billing address). Managing your subscription, its renewal, and cancellation happens in your App Store account settings. Apple's processing of this data is governed by <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
+    <h2>3. Data we do NOT collect</h2>
+    <div class="highlight-box">
+        <p>Techno&amp;Co <strong>does not collect, store, transmit, or sell</strong> any of the following:</p>
+        <ul>
+            <li>Identity, name, email, phone number</li>
+            <li>Location data</li>
+            <li>Advertising identifiers</li>
+            <li>Usage or behavioral data</li>
+            <li>Cookies or trackers</li>
+            <li>Health, financial, or payment data</li>
+        </ul>
+        <p>The application <strong>contains no advertisements</strong> and <strong>no analytics tools</strong> (no Google Analytics, Firebase, Mixpanel, etc.).</p>
+        <p><strong>We do not sell, transfer, or disclose any Google user data to third parties</strong>, in particular not to data brokers, advertising networks, information resellers, for targeted advertising, retargeting, creditworthiness assessment, or any other purpose that is not strictly necessary to provide the user-facing features of TechnoDaily.</p>
+    </div>
+    <h2>4. Servers and data transfers</h2>
+    <p><strong>Techno&amp;Co does not own or operate any servers.</strong> The application runs entirely on your device. The only network connections are:</p>
+    <ul>
+        <li>Fetching public RSS feeds (direct connection between your device and the source website)</li>
+        <li>Google APIs (Gmail/YouTube) if you connect these services — direct connection between your device and Google</li>
+        <li>Apple CloudKit for synchronization between your devices — direct connection between your device and iCloud</li>
+        <li>Apple App Store for purchase and subscription management — direct connection between your device and Apple</li>
+    </ul>
+    <h2>5. Your rights (GDPR)</h2>
+    <p>Since we do not collect any personal data, your rights of access, rectification, deletion, and portability are exercised directly on your device:</p>
+    <ul>
+        <li><strong>Delete your data</strong>: uninstall the application. All local data is deleted.</li>
+        <li><strong>Revoke Gmail/YouTube access</strong>: in the application Settings or via <a href="https://myaccount.google.com/permissions">your Google account permissions</a>. Signing out also triggers immediate revocation of OAuth tokens with Google.</li>
+        <li><strong>Delete iCloud data</strong>: in iOS Settings &gt; iCloud &gt; Manage Storage.</li>
+    </ul>
+    <p>For any questions, contact us at <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a>.</p>
+    <h2>6. Security</h2>
+    <p>Your data is protected by Apple's native security mechanisms: iOS storage encryption (iOS Data Protection, AES-256), hardware-backed Keychain for authentication tokens (kSecAttrAccessibleWhenUnlockedThisDeviceOnly, tied to the Secure Enclave), and CloudKit end-to-end encryption managed by Apple. The 100% on-device architecture eliminates risks associated with server data breaches, since no proprietary server exists.</p>
+    <h2>7. Children</h2>
+    <p>TechnoDaily is not intended for children under 13 years of age and does not knowingly collect any data from children.</p>
+    <h2>8. Changes</h2>
+    <p>We may update this policy occasionally. The last update date is shown at the top of this page. Significant changes will be noted in the application's App Store release notes.</p>
+    <h2>9. Contact</h2>
+    <p>For any questions regarding this privacy policy:</p>
+    <p><strong>Techno&amp;Co</strong><br>
+    Email: <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
+    Website: <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
+</div>
+</main>
+<footer>
+    <p>© 2026 Techno&amp;Co — <a href="https://www.technoandco.fr">technoandco.fr</a></p>
+</footer>
+<script>
+    function switchLang(lang) {
+        document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+        document.getElementById('lang-' + lang).classList.add('active');
+        document.querySelector('[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+        document.documentElement.lang = lang;
+    }
+</script>
+</body>
+</html>
+ 
