@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#F3F0EA">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect x="450" y="248" width="300" height="304" rx="48" fill="#FBFAF7" stroke="#DBD5C8" stroke-width="4"/>
+    <circle cx="600" cy="330" r="26" fill="#DE9433"/>
+    <rect x="516" y="392" width="168" height="20" rx="10" fill="#221F1A"/>
+    <rect x="516" y="430" width="168" height="14" rx="7" fill="#9B958B"/>
+    <rect x="516" y="460" width="120" height="14" rx="7" fill="#9B958B"/>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F3F0EA}
+  ::selection{background:#DE943344}
+  a{color:#9A5E12;text-decoration:none}
+  a:hover{color:#7A4A0E}
+  a:focus-visible,button:focus-visible{outline:2px solid #9A5E12;outline-offset:2px;border-radius:6px}
+  @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F3F0EA;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;color:#221F1A;-webkit-font-smoothing:antialiased">
+
+  <!-- ══════════ NAV ══════════ -->
+  <header style="border-bottom:1px solid #E4DFD5;background:#F3F0EA">
+    <nav aria-label="Navigation principale" style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 44px">
+      <a href="index.html" style="display:flex;align-items:baseline;gap:10px;flex:none">
+        <span style="font-family:'New York',ui-serif,Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.01em;color:#221F1A">TechnoDaily</span>
+        <span style="font:700 10.5px -apple-system,system-ui;letter-spacing:.12em;color:#9A5E12;background:rgba(222,148,51,.16);border-radius:999px;padding:3px 8px">V2</span>
+      </a>
+      <div style="display:flex;gap:26px;font:500 14px -apple-system,system-ui">
+        <a href="#fonctionnalites" style="color:#6E685F" data-i18n="nav.feat">Fonctionnalités</a>
+        <a href="#dossiers" style="color:#6E685F" data-i18n="nav.dossiers">Dossiers de veille</a>
+        <a href="#confidentialite" style="color:#6E685F" data-i18n="nav.privacy">Confidentialité</a>
+        <a href="#tarif" style="color:#6E685F" data-i18n="nav.pricing">Tarif</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex:none">
+        <div role="group" aria-label="Langue" style="display:flex;background:#E7E1D3;border-radius:10px;padding:3px">
+          <button type="button" data-lang-btn="en" onClick="{{ setEn }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">EN</button>
+          <button type="button" data-lang-btn="fr" onClick="{{ setFr }}" style="border:none;background:#FBFAF7;font:700 12px -apple-system,system-ui;color:#221F1A;padding:5px 10px;border-radius:8px;cursor:pointer">FR</button>
+          <button type="button" data-lang-btn="es" onClick="{{ setEs }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">ES</button>
+          <button type="button" data-lang-btn="zh" onClick="{{ setZh }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">中文</button>
+        </div>
+        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:inline-flex;background:#DE9433;color:#221F1A;font:600 14px -apple-system,system-ui;padding:9px 16px;border-radius:12px" data-i18n="nav.dl">Télécharger</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+  <!-- ══════════ HERO ══════════ -->
+  <section data-screen-label="Hero" style="max-width:1240px;margin:0 auto;display:flex;gap:56px;align-items:center;padding:76px 44px 64px">
+    <div style="flex:1;min-width:0">
+      <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#9A5E12;text-transform:uppercase" data-i18n="hero.kicker">Nouveau · TechnoDaily V2 pour iOS 26</p>
+      <h1 style="font-family:'New York',ui-serif,Georgia,serif;font-size:62px;font-weight:700;line-height:1.04;letter-spacing:-.02em;margin-top:20px"><span data-i18n="hero.h1a">Toutes vos sources.</span><br><span data-i18n="hero.h1b">Un seul brief.</span></h1>
+      <p style="font-size:19px;line-height:1.6;color:#6E685F;max-width:520px;margin-top:22px" data-i18n="hero.sub">Newsletters Gmail, flux RSS, YouTube et Reddit, réunis dans un lecteur qui apprend vos centres d'intérêt et vous prépare chaque matin l'essentiel. Entièrement sur votre appareil.</p>
+      <div style="display:flex;align-items:center;gap:24px;margin-top:32px">
+        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#221F1A;color:#F3F0EA;font:600 15px -apple-system,system-ui;padding:15px 26px;border-radius:13px;flex:none"><span style="font-size:17px">‹</span><span data-i18n="dlbtn">Télécharger dans l'App Store</span></a>
+        <a href="#tarif" style="font:600 15px -apple-system,system-ui" data-i18n="hero.cta2">Voir le tarif →</a>
+      </div>
+      <div style="display:flex;gap:18px;margin-top:24px;font:500 13px -apple-system,system-ui;color:#9B958B">
+        <span data-i18n="hero.m1">Essai gratuit de 14 jours</span><span>·</span><span data-i18n="hero.m2">19,99 €/an ensuite</span><span>·</span><span data-i18n="hero.m3">Privacy by design</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:9px;margin-top:18px">
+        <span style="font:700 11px -apple-system,system-ui;letter-spacing:.12em;color:#9B958B" data-i18n="hero.dispo">DISPONIBLE SUR</span>
+        <span style="font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px">iPhone</span>
+        <span style="font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px">iPad</span>
+        <span style="font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px">Apple Vision Pro</span>
+      </div>
+    </div>
+
+    <!-- phone mock -->
+    <div aria-hidden="true" style="flex:none;width:332px;background:#2A2723;border-radius:46px;padding:11px;box-shadow:0 24px 60px rgba(34,31,26,.18)">
+      <div style="background:#F3F0EA;border-radius:36px;overflow:hidden;height:648px;display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 22px 4px;font:600 12px -apple-system,system-ui">
+          <span>9:41</span>
+          <span style="width:15px;height:9px;border:1px solid #221F1A;border-radius:3px;display:inline-block"></span>
+        </div>
+        <div style="padding:12px 18px 0">
+          <div style="font:700 10px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="mock.date">MARDI 7 JUILLET</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:3px">
+            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700" data-i18n="mock.title">Pour vous</div>
+            <span style="font:600 11.5px -apple-system,system-ui;color:#6E685F;border:1px solid #DBD5C8;border-radius:999px;padding:5px 11px;background:#FBFAF7" data-i18n="mock.refine">Affiner</span>
+          </div>
+          <div style="display:flex;background:#E7E1D3;border-radius:12px;padding:3px;margin-top:12px">
+            <span style="flex:1;text-align:center;font:600 11.5px -apple-system,system-ui;color:#6E685F;padding:6px 0" data-i18n="mock.segAll">Tout</span>
+            <span style="flex:1;text-align:center;font:700 11.5px -apple-system,system-ui;color:#221F1A;background:#DE9433;border-radius:9px;padding:6px 0" data-i18n="mock.segUnread">Non lus</span>
+            <span style="flex:1;text-align:center;font:600 11.5px -apple-system,system-ui;color:#6E685F;padding:6px 0" data-i18n="mock.segSaved">Enregistrés</span>
+            <span style="flex:1;text-align:center;font:600 11.5px -apple-system,system-ui;color:#6E685F;padding:6px 0" data-i18n="mock.segLater">À lire</span>
+          </div>
+          <div style="font:500 11px -apple-system,system-ui;color:#9B958B;margin-top:10px" data-i18n="mock.meta">12 articles · Tri intelligent</div>
+        </div>
+        <div style="padding:10px 18px 0;display:flex;flex-direction:column;gap:10px;flex:1">
+          <div style="background:#FAF1DF;border:1px solid #ECD5A8;border-radius:14px;padding:13px 14px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span style="font:700 9.5px -apple-system,system-ui;letter-spacing:.13em;color:#9A5E12" data-i18n="mock.resume">✦ RÉSUMÉ DU JOUR</span>
+              <span style="font:600 9.5px -apple-system,system-ui;color:#9B958B" data-i18n="mock.topics">3 SUJETS</span>
+            </div>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:9px">
+              <div style="border-bottom:1px solid #ECD5A8;padding-bottom:9px">
+                <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:13.5px;font-weight:700;line-height:1.3" data-i18n="mock.t1">Apple ouvre Apple Intelligence aux apps tierces</div>
+                <div style="font:500 10px -apple-system,system-ui;color:#9B958B;margin-top:3px" data-i18n="mock.t1s">4 sources · Newsletters + RSS</div>
+              </div>
+              <div style="border-bottom:1px solid #ECD5A8;padding-bottom:9px">
+                <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:13.5px;font-weight:700;line-height:1.3" data-i18n="mock.t2">GPU : le cycle d'achat approche du pic</div>
+                <div style="font:500 10px -apple-system,system-ui;color:#9B958B;margin-top:3px" data-i18n="mock.t2s">3 sources · Newsletters</div>
+              </div>
+              <div style="font:500 9.5px -apple-system,system-ui;color:#9A5E12" data-i18n="mock.gen">✦ Généré sur votre iPhone</div>
+            </div>
+          </div>
+          <div style="background:#FEFDFB;border:1px solid #E4DFD5;border-radius:14px;padding:12px 13px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start">
+              <span style="font:700 9.5px -apple-system,system-ui;color:#A84637;background:rgba(168,70,55,.11);border-radius:999px;padding:3px 8px" data-i18n="mock.badgeN">✉ Newsletter</span>
+              <span style="width:8px;height:8px;border-radius:50%;background:#DE9433;margin-top:2px"></span>
+            </div>
+            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:13.5px;font-weight:700;line-height:1.3;margin-top:8px" data-i18n="mock.a1">Stratechery : la fin du cycle des GPU ?</div>
+            <div style="font:500 10px -apple-system,system-ui;color:#9B958B;margin-top:5px"><span data-i18n="mock.a1m">Ben Thompson · 6 min · </span><span style="color:#4F7A4F;font-weight:600" data-i18n="mock.cat1">Business</span></div>
+          </div>
+          <div style="background:#FEFDFB;border:1px solid #E4DFD5;border-radius:14px;padding:12px 13px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start">
+              <span style="font:700 9.5px -apple-system,system-ui;color:#4E7188;background:rgba(91,127,150,.13);border-radius:999px;padding:3px 8px">⌁ RSS</span>
+              <span style="width:8px;height:8px;border-radius:50%;background:#DE9433;margin-top:2px"></span>
+            </div>
+            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:13.5px;font-weight:700;line-height:1.3;margin-top:8px" data-i18n="mock.a2">Le M5 repousse les limites du silicium maison</div>
+            <div style="font:500 10px -apple-system,system-ui;color:#9B958B;margin-top:5px"><span data-i18n="mock.a2m">The Verge · 4 min · </span><span style="color:#4F7A4F;font-weight:600" data-i18n="mock.cat2">Tech</span></div>
+          </div>
+        </div>
+        <div style="display:flex;border-top:1px solid #E4DFD5;background:#FBFAF7;padding:9px 12px 16px">
+          <div style="flex:1;text-align:center;color:#9A5E12"><div style="font-size:14px">✦</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px" data-i18n="mock.tabPour">Pour vous</div></div>
+          <div style="flex:1;text-align:center;color:#9B958B"><div style="font-size:14px">✉</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px" data-i18n="mock.tabNews">Newsletters</div></div>
+          <div style="flex:1;text-align:center;color:#9B958B"><div style="font-size:14px">⌁</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px">RSS</div></div>
+          <div style="flex:1;text-align:center;color:#9B958B"><div style="font-size:14px">▷</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px">YouTube</div></div>
+          <div style="flex:1;text-align:center;color:#9B958B"><div style="font-size:14px">⚙</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px" data-i18n="mock.tabSettings">Réglages</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SOURCES ══════════ -->
+  <section data-screen-label="Sources" style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:14px;padding:0 44px 72px;flex-wrap:wrap">
+    <span style="font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#928C82;text-transform:uppercase;margin-right:8px" data-i18n="src.label">Vos sources</span>
+    <span style="font:700 13px -apple-system,system-ui;color:#A84637;background:rgba(168,70,55,.11);border-radius:999px;padding:8px 16px" data-i18n="src.n">✉ Newsletters Gmail</span>
+    <span style="font:700 13px -apple-system,system-ui;color:#4E7188;background:rgba(91,127,150,.13);border-radius:999px;padding:8px 16px" data-i18n="src.r">⌁ Flux RSS</span>
+    <span style="font:700 13px -apple-system,system-ui;color:#C14848;background:rgba(193,72,72,.12);border-radius:999px;padding:8px 16px">▷ YouTube</span>
+    <span style="font:700 13px -apple-system,system-ui;color:#6E685F;background:#E7E1D3;border-radius:999px;padding:8px 16px">◈ Reddit</span>
+    <span style="font:500 13px -apple-system,system-ui;color:#9B958B;margin-left:8px" data-i18n="src.opml">Import OPML en un geste</span>
+  </section>
+
+  <!-- ══════════ POUR VOUS ══════════ -->
+  <section id="fonctionnalites" data-screen-label="Pour vous" style="border-top:1px solid #E4DFD5;background:#EDE8DE">
+    <div style="max-width:1240px;margin:0 auto;display:flex;gap:64px;align-items:center;padding:88px 44px">
+      <div style="flex:1">
+        <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#9A5E12;text-transform:uppercase" data-i18n="pv.kicker">Pour vous</p>
+        <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:14px"><span data-i18n="pv.h3a">Chaque matin, l'essentiel.</span><br><span data-i18n="pv.h3b">Déjà trié.</span></h2>
+        <p style="font-size:16.5px;line-height:1.65;color:#6E685F;max-width:460px;margin-top:18px" data-i18n="pv.p">Le moteur de recommandation apprend ce qui compte pour vous, sur l'appareil, jamais dans un cloud. Le Résumé du jour regroupe les sujets chauds à travers vos sources, avec une synthèse générée par Apple Intelligence.</p>
+        <ul style="display:flex;flex-direction:column;gap:12px;margin-top:24px;max-width:460px;list-style:none">
+          <li style="display:flex;gap:12px;align-items:baseline"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px"></span><span style="font:500 15px -apple-system,system-ui;color:#4A453D" data-i18n="pv.b1">Un même geste partout : Tout · Non lus · Enregistrés · À lire</span></li>
+          <li style="display:flex;gap:12px;align-items:baseline"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px"></span><span style="font:500 15px -apple-system,system-ui;color:#4A453D" data-i18n="pv.b2">Tri intelligent ou récent : vous choisissez, l'app s'en souvient</span></li>
+          <li style="display:flex;gap:12px;align-items:baseline"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px"></span><span style="font:500 15px -apple-system,system-ui;color:#4A453D" data-i18n="pv.b3">Vos newsletters, lues là où c'est fait pour lire</span></li>
+        </ul>
+        <p style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:22px" data-i18n="pv.note">Résumés IA : nécessite un appareil compatible Apple Intelligence.</p>
+      </div>
+      <div style="flex:none;width:480px;background:#FAF1DF;border:1px solid #ECD5A8;border-radius:20px;padding:24px 26px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#9A5E12" data-i18n="mock.resume">✦ RÉSUMÉ DU JOUR</span>
+          <span style="font:600 11.5px -apple-system,system-ui;color:#9B958B" data-i18n="mock.date">MARDI 7 JUILLET</span>
+        </div>
+        <div style="margin-top:16px;display:flex;flex-direction:column">
+          <div style="padding:13px 0;border-bottom:1px solid #ECD5A8">
+            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:18px;font-weight:700;line-height:1.3" data-i18n="mock.t1">Apple ouvre Apple Intelligence aux apps tierces</div>
+            <div style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:5px" data-i18n="rc.t1s">4 sources · Stratechery, The Verge, Platformer…</div>
+          </div>
+          <div style="padding:13px 0;border-bottom:1px solid #ECD5A8">
+            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:18px;font-weight:700;line-height:1.3" data-i18n="mock.t2">GPU : le cycle d'achat approche du pic</div>
+            <div style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:5px" data-i18n="rc.t2s">3 sources · Ben Evans, Stratechery…</div>
+          </div>
+          <div style="padding:13px 0">
+            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:18px;font-weight:700;line-height:1.3" data-i18n="rc.t3">Threads franchit 250 M d'utilisateurs actifs</div>
+            <div style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:5px" data-i18n="rc.t3s">2 sources · Platformer, The Information</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ECD5A8;padding-top:14px;margin-top:4px">
+          <span style="font:600 12px -apple-system,system-ui;color:#9A5E12" data-i18n="mock.gen">✦ Généré sur votre iPhone</span>
+          <span style="font:500 12px -apple-system,system-ui;color:#9B958B" data-i18n="rc.sec">L'essentiel en 10 secondes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ DOSSIERS ══════════ -->
+  <section id="dossiers" data-screen-label="Dossiers de veille" style="border-top:1px solid #E4DFD5">
+    <div style="max-width:1240px;margin:0 auto;display:flex;gap:64px;align-items:center;padding:88px 44px">
+      <div style="flex:none;width:460px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:22px 24px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-family:'New York',ui-serif,Georgia,serif;font-size:22px;font-weight:700">Apple Intelligence</span>
+          <span style="font:700 11px -apple-system,system-ui;color:#9A5E12;background:rgba(222,148,51,.14);border-radius:999px;padding:4px 10px" data-i18n="dm.pic">▲ Pic</span>
+        </div>
+        <div style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:5px" data-i18n="dm.meta">18 articles · 5 sources · Suivi depuis mai</div>
+        <div style="background:#161513;border-radius:16px;padding:16px 18px;margin-top:16px">
+          <div style="font:700 10.5px -apple-system,system-ui;letter-spacing:.15em;color:#F2BA5C" data-i18n="dm.changed">CE QUI A CHANGÉ</div>
+          <div style="font:400 13.5px -apple-system,system-ui;line-height:1.6;color:#F2EEE6;margin-top:8px" data-i18n="dm.digest">Apple ouvre son modèle aux apps tierces ; trois de vos sources y voient un tournant pour les développeurs. Les premiers tests évoquent une latence divisée par deux.</div>
+        </div>
+        <div style="margin-top:18px">
+          <div style="font:700 10.5px -apple-system,system-ui;letter-spacing:.14em;color:#9B958B" data-i18n="dm.today">AUJOURD'HUI</div>
+          <div style="display:flex;gap:11px;align-items:baseline;margin-top:10px"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none"></span><div><div style="font-family:'New York',ui-serif,Georgia,serif;font-size:14.5px;font-weight:600;line-height:1.35" data-i18n="dm.i1">Apple Intelligence : un an plus tard, où en est-on ?</div><div style="font:500 11.5px -apple-system,system-ui;color:#9B958B;margin-top:2px" data-i18n="dm.i1m">Stratechery · 10 min</div></div></div>
+          <div style="display:flex;gap:11px;align-items:baseline;margin-top:10px"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none"></span><div><div style="font-family:'New York',ui-serif,Georgia,serif;font-size:14.5px;font-weight:600;line-height:1.35" data-i18n="dm.i2">Le SDK tiers arrive avec iOS 26.1</div><div style="font:500 11.5px -apple-system,system-ui;color:#9B958B;margin-top:2px" data-i18n="dm.i2m">The Verge · 4 min</div></div></div>
+          <div style="font:500 11px -apple-system,system-ui;color:#9B958B;margin:10px 0 0 18px;border-left:2px solid #E4DFD5;padding-left:10px" data-i18n="dm.cluster">Regroupé autour de : SDK · développeurs · iOS 26</div>
+          <div style="font:700 10.5px -apple-system,system-ui;letter-spacing:.14em;color:#9B958B;margin-top:16px" data-i18n="dm.yesterday">HIER</div>
+          <div style="display:flex;gap:11px;align-items:baseline;margin-top:10px"><span style="width:7px;height:7px;border-radius:50%;border:1.5px solid #DBD5C8;flex:none"></span><div><div style="font-family:'New York',ui-serif,Georgia,serif;font-size:14.5px;font-weight:600;line-height:1.35;color:#6E685F" data-i18n="dm.i3">Benchmarks : le modèle on-device rattrape GPT-4</div><div style="font:500 11.5px -apple-system,system-ui;color:#9B958B;margin-top:2px" data-i18n="dm.i3m">Ben Evans · 6 min</div></div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;border-top:1px solid #E4DFD5;margin-top:18px;padding-top:16px">
+          <span style="display:inline-flex;background:#DE9433;color:#221F1A;font:600 13px -apple-system,system-ui;padding:9px 16px;border-radius:11px" data-i18n="dm.share">Partager le dossier</span>
+          <span style="font:500 12px -apple-system,system-ui;color:#9B958B" data-i18n="dm.formats">Texte · Markdown · Image</span>
+        </div>
+      </div>
+      <div style="flex:1">
+        <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#9A5E12;text-transform:uppercase" data-i18n="do.kicker">Dossiers de veille</p>
+        <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:14px"><span data-i18n="do.h3a">Suivez un sujet.</span><br><span data-i18n="do.h3b">Voyez ce qui change.</span></h2>
+        <p style="font-size:16.5px;line-height:1.65;color:#6E685F;max-width:470px;margin-top:18px" data-i18n="do.p1">Suivez un sujet et TechnoDaily en construit un dossier vivant : la frise de ce qui bouge jour après jour, une synthèse « ce qui a changé », et un repère quand la couverture s'emballe.</p>
+        <p style="font-size:16.5px;line-height:1.65;color:#6E685F;max-width:470px;margin-top:14px" data-i18n="do.p2">Partagez-le en texte, Markdown ou image. Votre veille sur vos sources : personne d'autre que vous ne sait ce que vous suivez.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ PRIVACY ══════════ -->
+  <section id="confidentialite" data-screen-label="Privacy by design" style="background:#161513">
+    <div style="max-width:1000px;margin:0 auto;padding:92px 44px">
+      <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#F2BA5C;text-transform:uppercase;text-align:center" data-i18n="py.kicker">Privacy by design</p>
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:46px;font-weight:700;line-height:1.1;letter-spacing:-.015em;color:#F2EEE6;text-align:center;margin-top:16px" data-i18n="py.h3">Vos lectures ne regardent que vous.</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px">
+        <div style="background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px">
+          <div style="width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;background:#F2BA5C;border-radius:3px;display:inline-block"></span></div>
+          <div style="font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px" data-i18n="py.p1t">Tout reste sur votre appareil</div>
+          <div style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="py.p1">Vos contenus, votre activité de lecture et vos scores de recommandation ne quittent jamais l'iPhone. Aucun serveur ne les reçoit.</div>
+        </div>
+        <div style="background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px">
+          <div style="width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;background:#F2BA5C;border-radius:50%;display:inline-block"></span></div>
+          <div style="font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px" data-i18n="py.p2t">Personne ne vous profile</div>
+          <div style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="py.p2">Pas de profil publicitaire, pas de tracking, aucun SDK tiers, aucune publicité. Vous n'êtes pas le produit.</div>
+        </div>
+        <div style="background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px">
+          <div style="width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;border:1.5px solid #F2BA5C;border-radius:3px;display:inline-block"></span></div>
+          <div style="font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px" data-i18n="py.p3t">Vos e-mails, seulement lus</div>
+          <div style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="py.p3">Gmail en lecture seule, sur l'appareil, jamais stockés ailleurs. Audit de sécurité indépendant exigé par Google (CASA).</div>
+        </div>
+        <div style="background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px">
+          <div style="width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;border:1.5px solid #F2BA5C;border-radius:50%;display:inline-block"></span></div>
+          <div style="font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px" data-i18n="py.p4t">Une synchronisation privée</div>
+          <div style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="py.p4">Entre vos appareils, via votre iCloud personnel, chiffrée par Apple. Nous n'y avons pas accès.</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;font:400 14.5px -apple-system,system-ui;color:#A8A199"><span data-i18n="py.stats">Et les statistiques d'usage ? Anonymes, agrégées, </span><strong style="color:#F2EEE6" data-i18n="py.statsB">désactivées par défaut</strong><span data-i18n="py.statsC">. Vous décidez. </span><a href="confidentialite.html" style="color:#F2BA5C;font-weight:600" data-i18n="py.link">Lire la politique de confidentialité →</a></div>
+    </div>
+  </section>
+
+  <!-- ══════════ PRICING ══════════ -->
+  <section id="tarif" data-screen-label="Tarif" style="max-width:1240px;margin:0 auto;padding:92px 44px">
+    <div style="text-align:center">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:40px;font-weight:700;letter-spacing:-.015em" data-i18n="pr.h3">Un prix simple. Pas de version gratuite.</h2>
+      <p style="font-size:16.5px;line-height:1.6;color:#6E685F;max-width:520px;margin:16px auto 0" data-i18n="pr.sub">TechnoDaily est payé par vous, pas par la publicité. C'est ce qui rend la promesse possible.</p>
+    </div>
+    <div style="display:flex;gap:22px;justify-content:center;margin-top:48px;flex-wrap:wrap">
+      <div style="width:340px;background:#FEFDFB;border:1.5px solid #DE9433;border-radius:20px;padding:30px 30px;position:relative">
+        <span style="position:absolute;top:-12px;left:28px;background:#DE9433;color:#221F1A;font:700 11px -apple-system,system-ui;letter-spacing:.1em;border-radius:999px;padding:5px 12px" data-i18n="pr.trialBadge">ESSAI 14 JOURS</span>
+        <div style="font:600 14px -apple-system,system-ui;color:#6E685F" data-i18n="pr.annual">Annuel</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-top:10px"><span style="font-family:'New York',ui-serif,Georgia,serif;font-size:44px;font-weight:700" data-i18n="pr.price">19,99 €</span><span style="font:500 15px -apple-system,system-ui;color:#9B958B" data-i18n="pr.year">/an</span></div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:18px;font:500 14px -apple-system,system-ui;color:#4A453D">
+          <span data-i18n="pr.a1">✓ Toutes les fonctionnalités</span>
+          <span data-i18n="pr.a2">✓ 14 jours gratuits, sans engagement</span>
+          <span data-i18n="pr.a3">✓ iPhone, iPad et Apple Vision Pro</span>
+        </div>
+        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:flex;justify-content:center;background:#DE9433;color:#221F1A;font:600 15px -apple-system,system-ui;padding:13px 0;border-radius:12px;margin-top:24px" data-i18n="pr.cta">Commencer l'essai</a>
+      </div>
+      <div style="width:340px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:30px 30px">
+        <div style="font:600 14px -apple-system,system-ui;color:#6E685F" data-i18n="pr.life">À vie</div>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-top:10px"><span style="font-family:'New York',ui-serif,Georgia,serif;font-size:44px;font-weight:700" data-i18n="pr.priceLife">49,99 €</span><span style="font:500 15px -apple-system,system-ui;color:#9B958B" data-i18n="pr.once">une fois</span></div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:18px;font:500 14px -apple-system,system-ui;color:#4A453D">
+          <span data-i18n="pr.l1">✓ Tout, pour toujours</span>
+          <span data-i18n="pr.l2">✓ Aucun abonnement</span>
+          <span data-i18n="pr.l3">✓ Les mises à jour incluses</span>
+        </div>
+        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:flex;justify-content:center;background:#FEFDFB;border:1px solid #DBD5C8;color:#221F1A;font:600 15px -apple-system,system-ui;padding:12px 0;border-radius:12px;margin-top:24px" data-i18n="pr.ctaLife">Acheter à vie</a>
+      </div>
+    </div>
+    <p style="text-align:center;font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:26px" data-i18n="pr.note">Prix France, TVA incluse · Sur l'App Store · iOS 26, iPadOS 26, visionOS 26 · Résumés IA : nécessite un appareil compatible Apple Intelligence</p>
+  </section>
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer data-screen-label="Footer" style="border-top:1px solid #E4DFD5;background:#EDE8DE">
+    <div style="max-width:1240px;margin:0 auto;padding:44px 44px 32px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:19px;font-weight:700">TechnoDaily</div>
+          <div style="font:400 13px -apple-system,system-ui;color:#6E685F;margin-top:8px;max-width:300px" data-i18n="ft.tagline">Privacy by design. Vos lectures ne regardent que vous.</div>
+        </div>
+        <div style="display:flex;gap:64px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.product">PRODUIT</span>
+            <a href="#fonctionnalites" style="color:#6E685F" data-i18n="nav.feat">Fonctionnalités</a>
+            <a href="#dossiers" style="color:#6E685F" data-i18n="nav.dossiers">Dossiers de veille</a>
+            <a href="#tarif" style="color:#6E685F" data-i18n="nav.pricing">Tarif</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.legal">LÉGAL</span>
+            <a href="confidentialite.html" style="color:#6E685F" data-i18n="ft.privacy">Politique de confidentialité</a>
+            <a href="conditions.html" style="color:#6E685F" data-i18n="ft.terms">Conditions d'utilisation</a>
+            <a href="accessibilite.html" style="color:#6E685F" data-i18n="ft.access">Politique d'accessibilité</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui;align-items:flex-start">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.lang">LANGUES</span>
+            <button type="button" onClick="{{ setEn }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">English</button>
+            <button type="button" onClick="{{ setFr }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">Français</button>
+            <button type="button" onClick="{{ setEs }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">Español</button>
+            <button type="button" onClick="{{ setZh }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">中文</button>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #DBD5C8;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 12.5px -apple-system,system-ui;color:#9B958B">
+        <span>© 2026 TechnoAndCo · contact@technoandco.fr</span>
+        <span data-i18n="ft.marks">Apple, iPhone et Apple Intelligence sont des marques d'Apple Inc.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fr&quot;,&quot;en&quot;,&quot;es&quot;,&quot;zh&quot;],&quot;default&quot;:&quot;fr&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Langue&quot;},&quot;appStoreId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;6758897742&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;App Store&quot;}}">
+class Component extends DCLogic {
+  dicts() {
+    return {
+      en: {
+        'nav.feat': 'Features', 'nav.dossiers': 'Tracked topics', 'nav.privacy': 'Privacy', 'nav.pricing': 'Pricing', 'nav.dl': 'Download', 'dlbtn': 'Download on the App Store',
+        'hero.kicker': 'New · TechnoDaily V2 for iOS 26',
+        'hero.h1a': 'All your sources.', 'hero.h1b': 'One single brief.',
+        'hero.sub': 'Gmail newsletters, RSS feeds, YouTube and Reddit, together in one reader that learns your interests and prepares the essentials for you every morning. Entirely on your device.',
+        'hero.cta2': 'See pricing →', 'hero.m1': '14-day free trial', 'hero.m2': 'Then €19.99/year', 'hero.m3': 'Privacy by design', 'hero.dispo': 'AVAILABLE ON',
+        'mock.date': 'TUESDAY, JULY 7', 'mock.title': 'For You', 'mock.refine': 'Refine',
+        'mock.segAll': 'All', 'mock.segUnread': 'Unread', 'mock.segSaved': 'Saved', 'mock.segLater': 'To read',
+        'mock.meta': '12 articles · Smart sort', 'mock.resume': '✦ DAILY BRIEF', 'mock.topics': '3 TOPICS',
+        'mock.t1': 'Apple opens Apple Intelligence to third-party apps', 'mock.t1s': '4 sources · Newsletters + RSS',
+        'mock.t2': 'GPUs: the buying cycle nears its peak', 'mock.t2s': '3 sources · Newsletters',
+        'mock.gen': '✦ Generated on your iPhone', 'mock.badgeN': '✉ Newsletter',
+        'mock.a1': 'Stratechery: the end of the GPU cycle?', 'mock.a1m': 'Ben Thompson · 6 min · ', 'mock.cat1': 'Business',
+        'mock.a2': 'The M5 pushes in-house silicon further', 'mock.a2m': 'The Verge · 4 min · ', 'mock.cat2': 'Tech',
+        'mock.tabPour': 'For You', 'mock.tabNews': 'Newsletters', 'mock.tabSettings': 'Settings',
+        'src.label': 'Your sources', 'src.n': '✉ Gmail newsletters', 'src.r': '⌁ RSS feeds', 'src.opml': 'OPML import in one step',
+        'pv.kicker': 'For You', 'pv.h3a': 'Every morning, the essentials.', 'pv.h3b': 'Already sorted.',
+        'pv.p': 'The recommendation engine learns what matters to you, on the device, never in a cloud. The Daily Brief groups the hot topics across your sources, with a summary generated by Apple Intelligence.',
+        'pv.b1': 'One grammar everywhere: All · Unread · Saved · To read',
+        'pv.b2': 'Smart or recent sort: you choose, the app remembers',
+        'pv.b3': 'Your newsletters, read where reading belongs',
+        'pv.note': 'AI summaries: requires an Apple Intelligence-compatible device.',
+        'rc.t1s': '4 sources · Stratechery, The Verge, Platformer…', 'rc.t2s': '3 sources · Ben Evans, Stratechery…',
+        'rc.t3': 'Threads passes 250M active users', 'rc.t3s': '2 sources · Platformer, The Information',
+        'rc.sec': 'The essentials in 10 seconds',
+        'do.kicker': 'Tracked topics', 'do.h3a': 'Follow a topic.', 'do.h3b': 'See what changes.',
+        'do.p1': 'Follow a topic and TechnoDaily builds a living dossier: a day-by-day timeline of what moves, a "what changed" summary, and a cue when coverage spikes.',
+        'do.p2': 'Share it as text, Markdown or image. Your watch, on your sources: nobody but you knows what you follow.',
+        'dm.pic': '▲ Spike', 'dm.meta': '18 articles · 5 sources · Followed since May', 'dm.changed': 'WHAT CHANGED',
+        'dm.digest': 'Apple opens its model to third-party apps; three of your sources call it a turning point for developers. Early tests report latency cut in half.',
+        'dm.today': 'TODAY', 'dm.i1': 'Apple Intelligence, one year on: where do we stand?', 'dm.i1m': 'Stratechery · 10 min',
+        'dm.i2': 'The third-party SDK lands with iOS 26.1', 'dm.i2m': 'The Verge · 4 min',
+        'dm.cluster': 'Grouped around: SDK · developers · iOS 26', 'dm.yesterday': 'YESTERDAY',
+        'dm.i3': 'Benchmarks: the on-device model catches up with GPT-4', 'dm.i3m': 'Ben Evans · 6 min',
+        'dm.share': 'Share the dossier', 'dm.formats': 'Text · Markdown · Image',
+        'py.kicker': 'Privacy by design', 'py.h3': "Your reading is nobody's business but yours.",
+        'py.p1t': 'Everything stays on your device', 'py.p1': 'Your content, reading activity and recommendation scores never leave the iPhone. No server receives them.',
+        'py.p2t': 'Nobody profiles you', 'py.p2': 'No ad profile, no tracking, no third-party SDK, no ads. You are not the product.',
+        'py.p3t': 'Your emails, only read', 'py.p3': 'Gmail read-only, on the device, never stored elsewhere. Independent security audit required by Google (CASA).',
+        'py.p4t': 'A private sync', 'py.p4': 'Between your devices, through your personal iCloud, encrypted by Apple. We have no access to it.',
+        'py.stats': 'And usage statistics? Anonymous, aggregated, ', 'py.statsB': 'off by default', 'py.statsC': '. You decide. ',
+        'py.link': 'Read the privacy policy →',
+        'pr.h3': 'Simple pricing. No free tier.',
+        'pr.sub': 'TechnoDaily is paid by you, not by advertising. That is what makes the promise possible.',
+        'pr.trialBadge': '14-DAY TRIAL', 'pr.annual': 'Annual', 'pr.price': '€19.99', 'pr.year': '/year',
+        'pr.a1': '✓ Every feature', 'pr.a2': '✓ 14 days free, no commitment', 'pr.a3': '✓ iPhone, iPad and Apple Vision Pro',
+        'pr.cta': 'Start the trial', 'pr.life': 'Lifetime', 'pr.priceLife': '€49.99', 'pr.once': 'one time',
+        'pr.l1': '✓ Everything, forever', 'pr.l2': '✓ No subscription', 'pr.l3': '✓ Updates included',
+        'pr.ctaLife': 'Buy lifetime',
+        'pr.note': 'Prices incl. VAT · On the App Store · iOS 26, iPadOS 26, visionOS 26 · AI summaries: requires an Apple Intelligence-compatible device',
+        'ft.tagline': "Privacy by design. Your reading is nobody's business but yours.",
+        'ft.product': 'PRODUCT', 'ft.legal': 'LEGAL', 'ft.lang': 'LANGUAGES',
+        'ft.privacy': 'Privacy policy', 'ft.terms': 'Terms of use', 'ft.access': 'Accessibility policy',
+        'ft.marks': 'Apple, iPhone and Apple Intelligence are trademarks of Apple Inc.'
+      },
+      es: {
+        'nav.feat': 'Funciones', 'nav.dossiers': 'Temas seguidos', 'nav.privacy': 'Privacidad', 'nav.pricing': 'Precio', 'nav.dl': 'Descargar', 'dlbtn': 'Descargar en el App Store',
+        'hero.kicker': 'Nuevo · TechnoDaily V2 para iOS 26',
+        'hero.h1a': 'Todas tus fuentes.', 'hero.h1b': 'Un solo brief.',
+        'hero.sub': 'Newsletters de Gmail, feeds RSS, YouTube y Reddit, reunidos en un lector que aprende tus intereses y te prepara lo esencial cada mañana. Todo en tu dispositivo.',
+        'hero.cta2': 'Ver el precio →', 'hero.m1': 'Prueba gratis de 14 días', 'hero.m2': 'Después 19,99 €/año', 'hero.m3': 'Privacy by design', 'hero.dispo': 'DISPONIBLE EN',
+        'mock.date': 'MARTES 7 DE JULIO', 'mock.title': 'Para ti', 'mock.refine': 'Afinar',
+        'mock.segAll': 'Todo', 'mock.segUnread': 'No leídos', 'mock.segSaved': 'Guardados', 'mock.segLater': 'Para leer',
+        'mock.meta': '12 artículos · Orden inteligente', 'mock.resume': '✦ RESUMEN DEL DÍA', 'mock.topics': '3 TEMAS',
+        'mock.t1': 'Apple abre Apple Intelligence a las apps de terceros', 'mock.t1s': '4 fuentes · Newsletters + RSS',
+        'mock.t2': 'GPU: el ciclo de compra se acerca al pico', 'mock.t2s': '3 fuentes · Newsletters',
+        'mock.gen': '✦ Generado en tu iPhone', 'mock.badgeN': '✉ Newsletter',
+        'mock.a1': 'Stratechery: ¿el fin del ciclo de las GPU?', 'mock.a1m': 'Ben Thompson · 6 min · ', 'mock.cat1': 'Business',
+        'mock.a2': 'El M5 lleva más lejos el silicio propio', 'mock.a2m': 'The Verge · 4 min · ', 'mock.cat2': 'Tech',
+        'mock.tabPour': 'Para ti', 'mock.tabNews': 'Newsletters', 'mock.tabSettings': 'Ajustes',
+        'src.label': 'Tus fuentes', 'src.n': '✉ Newsletters de Gmail', 'src.r': '⌁ Feeds RSS', 'src.opml': 'Importación OPML en un gesto',
+        'pv.kicker': 'Para ti', 'pv.h3a': 'Cada mañana, lo esencial.', 'pv.h3b': 'Ya ordenado.',
+        'pv.p': 'El motor de recomendación aprende lo que te importa, en el dispositivo, nunca en una nube. El Resumen del día agrupa los temas calientes de tus fuentes, con una síntesis generada por Apple Intelligence.',
+        'pv.b1': 'El mismo gesto en todas partes: Todo · No leídos · Guardados · Para leer',
+        'pv.b2': 'Orden inteligente o reciente: tú eliges, la app lo recuerda',
+        'pv.b3': 'Tus newsletters, leídas donde se lee de verdad',
+        'pv.note': 'Resúmenes con IA: requiere un dispositivo compatible con Apple Intelligence.',
+        'rc.t1s': '4 fuentes · Stratechery, The Verge, Platformer…', 'rc.t2s': '3 fuentes · Ben Evans, Stratechery…',
+        'rc.t3': 'Threads supera los 250 M de usuarios activos', 'rc.t3s': '2 fuentes · Platformer, The Information',
+        'rc.sec': 'Lo esencial en 10 segundos',
+        'do.kicker': 'Temas seguidos', 'do.h3a': 'Sigue un tema.', 'do.h3b': 'Ve qué cambia.',
+        'do.p1': 'Sigue un tema y TechnoDaily crea un dossier vivo: la línea de tiempo de lo que se mueve día a día, un resumen de «qué ha cambiado» y un aviso cuando la cobertura se dispara.',
+        'do.p2': 'Compártelo en texto, Markdown o imagen. Tu seguimiento, en tus fuentes: nadie más que tú sabe qué sigues.',
+        'dm.pic': '▲ Pico', 'dm.meta': '18 artículos · 5 fuentes · Seguido desde mayo', 'dm.changed': 'QUÉ HA CAMBIADO',
+        'dm.digest': 'Apple abre su modelo a las apps de terceros; tres de tus fuentes lo ven como un punto de inflexión para los desarrolladores. Las primeras pruebas hablan de una latencia reducida a la mitad.',
+        'dm.today': 'HOY', 'dm.i1': 'Apple Intelligence: un año después, ¿dónde estamos?', 'dm.i1m': 'Stratechery · 10 min',
+        'dm.i2': 'El SDK de terceros llega con iOS 26.1', 'dm.i2m': 'The Verge · 4 min',
+        'dm.cluster': 'Agrupado en torno a: SDK · desarrolladores · iOS 26', 'dm.yesterday': 'AYER',
+        'dm.i3': 'Benchmarks: el modelo on-device alcanza a GPT-4', 'dm.i3m': 'Ben Evans · 6 min',
+        'dm.share': 'Compartir el dossier', 'dm.formats': 'Texto · Markdown · Imagen',
+        'py.kicker': 'Privacy by design', 'py.h3': 'Tu lectura solo te concierne a ti.',
+        'py.p1t': 'Todo se queda en tu dispositivo', 'py.p1': 'Tus contenidos, tu actividad de lectura y tus puntuaciones nunca salen del iPhone. Ningún servidor los recibe.',
+        'py.p2t': 'Nadie te perfila', 'py.p2': 'Sin perfil publicitario, sin rastreo, sin SDK de terceros, sin anuncios. No eres el producto.',
+        'py.p3t': 'Tus correos, solo leídos', 'py.p3': 'Gmail en modo solo lectura, en el dispositivo, nunca almacenados en otro lugar. Auditoría de seguridad independiente exigida por Google (CASA).',
+        'py.p4t': 'Una sincronización privada', 'py.p4': 'Entre tus dispositivos, a través de tu iCloud personal, cifrada por Apple. No tenemos acceso.',
+        'py.stats': '¿Y las estadísticas de uso? Anónimas, agregadas, ', 'py.statsB': 'desactivadas por defecto', 'py.statsC': '. Tú decides. ',
+        'py.link': 'Leer la política de privacidad →',
+        'pr.h3': 'Un precio simple. Sin versión gratuita.',
+        'pr.sub': 'TechnoDaily lo pagas tú, no la publicidad. Eso hace posible la promesa.',
+        'pr.trialBadge': 'PRUEBA 14 DÍAS', 'pr.annual': 'Anual', 'pr.price': '19,99 €', 'pr.year': '/año',
+        'pr.a1': '✓ Todas las funciones', 'pr.a2': '✓ 14 días gratis, sin compromiso', 'pr.a3': '✓ iPhone, iPad y Apple Vision Pro',
+        'pr.cta': 'Empezar la prueba', 'pr.life': 'De por vida', 'pr.priceLife': '49,99 €', 'pr.once': 'una vez',
+        'pr.l1': '✓ Todo, para siempre', 'pr.l2': '✓ Sin suscripción', 'pr.l3': '✓ Actualizaciones incluidas',
+        'pr.ctaLife': 'Comprar de por vida',
+        'pr.note': 'Precios con IVA · En el App Store · iOS 26, iPadOS 26, visionOS 26 · Resúmenes con IA: requiere un dispositivo compatible con Apple Intelligence',
+        'ft.tagline': 'Privacy by design. Tu lectura solo te concierne a ti.',
+        'ft.product': 'PRODUCTO', 'ft.legal': 'LEGAL', 'ft.lang': 'IDIOMAS',
+        'ft.privacy': 'Política de privacidad', 'ft.terms': 'Condiciones de uso', 'ft.access': 'Política de accesibilidad',
+        'ft.marks': 'Apple, iPhone y Apple Intelligence son marcas de Apple Inc.'
+      },
+      zh: {
+        'nav.feat': '功能', 'nav.dossiers': '主题追踪', 'nav.privacy': '隐私', 'nav.pricing': '价格', 'nav.dl': '下载', 'dlbtn': '在 App Store 下载',
+        'hero.kicker': '全新 · TechnoDaily V2，适用于 iOS 26',
+        'hero.h1a': '你的所有信息源。', 'hero.h1b': '一份简报。',
+        'hero.sub': 'Gmail 新闻通讯、RSS 订阅源、YouTube 与 Reddit，汇聚在一个懂你兴趣的阅读器里，每天早晨为你准备好最重要的内容。完全在你的设备上运行。',
+        'hero.cta2': '查看价格 →', 'hero.m1': '14 天免费试用', 'hero.m2': '之后每年 19,99 €', 'hero.m3': '隐私优先设计', 'hero.dispo': '适用于',
+        'mock.date': '7月7日 星期二', 'mock.title': '为你推荐', 'mock.refine': '筛选',
+        'mock.segAll': '全部', 'mock.segUnread': '未读', 'mock.segSaved': '已保存', 'mock.segLater': '稍后读',
+        'mock.meta': '12 篇 · 智能排序', 'mock.resume': '✦ 每日摘要', 'mock.topics': '3 个主题',
+        'mock.t1': 'Apple 向第三方应用开放 Apple Intelligence', 'mock.t1s': '4 个来源 · 新闻通讯 + RSS',
+        'mock.t2': 'GPU 采购周期临近峰值', 'mock.t2s': '3 个来源 · 新闻通讯',
+        'mock.gen': '✦ 在你的 iPhone 上生成', 'mock.badgeN': '✉ 新闻通讯',
+        'mock.a1': 'Stratechery：GPU 周期的终点？', 'mock.a1m': 'Ben Thompson · 6 分钟 · ', 'mock.cat1': '商业',
+        'mock.a2': 'M5 再次突破自研芯片的极限', 'mock.a2m': 'The Verge · 4 分钟 · ', 'mock.cat2': '科技',
+        'mock.tabPour': '为你推荐', 'mock.tabNews': '新闻通讯', 'mock.tabSettings': '设置',
+        'src.label': '你的信息源', 'src.n': '✉ Gmail 新闻通讯', 'src.r': '⌁ RSS 订阅源', 'src.opml': '一键导入 OPML',
+        'pv.kicker': '为你推荐', 'pv.h3a': '每天早晨，只看重点。', 'pv.h3b': '已为你排好。',
+        'pv.p': '推荐引擎在设备端学习你在意的内容，绝不上传云端。每日摘要把你各个信息源里的热点话题聚合起来，并由 Apple Intelligence 生成综述。',
+        'pv.b1': '处处同一套操作：全部 · 未读 · 已保存 · 稍后读',
+        'pv.b2': '智能或最新排序：你来选择，应用会记住',
+        'pv.b3': '你的新闻通讯，在真正适合阅读的地方阅读',
+        'pv.note': 'AI 摘要：需要支持 Apple Intelligence 的设备。',
+        'rc.t1s': '4 个来源 · Stratechery、The Verge、Platformer…', 'rc.t2s': '3 个来源 · Ben Evans、Stratechery…',
+        'rc.t3': 'Threads 月活用户突破 2.5 亿', 'rc.t3s': '2 个来源 · Platformer、The Information',
+        'rc.sec': '10 秒读完重点',
+        'do.kicker': '主题追踪', 'do.h3a': '关注一个主题。', 'do.h3b': '看清它的变化。',
+        'do.p1': '关注一个主题，TechnoDaily 会为它建立一份动态档案：逐日时间线、一段「有何变化」的摘要，以及报道热度骤增时的提示。',
+        'do.p2': '以文本、Markdown 或图片分享。基于你自己的信息源：除了你，没有人知道你在关注什么。',
+        'dm.pic': '▲ 热度', 'dm.meta': '18 篇 · 5 个来源 · 自 5 月起关注', 'dm.changed': '有何变化',
+        'dm.digest': 'Apple 向第三方应用开放其模型；你的三个信息源都认为这是开发者的转折点。首批测试显示延迟减半。',
+        'dm.today': '今天', 'dm.i1': 'Apple Intelligence 一周年：进展如何？', 'dm.i1m': 'Stratechery · 10 分钟',
+        'dm.i2': '第三方 SDK 将随 iOS 26.1 到来', 'dm.i2m': 'The Verge · 4 分钟',
+        'dm.cluster': '聚合关键词：SDK · 开发者 · iOS 26', 'dm.yesterday': '昨天',
+        'dm.i3': '基准测试：端侧模型追上 GPT-4', 'dm.i3m': 'Ben Evans · 6 分钟',
+        'dm.share': '分享档案', 'dm.formats': '文本 · Markdown · 图片',
+        'py.kicker': '隐私优先设计', 'py.h3': '你的阅读只属于你自己。',
+        'py.p1t': '一切都留在你的设备上', 'py.p1': '你的内容、阅读活动和推荐评分从不离开 iPhone。没有任何服务器接收它们。',
+        'py.p2t': '没有人给你建立画像', 'py.p2': '没有广告画像，没有追踪，没有第三方 SDK，没有广告。你不是商品。',
+        'py.p3t': '你的邮件，只读不存', 'py.p3': 'Gmail 仅以只读方式在设备端读取，绝不存储在别处。已通过 Google 要求的独立安全审计（CASA）。',
+        'py.p4t': '私密同步', 'py.p4': '通过你的个人 iCloud 在设备间同步，由 Apple 加密。我们无法访问。',
+        'py.stats': '使用统计呢？匿名、聚合，', 'py.statsB': '默认关闭', 'py.statsC': '。由你决定。 ',
+        'py.link': '阅读隐私政策 →',
+        'pr.h3': '价格简单，没有免费版。',
+        'pr.sub': 'TechnoDaily 由你付费，而不是由广告付费。这正是承诺得以成立的原因。',
+        'pr.trialBadge': '14 天试用', 'pr.annual': '年度订阅', 'pr.price': '19,99 €', 'pr.year': '/年',
+        'pr.a1': '✓ 全部功能', 'pr.a2': '✓ 14 天免费，随时取消', 'pr.a3': '✓ iPhone、iPad 与 Apple Vision Pro',
+        'pr.cta': '开始试用', 'pr.life': '终身买断', 'pr.priceLife': '49,99 €', 'pr.once': '一次付清',
+        'pr.l1': '✓ 一次拥有，永久使用', 'pr.l2': '✓ 无需订阅', 'pr.l3': '✓ 含后续更新',
+        'pr.ctaLife': '购买终身版',
+        'pr.note': '价格含税 · 于 App Store 提供 · iOS 26、iPadOS 26、visionOS 26 · AI 摘要：需要支持 Apple Intelligence 的设备',
+        'ft.tagline': '隐私优先设计。你的阅读只属于你自己。',
+        'ft.product': '产品', 'ft.legal': '法律', 'ft.lang': '语言',
+        'ft.privacy': '隐私政策', 'ft.terms': '使用条款', 'ft.access': '无障碍政策',
+        'ft.marks': 'Apple、iPhone 与 Apple Intelligence 是 Apple Inc. 的商标。'
+      }
+    };
+  }
+
+  applyLang(l) {
+    const dict = this.dicts()[l] || {};
+    document.documentElement.lang = ({ fr: 'fr', en: 'en', es: 'es', zh: 'zh-Hans' })[l] || 'fr';
+    if (!this._defaults) {
+      this._defaults = new Map();
+      document.querySelectorAll('[data-i18n]').forEach((n) => { this._defaults.set(n, n.textContent); });
+    }
+    document.querySelectorAll('[data-i18n]').forEach((n) => {
+      const k = n.getAttribute('data-i18n');
+      const fallback = this._defaults.get(n);
+      n.textContent = (l === 'fr') ? fallback : (dict[k] != null ? dict[k] : fallback);
+    });
+    const id = this.props.appStoreId ?? '6758897742';
+    const cc = ({ fr: 'fr', en: 'us', es: 'es', zh: 'cn' })[l] || 'fr';
+    const url = 'https://apps.apple.com/' + cc + '/app/technodaily/id' + id + '?itsct=apps_box_badge&itscg=30200';
+    document.querySelectorAll('a[data-store]').forEach((a) => { a.setAttribute('href', url); });
+    // Badge App Store en bouton texte (version hors-ligne, sans logo Apple).
+    document.querySelectorAll('[data-lang-btn]').forEach((b) => {
+      const on = b.getAttribute('data-lang-btn') === l;
+      b.style.background = on ? '#FBFAF7' : 'transparent';
+      b.style.color = on ? '#221F1A' : '#6E685F';
+      b.style.fontWeight = on ? '700' : '600';
+    });
+    this._lang = l;
+    try { localStorage.setItem('td_lang', l); } catch (e) {}
+  }
+
+  detectLang() {
+    try {
+      const langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (const raw of langs) {
+        const t = (raw || '').toLowerCase();
+        if (t.startsWith('fr')) return 'fr';
+        if (t.startsWith('es')) return 'es';
+        if (t.startsWith('zh')) return 'zh';
+        if (t.startsWith('en')) return 'en';
+      }
+    } catch (e) {}
+    return null;
+  }
+
+  componentDidMount() {
+    let l = null;
+    try { l = localStorage.getItem('td_lang'); } catch (e) {}
+    if (!l && this.props.lang) l = this.props.lang;
+    if (!l) l = this.detectLang();
+    if (!l || !['fr', 'en', 'es', 'zh'].includes(l)) l = 'en';
+    this.applyLang(l);
+  }
+
+  renderVals() {
+    return {
+      setFr: () => this.applyLang('fr'),
+      setEn: () => this.applyLang('en'),
+      setEs: () => this.applyLang('es'),
+      setZh: () => this.applyLang('zh')
+    };
+  }
+}
+</script>
+</body>
+</html>
