@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F3F0EA}
+  ::selection{background:#DE943344}
+  a{color:#9A5E12;text-decoration:none}
+  a:hover{color:#7A4A0E}
+  a:focus-visible,button:focus-visible{outline:2px solid #9A5E12;outline-offset:2px;border-radius:6px}
+  @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+  img,svg{max-width:100%}
+  @media (max-width:860px){
+    body{overflow-x:hidden}
+    nav{flex-wrap:wrap !important;row-gap:10px !important}
+    nav > div:nth-child(2){order:3;flex-basis:100% !important;flex-wrap:wrap !important;gap:14px !important;margin-top:2px}
+    [style*="max-width:1240px"],[style*="max-width:1000px"],[style*="max-width:760px"]{padding-left:18px !important;padding-right:18px !important}
+    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+    h1{font-size:34px !important;line-height:1.1 !important}
+    h2{font-size:24px !important}
+  }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F3F0EA;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;color:#221F1A;-webkit-font-smoothing:antialiased">
+
+  <!-- ══════════ NAV ══════════ -->
+  <header style="border-bottom:1px solid #E4DFD5;background:#F3F0EA">
+    <nav aria-label="Navigation principale" style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 44px">
+      <a href="index.html" style="display:flex;align-items:baseline;gap:10px;flex:none">
+        <span style="font-family:'New York',ui-serif,Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.01em;color:#221F1A">TechnoDaily</span>
+        <span style="font:700 10.5px -apple-system,system-ui;letter-spacing:.12em;color:#9A5E12;background:rgba(222,148,51,.16);border-radius:999px;padding:3px 8px">V2</span>
+      </a>
+      <div style="display:flex;gap:26px;font:500 14px -apple-system,system-ui">
+        <a href="index.html#fonctionnalites" style="color:#6E685F" data-i18n="nav.feat">Fonctionnalités</a>
+        <a href="index.html#dossiers" style="color:#6E685F" data-i18n="nav.dossiers">Dossiers de veille</a>
+        <a href="index.html#confidentialite" style="color:#6E685F" data-i18n="nav.privacy">Confidentialité</a>
+        <a href="index.html#tarif" style="color:#6E685F" data-i18n="nav.pricing">Tarif</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex:none">
+        <div role="group" aria-label="Langue" style="display:flex;background:#E7E1D3;border-radius:10px;padding:3px">
+          <button type="button" data-lang-btn="en" onClick="{{ setEn }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">EN</button>
+          <button type="button" data-lang-btn="fr" onClick="{{ setFr }}" style="border:none;background:#FBFAF7;font:700 12px -apple-system,system-ui;color:#221F1A;padding:5px 10px;border-radius:8px;cursor:pointer">FR</button>
+          <button type="button" data-lang-btn="es" onClick="{{ setEs }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">ES</button>
+          <button type="button" data-lang-btn="zh" onClick="{{ setZh }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">中文</button>
+        </div>
+        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:inline-flex;background:#DE9433;color:#221F1A;font:600 14px -apple-system,system-ui;padding:9px 16px;border-radius:12px" data-i18n="nav.dl">Télécharger</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+  <!-- ══════════ PAGE HEADER ══════════ -->
+  <section data-screen-label="Accessibilité · en-tête" style="max-width:760px;margin:0 auto;padding:72px 40px 0">
+    <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#9A5E12;text-transform:uppercase" data-i18n="ax.kicker">Politique d'accessibilité</p>
+    <h1 style="font-family:'New York',ui-serif,Georgia,serif;font-size:46px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:16px"><span data-i18n="ax.h1a">Lire est un droit,</span><br><span data-i18n="ax.h1b">pas une option d'affichage.</span></h1>
+    <p style="font-size:17px;line-height:1.65;color:#6E685F;margin-top:18px" data-i18n="ax.intro">TechnoDaily est une application de lecture. Si elle n'est pas lisible par vous, quelle que soit votre vue, votre motricité ou votre façon d'utiliser un appareil, c'est un défaut du produit, pas le vôtre. Cette page décrit ce qui est en place aujourd'hui, ce qui manque encore, et comment nous le dire.</p>
+    <p style="font:500 13px -apple-system,system-ui;color:#9B958B;margin-top:16px" data-i18n="ax.updated">Dernière mise à jour : 8 juillet 2026 · S'applique à l'app TechnoDaily V2 (iOS, iPadOS, visionOS) et à ce site.</p>
+  </section>
+
+  <!-- ══════════ ENGAGEMENT ══════════ -->
+  <section data-screen-label="Notre engagement" style="max-width:760px;margin:0 auto;padding:56px 40px 0">
+    <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:28px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:14px" data-i18n="ax.eng.h">Notre engagement</h2>
+    <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:18px"><span data-i18n="ax.eng.p1">Nous traitons l'accessibilité comme une exigence produit, intégrée au développement, pas comme une conformité cosmétique ajoutée après coup. Nos référentiels de travail sont les recommandations d'accessibilité d'Apple pour l'application et les </span><strong data-i18n="ax.eng.p1b">WCAG 2.2 niveau AA</strong><span data-i18n="ax.eng.p1c"> pour ce site.</span></p>
+    <div style="background:#FBFAF7;border:1px solid #E4DFD5;border-radius:16px;padding:20px 24px;margin-top:18px">
+      <p style="font-size:15px;line-height:1.65;color:#4A453D"><strong data-i18n="ax.eng.transp">En toute transparence :</strong> <span data-i18n="ax.eng.transp2">aucun audit formel de conformité n'a encore été réalisé. Nous ne revendiquons donc pas, à ce stade, une conformité RGAA ou WCAG. Nous documentons ci-dessous ce qui est réellement en place, testé sur appareil, et ce qui reste à faire.</span></p>
+    </div>
+  </section>
+
+  <!-- ══════════ DANS L'APP ══════════ -->
+  <section data-screen-label="Dans l'app" style="max-width:760px;margin:0 auto;padding:56px 40px 0">
+    <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:28px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:14px" data-i18n="ax.app.h">Dans l'app, aujourd'hui</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px">
+      <div style="background:#FBFAF7;border:1px solid #E4DFD5;border-radius:16px;padding:22px 24px">
+        <div style="font:700 12px -apple-system,system-ui;letter-spacing:.14em;color:#4F7A4F" data-i18n="ax.app.vision">VISION</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;font:400 14px -apple-system,system-ui;line-height:1.55;color:#4A453D">
+          <span><strong data-i18n="ax.app.v1b">Dynamic Type partout</strong><span data-i18n="ax.app.v1"> : toute l'interface suit la taille de texte iOS, validée jusqu'à XXL sans casse, avec un reflow contrôlé aux tailles Accessibilité.</span></span>
+          <span><strong data-i18n="ax.app.v2b">Contrastes AA</strong><span data-i18n="ax.app.v2"> : tous les textes atteignent 4,5:1 minimum (texte principal : 15:1).</span></span>
+          <span><strong data-i18n="ax.app.v3b">« Augmenter le contraste »</strong><span data-i18n="ax.app.v3"> : chaque couleur existe en 4 états (clair/sombre × contraste normal/élevé), bordures renforcées.</span></span>
+          <span><strong data-i18n="ax.app.v4b">Thème clair et sombre</strong><span data-i18n="ax.app.v4"> : suit votre réglage système, jamais imposé.</span></span>
+        </div>
+      </div>
+      <div style="background:#FBFAF7;border:1px solid #E4DFD5;border-radius:16px;padding:22px 24px">
+        <div style="font:700 12px -apple-system,system-ui;letter-spacing:.14em;color:#4F7A4F">VOICEOVER</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;font:400 14px -apple-system,system-ui;line-height:1.55;color:#4A453D">
+          <span><strong data-i18n="ax.app.o1b">Chaque élément interactif est labellisé</strong><span data-i18n="ax.app.o1"> : y compris les signaux purement visuels comme le point « non lu ».</span></span>
+          <span><strong data-i18n="ax.app.o2b">Ordre de lecture logique</strong><span data-i18n="ax.app.o2"> : les cartes se lisent d'un bloc, sans détour.</span></span>
+          <span><strong data-i18n="ax.app.o3b">Actions au rotor</strong><span data-i18n="ax.app.o3"> : marquer lu, enregistrer, à lire, disponibles sans gestes complexes (déployé sur les flux RSS, extension en cours aux autres onglets).</span></span>
+        </div>
+      </div>
+      <div style="background:#FBFAF7;border:1px solid #E4DFD5;border-radius:16px;padding:22px 24px">
+        <div style="font:700 12px -apple-system,system-ui;letter-spacing:.14em;color:#4F7A4F" data-i18n="ax.app.motion">MOUVEMENT &amp; MATIÈRES</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;font:400 14px -apple-system,system-ui;line-height:1.55;color:#4A453D">
+          <span><strong data-i18n="ax.app.m1b">« Réduire les animations »</strong><span data-i18n="ax.app.m1"> : transitions instantanées, effets de chargement remplacés par des surfaces statiques.</span></span>
+          <span><strong data-i18n="ax.app.m2b">« Réduire la transparence »</strong><span data-i18n="ax.app.m2"> : toutes les matières translucides deviennent opaques.</span></span>
+          <span><strong data-i18n="ax.app.m3b">« Texte en gras »</strong><span data-i18n="ax.app.m3"> : pris en charge par le système, sans casse de mise en page.</span></span>
+        </div>
+      </div>
+      <div style="background:#FBFAF7;border:1px solid #E4DFD5;border-radius:16px;padding:22px 24px">
+        <div style="font:700 12px -apple-system,system-ui;letter-spacing:.14em;color:#4F7A4F" data-i18n="ax.app.inter">INTERACTION</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;font:400 14px -apple-system,system-ui;line-height:1.55;color:#4A453D">
+          <span><strong data-i18n="ax.app.i1b">Cibles tactiles ≥ 44 pt</strong><span data-i18n="ax.app.i1"> : sur tous les contrôles, y compris les plus discrets.</span></span>
+          <span><strong data-i18n="ax.app.i2b">Aucun geste obligatoire</strong><span data-i18n="ax.app.i2"> : tout balayage a un équivalent par menu ou bouton.</span></span>
+          <span><strong data-i18n="ax.app.i3b">Taille de texte in-app (S/M/L)</strong><span data-i18n="ax.app.i3"> : en complément du réglage système, jamais à sa place.</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SUR CE SITE ══════════ -->
+  <section data-screen-label="Sur ce site" style="max-width:760px;margin:0 auto;padding:56px 40px 0">
+    <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:28px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:14px" data-i18n="ax.site.h">Sur ce site</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px;font:400 15.5px -apple-system,system-ui;line-height:1.65;color:#4A453D">
+      <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="ax.site.1">HTML sémantique : titres hiérarchisés, points de repère, texte alternatif sur les images.</span></span>
+      <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="ax.site.2">Navigation complète au clavier, avec un état de focus toujours visible.</span></span>
+      <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="ax.site.3">Contrastes de texte conformes AA sur tous les fonds.</span></span>
+      <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="ax.site.4">Langue de la page déclarée, dans les quatre langues du site (FR, EN, ES, 中文).</span></span>
+      <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="ax.site.5">Le réglage « réduire les animations » de votre système est respecté.</span></span>
+    </div>
+  </section>
+
+  <!-- ══════════ CE QUI MANQUE ══════════ -->
+  <section data-screen-label="Ce qui manque" style="max-width:760px;margin:0 auto;padding:56px 40px 0">
+    <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:28px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:14px" data-i18n="ax.gap.h">Ce qui manque encore</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px;font:400 15.5px -apple-system,system-ui;line-height:1.65;color:#4A453D">
+      <span style="display:flex;gap:12px"><span style="color:#A84637;font-weight:700;flex:none">✕</span><span data-i18n="ax.gap.1">Les actions VoiceOver au rotor ne couvrent pas encore les onglets Newsletters et YouTube : le déploiement suit la validation du patron sur les flux RSS.</span></span>
+      <span style="display:flex;gap:12px"><span style="color:#A84637;font-weight:700;flex:none">✕</span><span data-i18n="ax.gap.2">Aucun audit externe n'a encore été mené, ni sur l'app ni sur ce site.</span></span>
+      <span style="display:flex;gap:12px"><span style="color:#A84637;font-weight:700;flex:none">✕</span><span data-i18n="ax.gap.3">Voice Control et les rotors personnalisés (naviguer d'article en article) ne sont pas encore pris en charge.</span></span>
+    </div>
+    <div style="background:#FBFAF7;border:1px solid #E4DFD5;border-radius:16px;padding:20px 24px;margin-top:22px">
+      <div style="font:700 12px -apple-system,system-ui;letter-spacing:.14em;color:#928C82" data-i18n="ax.roadmap.h">FEUILLE DE ROUTE</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px;font:400 14.5px -apple-system,system-ui;line-height:1.6;color:#4A453D">
+        <span data-i18n="ax.roadmap.1">1. Passe VoiceOver complète « yeux fermés » sur appareil, écran par écran.</span>
+        <span data-i18n="ax.roadmap.2">2. Extension des actions au rotor à tous les onglets.</span>
+        <span data-i18n="ax.roadmap.3">3. Prise en charge des tailles Dynamic Type Accessibilité (au-delà de XXL).</span>
+        <span data-i18n="ax.roadmap.4">4. Voice Control, puis audit externe.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section data-screen-label="Contact accessibilité" style="max-width:760px;margin:0 auto;padding:56px 40px 80px">
+    <div style="background:#161513;border-radius:20px;padding:32px 36px">
+      <div style="font:700 12px -apple-system,system-ui;letter-spacing:.16em;color:#F2BA5C" data-i18n="ax.contact.kicker">UN OBSTACLE ? DITES-LE NOUS.</div>
+      <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:24px;font-weight:700;line-height:1.25;color:#F2EEE6;margin-top:12px" data-i18n="ax.contact.h">Si une partie de TechnoDaily vous est inaccessible, c'est un bug, et il passe en tête de liste.</div>
+      <div style="font:400 14.5px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:12px" data-i18n="ax.contact.p">Écrivez-nous en décrivant l'écran et le réglage utilisé (VoiceOver, taille de texte…). Nous répondons personnellement : il n'y a pas de service client anonyme, seulement le développeur.</div>
+      <div style="margin-top:18px"><a href="mailto:contact@technoandco.fr" style="display:inline-flex;background:#DE9433;color:#221F1A;font:600 14.5px -apple-system,system-ui;padding:11px 20px;border-radius:12px">contact@technoandco.fr</a></div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer data-screen-label="Footer" style="border-top:1px solid #E4DFD5;background:#EDE8DE">
+    <div style="max-width:1240px;margin:0 auto;padding:44px 44px 32px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:19px;font-weight:700">TechnoDaily</div>
+          <div style="font:400 13px -apple-system,system-ui;color:#6E685F;margin-top:8px;max-width:300px" data-i18n="ft.tagline">Privacy by design. Vos lectures ne regardent que vous.</div>
+        </div>
+        <div style="display:flex;gap:64px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.product">PRODUIT</span>
+            <a href="index.html#fonctionnalites" style="color:#6E685F" data-i18n="nav.feat">Fonctionnalités</a>
+            <a href="index.html#dossiers" style="color:#6E685F" data-i18n="nav.dossiers">Dossiers de veille</a>
+            <a href="index.html#tarif" style="color:#6E685F" data-i18n="nav.pricing">Tarif</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.legal">LÉGAL</span>
+            <a href="confidentialite.html" style="color:#6E685F" data-i18n="ft.privacy">Politique de confidentialité</a>
+            <a href="conditions.html" style="color:#6E685F" data-i18n="ft.terms">Conditions d'utilisation</a>
+            <a href="accessibilite.html" style="color:#221F1A;font-weight:600" data-i18n="ft.access">Politique d'accessibilité</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui;align-items:flex-start">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.lang">LANGUES</span>
+            <button type="button" onClick="{{ setEn }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">English</button>
+            <button type="button" onClick="{{ setFr }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">Français</button>
+            <button type="button" onClick="{{ setEs }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">Español</button>
+            <button type="button" onClick="{{ setZh }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">中文</button>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #DBD5C8;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 12.5px -apple-system,system-ui;color:#9B958B">
+        <span>© 2026 TechnoAndCo · contact@technoandco.fr</span>
+        <span data-i18n="ft.marks">Apple, iPhone et Apple Intelligence sont des marques d'Apple Inc.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fr&quot;,&quot;en&quot;,&quot;es&quot;,&quot;zh&quot;],&quot;default&quot;:&quot;fr&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Langue&quot;},&quot;appStoreId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;6758897742&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;App Store&quot;}}">
+class Component extends DCLogic {
+  dicts() {
+    return {
+      en: {
+        'nav.feat': 'Features', 'nav.dossiers': 'Tracked topics', 'nav.privacy': 'Privacy', 'nav.pricing': 'Pricing', 'nav.dl': 'Download',
+        'ax.kicker': 'Accessibility policy',
+        'ax.h1a': 'Reading is a right,', 'ax.h1b': 'not a display option.',
+        'ax.intro': 'TechnoDaily is a reading app. If it is not readable by you, whatever your sight, your mobility or the way you use a device, that is a fault of the product, not yours. This page describes what is in place today, what is still missing, and how to tell us.',
+        'ax.updated': 'Last updated: July 8, 2026 · Applies to the TechnoDaily V2 app (iOS, iPadOS, visionOS) and to this site.',
+        'ax.eng.h': 'Our commitment',
+        'ax.eng.p1': 'We treat accessibility as a product requirement, built into development, not as cosmetic compliance bolted on afterwards. Our working references are Apple\u2019s accessibility guidelines for the app and ',
+        'ax.eng.p1b': 'WCAG 2.2 level AA', 'ax.eng.p1c': ' for this site.',
+        'ax.eng.transp': 'In full transparency:', 'ax.eng.transp2': ' no formal conformance audit has been carried out yet. We therefore do not, at this stage, claim RGAA or WCAG conformance. Below we document what is actually in place, tested on device, and what remains to do.',
+        'ax.app.h': 'In the app, today',
+        'ax.app.vision': 'VISION',
+        'ax.app.v1b': 'Dynamic Type everywhere', 'ax.app.v1': ': the whole interface follows the iOS text size, validated up to XXL without breakage, with controlled reflow at Accessibility sizes.',
+        'ax.app.v2b': 'AA contrast', 'ax.app.v2': ': all text reaches at least 4.5:1 (primary text: 15:1).',
+        'ax.app.v3b': '\u201cIncrease Contrast\u201d', 'ax.app.v3': ': every color exists in 4 states (light/dark \u00d7 normal/high contrast), with reinforced borders.',
+        'ax.app.v4b': 'Light and dark themes', 'ax.app.v4': ': follows your system setting, never imposed.',
+        'ax.app.o1b': 'Every interactive element is labelled', 'ax.app.o1': ': including purely visual signals like the \u201cunread\u201d dot.',
+        'ax.app.o2b': 'Logical reading order', 'ax.app.o2': ': cards are read as one block, without detours.',
+        'ax.app.o3b': 'Rotor actions', 'ax.app.o3': ': mark as read, save, to-read, available without complex gestures (deployed on RSS feeds, extension to the other tabs in progress).',
+        'ax.app.motion': 'MOTION & MATERIALS',
+        'ax.app.m1b': '\u201cReduce Motion\u201d', 'ax.app.m1': ': instant transitions, loading effects replaced by static surfaces.',
+        'ax.app.m2b': '\u201cReduce Transparency\u201d', 'ax.app.m2': ': all translucent materials become opaque.',
+        'ax.app.m3b': '\u201cBold Text\u201d', 'ax.app.m3': ': handled by the system, without breaking the layout.',
+        'ax.app.inter': 'INTERACTION',
+        'ax.app.i1b': 'Touch targets \u2265 44 pt', 'ax.app.i1': ': on every control, including the most discreet.',
+        'ax.app.i2b': 'No mandatory gesture', 'ax.app.i2': ': every swipe has a menu or button equivalent.',
+        'ax.app.i3b': 'In-app text size (S/M/L)', 'ax.app.i3': ': complementing the system setting, never replacing it.',
+        'ax.site.h': 'On this site',
+        'ax.site.1': 'Semantic HTML: hierarchical headings, landmarks, alt text on images.',
+        'ax.site.2': 'Full keyboard navigation, with an always-visible focus state.',
+        'ax.site.3': 'AA-compliant text contrast on every background.',
+        'ax.site.4': 'Page language declared, in the four languages of the site (FR, EN, ES, \u4e2d\u6587).',
+        'ax.site.5': 'Your system\u2019s \u201creduce motion\u201d setting is respected.',
+        'ax.gap.h': 'What is still missing',
+        'ax.gap.1': 'Rotor VoiceOver actions do not yet cover the Newsletters and YouTube tabs: the rollout follows validation of the pattern on RSS feeds.',
+        'ax.gap.2': 'No external audit has been carried out yet, neither on the app nor on this site.',
+        'ax.gap.3': 'Voice Control and custom rotors (navigating article by article) are not yet supported.',
+        'ax.roadmap.h': 'ROADMAP',
+        'ax.roadmap.1': '1. Full \u201ceyes-closed\u201d VoiceOver pass on device, screen by screen.',
+        'ax.roadmap.2': '2. Extension of rotor actions to every tab.',
+        'ax.roadmap.3': '3. Support for Accessibility Dynamic Type sizes (beyond XXL).',
+        'ax.roadmap.4': '4. Voice Control, then an external audit.',
+        'ax.contact.kicker': 'A BARRIER? TELL US.',
+        'ax.contact.h': 'If any part of TechnoDaily is inaccessible to you, it is a bug, and it goes to the top of the list.',
+        'ax.contact.p': 'Write to us describing the screen and the setting used (VoiceOver, text size\u2026). We answer personally: there is no anonymous support desk, only the developer.',
+        'ft.tagline': 'Privacy by design. Your reading is nobody\u2019s business but yours.',
+        'ft.product': 'PRODUCT', 'ft.legal': 'LEGAL', 'ft.lang': 'LANGUAGES',
+        'ft.privacy': 'Privacy policy', 'ft.terms': 'Terms of use', 'ft.access': 'Accessibility policy',
+        'ft.marks': 'Apple, iPhone and Apple Intelligence are trademarks of Apple Inc.'
+      },
+      es: {
+        'nav.feat': 'Funciones', 'nav.dossiers': 'Temas seguidos', 'nav.privacy': 'Privacidad', 'nav.pricing': 'Precio', 'nav.dl': 'Descargar',
+        'ax.kicker': 'Política de accesibilidad',
+        'ax.h1a': 'Leer es un derecho,', 'ax.h1b': 'no una opción de pantalla.',
+        'ax.intro': 'TechnoDaily es una aplicación de lectura. Si no te resulta legible, sea cual sea tu vista, tu movilidad o tu forma de usar un dispositivo, es un defecto del producto, no tuyo. Esta página describe lo que hay hoy, lo que aún falta y cómo decírnoslo.',
+        'ax.updated': 'Última actualización: 8 de julio de 2026 · Se aplica a la app TechnoDaily V2 (iOS, iPadOS, visionOS) y a este sitio.',
+        'ax.eng.h': 'Nuestro compromiso',
+        'ax.eng.p1': 'Tratamos la accesibilidad como un requisito de producto, integrado en el desarrollo, no como un cumplimiento cosmético añadido después. Nuestras referencias de trabajo son las pautas de accesibilidad de Apple para la app y las ',
+        'ax.eng.p1b': 'WCAG 2.2 nivel AA', 'ax.eng.p1c': ' para este sitio.',
+        'ax.eng.transp': 'Con total transparencia:', 'ax.eng.transp2': ' aún no se ha realizado ninguna auditoría formal de conformidad. Por eso no reivindicamos, por ahora, una conformidad RGAA o WCAG. A continuación documentamos lo que realmente está en marcha, probado en dispositivo, y lo que queda por hacer.',
+        'ax.app.h': 'En la app, hoy',
+        'ax.app.vision': 'VISIÓN',
+        'ax.app.v1b': 'Dynamic Type en todas partes', 'ax.app.v1': ': toda la interfaz sigue el tamaño de texto de iOS, validado hasta XXL sin roturas, con un reflujo controlado en tamaños de Accesibilidad.',
+        'ax.app.v2b': 'Contrastes AA', 'ax.app.v2': ': todos los textos alcanzan un mínimo de 4,5:1 (texto principal: 15:1).',
+        'ax.app.v3b': '«Aumentar contraste»', 'ax.app.v3': ': cada color existe en 4 estados (claro/oscuro \u00d7 contraste normal/alto), con bordes reforzados.',
+        'ax.app.v4b': 'Tema claro y oscuro', 'ax.app.v4': ': sigue tu ajuste del sistema, nunca impuesto.',
+        'ax.app.o1b': 'Cada elemento interactivo está etiquetado', 'ax.app.o1': ': incluidas las señales puramente visuales como el punto «no leído».',
+        'ax.app.o2b': 'Orden de lectura lógico', 'ax.app.o2': ': las tarjetas se leen de un bloque, sin rodeos.',
+        'ax.app.o3b': 'Acciones en el rotor', 'ax.app.o3': ': marcar leído, guardar, para leer, disponibles sin gestos complejos (desplegado en los feeds RSS, extensión a las demás pestañas en curso).',
+        'ax.app.motion': 'MOVIMIENTO Y MATERIALES',
+        'ax.app.m1b': '«Reducir movimiento»', 'ax.app.m1': ': transiciones instantáneas, efectos de carga sustituidos por superficies estáticas.',
+        'ax.app.m2b': '«Reducir transparencia»', 'ax.app.m2': ': todos los materiales translúcidos se vuelven opacos.',
+        'ax.app.m3b': '«Texto en negrita»', 'ax.app.m3': ': gestionado por el sistema, sin romper la maquetación.',
+        'ax.app.inter': 'INTERACCIÓN',
+        'ax.app.i1b': 'Objetivos táctiles \u2265 44 pt', 'ax.app.i1': ': en todos los controles, incluidos los más discretos.',
+        'ax.app.i2b': 'Ningún gesto obligatorio', 'ax.app.i2': ': cada deslizamiento tiene un equivalente por menú o botón.',
+        'ax.app.i3b': 'Tamaño de texto in-app (S/M/L)', 'ax.app.i3': ': como complemento del ajuste del sistema, nunca en su lugar.',
+        'ax.site.h': 'En este sitio',
+        'ax.site.1': 'HTML semántico: títulos jerarquizados, puntos de referencia, texto alternativo en las imágenes.',
+        'ax.site.2': 'Navegación completa con teclado, con un estado de foco siempre visible.',
+        'ax.site.3': 'Contrastes de texto conformes AA sobre todos los fondos.',
+        'ax.site.4': 'Idioma de la página declarado, en los cuatro idiomas del sitio (FR, EN, ES, \u4e2d\u6587).',
+        'ax.site.5': 'Se respeta el ajuste «reducir movimiento» de tu sistema.',
+        'ax.gap.h': 'Lo que aún falta',
+        'ax.gap.1': 'Las acciones VoiceOver en el rotor aún no cubren las pestañas Newsletters y YouTube: el despliegue sigue a la validación del patrón en los feeds RSS.',
+        'ax.gap.2': 'Todavía no se ha llevado a cabo ninguna auditoría externa, ni en la app ni en este sitio.',
+        'ax.gap.3': 'Voice Control y los rotores personalizados (navegar artículo por artículo) aún no son compatibles.',
+        'ax.roadmap.h': 'HOJA DE RUTA',
+        'ax.roadmap.1': '1. Pase VoiceOver completo «con los ojos cerrados» en dispositivo, pantalla por pantalla.',
+        'ax.roadmap.2': '2. Extensión de las acciones del rotor a todas las pestañas.',
+        'ax.roadmap.3': '3. Compatibilidad con los tamaños Dynamic Type de Accesibilidad (más allá de XXL).',
+        'ax.roadmap.4': '4. Voice Control y, después, auditoría externa.',
+        'ax.contact.kicker': '¿UN OBSTÁCULO? DÍNOSLO.',
+        'ax.contact.h': 'Si alguna parte de TechnoDaily te resulta inaccesible, es un bug, y pasa al principio de la lista.',
+        'ax.contact.p': 'Escríbenos describiendo la pantalla y el ajuste usado (VoiceOver, tamaño de texto…). Respondemos personalmente: no hay un servicio de atención anónimo, solo el desarrollador.',
+        'ft.tagline': 'Privacy by design. Tu lectura solo te concierne a ti.',
+        'ft.product': 'PRODUCTO', 'ft.legal': 'LEGAL', 'ft.lang': 'IDIOMAS',
+        'ft.privacy': 'Política de privacidad', 'ft.terms': 'Condiciones de uso', 'ft.access': 'Política de accesibilidad',
+        'ft.marks': 'Apple, iPhone y Apple Intelligence son marcas de Apple Inc.'
+      },
+      zh: {
+        'nav.feat': '功能', 'nav.dossiers': '主题追踪', 'nav.privacy': '隐私', 'nav.pricing': '价格', 'nav.dl': '下载',
+        'ax.kicker': '无障碍政策',
+        'ax.h1a': '阅读是一项权利，', 'ax.h1b': '而不是一个显示选项。',
+        'ax.intro': 'TechnoDaily 是一款阅读应用。如果你无法阅读它，无论是因为视力、行动能力，还是你使用设备的方式，那都是产品的缺陷，而不是你的问题。本页说明目前已具备的能力、仍然缺少的部分，以及如何告诉我们。',
+        'ax.updated': '最后更新：2026 年 7 月 8 日 · 适用于 TechnoDaily V2 应用（iOS、iPadOS、visionOS）及本网站。',
+        'ax.eng.h': '我们的承诺',
+        'ax.eng.p1': '我们把无障碍视为产品需求，融入开发之中，而不是事后附加的表面合规。我们的工作参照是 Apple 的应用无障碍指南，以及本网站遵循的 ',
+        'ax.eng.p1b': 'WCAG 2.2 AA 级', 'ax.eng.p1c': '。',
+        'ax.eng.transp': '坦诚相告：', 'ax.eng.transp2': '目前尚未进行任何正式的合规审计。因此，现阶段我们不声称符合 RGAA 或 WCAG。下面我们记录的是真正已经落地、在设备上测试过的内容，以及仍待完成的部分。',
+        'ax.app.h': '应用中，现状',
+        'ax.app.vision': '视觉',
+        'ax.app.v1b': '全局 Dynamic Type', 'ax.app.v1': '：整个界面跟随 iOS 文字大小，已验证到 XXL 不会错乱，在无障碍字号下有受控的重排。',
+        'ax.app.v2b': 'AA 对比度', 'ax.app.v2': '：所有文字至少达到 4.5:1（主要文字：15:1）。',
+        'ax.app.v3b': '「提高对比度」', 'ax.app.v3': '：每种颜色都有 4 种状态（浅色/深色 \u00d7 普通/高对比度），并加强边框。',
+        'ax.app.v4b': '浅色与深色主题', 'ax.app.v4': '：跟随你的系统设置，绝不强加。',
+        'ax.app.o1b': '每个可交互元素都有标签', 'ax.app.o1': '：包括「未读」圆点这类纯视觉信号。',
+        'ax.app.o2b': '逻辑阅读顺序', 'ax.app.o2': '：卡片作为一个整体朗读，不绕弯。',
+        'ax.app.o3b': '转子操作', 'ax.app.o3': '：标为已读、保存、稍后读，无需复杂手势即可使用（已在 RSS 订阅源上线，正在扩展到其他标签页）。',
+        'ax.app.motion': '动效与材质',
+        'ax.app.m1b': '「减弱动态效果」', 'ax.app.m1': '：即时切换，加载效果由静态表面替代。',
+        'ax.app.m2b': '「降低透明度」', 'ax.app.m2': '：所有半透明材质变为不透明。',
+        'ax.app.m3b': '「粗体文本」', 'ax.app.m3': '：由系统处理，不破坏布局。',
+        'ax.app.inter': '交互',
+        'ax.app.i1b': '触控目标 \u2265 44 pt', 'ax.app.i1': '：涵盖所有控件，包括最不起眼的。',
+        'ax.app.i2b': '没有强制手势', 'ax.app.i2': '：每个滑动都有菜单或按钮的等效操作。',
+        'ax.app.i3b': '应用内文字大小（S/M/L）', 'ax.app.i3': '：作为系统设置的补充，绝不取代它。',
+        'ax.site.h': '本网站',
+        'ax.site.1': '语义化 HTML：分级标题、地标、图片替代文本。',
+        'ax.site.2': '完整键盘导航，焦点状态始终可见。',
+        'ax.site.3': '所有背景上的文字对比度均符合 AA。',
+        'ax.site.4': '声明页面语言，涵盖网站的四种语言（FR、EN、ES、中文）。',
+        'ax.site.5': '尊重你系统的「减弱动态效果」设置。',
+        'ax.gap.h': '仍然缺少的部分',
+        'ax.gap.1': '转子 VoiceOver 操作尚未覆盖新闻通讯和 YouTube 标签页：推广将在 RSS 订阅源上的方案验证之后进行。',
+        'ax.gap.2': '尚未对应用或本网站进行任何外部审计。',
+        'ax.gap.3': '尚不支持 Voice Control 与自定义转子（逐篇文章导航）。',
+        'ax.roadmap.h': '路线图',
+        'ax.roadmap.1': '1. 在设备上逐屏进行完整的「闭眼」VoiceOver 测试。',
+        'ax.roadmap.2': '2. 将转子操作扩展到所有标签页。',
+        'ax.roadmap.3': '3. 支持无障碍 Dynamic Type 字号（超过 XXL）。',
+        'ax.roadmap.4': '4. Voice Control，随后进行外部审计。',
+        'ax.contact.kicker': '遇到障碍？告诉我们。',
+        'ax.contact.h': '如果 TechnoDaily 的某个部分让你无法使用，那就是一个 bug，而且会被排到最前面。',
+        'ax.contact.p': '来信时请描述屏幕和所用设置（VoiceOver、文字大小……）。我们会亲自回复：没有匿名客服，只有开发者本人。',
+        'ft.tagline': '隐私优先设计。你的阅读只属于你自己。',
+        'ft.product': '产品', 'ft.legal': '法律', 'ft.lang': '语言',
+        'ft.privacy': '隐私政策', 'ft.terms': '使用条款', 'ft.access': '无障碍政策',
+        'ft.marks': 'Apple、iPhone 与 Apple Intelligence 是 Apple Inc. 的商标。'
+      }
+    };
+  }
+
+  applyLang(l) {
+    const dict = this.dicts()[l] || {};
+    document.documentElement.lang = ({ fr: 'fr', en: 'en', es: 'es', zh: 'zh-Hans' })[l] || 'fr';
+    if (!this._defaults) {
+      this._defaults = new Map();
+      document.querySelectorAll('[data-i18n]').forEach((n) => { this._defaults.set(n, n.textContent); });
+    }
+    document.querySelectorAll('[data-i18n]').forEach((n) => {
+      const k = n.getAttribute('data-i18n');
+      const fallback = this._defaults.get(n);
+      n.textContent = (l === 'fr') ? fallback : (dict[k] != null ? dict[k] : fallback);
+    });
+    const id = this.props.appStoreId ?? '6758897742';
+    const cc = ({ fr: 'fr', en: 'us', es: 'es', zh: 'cn' })[l] || 'fr';
+    const url = 'https://apps.apple.com/' + cc + '/app/technodaily/id' + id + '?itsct=apps_box_badge&itscg=30200';
+    document.querySelectorAll('a[data-store]').forEach((a) => { a.setAttribute('href', url); });
+    document.querySelectorAll('[data-lang-btn]').forEach((b) => {
+      const on = b.getAttribute('data-lang-btn') === l;
+      b.style.background = on ? '#FBFAF7' : 'transparent';
+      b.style.color = on ? '#221F1A' : '#6E685F';
+      b.style.fontWeight = on ? '700' : '600';
+    });
+    this._lang = l;
+    try { localStorage.setItem('td_lang', l); } catch (e) {}
+  }
+
+  detectLang() {
+    try {
+      const langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (const raw of langs) {
+        const t = (raw || '').toLowerCase();
+        if (t.startsWith('fr')) return 'fr';
+        if (t.startsWith('es')) return 'es';
+        if (t.startsWith('zh')) return 'zh';
+        if (t.startsWith('en')) return 'en';
+      }
+    } catch (e) {}
+    return null;
+  }
+
+  componentDidMount() {
+    let l = null;
+    try { l = localStorage.getItem('td_lang'); } catch (e) {}
+    if (!l && this.props.lang) l = this.props.lang;
+    if (!l) l = this.detectLang();
+    if (!l || !['fr', 'en', 'es', 'zh'].includes(l)) l = 'en';
+    this.applyLang(l);
+  }
+
+  renderVals() {
+    return {
+      setFr: () => this.applyLang('fr'),
+      setEn: () => this.applyLang('en'),
+      setEs: () => this.applyLang('es'),
+      setZh: () => this.applyLang('zh')
+    };
+  }
+}
+</script>
+</body>
+</html>
