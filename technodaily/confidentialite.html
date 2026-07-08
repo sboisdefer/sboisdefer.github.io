@@ -21,10 +21,18 @@
     body{overflow-x:hidden}
     nav{flex-wrap:wrap !important;row-gap:10px !important}
     nav > div:nth-child(2){order:3;flex-basis:100% !important;flex-wrap:wrap !important;gap:14px !important;margin-top:2px}
-    [style*="max-width:1240px"],[style*="max-width:1000px"],[style*="max-width:760px"]{padding-left:18px !important;padding-right:18px !important}
-    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+    [style*="max-width: 1240px"],[style*="max-width: 1000px"],[style*="max-width: 760px"]{padding-left:18px !important;padding-right:18px !important}
+    [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr !important}
     h1{font-size:34px !important;line-height:1.1 !important}
     h2{font-size:24px !important}
+  }
+  @media (max-width:640px){
+    header{position:sticky;top:0;z-index:60}
+    nav{padding:12px 18px !important;gap:12px !important}
+    nav > div:nth-child(2){display:none !important}
+    h1{font-size:30px !important;line-height:1.1 !important}
+    h2{font-size:22px !important}
+    [style*="padding: 72px 40px 0"]{padding:44px 20px 0 !important}
   }
 </style>
 </helmet>

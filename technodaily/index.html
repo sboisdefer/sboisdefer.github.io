@@ -21,16 +21,30 @@
     body{overflow-x:hidden}
     nav{flex-wrap:wrap !important;row-gap:10px !important}
     nav > div:nth-child(2){order:3;flex-basis:100% !important;flex-wrap:wrap !important;gap:14px !important;margin-top:2px}
-    [style*="max-width:1240px"],[style*="max-width:1000px"],[style*="max-width:760px"]{padding-left:18px !important;padding-right:18px !important}
+    [style*="max-width: 1240px"],[style*="max-width: 1000px"],[style*="max-width: 760px"]{padding-left:18px !important;padding-right:18px !important}
     [data-screen-label="Hero"]{flex-direction:column !important;gap:36px !important}
     [data-screen-label="Hero"] > div:last-child{align-self:center}
     [data-screen-label="Hero"] > div:first-child > div{flex-wrap:wrap !important}
     #fonctionnalites > div,#dossiers > div{flex-direction:column !important;gap:32px !important}
-    [style*="width:480px"],[style*="width:460px"],[style*="width:340px"]{width:100% !important;max-width:100% !important}
-    [style*="width:332px"]{width:min(332px,86vw) !important}
-    [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+    [style*="width: 480px"],[style*="width: 460px"],[style*="width: 340px"]{width:100% !important;max-width:100% !important}
+    [style*="width: 332px"]{width:min(332px,86vw) !important}
+    [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr !important}
     h1{font-size:38px !important;line-height:1.07 !important}
     h2{font-size:28px !important}
+  }
+  @media (max-width:640px){
+    header{position:sticky;top:0;z-index:60}
+    nav{padding:12px 18px !important;gap:12px !important}
+    nav > div:nth-child(2){display:none !important}
+    nav a[data-store]{display:none !important}
+    section[id]{scroll-margin-top:68px}
+    [data-screen-label="Hero"]{padding:32px 20px 40px !important}
+    [data-screen-label="Hero"] h1{font-size:40px !important;line-height:1.05 !important}
+    [data-screen-label="Sources"]{padding:4px 20px 44px !important}
+    [style*="padding: 88px 44px"],[style*="padding: 92px 44px"]{padding:56px 20px !important}
+    h2{font-size:29px !important}
+    [data-mobile-cta]{display:flex !important}
+    footer{padding-bottom:92px !important}
   }
 </style>
 </helmet>
@@ -337,6 +351,7 @@
       </div>
     </div>
   </footer>
+  <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" data-mobile-cta aria-label="Télécharger dans l'App Store" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;align-items:center;justify-content:center;gap:8px;background:#DE9433;color:#221F1A;font:700 16px -apple-system,system-ui;padding:16px 20px;box-shadow:0 -6px 20px rgba(34,31,26,.16)"><span style="font-size:15px">↓</span><span data-i18n="cta.mobile">Télécharger sur l'App Store</span></a>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fr&quot;,&quot;en&quot;,&quot;es&quot;,&quot;zh&quot;],&quot;default&quot;:&quot;fr&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Langue&quot;},&quot;appStoreId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;6758897742&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;App Store&quot;}}">
@@ -344,7 +359,7 @@ class Component extends DCLogic {
   dicts() {
     return {
       en: {
-        'nav.feat': 'Features', 'nav.dossiers': 'Tracked topics', 'nav.privacy': 'Privacy', 'nav.pricing': 'Pricing', 'nav.dl': 'Download',
+        'nav.feat': 'Features', 'nav.dossiers': 'Tracked topics', 'nav.privacy': 'Privacy', 'nav.pricing': 'Pricing', 'nav.dl': 'Download', 'cta.mobile': 'Download on the App Store',
         'hero.kicker': 'New · TechnoDaily V2 for iOS 26',
         'hero.h1a': 'All your sources.', 'hero.h1b': 'One single brief.',
         'hero.sub': 'Gmail newsletters, RSS feeds, YouTube and Reddit, together in one reader that learns your interests and prepares the essentials for you every morning. Entirely on your device.',
@@ -399,7 +414,7 @@ class Component extends DCLogic {
         'ft.marks': 'Apple, iPhone and Apple Intelligence are trademarks of Apple Inc.'
       },
       es: {
-        'nav.feat': 'Funciones', 'nav.dossiers': 'Temas seguidos', 'nav.privacy': 'Privacidad', 'nav.pricing': 'Precio', 'nav.dl': 'Descargar',
+        'nav.feat': 'Funciones', 'nav.dossiers': 'Temas seguidos', 'nav.privacy': 'Privacidad', 'nav.pricing': 'Precio', 'nav.dl': 'Descargar', 'cta.mobile': 'Descargar en el App Store',
         'hero.kicker': 'Nuevo · TechnoDaily V2 para iOS 26',
         'hero.h1a': 'Todas tus fuentes.', 'hero.h1b': 'Un solo brief.',
         'hero.sub': 'Newsletters de Gmail, feeds RSS, YouTube y Reddit, reunidos en un lector que aprende tus intereses y te prepara lo esencial cada mañana. Todo en tu dispositivo.',
@@ -454,7 +469,7 @@ class Component extends DCLogic {
         'ft.marks': 'Apple, iPhone y Apple Intelligence son marcas de Apple Inc.'
       },
       zh: {
-        'nav.feat': '功能', 'nav.dossiers': '主题追踪', 'nav.privacy': '隐私', 'nav.pricing': '价格', 'nav.dl': '下载',
+        'nav.feat': '功能', 'nav.dossiers': '主题追踪', 'nav.privacy': '隐私', 'nav.pricing': '价格', 'nav.dl': '下载', 'cta.mobile': '在 App Store 下载',
         'hero.kicker': '全新 · TechnoDaily V2，适用于 iOS 26',
         'hero.h1a': '你的所有信息源。', 'hero.h1b': '一份简报。',
         'hero.sub': 'Gmail 新闻通讯、RSS 订阅源、YouTube 与 Reddit，汇聚在一个懂你兴趣的阅读器里，每天早晨为你准备好最重要的内容。完全在你的设备上运行。',
