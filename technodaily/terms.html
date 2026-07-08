@@ -1,341 +1,361 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechnoDaily — Conditions d'Utilisation / Terms of Service</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --cream: #F4F3EE;
-            --cream-dark: #EBE9E1;
-            --amber: #D4A053;
-            --amber-dark: #B8863A;
-            --terra: #CC785C;
-            --sage: #7A8B6F;
-            --charcoal: #2C2C2E;
-            --text: #3A3A3C;
-            --text-light: #8E8E93;
-            --white: #FFFFFF;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'DM Sans', -apple-system, sans-serif;
-            background: var(--cream);
-            color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-        /* Header */
-        header {
-            background: var(--charcoal);
-            padding: 2rem 1.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(212, 160, 83, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(204, 120, 92, 0.06) 0%, transparent 40%);
-            pointer-events: none;
-        }
-        .header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        .app-icon {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, var(--amber), var(--terra));
-            border-radius: 16px;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 20px rgba(212, 160, 83, 0.3);
-        }
-        header h1 {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--cream);
-            margin-bottom: 0.25rem;
-            letter-spacing: -0.02em;
-        }
-        header p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        /* Language toggle */
-        .lang-toggle {
-            display: flex;
-            gap: 0;
-            justify-content: center;
-            margin-top: 1.25rem;
-        }
-        .lang-btn {
-            padding: 0.4rem 1.2rem;
-            border: 1px solid rgba(212, 160, 83, 0.4);
-            background: transparent;
-            color: var(--text-light);
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .lang-btn:first-child {
-            border-radius: 20px 0 0 20px;
-        }
-        .lang-btn:last-child {
-            border-radius: 0 20px 20px 0;
-            border-left: none;
-        }
-        .lang-btn.active {
-            background: var(--amber);
-            border-color: var(--amber);
-            color: var(--charcoal);
-        }
-        /* Main */
-        main {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem 4rem;
-        }
-        .last-updated {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--cream-dark);
-        }
-        h2 {
-            font-family: 'Source Serif 4', Georgia, serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--charcoal);
-            margin: 2rem 0 0.75rem;
-            letter-spacing: -0.01em;
-        }
-        h2:first-of-type {
-            margin-top: 0;
-        }
-        p {
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        .highlight-box {
-            background: var(--white);
-            border-left: 3px solid var(--amber);
-            padding: 1.25rem 1.5rem;
-            border-radius: 0 8px 8px 0;
-            margin: 1.5rem 0;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-        }
-        .highlight-box p {
-            margin-bottom: 0.5rem;
-        }
-        .highlight-box p:last-child {
-            margin-bottom: 0;
-        }
-        .highlight-box strong {
-            color: var(--charcoal);
-        }
-        ul {
-            padding-left: 1.25rem;
-            margin-bottom: 1rem;
-        }
-        li {
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-        a {
-            color: var(--amber-dark);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(184, 134, 58, 0.3);
-            transition: border-color 0.2s;
-        }
-        a:hover {
-            border-color: var(--amber-dark);
-        }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid var(--cream-dark);
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        footer p {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-        footer a {
-            color: var(--amber-dark);
-        }
-        /* Language sections */
-        .lang-section {
-            display: none;
-        }
-        .lang-section.active {
-            display: block;
-        }
-        /* Responsive */
-        @media (max-width: 480px) {
-            header {
-                padding: 1.5rem 1rem;
-            }
-            main {
-                padding: 2rem 1rem 3rem;
-            }
-            header h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.15rem;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-<header>
-    <div class="header-content">
-        <div class="app-icon">📰</div>
-        <h1>TechnoDaily</h1>
-        <p>Conditions d'Utilisation / Terms of Service</p>
-        <div class="lang-toggle">
-            <button class="lang-btn active" onclick="switchLang('fr')">Français</button>
-            <button class="lang-btn" onclick="switchLang('en')">English</button>
+<x-dc>
+<helmet>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#F3F0EA}
+  ::selection{background:#DE943344}
+  a{color:#9A5E12;text-decoration:none}
+  a:hover{color:#7A4A0E}
+  a:focus-visible,button:focus-visible{outline:2px solid #9A5E12;outline-offset:2px;border-radius:6px}
+  @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#F3F0EA;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;color:#221F1A;-webkit-font-smoothing:antialiased">
+
+  <!-- ══════════ NAV ══════════ -->
+  <header style="border-bottom:1px solid #E4DFD5;background:#F3F0EA">
+    <nav aria-label="Navigation principale" style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 44px">
+      <a href="index.html" style="display:flex;align-items:baseline;gap:10px;flex:none">
+        <span style="font-family:'New York',ui-serif,Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.01em;color:#221F1A">TechnoDaily</span>
+        <span style="font:700 10.5px -apple-system,system-ui;letter-spacing:.12em;color:#9A5E12;background:rgba(222,148,51,.16);border-radius:999px;padding:3px 8px">V2</span>
+      </a>
+      <div style="display:flex;gap:26px;font:500 14px -apple-system,system-ui">
+        <a href="index.html#fonctionnalites" style="color:#6E685F" data-i18n="nav.feat">Fonctionnalités</a>
+        <a href="index.html#dossiers" style="color:#6E685F" data-i18n="nav.dossiers">Dossiers de veille</a>
+        <a href="index.html#confidentialite" style="color:#6E685F" data-i18n="nav.privacy">Confidentialité</a>
+        <a href="index.html#tarif" style="color:#6E685F" data-i18n="nav.pricing">Tarif</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex:none">
+        <div role="group" aria-label="Langue" style="display:flex;background:#E7E1D3;border-radius:10px;padding:3px">
+          <button type="button" data-lang-btn="en" onClick="{{ setEn }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">EN</button>
+          <button type="button" data-lang-btn="fr" onClick="{{ setFr }}" style="border:none;background:#FBFAF7;font:700 12px -apple-system,system-ui;color:#221F1A;padding:5px 10px;border-radius:8px;cursor:pointer">FR</button>
+          <button type="button" data-lang-btn="es" onClick="{{ setEs }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">ES</button>
+          <button type="button" data-lang-btn="zh" onClick="{{ setZh }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">中文</button>
         </div>
+        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:inline-flex;background:#DE9433;color:#221F1A;font:600 14px -apple-system,system-ui;padding:9px 16px;border-radius:12px" data-i18n="nav.dl">Télécharger</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+  <!-- ══════════ HEADER ══════════ -->
+  <section data-screen-label="Conditions · en-tête" style="max-width:760px;margin:0 auto;padding:72px 40px 0">
+    <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#9A5E12;text-transform:uppercase" data-i18n="tu.kicker">Conditions d'utilisation</p>
+    <h1 style="font-family:'New York',ui-serif,Georgia,serif;font-size:46px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:16px" data-i18n="tu.h1">Conditions d'utilisation</h1>
+    <p style="font-size:17px;line-height:1.65;color:#6E685F;margin-top:18px" data-i18n="tu.intro">Bienvenue sur TechnoDaily, éditée par TechnoAndCo (« nous »). En téléchargeant ou en utilisant l'application, vous acceptez les présentes conditions. Si vous ne les acceptez pas, n'utilisez pas l'application.</p>
+    <p style="font:500 13px -apple-system,system-ui;color:#9B958B;margin-top:16px" data-i18n="tu.updated">Dernière mise à jour : 8 juillet 2026.</p>
+    <div style="background:#161513;border-radius:14px;padding:18px 22px;margin-top:18px">
+      <div style="font:700 11px -apple-system,system-ui;letter-spacing:.14em;color:#F2BA5C" data-i18n="tu.eula.h">À PROPOS DE L'EULA</div>
+      <p style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="tu.eula.p">TechnoDaily s'appuie sur le contrat de licence utilisateur standard d'Apple (« Licensed Application End User License Agreement »). Les présentes conditions le complètent en tant que conditions d'utilisation, liées dans l'application et dans le paywall.</p>
     </div>
-</header>
-<main>
-<!-- ==================== FRANÇAIS ==================== -->
-<div id="lang-fr" class="lang-section active">
-    <p class="last-updated">Dernière mise à jour : 5 juin 2026</p>
-    <h2>Résumé</h2>
-    <div class="highlight-box">
-        <p><strong>TechnoDaily est une application sans publicité qui fonctionne entièrement sur votre appareil.</strong></p>
-        <p>Le téléchargement est gratuit, avec un essai gratuit de 7 jours, puis un abonnement annuel ou un achat unique à vie. En utilisant l'application, vous acceptez les conditions ci-dessous.</p>
+  </section>
+
+  <!-- ══════════ SECTIONS ══════════ -->
+  <section data-screen-label="Conditions · corps" style="max-width:760px;margin:0 auto;padding:8px 40px 0">
+
+    <div style="padding-top:48px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s1h">1. Description du service</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px" data-i18n="tu.s1p">TechnoDaily est une application de veille qui réunit vos newsletters (via Gmail), vos flux RSS, vos abonnements YouTube et des flux Reddit en un seul lecteur, avec un briefing personnalisé, des dossiers de veille, une recherche locale et des résumés générés sur votre appareil.</p>
     </div>
-    <h2>1. Acceptation des conditions</h2>
-    <p>En téléchargeant, installant ou utilisant TechnoDaily, vous acceptez les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser l'application.</p>
-    <h2>2. Description du service</h2>
-    <p>TechnoDaily est une application iOS d'agrégation de contenu qui vous permet de centraliser vos newsletters, flux RSS, abonnements YouTube et podcasts en un seul endroit. L'application utilise un algorithme de scoring pour personnaliser vos recommandations.</p>
-    <p>L'application est éditée par <strong>Techno&amp;Co</strong>, société de conseil en transformation digitale basée en France.</p>
-    <h2>3. Compte et accès</h2>
-    <p>TechnoDaily ne nécessite pas de création de compte. Vous pouvez optionnellement connecter vos comptes Google (Gmail et/ou YouTube) via OAuth 2.0 pour accéder à vos newsletters et abonnements. Vous pouvez révoquer ces connexions à tout moment depuis les réglages de l'application ou via <a href="https://myaccount.google.com/permissions">les permissions de votre compte Google</a>.</p>
-    <h2>4. Abonnements et achats</h2>
-    <p>TechnoDaily est gratuite au téléchargement et propose un <strong>essai gratuit de 7 jours</strong> donnant accès à l'ensemble des fonctionnalités. À l'issue de l'essai, l'accès complet nécessite l'un des achats suivants, proposés via l'App Store d'Apple :</p>
-    <ul>
-        <li><strong>Abonnement annuel</strong> : abonnement à renouvellement automatique. Il se renouvelle automatiquement pour la même durée et au même tarif, sauf annulation au moins 24 heures avant la fin de la période en cours. Le montant est débité sur votre compte Apple à la confirmation de l'achat, puis à chaque renouvellement dans les 24 heures précédant la fin de la période.</li>
-        <li><strong>Achat à vie</strong> : paiement unique donnant un accès permanent à l'ensemble des fonctionnalités, sans renouvellement ni frais récurrents.</li>
-    </ul>
-    <p>Vous pouvez gérer votre abonnement et désactiver le renouvellement automatique à tout moment dans les réglages de votre compte App Store. La désinstallation de l'application n'annule pas un abonnement actif.</p>
-    <p><strong>Paiements et remboursements.</strong> Tous les paiements sont traités par Apple ; Techno&amp;Co ne reçoit ni ne conserve vos données de paiement. Les demandes de remboursement relèvent d'Apple et de sa politique applicable — Techno&amp;Co ne peut pas traiter de remboursement directement.</p>
-    <p><strong>Modification des tarifs.</strong> Les tarifs peuvent évoluer ; toute modification du prix d'un abonnement vous sera notifiée par Apple et, le cas échéant, requerra votre consentement conformément aux règles de l'App Store.</p>
-    <h2>5. Traitement des données</h2>
-    <p>Toutes les données sont traitées et stockées <strong>localement sur votre appareil</strong>. Techno&amp;Co ne collecte, ne stocke et ne transmet aucune donnée personnelle. Pour plus de détails, consultez notre <a href="https://www.technoandco.fr/technodaily/privacy.html">Politique de Confidentialité</a>.</p>
-    <h2>6. Utilisation acceptable</h2>
-    <p>Vous vous engagez à utiliser TechnoDaily conformément aux lois en vigueur et à ne pas :</p>
-    <ul>
-        <li>Tenter de modifier, décompiler ou désassembler l'application</li>
-        <li>Utiliser l'application à des fins illégales</li>
-        <li>Contourner les mesures de sécurité de l'application</li>
-    </ul>
-    <h2>7. Propriété intellectuelle</h2>
-    <p>TechnoDaily et son code source sont la propriété de Techno&amp;Co. Les contenus affichés dans l'application (articles, newsletters, vidéos) restent la propriété de leurs éditeurs respectifs. TechnoDaily ne fait qu'agréger et afficher ces contenus pour votre usage personnel.</p>
-    <h2>8. Services tiers</h2>
-    <p>TechnoDaily interagit avec des services tiers (Google Gmail, Google YouTube, flux RSS publics, Apple CloudKit, Apple App Store). L'utilisation de ces services est soumise à leurs propres conditions d'utilisation. Techno&amp;Co n'est pas responsable du fonctionnement ou de la disponibilité de ces services tiers.</p>
-    <p>L'utilisation des données Google est conforme à la <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, y compris les exigences d'utilisation limitée (Limited Use requirements).</p>
-    <h2>9. Limitation de responsabilité</h2>
-    <p>TechnoDaily est fournie « en l'état ». Techno&amp;Co ne garantit pas que l'application sera exempte d'erreurs ou disponible de manière ininterrompue. Techno&amp;Co ne saurait être tenu responsable de tout dommage direct ou indirect résultant de l'utilisation de l'application.</p>
-    <h2>10. Modifications</h2>
-    <p>Techno&amp;Co se réserve le droit de modifier ces conditions à tout moment. La date de dernière mise à jour est indiquée en haut de cette page. Les modifications significatives seront signalées dans les notes de mise à jour de l'application sur l'App Store.</p>
-    <h2>11. Droit applicable</h2>
-    <p>Les présentes conditions sont régies par le droit français. Tout litige relatif à l'utilisation de TechnoDaily sera soumis aux tribunaux compétents de France.</p>
-    <h2>12. Contact</h2>
-    <p>Pour toute question relative à ces conditions d'utilisation :</p>
-    <p><strong>Techno&amp;Co</strong><br>
-    Email : <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
-    Site web : <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s2h">2. Abonnement, essai et paiement</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px;font-size:16px;line-height:1.65;color:#4A453D">
+        <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="tu.s2a">L'accès complet requiert un abonnement Pro. Deux formules : un abonnement annuel (avec essai gratuit de 14 jours pour les nouveaux abonnés éligibles) et un achat à vie (paiement unique, sans essai).</span></span>
+        <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="tu.s2b">Le paiement est prélevé sur votre compte Apple à la confirmation de l'achat.</span></span>
+        <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="tu.s2c">L'abonnement annuel se renouvelle automatiquement sauf résiliation au moins 24 h avant la fin de la période en cours. Vous gérez et résiliez votre abonnement dans les Réglages de votre compte Apple ; nous n'avons pas accès à votre moyen de paiement.</span></span>
+        <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="tu.s2d">Si vous ne résiliez pas pendant l'essai gratuit, il se convertit en abonnement payant.</span></span>
+        <span style="display:flex;gap:12px"><span style="color:#9A5E12;font-weight:700;flex:none">·</span><span data-i18n="tu.s2e">Les prix sont affichés dans l'app (issus de l'App Store) et peuvent varier selon la région.</span></span>
+      </div>
+    </div>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s3h">3. Comptes tiers et sources</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px;font-size:16px;line-height:1.7;color:#4A453D">
+        <p data-i18n="tu.s3a">Vous pouvez connecter Gmail (lecture seule) et YouTube (lecture seule), et ajouter des flux RSS et Reddit. Vous êtes responsable du respect des conditions d'utilisation de ces services tiers.</p>
+        <p data-i18n="tu.s3b">Les contenus proviennent de vos sources ; nous n'en sommes pas l'auteur et n'en garantissons ni l'exactitude ni la disponibilité.</p>
+      </div>
+    </div>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s4h">4. Contenu partagé par vous</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px" data-i18n="tu.s4p">L'application vous permet d'exporter ou de partager certains éléments (par exemple un dossier de veille, sous forme de texte, de fichier Markdown ou d'image). Vous êtes seul responsable de l'usage que vous faites du contenu partagé et du respect des droits des tiers (droit d'auteur, etc.). Ce contenu provient de vos propres sources.</p>
+    </div>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s5h">5. Usage acceptable</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px" data-i18n="tu.s5p">Vous vous engagez à ne pas : contourner les protections de l'app ; l'utiliser à des fins illégales ; extraire massivement des contenus tiers en violation de leurs conditions ; perturber le service.</p>
+    </div>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s6h">6. Confidentialité</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px"><span data-i18n="tu.s6p">L'utilisation de l'app est régie par notre Politique de confidentialité, qui décrit notamment le traitement sur l'appareil, la synchronisation iCloud privée, et les statistiques d'usage anonymes facultatives (désactivées par défaut).</span> <a href="confidentialite.html" data-i18n="tu.s6link">Lire la politique de confidentialité →</a></p>
+    </div>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s7h">7. Propriété intellectuelle</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px" data-i18n="tu.s7p">L'application, son design et ses composants originaux nous appartiennent ou sont sous licence. Les contenus tiers restent la propriété de leurs titulaires respectifs.</p>
+    </div>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s8h">8. Garanties et responsabilité</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px" data-i18n="tu.s8p">L'application est fournie « en l'état », sans garantie que le service sera ininterrompu ou exempt d'erreurs. Dans les limites permises par la loi, notre responsabilité est limitée ; rien dans ces conditions ne limite les droits impératifs que vous confère la loi applicable (notamment en tant que consommateur dans l'Union européenne).</p>
+    </div>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s9h">9. Modifications</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px" data-i18n="tu.s9p">Nous pouvons modifier ces conditions ; la date en tête indique la version en vigueur. L'usage continu de l'app vaut acceptation des conditions mises à jour.</p>
+    </div>
+
+    <div style="padding-top:40px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s10h">10. Droit applicable</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px" data-i18n="tu.s10p">Les présentes conditions sont régies par le droit français, sans préjudice des règles impératives de protection des consommateurs de votre pays de résidence dans l'UE.</p>
+    </div>
+
+    <div style="padding-top:40px;padding-bottom:20px">
+      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700;letter-spacing:-.01em;border-bottom:1px solid #DBD5C8;padding-bottom:12px" data-i18n="tu.s11h">11. Contact</h2>
+      <p style="font-size:16px;line-height:1.7;color:#4A453D;margin-top:16px">TechnoAndCo · <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a></p>
+    </div>
+
+    <div style="display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid #DBD5C8;margin-top:36px;padding:24px 0 80px;font:600 14px -apple-system,system-ui">
+      <a href="confidentialite.html" data-i18n="tu.seePrivacy">Politique de confidentialité →</a>
+      <a href="accessibilite.html" data-i18n="tu.seeAccess">Politique d'accessibilité →</a>
+    </div>
+  </section>
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer data-screen-label="Footer" style="border-top:1px solid #E4DFD5;background:#EDE8DE">
+    <div style="max-width:1240px;margin:0 auto;padding:44px 44px 32px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:19px;font-weight:700">TechnoDaily</div>
+          <div style="font:400 13px -apple-system,system-ui;color:#6E685F;margin-top:8px;max-width:300px" data-i18n="ft.tagline">Privacy by design. Vos lectures ne regardent que vous.</div>
+        </div>
+        <div style="display:flex;gap:64px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.product">PRODUIT</span>
+            <a href="index.html#fonctionnalites" style="color:#6E685F" data-i18n="nav.feat">Fonctionnalités</a>
+            <a href="index.html#dossiers" style="color:#6E685F" data-i18n="nav.dossiers">Dossiers de veille</a>
+            <a href="index.html#tarif" style="color:#6E685F" data-i18n="nav.pricing">Tarif</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.legal">LÉGAL</span>
+            <a href="confidentialite.html" style="color:#6E685F" data-i18n="ft.privacy">Politique de confidentialité</a>
+            <a href="conditions.html" style="color:#221F1A;font-weight:600" data-i18n="ft.terms">Conditions d'utilisation</a>
+            <a href="accessibilite.html" style="color:#6E685F" data-i18n="ft.access">Politique d'accessibilité</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui;align-items:flex-start">
+            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.lang">LANGUES</span>
+            <button type="button" onClick="{{ setEn }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">English</button>
+            <button type="button" onClick="{{ setFr }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">Français</button>
+            <button type="button" onClick="{{ setEs }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">Español</button>
+            <button type="button" onClick="{{ setZh }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">中文</button>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #DBD5C8;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 12.5px -apple-system,system-ui;color:#9B958B">
+        <span>© 2026 TechnoAndCo · contact@technoandco.fr</span>
+        <span data-i18n="ft.marks">Apple, iPhone et Apple Intelligence sont des marques d'Apple Inc.</span>
+      </div>
+    </div>
+  </footer>
 </div>
-<!-- ==================== ENGLISH ==================== -->
-<div id="lang-en" class="lang-section">
-    <p class="last-updated">Last updated: June 5, 2026</p>
-    <h2>Summary</h2>
-    <div class="highlight-box">
-        <p><strong>TechnoDaily is an ad-free application that runs entirely on your device.</strong></p>
-        <p>It is free to download, with a 7-day free trial, then an annual subscription or a one-time lifetime purchase. By using the application, you agree to the terms below.</p>
-    </div>
-    <h2>1. Acceptance of terms</h2>
-    <p>By downloading, installing, or using TechnoDaily, you agree to these terms of service. If you do not agree to these terms, please do not use the application.</p>
-    <h2>2. Description of service</h2>
-    <p>TechnoDaily is an iOS content aggregation app that lets you centralize your newsletters, RSS feeds, YouTube subscriptions, and podcasts in one place. The application uses a scoring algorithm to personalize your recommendations.</p>
-    <p>The application is published by <strong>Techno&amp;Co</strong>, a digital transformation consultancy based in France.</p>
-    <h2>3. Account and access</h2>
-    <p>TechnoDaily does not require account creation. You may optionally connect your Google accounts (Gmail and/or YouTube) via OAuth 2.0 to access your newsletters and subscriptions. You can revoke these connections at any time from the app settings or via <a href="https://myaccount.google.com/permissions">your Google account permissions</a>.</p>
-    <h2>4. Subscriptions and purchases</h2>
-    <p>TechnoDaily is free to download and offers a <strong>7-day free trial</strong> granting access to all features. After the trial, full access requires one of the following purchases, offered through Apple's App Store:</p>
-    <ul>
-        <li><strong>Annual subscription</strong>: an auto-renewable subscription. It renews automatically for the same duration and price unless canceled at least 24 hours before the end of the current period. Payment is charged to your Apple Account upon purchase confirmation, then at each renewal within 24 hours before the end of the period.</li>
-        <li><strong>Lifetime purchase</strong>: a one-time payment granting permanent access to all features, with no renewal or recurring charges.</li>
-    </ul>
-    <p>You can manage your subscription and turn off auto-renewal at any time in your App Store account settings. Uninstalling the app does not cancel an active subscription.</p>
-    <p><strong>Payments and refunds.</strong> All payments are processed by Apple; Techno&amp;Co does not receive or retain your payment data. Refund requests are handled by Apple under its applicable policy — Techno&amp;Co cannot process refunds directly.</p>
-    <p><strong>Price changes.</strong> Prices may change; any change to a subscription price will be notified to you by Apple and, where applicable, will require your consent in accordance with App Store rules.</p>
-    <h2>5. Data processing</h2>
-    <p>All data is processed and stored <strong>locally on your device</strong>. Techno&amp;Co does not collect, store, or transmit any personal data. For more details, see our <a href="https://www.technoandco.fr/technodaily/privacy.html">Privacy Policy</a>.</p>
-    <h2>6. Acceptable use</h2>
-    <p>You agree to use TechnoDaily in compliance with applicable laws and not to:</p>
-    <ul>
-        <li>Attempt to modify, decompile, or disassemble the application</li>
-        <li>Use the application for illegal purposes</li>
-        <li>Circumvent the application's security measures</li>
-    </ul>
-    <h2>7. Intellectual property</h2>
-    <p>TechnoDaily and its source code are the property of Techno&amp;Co. Content displayed in the application (articles, newsletters, videos) remains the property of their respective publishers. TechnoDaily only aggregates and displays this content for your personal use.</p>
-    <h2>8. Third-party services</h2>
-    <p>TechnoDaily interacts with third-party services (Google Gmail, Google YouTube, public RSS feeds, Apple CloudKit, Apple App Store). Use of these services is subject to their own terms of service. Techno&amp;Co is not responsible for the operation or availability of these third-party services.</p>
-    <p>The use of Google data adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
-    <h2>9. Limitation of liability</h2>
-    <p>TechnoDaily is provided "as is". Techno&amp;Co does not guarantee that the application will be error-free or available without interruption. Techno&amp;Co shall not be liable for any direct or indirect damages resulting from the use of the application.</p>
-    <h2>10. Changes</h2>
-    <p>Techno&amp;Co reserves the right to modify these terms at any time. The last update date is shown at the top of this page. Significant changes will be noted in the application's App Store release notes.</p>
-    <h2>11. Governing law</h2>
-    <p>These terms are governed by French law. Any dispute relating to the use of TechnoDaily shall be submitted to the competent courts of France.</p>
-    <h2>12. Contact</h2>
-    <p>For any questions regarding these terms of service:</p>
-    <p><strong>Techno&amp;Co</strong><br>
-    Email: <a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a><br>
-    Website: <a href="https://www.technoandco.fr">www.technoandco.fr</a></p>
-</div>
-</main>
-<footer>
-    <p>© 2026 Techno&amp;Co — <a href="https://www.technoandco.fr">technoandco.fr</a></p>
-</footer>
-<script>
-    function switchLang(lang) {
-        document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
-        document.getElementById('lang-' + lang).classList.add('active');
-        document.querySelector('[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
-        document.documentElement.lang = lang;
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fr&quot;,&quot;en&quot;,&quot;es&quot;,&quot;zh&quot;],&quot;default&quot;:&quot;fr&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Langue&quot;},&quot;appStoreId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;6758897742&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;App Store&quot;}}">
+class Component extends DCLogic {
+  dicts() {
+    return {
+      en: {
+        'nav.feat': 'Features', 'nav.dossiers': 'Tracked topics', 'nav.privacy': 'Privacy', 'nav.pricing': 'Pricing', 'nav.dl': 'Download',
+        'tu.kicker': 'Terms of use', 'tu.h1': 'Terms of use',
+        'tu.intro': 'Welcome to TechnoDaily, published by TechnoAndCo ("we"). By downloading or using the app, you agree to these terms. If you do not agree, do not use the app.',
+        'tu.updated': 'Last updated: July 8, 2026.',
+        'tu.draft': 'Working draft to be legally reviewed before publication. Publisher, contact details and jurisdiction (France by default) to be confirmed.',
+        'tu.eula.h': 'ABOUT THE EULA',
+        'tu.eula.p': 'TechnoDaily relies on Apple\u2019s standard Licensed Application End User License Agreement. These terms complement it as Terms of Use, linked in the app and in the paywall.',
+        'tu.s1h': '1. Service description',
+        'tu.s1p': 'TechnoDaily is a news-and-feeds app that brings your newsletters (via Gmail), RSS feeds, YouTube subscriptions and Reddit feeds into one reader, with a personalized briefing, tracked-topic dossiers, local search and on-device summaries.',
+        'tu.s2h': '2. Subscription, trial and payment',
+        'tu.s2a': 'Full access requires a Pro subscription. Two options: an annual subscription (with a 14-day free trial for eligible new subscribers) and a lifetime purchase (one-time, no trial).',
+        'tu.s2b': 'Payment is charged to your Apple account at purchase confirmation.',
+        'tu.s2c': 'The annual subscription auto-renews unless cancelled at least 24 hours before the end of the current period. You manage and cancel your subscription in your Apple account Settings; we have no access to your payment method.',
+        'tu.s2d': 'If you do not cancel during the free trial, it converts into a paid subscription.',
+        'tu.s2e': 'Prices are shown in the app (from the App Store) and may vary by region.',
+        'tu.s3h': '3. Third-party accounts and sources',
+        'tu.s3a': 'You may connect Gmail (read-only) and YouTube (read-only), and add RSS and Reddit feeds. You are responsible for complying with those third-party services\u2019 terms.',
+        'tu.s3b': 'Content comes from your sources; we are not its author and do not guarantee its accuracy or availability.',
+        'tu.s4h': '4. Content you share',
+        'tu.s4p': 'The app lets you export or share certain items (for example a tracked-topic dossier, as text, a Markdown file, or an image). You are solely responsible for how you use shared content and for respecting third-party rights (copyright, etc.). This content comes from your own sources.',
+        'tu.s5h': '5. Acceptable use',
+        'tu.s5p': 'You agree not to: circumvent the app\u2019s protections; use it for unlawful purposes; bulk-extract third-party content in breach of their terms; or disrupt the service.',
+        'tu.s6h': '6. Privacy',
+        'tu.s6p': 'Use of the app is governed by our Privacy Policy, which describes on-device processing, private iCloud sync, and the optional anonymous usage statistics (off by default).', 'tu.s6link': 'Read the privacy policy →',
+        'tu.s7h': '7. Intellectual property',
+        'tu.s7p': 'The app, its design and original components are owned by us or licensed. Third-party content remains the property of its respective owners.',
+        'tu.s8h': '8. Warranties and liability',
+        'tu.s8p': 'The app is provided "as is," with no warranty that the service will be uninterrupted or error-free. To the extent permitted by law, our liability is limited; nothing in these terms limits the mandatory rights granted to you by applicable law (in particular as a consumer in the European Union).',
+        'tu.s9h': '9. Changes',
+        'tu.s9p': 'We may change these terms; the date at the top indicates the version in force. Continued use of the app means acceptance of the updated terms.',
+        'tu.s10h': '10. Governing law',
+        'tu.s10p': 'These terms are governed by French law, without prejudice to the mandatory consumer-protection rules of your EU country of residence.',
+        'tu.s11h': '11. Contact',
+        'tu.seePrivacy': 'Privacy policy →', 'tu.seeAccess': 'Accessibility policy →',
+        'ft.tagline': 'Privacy by design. Your reading is nobody\u2019s business but yours.',
+        'ft.product': 'PRODUCT', 'ft.legal': 'LEGAL', 'ft.lang': 'LANGUAGES',
+        'ft.privacy': 'Privacy policy', 'ft.terms': 'Terms of use', 'ft.access': 'Accessibility policy',
+        'ft.marks': 'Apple, iPhone and Apple Intelligence are trademarks of Apple Inc.'
+      },
+      es: {
+        'nav.feat': 'Funciones', 'nav.dossiers': 'Temas seguidos', 'nav.privacy': 'Privacidad', 'nav.pricing': 'Precio', 'nav.dl': 'Descargar',
+        'tu.kicker': 'Condiciones de uso', 'tu.h1': 'Condiciones de uso',
+        'tu.intro': 'Bienvenido a TechnoDaily, editada por TechnoAndCo («nosotros»). Al descargar o usar la aplicación, aceptas estas condiciones. Si no las aceptas, no uses la aplicación.',
+        'tu.updated': 'Última actualización: 8 de julio de 2026.',
+        'tu.draft': 'Versión de trabajo pendiente de revisión jurídica antes de su publicación. Editor, datos de contacto y jurisdicción (Francia por defecto) por confirmar.',
+        'tu.eula.h': 'SOBRE EL EULA',
+        'tu.eula.p': 'TechnoDaily se apoya en el contrato de licencia de usuario final estándar de Apple (Licensed Application End User License Agreement). Estas condiciones lo complementan como condiciones de uso, enlazadas en la app y en el paywall.',
+        'tu.s1h': '1. Descripción del servicio',
+        'tu.s1p': 'TechnoDaily es una app de veille que reúne tus newsletters (vía Gmail), tus feeds RSS, tus suscripciones de YouTube y feeds de Reddit en un único lector, con un briefing personalizado, dossiers de temas seguidos, búsqueda local y resúmenes generados en tu dispositivo.',
+        'tu.s2h': '2. Suscripción, prueba y pago',
+        'tu.s2a': 'El acceso completo requiere una suscripción Pro. Dos opciones: una suscripción anual (con prueba gratuita de 14 días para nuevos suscriptores elegibles) y una compra de por vida (pago único, sin prueba).',
+        'tu.s2b': 'El pago se carga en tu cuenta de Apple al confirmar la compra.',
+        'tu.s2c': 'La suscripción anual se renueva automáticamente salvo que se cancele al menos 24 h antes del final del periodo en curso. Gestionas y cancelas tu suscripción en los Ajustes de tu cuenta de Apple; no tenemos acceso a tu medio de pago.',
+        'tu.s2d': 'Si no cancelas durante la prueba gratuita, esta se convierte en una suscripción de pago.',
+        'tu.s2e': 'Los precios se muestran en la app (procedentes del App Store) y pueden variar según la región.',
+        'tu.s3h': '3. Cuentas de terceros y fuentes',
+        'tu.s3a': 'Puedes conectar Gmail (solo lectura) y YouTube (solo lectura), y añadir feeds RSS y Reddit. Eres responsable de cumplir las condiciones de uso de esos servicios de terceros.',
+        'tu.s3b': 'Los contenidos provienen de tus fuentes; no somos su autor y no garantizamos ni su exactitud ni su disponibilidad.',
+        'tu.s4h': '4. Contenido que compartes',
+        'tu.s4p': 'La app te permite exportar o compartir ciertos elementos (por ejemplo un dossier de tema seguido, como texto, archivo Markdown o imagen). Eres el único responsable del uso que hagas del contenido compartido y del respeto de los derechos de terceros (derechos de autor, etc.). Este contenido proviene de tus propias fuentes.',
+        'tu.s5h': '5. Uso aceptable',
+        'tu.s5p': 'Te comprometes a no: eludir las protecciones de la app; usarla con fines ilegales; extraer masivamente contenidos de terceros en violación de sus condiciones; perturbar el servicio.',
+        'tu.s6h': '6. Privacidad',
+        'tu.s6p': 'El uso de la app se rige por nuestra Política de privacidad, que describe el tratamiento en el dispositivo, la sincronización iCloud privada y las estadísticas de uso anónimas opcionales (desactivadas por defecto).', 'tu.s6link': 'Leer la política de privacidad →',
+        'tu.s7h': '7. Propiedad intelectual',
+        'tu.s7p': 'La app, su diseño y sus componentes originales nos pertenecen o están bajo licencia. Los contenidos de terceros siguen siendo propiedad de sus respectivos titulares.',
+        'tu.s8h': '8. Garantías y responsabilidad',
+        'tu.s8p': 'La app se proporciona «tal cual», sin garantía de que el servicio sea ininterrumpido o esté libre de errores. Dentro de los límites permitidos por la ley, nuestra responsabilidad es limitada; nada en estas condiciones limita los derechos imperativos que te otorga la ley aplicable (en particular como consumidor en la Unión Europea).',
+        'tu.s9h': '9. Modificaciones',
+        'tu.s9p': 'Podemos modificar estas condiciones; la fecha de la cabecera indica la versión en vigor. El uso continuado de la app implica la aceptación de las condiciones actualizadas.',
+        'tu.s10h': '10. Ley aplicable',
+        'tu.s10p': 'Estas condiciones se rigen por la ley francesa, sin perjuicio de las normas imperativas de protección de los consumidores de tu país de residencia en la UE.',
+        'tu.s11h': '11. Contacto',
+        'tu.seePrivacy': 'Política de privacidad →', 'tu.seeAccess': 'Política de accesibilidad →',
+        'ft.tagline': 'Privacy by design. Tu lectura solo te concierne a ti.',
+        'ft.product': 'PRODUCTO', 'ft.legal': 'LEGAL', 'ft.lang': 'IDIOMAS',
+        'ft.privacy': 'Política de privacidad', 'ft.terms': 'Condiciones de uso', 'ft.access': 'Política de accesibilidad',
+        'ft.marks': 'Apple, iPhone y Apple Intelligence son marcas de Apple Inc.'
+      },
+      zh: {
+        'nav.feat': '功能', 'nav.dossiers': '主题追踪', 'nav.privacy': '隐私', 'nav.pricing': '价格', 'nav.dl': '下载',
+        'tu.kicker': '使用条款', 'tu.h1': '使用条款',
+        'tu.intro': '欢迎使用 TechnoDaily，由 TechnoAndCo（「我们」）发行。下载或使用本应用即表示你接受本条款。若你不接受，请勿使用本应用。',
+        'tu.updated': '最后更新：2026 年 7 月 8 日。',
+        'tu.draft': '此为工作草稿，发布前须经法律审核。发行方、联系方式与适用法域（默认法国）待确认。',
+        'tu.eula.h': '关于 EULA',
+        'tu.eula.p': 'TechnoDaily 采用 Apple 的标准最终用户许可协议（Licensed Application End User License Agreement）。本条款作为使用条款对其加以补充，并在应用内及付费墙中提供链接。',
+        'tu.s1h': '1. 服务说明',
+        'tu.s1p': 'TechnoDaily 是一款资讯聚合应用，把你的新闻通讯（通过 Gmail）、RSS 订阅源、YouTube 订阅和 Reddit 订阅源汇聚到一个阅读器中，并提供个性化简报、主题追踪档案、本地搜索以及在设备端生成的摘要。',
+        'tu.s2h': '2. 订阅、试用与付款',
+        'tu.s2a': '完整访问需要 Pro 订阅。两种方案：年度订阅（符合条件的新订阅者可享 14 天免费试用）与终身购买（一次性付款，无试用）。',
+        'tu.s2b': '付款将在确认购买时从你的 Apple 账户扣除。',
+        'tu.s2c': '年度订阅会自动续订，除非在当前周期结束前至少 24 小时取消。你可在 Apple 账户的「设置」中管理和取消订阅；我们无法访问你的付款方式。',
+        'tu.s2d': '若你在免费试用期间未取消，试用将转为付费订阅。',
+        'tu.s2e': '价格在应用内显示（来自 App Store），并可能因地区而异。',
+        'tu.s3h': '3. 第三方账户与信息源',
+        'tu.s3a': '你可以连接 Gmail（只读）和 YouTube（只读），并添加 RSS 与 Reddit 订阅源。你有责任遵守这些第三方服务的使用条款。',
+        'tu.s3b': '内容来自你的信息源；我们不是其作者，也不保证其准确性或可用性。',
+        'tu.s4h': '4. 你分享的内容',
+        'tu.s4p': '本应用允许你导出或分享某些项目（例如以文本、Markdown 文件或图片形式分享一份主题追踪档案）。你对如何使用所分享的内容以及尊重第三方权利（著作权等）负全部责任。这些内容来自你自己的信息源。',
+        'tu.s5h': '5. 可接受的使用',
+        'tu.s5p': '你承诺不会：规避应用的保护机制；将其用于非法目的；违反第三方条款大规模抓取其内容；干扰服务。',
+        'tu.s6h': '6. 隐私',
+        'tu.s6p': '本应用的使用受我们的隐私政策约束，其中说明了设备端处理、私有 iCloud 同步，以及可选的匿名使用统计（默认关闭）。', 'tu.s6link': '阅读隐私政策 →',
+        'tu.s7h': '7. 知识产权',
+        'tu.s7p': '本应用、其设计及原创组件归我们所有或经授权使用。第三方内容仍归其各自权利人所有。',
+        'tu.s8h': '8. 保证与责任',
+        'tu.s8p': '本应用按「现状」提供，不保证服务不中断或无差错。在法律允许的范围内，我们的责任有限；本条款中的任何内容均不限制适用法律赋予你的强制性权利（尤其是作为欧盟消费者的权利）。',
+        'tu.s9h': '9. 变更',
+        'tu.s9p': '我们可能会修改本条款；顶部的日期表示当前生效的版本。继续使用本应用即表示接受更新后的条款。',
+        'tu.s10h': '10. 适用法律',
+        'tu.s10p': '本条款受法国法律管辖，但不影响你在欧盟居住国的强制性消费者保护规定。',
+        'tu.s11h': '11. 联系方式',
+        'tu.seePrivacy': '隐私政策 →', 'tu.seeAccess': '无障碍政策 →',
+        'ft.tagline': '隐私优先设计。你的阅读只属于你自己。',
+        'ft.product': '产品', 'ft.legal': '法律', 'ft.lang': '语言',
+        'ft.privacy': '隐私政策', 'ft.terms': '使用条款', 'ft.access': '无障碍政策',
+        'ft.marks': 'Apple、iPhone 与 Apple Intelligence 是 Apple Inc. 的商标。'
+      }
+    };
+  }
+
+  applyLang(l) {
+    const dict = this.dicts()[l] || {};
+    document.documentElement.lang = ({ fr: 'fr', en: 'en', es: 'es', zh: 'zh-Hans' })[l] || 'fr';
+    if (!this._defaults) {
+      this._defaults = new Map();
+      document.querySelectorAll('[data-i18n]').forEach((n) => { this._defaults.set(n, n.textContent); });
     }
+    document.querySelectorAll('[data-i18n]').forEach((n) => {
+      const k = n.getAttribute('data-i18n');
+      const fallback = this._defaults.get(n);
+      n.textContent = (l === 'fr') ? fallback : (dict[k] != null ? dict[k] : fallback);
+    });
+    const id = this.props.appStoreId ?? '6758897742';
+    const cc = ({ fr: 'fr', en: 'us', es: 'es', zh: 'cn' })[l] || 'fr';
+    const url = 'https://apps.apple.com/' + cc + '/app/technodaily/id' + id + '?itsct=apps_box_badge&itscg=30200';
+    document.querySelectorAll('a[data-store]').forEach((a) => { a.setAttribute('href', url); });
+    document.querySelectorAll('[data-lang-btn]').forEach((b) => {
+      const on = b.getAttribute('data-lang-btn') === l;
+      b.style.background = on ? '#FBFAF7' : 'transparent';
+      b.style.color = on ? '#221F1A' : '#6E685F';
+      b.style.fontWeight = on ? '700' : '600';
+    });
+    this._lang = l;
+    try { localStorage.setItem('td_lang', l); } catch (e) {}
+  }
+
+  detectLang() {
+    try {
+      const langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (const raw of langs) {
+        const t = (raw || '').toLowerCase();
+        if (t.startsWith('fr')) return 'fr';
+        if (t.startsWith('es')) return 'es';
+        if (t.startsWith('zh')) return 'zh';
+        if (t.startsWith('en')) return 'en';
+      }
+    } catch (e) {}
+    return null;
+  }
+
+  componentDidMount() {
+    let l = null;
+    try { l = localStorage.getItem('td_lang'); } catch (e) {}
+    if (!l && this.props.lang) l = this.props.lang;
+    if (!l) l = this.detectLang();
+    if (!l || !['fr', 'en', 'es', 'zh'].includes(l)) l = 'en';
+    this.applyLang(l);
+  }
+
+  renderVals() {
+    return {
+      setFr: () => this.applyLang('fr'),
+      setEn: () => this.applyLang('en'),
+      setEs: () => this.applyLang('es'),
+      setZh: () => this.applyLang('zh')
+    };
+  }
+}
 </script>
 </body>
 </html>
