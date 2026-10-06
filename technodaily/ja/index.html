@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechnoDaily：ニュースレター、RSS、YouTubeをひとつのリーダーに</title>
+<meta name="description" content="Gmailのニュースレター、RSSフィード、YouTubeチャンネルをひとつに。デバイス上で学習し、複数のソースが取り上げたトピックを「今日のまとめ」に集めます。iPhone、iPad、Mac、Apple Vision Pro対応。">
+<link rel="canonical" href="https://www.technoandco.fr/technodaily/ja/">
+<link rel="alternate" hreflang="en" href="https://www.technoandco.fr/technodaily/en/">
+<link rel="alternate" hreflang="fr" href="https://www.technoandco.fr/technodaily/">
+<link rel="alternate" hreflang="es" href="https://www.technoandco.fr/technodaily/es/">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.technoandco.fr/technodaily/zh/">
+<link rel="alternate" hreflang="ja" href="https://www.technoandco.fr/technodaily/ja/">
+<link rel="alternate" hreflang="x-default" href="https://www.technoandco.fr/technodaily/en/">
+<meta name="apple-itunes-app" content="app-id=6758897742">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TechnoDaily：ニュースレター、RSS、YouTubeをひとつのリーダーに">
+<meta property="og:description" content="Gmailのニュースレター、RSSフィード、YouTubeチャンネルをひとつに。デバイス上で学習し、複数のソースが取り上げたトピックを「今日のまとめ」に集めます。iPhone、iPad、Mac、Apple Vision Pro対応。">
+<meta property="og:url" content="https://www.technoandco.fr/technodaily/ja/">
+<meta property="og:locale" content="ja_JP">
+<meta name="theme-color" content="#F3F0EA">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#F3F0EA;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:#F3F0EA;color:#221F1A;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+:lang(ja) body,:lang(ja){font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif}
+:lang(zh-Hans) body,:lang(zh-Hans){font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif}
+::selection{background:#DE943344}
+a{color:#9A5E12;text-decoration:none}
+a:hover{color:#7A4A0E}
+a:focus-visible,button:focus-visible{outline:2px solid #9A5E12;outline-offset:2px;border-radius:6px}
+img,svg{max-width:100%}
+.serif{font-family:"Iowan Old Style","New York",ui-serif,Georgia,serif}
+:lang(ja) .serif,:lang(zh-Hans) .serif{font-family:inherit}
+.skip{position:absolute;left:-9999px;top:8px;background:#221F1A;color:#F3F0EA;padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 44px}
+header{border-bottom:1px solid #E4DFD5;background:#F3F0EA}
+nav.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}
+.brand{display:flex;align-items:baseline;gap:10px;flex:none;color:#221F1A}
+.brand b{font-size:21px;font-weight:700;letter-spacing:-.01em}
+.pill-v{font:700 10.5px -apple-system,system-ui;letter-spacing:.12em;color:#9A5E12;background:rgba(222,148,51,.16);border-radius:999px;padding:3px 8px}
+.navlinks{display:flex;gap:24px;font:500 14px -apple-system,system-ui}
+.navlinks a{color:#6E685F;white-space:nowrap}
+.navright{display:flex;align-items:center;gap:14px;flex:none}
+.langs{display:flex;background:#E7E1D3;border-radius:10px;padding:3px}
+.langs a{font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 9px;border-radius:8px}
+.langs a[aria-current]{background:#FBFAF7;color:#221F1A;font-weight:700}
+.btn{display:inline-flex;justify-content:center;background:#DE9433;color:#221F1A;font:600 14px -apple-system,system-ui;padding:9px 16px;border-radius:12px}
+.btn:hover{color:#221F1A;background:#D2872A}
+.hero{display:flex;gap:56px;align-items:center;padding:76px 0 64px}
+.hero .txt{flex:1;min-width:0}
+.kicker{font:700 12px -apple-system,system-ui;letter-spacing:.16em;color:#9A5E12;text-transform:uppercase}
+:lang(ja) .kicker,:lang(zh-Hans) .kicker{letter-spacing:.06em;text-transform:none}
+h1{font-size:62px;font-weight:700;line-height:1.04;letter-spacing:-.02em;margin-top:20px}
+:lang(ja) h1,:lang(zh-Hans) h1{font-size:44px;letter-spacing:0;line-height:1.2}
+:lang(ja) p,:lang(ja) h1,:lang(ja) h2,:lang(ja) li{line-break:strict;word-break:auto-phrase}
+.sub{font-size:19px;line-height:1.6;color:#6E685F;max-width:540px;margin-top:22px}
+.cta{display:flex;align-items:center;gap:24px;margin-top:32px;flex-wrap:wrap}
+.cta a.badge img{height:56px;width:auto;display:block}
+.cta .more{font:600 15px -apple-system,system-ui}
+.meta{margin-top:24px;font:500 13.5px -apple-system,system-ui;line-height:1.7;color:#6E685F}
+.meta span.dot{color:#B5AEA3}
+.dispo{display:flex;align-items:center;gap:9px;margin-top:18px;flex-wrap:wrap}
+.dispo .l{font:700 11px -apple-system,system-ui;letter-spacing:.12em;color:#6E685F}
+.chip{font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px}
+.jaextra{margin-top:14px;font:600 14px -apple-system,system-ui;color:#4F7A4F}
+/* maquette téléphone */
+.phone{flex:none;width:332px;background:#2A2723;border-radius:46px;padding:11px;box-shadow:0 24px 60px rgba(34,31,26,.18)}
+.screen{background:#F3F0EA;border-radius:36px;overflow:hidden;height:660px;display:flex;flex-direction:column}
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 4px;font:600 12px -apple-system,system-ui}
+.sbar i{width:15px;height:9px;border:1px solid #221F1A;border-radius:3px;display:inline-block}
+.mhead{padding:10px 18px 0}
+.mtitle{display:flex;justify-content:space-between;align-items:center}
+.mtitle b{font-size:26px;font-weight:700}
+.mtools{display:flex;gap:8px;align-items:center}
+.mtools span{font:600 11.5px -apple-system,system-ui;color:#6E685F;border:1px solid #DBD5C8;border-radius:999px;padding:5px 11px;background:#FBFAF7}
+.gear{width:28px;height:28px;border-radius:50%;border:1px solid #DBD5C8;background:#FBFAF7;display:flex;align-items:center;justify-content:center}
+.seg{display:flex;background:#E7E1D3;border-radius:12px;padding:3px;margin-top:12px}
+.seg span{flex:1;text-align:center;font:600 10px -apple-system,system-ui;color:#6E685F;padding:6px 2px;white-space:nowrap;overflow:hidden}
+.seg span.on{color:#221F1A;background:#DE9433;border-radius:9px;font-weight:700}
+.mmeta{font:500 11px -apple-system,system-ui;color:#6E685F;margin-top:10px}
+.mbody{padding:10px 18px 0;display:flex;flex-direction:column;gap:9px;flex:1;overflow:hidden}
+.sage{background:#E8EAE0;border:1px solid #CED8C8;border-radius:14px;padding:12px 14px}
+.sage .hd{display:flex;justify-content:space-between;align-items:center;font:700 9.5px -apple-system,system-ui;letter-spacing:.12em;color:#4F7A4F}
+.sage .hd em{font-style:normal;color:#6E685F;letter-spacing:.08em}
+.sage .t{border-bottom:1px solid #CED8C8;padding:8px 0}
+.sage .t:last-of-type{border-bottom:none}
+.sage .t b{display:block;font-size:13.5px;font-weight:700;line-height:1.3}
+.sage .t small{display:block;font:500 10px -apple-system,system-ui;color:#6E685F;margin-top:3px}
+.sage .gen{font:600 9.5px -apple-system,system-ui;color:#4F7A4F;margin-top:2px}
+.grp{font:700 9.5px -apple-system,system-ui;letter-spacing:.12em;color:#6E685F;margin-top:2px}
+.card{background:#FEFDFB;border:1px solid #E4DFD5;border-radius:14px;padding:11px 13px}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start}
+.tb{font:700 9.5px -apple-system,system-ui;border-radius:999px;padding:3px 8px}
+.tb.n{color:#A84637;background:rgba(168,70,55,.11)}
+.tb.r{color:#4E7188;background:rgba(91,127,150,.13)}
+.tb.y{color:#C14848;background:rgba(193,72,72,.12)}
+.udot{width:8px;height:8px;border-radius:50%;background:#DE9433;margin-top:2px}
+.card b{display:block;font-size:13.5px;font-weight:700;line-height:1.3;margin-top:7px}
+.card small{display:block;font:500 10px -apple-system,system-ui;color:#6E685F;margin-top:4px}
+.tabs{display:flex;border-top:1px solid #E4DFD5;background:#FBFAF7;padding:8px 10px 16px}
+.tabs div{flex:1;text-align:center;color:#6E685F;font:600 8.5px -apple-system,system-ui;position:relative}
+.tabs div.on{color:#221F1A}
+.tabs svg{display:block;margin:0 auto 3px;width:18px;height:18px}
+.tabs .bdg{position:absolute;top:-4px;left:calc(50% + 4px);background:#DE9433;color:#221F1A;border-radius:999px;font:700 8px -apple-system,system-ui;padding:1px 5px}
+/* sections */
+.sources{display:flex;align-items:center;justify-content:center;gap:12px 14px;padding:0 0 64px;flex-wrap:wrap}
+.sources .lab{font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#6E685F;text-transform:uppercase;margin-right:6px}
+.sp{font:700 13px -apple-system,system-ui;border-radius:999px;padding:8px 16px}
+.sp.n{color:#A84637;background:rgba(168,70,55,.11)}
+.sp.r{color:#4E7188;background:rgba(91,127,150,.13)}
+.sp.y{color:#C14848;background:rgba(193,72,72,.12)}
+.sources .note{font:500 13px -apple-system,system-ui;color:#6E685F;flex-basis:100%;text-align:center}
+section.band{border-top:1px solid #E4DFD5}
+section.alt{background:#EDE8DE}
+.split{display:flex;gap:64px;align-items:center;padding:88px 0}
+.split .txt{flex:1;min-width:0}
+h2{font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:14px}
+:lang(ja) h2,:lang(zh-Hans) h2{font-size:34px;letter-spacing:0;line-height:1.25}
+.lead{font-size:16.5px;line-height:1.65;color:#6E685F;max-width:480px;margin-top:18px}
+ul.dots{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:24px;max-width:480px}
+ul.dots li{display:flex;gap:12px;align-items:baseline;font:500 15px -apple-system,system-ui;color:#4A453D}
+ul.dots li:before{content:"";width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px}
+.small{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:22px}
+.bcard{flex:none;width:480px;background:#E8EAE0;border:1px solid #CED8C8;border-radius:20px;padding:24px 26px}
+.bcard .hd{display:flex;justify-content:space-between;align-items:center;font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#4F7A4F}
+.bcard .hd em{font-style:normal;color:#6E685F;letter-spacing:.08em;font-weight:600}
+.bcard .t{padding:13px 0;border-bottom:1px solid #CED8C8}
+.bcard .t:last-of-type{border-bottom:none}
+.bcard .t b{display:block;font-size:18px;font-weight:700;line-height:1.3}
+.bcard .t small{display:block;font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:5px}
+.bcard .ft{display:flex;justify-content:space-between;align-items:center;padding-top:14px;margin-top:0;font:600 12px -apple-system,system-ui;color:#4F7A4F}
+.dcard{flex:none;width:460px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:22px 24px}
+.dcard .nm{display:flex;align-items:center;gap:10px}
+.dcard .nm b{font-size:22px;font-weight:700}
+.dcard .pic{font:700 11px -apple-system,system-ui;color:#9A5E12;background:rgba(222,148,51,.14);border-radius:999px;padding:4px 10px}
+.dcard .dm{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:5px}
+.dcard .dig{background:#161513;border-radius:16px;padding:16px 18px;margin-top:16px}
+.dcard .dig .l{font:700 10.5px -apple-system,system-ui;letter-spacing:.15em;color:#F2BA5C}
+.dcard .dig p{font:400 13.5px -apple-system,system-ui;line-height:1.6;color:#F2EEE6;margin-top:8px}
+.dcard .day{font:700 10.5px -apple-system,system-ui;letter-spacing:.14em;color:#6E685F;margin-top:16px}
+.dcard .it{display:flex;gap:11px;align-items:baseline;margin-top:10px}
+.dcard .it i{width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none}
+.dcard .it i.read{background:transparent;border:1.5px solid #DBD5C8}
+.dcard .it b{display:block;font-size:14.5px;font-weight:600;line-height:1.35}
+.dcard .it b.read{color:#6E685F}
+.dcard .it small{display:block;font:500 11.5px -apple-system,system-ui;color:#6E685F;margin-top:2px}
+.dcard .cl{font:500 11px -apple-system,system-ui;color:#6E685F;margin:10px 0 0 18px;border-left:2px solid #E4DFD5;padding-left:10px}
+.dcard .sh{display:flex;align-items:center;gap:14px;border-top:1px solid #E4DFD5;margin-top:18px;padding-top:16px;flex-wrap:wrap}
+.dcard .sh span:first-child{background:#DE9433;color:#221F1A;font:600 13px -apple-system,system-ui;padding:9px 16px;border-radius:11px}
+.dcard .sh span:last-child{font:500 12px -apple-system,system-ui;color:#6E685F}
+/* Mac */
+.mac{flex:none;width:480px}
+.mwin{background:#FBFAF7;border:1px solid #DBD5C8;border-radius:14px;box-shadow:0 18px 44px rgba(34,31,26,.12);overflow:hidden}
+.mbar{display:flex;gap:16px;align-items:center;background:#E7E1D3;padding:7px 14px;font:600 12.5px -apple-system,system-ui;color:#4A453D;flex-wrap:wrap}
+.mbar b{font-weight:700;color:#221F1A}
+.mbar span.open{background:#DE9433;color:#221F1A;border-radius:5px;padding:1px 7px}
+.menus{display:flex;gap:14px;padding:14px;align-items:flex-start;flex-wrap:wrap}
+.menu{background:#FEFDFB;border:1px solid #E4DFD5;border-radius:10px;padding:6px;min-width:200px;box-shadow:0 8px 20px rgba(34,31,26,.08)}
+.menu .mh{font:700 10.5px -apple-system,system-ui;letter-spacing:.1em;color:#6E685F;padding:4px 10px 6px;text-transform:uppercase}
+.menu .mi{display:flex;justify-content:space-between;gap:18px;font:500 13px -apple-system,system-ui;color:#221F1A;padding:5px 10px;border-radius:6px}
+.menu .mi:first-of-type{background:#DE9433}
+.menu .mi kbd{font:500 12.5px -apple-system,system-ui;color:#4A453D;background:none}
+.menu hr{border:none;border-top:1px solid #E4DFD5;margin:5px 6px}
+.macbadge{margin-top:22px}
+.macbadge img{height:46px;width:auto;display:block}
+/* confidentialité */
+.dark{background:#161513}
+.dark .inner{max-width:1000px;margin:0 auto;padding:92px 44px}
+.dark .kicker{color:#F2BA5C;text-align:center}
+.dark h2{color:#F2EEE6;text-align:center;font-size:46px}
+:lang(ja) .dark h2,:lang(zh-Hans) .dark h2{font-size:38px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
+.pc{background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px}
+.pc .ic{width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center}
+.pc .ic span{width:9px;height:9px;background:#F2BA5C;border-radius:3px;display:inline-block}
+.pc h3{font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px}
+.pc p{font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px}
+.dark .learned{text-align:center;margin-top:34px;font:400 14.5px -apple-system,system-ui;color:#C9C2B8}
+.dark .stats{text-align:center;margin-top:14px;font:400 14.5px -apple-system,system-ui;color:#A8A199}
+.dark .stats strong{color:#F2EEE6}
+.dark .stats a{color:#F2BA5C;font-weight:600}
+/* tarif */
+.pricing{padding:92px 0;text-align:center}
+.pricing .sub2{font-size:16.5px;line-height:1.6;color:#6E685F;max-width:540px;margin:16px auto 0}
+.prices{display:flex;gap:22px;justify-content:center;margin-top:48px;flex-wrap:wrap;text-align:left}
+.price{width:340px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:30px;position:relative}
+.price.main{background:#FEFDFB;border:1.5px solid #DE9433}
+.price .tag{position:absolute;top:-12px;left:28px;background:#DE9433;color:#221F1A;font:700 11px -apple-system,system-ui;letter-spacing:.1em;border-radius:999px;padding:5px 12px}
+.price .nm{font:600 14px -apple-system,system-ui;color:#6E685F}
+.price .amt{display:flex;align-items:baseline;gap:6px;margin-top:10px}
+.price .amt b{font-size:44px;font-weight:700}
+.price .amt span{font:500 15px -apple-system,system-ui;color:#6E685F}
+.price ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:18px;font:500 14px -apple-system,system-ui;color:#4A453D}
+.price .go{display:flex;justify-content:center;font:600 15px -apple-system,system-ui;padding:13px 0;border-radius:12px;margin-top:24px;color:#221F1A}
+.price.main .go{background:#DE9433}
+.price .go.alt{background:#FEFDFB;border:1px solid #DBD5C8;padding:12px 0}
+.pnote{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin:26px auto 0;max-width:760px}
+/* pied */
+footer{border-top:1px solid #E4DFD5;background:#EDE8DE}
+.fwrap{max-width:1240px;margin:0 auto;padding:44px 44px 32px}
+.frow{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.fcols{display:flex;gap:56px;flex-wrap:wrap}
+.fcol{display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui}
+.fcol .h{font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#6E685F}
+.fcol a{color:#6E685F}
+.fbot{border-top:1px solid #DBD5C8;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;font:400 12.5px -apple-system,system-ui;color:#6E685F}
+.mcta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;align-items:center;justify-content:center;gap:8px;background:#DE9433;color:#221F1A;font:700 16px -apple-system,system-ui;padding:16px 20px;box-shadow:0 -6px 20px rgba(34,31,26,.16)}
+@media (max-width:980px){
+  .hero,.split{flex-direction:column;gap:40px}
+  .hero .phone{align-self:center}
+  .bcard,.dcard,.mac{width:100%;max-width:520px}
+  .grid2{grid-template-columns:1fr}
+  h1{font-size:44px}
+  :lang(ja) h1,:lang(zh-Hans) h1{font-size:38px}
+  h2{font-size:30px}
+  :lang(ja) h2,:lang(zh-Hans) h2{font-size:27px}
+}
+@media (max-width:1180px){
+  .navlinks{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  header{position:sticky;top:0;z-index:60}
+  nav.top{padding:12px 0;gap:10px}
+  .navright .btn{display:none}
+  .langs a{padding:5px 7px}
+  .hero{padding:32px 0 40px}
+  .phone{width:min(332px,88vw)}
+  .dark .inner{padding:56px 16px}
+  .split{padding:56px 0}
+  .pricing{padding:56px 0}
+  .price{width:100%}
+  .fwrap{padding:36px 16px 96px}
+  .mcta{display:flex}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">本文へ移動</a>
+<header><div class="wrap">
+<nav class="top" aria-label="メインナビゲーション">
+<a class="brand" href="/technodaily/ja/"><b class="serif">TechnoDaily</b><span class="pill-v">2.5</span></a>
+<div class="navlinks">
+<a href="#fonctionnalites">機能</a>
+<a href="#mac">Mac</a>
+<a href="#sujets">トピックのフォロー</a>
+<a href="#confidentialite">プライバシー</a>
+<a href="#tarif">料金</a>
+</div>
+<div class="navright">
+<div class="langs" role="group" aria-label="言語">
+<a href="/technodaily/en/" hreflang="en" lang="en">EN</a>
+<a href="/technodaily/" hreflang="fr" lang="fr">FR</a>
+<a href="/technodaily/es/" hreflang="es" lang="es">ES</a>
+<a href="/technodaily/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+<a href="/technodaily/ja/" hreflang="ja" lang="ja" aria-current="page">日本語</a>
+</div>
+<a class="btn" href="https://apps.apple.com/jp/app/technodaily/id6758897742">ダウンロード</a>
+</div></nav></div></header>
+<main id="contenu">
+<div class="wrap"><section class="hero">
+<div class="txt">
+<p class="kicker">新着・2.5：日本語に対応、Mac版も登場</p>
+<h1 class="serif">すべてのソースを、<br>ひとつのブリーフィングに。</h1>
+<p class="sub">Gmailのニュースレター、RSSフィード、YouTubeチャンネルをひとつのリーダーに。あなたにとって大切なものをデバイス上で学習し、複数のソースが取り上げたトピックを毎日「今日のまとめ」に集めます。「あなたへ」には一度に最大30件だけを表示します。</p>
+<p class="jaextra">日本語に対応。ニュース、経済、テクノロジー、スポーツ、カルチャーなど、日本語のフィード20件をすぐに追加できます。</p>
+<div class="cta">
+<a class="badge" href="https://apps.apple.com/jp/app/technodaily/id6758897742"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iSlAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwOC44NTE1NyIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDEwOC44NTE1NyA0MCI+CiAgPHRpdGxlPkRvd25sb2FkX29uX3RoZV9BcHBfU3RvcmVfQmFkZ2VfSlBfUkdCX2Jsa18xMDAzMTc8L3RpdGxlPgogIDxnPgogICAgPGc+CiAgICAgIDxwYXRoIGQ9Ik05OS4zMjIyNywwSDkuNTM0NjhjLS4zNjY3LDAtLjcyOSwwLTEuMDk0NzMuMDAyLS4zMDYxNS4wMDItLjYwOTg2LjAwNzgxLS45MTg5NS4wMTI3QTEzLjIxNDc2LDEzLjIxNDc2LDAsMCwwLDUuNTE3MS4xOTE0MWE2LjY2NTA5LDYuNjY1MDksMCwwLDAtMS45MDA4OC42MjdBNi40Mzc3OSw2LjQzNzc5LDAsMCwwLDEuOTk3NTcsMS45OTcwNyw2LjI1ODQ0LDYuMjU4NDQsMCwwLDAsLjgxOTM1LDMuNjE4MTZhNi42MDExOSw2LjYwMTE5LDAsMCwwLS42MjUsMS45MDMzMiwxMi45OTMsMTIuOTkzLDAsMCwwLS4xNzkyLDIuMDAyQy4wMDU4Nyw3LjgzMDA4LjAwNDg5LDguMTM3NywwLDguNDQ0MzRWMzEuNTU4NmMuMDA0ODkuMzEwNS4wMDU4Ny42MTEzLjAxNTE1LjkyMTlhMTIuOTkyMzIsMTIuOTkyMzIsMCwwLDAsLjE3OTIsMi4wMDE5LDYuNTg3NTYsNi41ODc1NiwwLDAsMCwuNjI1LDEuOTA0M0E2LjIwNzc4LDYuMjA3NzgsMCwwLDAsMS45OTc1NywzOC4wMDFhNi4yNzQ0NSw2LjI3NDQ1LDAsMCwwLDEuNjE4NjUsMS4xNzg3LDYuNzAwODIsNi43MDA4MiwwLDAsMCwxLjkwMDg4LjYzMDgsMTMuNDU1MTQsMTMuNDU1MTQsMCwwLDAsMi4wMDM5LjE3NjhjLjMwOTA5LjAwNjguNjEyOC4wMTA3LjkxODk1LjAxMDdDOC44MDU2Nyw0MCw5LjE2OCw0MCw5LjUzNDY4LDQwSDk5LjMyMjI3Yy4zNTk0LDAsLjcyNDYsMCwxLjA4NC0uMDAyLjMwNDcsMCwuNjE3Mi0uMDAzOS45MjE5LS4wMTA3YTEzLjI3OSwxMy4yNzksMCwwLDAsMi0uMTc2OCw2LjgwNDMyLDYuODA0MzIsMCwwLDAsMS45MDgyLS42MzA4LDYuMjc3NDIsNi4yNzc0MiwwLDAsMCwxLjYxNzItMS4xNzg3LDYuMzk0ODIsNi4zOTQ4MiwwLDAsMCwxLjE4MTYtMS42MTQzLDYuNjA0MTMsNi42MDQxMywwLDAsMCwuNjE5MS0xLjkwNDMsMTMuNTA2NDMsMTMuNTA2NDMsMCwwLDAsLjE4NTYtMi4wMDE5Yy4wMDM5LS4zMTA2LjAwMzktLjYxMTQuMDAzOS0uOTIxOS4wMDc4LS4zNjMzLjAwNzgtLjcyNDYuMDA3OC0xLjA5MzhWOS41MzYxM2MwLS4zNjYyMSwwLS43Mjk0OS0uMDA3OC0xLjA5MTc5LDAtLjMwNjY0LDAtLjYxNDI2LS4wMDM5LS45MjA5YTEzLjUwNzEsMTMuNTA3MSwwLDAsMC0uMTg1Ni0yLjAwMiw2LjYxNzcsNi42MTc3LDAsMCwwLS42MTkxLTEuOTAzMzIsNi40NjYxOSw2LjQ2NjE5LDAsMCwwLTIuNzk4OC0yLjc5OTgsNi43Njc1NCw2Ljc2NzU0LDAsMCwwLTEuOTA4Mi0uNjI3LDEzLjA0Mzk0LDEzLjA0Mzk0LDAsMCwwLTItLjE3Njc2Yy0uMzA0Ny0uMDA0ODgtLjYxNzItLjAxMDc0LS45MjE5LS4wMTI2OUMxMDAuMDQ2ODcsMCw5OS42ODE2NywwLDk5LjMyMjI3LDBaIiBzdHlsZT0iZmlsbDogI2E2YTZhNiIvPgogICAgICA8cGF0aCBkPSJNOC40NDQ4MywzOS4xMjVjLS4zMDQ2OCwwLS42MDItLjAwMzktLjkwNDI5LS4wMTA3YTEyLjY4NzE0LDEyLjY4NzE0LDAsMCwxLTEuODY5MTQtLjE2MzEsNS44ODM4MSw1Ljg4MzgxLDAsMCwxLTEuNjU2NzQtLjU0NzksNS40MDU3Myw1LjQwNTczLDAsMCwxLTEuMzk3LTEuMDE2Niw1LjMyMDgyLDUuMzIwODIsMCwwLDEtMS4wMjA1MS0xLjM5NjUsNS43MjE4Niw1LjcyMTg2LDAsMCwxLS41NDMtMS42NTcyLDEyLjQxMzUxLDEyLjQxMzUxLDAsMCwxLS4xNjY1LTEuODc1Yy0uMDA2MzQtLjIxMDktLjAxNDY0LS45MTMxLS4wMTQ2NC0uOTEzMVY4LjQ0NDM0Uy44ODE4NSw3Ljc1MjkzLjg4NzcsNy41NDk4YTEyLjM3MDM5LDEyLjM3MDM5LDAsMCwxLC4xNjU1My0xLjg3MjA3LDUuNzU1NSw1Ljc1NTUsMCwwLDEsLjU0MzQ2LTEuNjYyMUE1LjM3MzQ5LDUuMzczNDksMCwwLDEsMi42MTE4MywyLjYxNzY4LDUuNTY1NDMsNS41NjU0MywwLDAsMSw0LjAxNDE3LDEuNTk1MjFhNS44MjMwOSw1LjgyMzA5LDAsMCwxLDEuNjUzMzItLjU0Mzk0QTEyLjU4NTg5LDEyLjU4NTg5LDAsMCwxLDcuNTQzLjg4NzIxTDguNDQ1MzIuODc1aDkxLjk1NmwuOTEzMS4wMTI3YTEyLjM4NDkzLDEyLjM4NDkzLDAsMCwxLDEuODU4NC4xNjI1OSw1LjkzODMzLDUuOTM4MzMsMCwwLDEsMS42NzA5LjU0Nzg1LDUuNTkzNzQsNS41OTM3NCwwLDAsMSwyLjQxNSwyLjQxOTkzQTUuNzYyNjcsNS43NjI2NywwLDAsMSwxMDcuNzk0LDUuNjY3YTEyLjk5NSwxMi45OTUsMCwwLDEsLjE3MzgsMS44ODcyMWMuMDAyOS4yODMyLjAwMjkuNTg3NC4wMDI5Ljg5MDE0LjAwNzkuMzc1LjAwNzkuNzMxOTMuMDA3OSwxLjA5MTc5VjMwLjQ2NDhjMCwuMzYzMywwLC43MTc4LS4wMDc5LDEuMDc1MiwwLC4zMjUyLDAsLjYyMzEtLjAwMzkuOTI5N2ExMi43MzEyNiwxMi43MzEyNiwwLDAsMS0uMTcwOSwxLjg1MzUsNS43MzksNS43MzksMCwwLDEtLjU0LDEuNjcsNS40ODAyOSw1LjQ4MDI5LDAsMCwxLTEuMDE1NiwxLjM4NTcsNS40MTI5LDUuNDEyOSwwLDAsMS0xLjM5OTQsMS4wMjI1LDUuODYxNjgsNS44NjE2OCwwLDAsMS0xLjY2OC41NDk4LDEyLjU0MjE4LDEyLjU0MjE4LDAsMCwxLTEuODY5Mi4xNjMxYy0uMjkyOS4wMDY4LS41OTk2LjAxMDctLjg5NzQuMDEwN2wtMS4wODQuMDAyWiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGQ9Ik00MS4xNjc0MiwxNi41NTQ2MkgzNy4xMTU4NWwtLjk3MywyLjg3M0gzNC40MjY3OEwzOC4yNjQzNyw4Ljc5ODM3aDEuNzgzbDMuODM3NTksMTAuNjI5MjJINDIuMTM5NTdabS0zLjYzMi0xLjMyNTczSDQwLjc0N2wtMS41ODMxOC00LjY2MjYxaC0uMDQ0M1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik01Mi4xNzI4LDE1LjU1MzIyYzAsMi40MDgyMS0xLjI4ODk1LDMuOTU1NDUtMy4yMzQwNywzLjk1NTQ1YTIuNjI3MTksMi42MjcxOSwwLDAsMS0yLjQzODMtMS4zNTU4MmgtLjAzNjc4djMuODM4NDJINDQuODcyOTRWMTEuNjc4aDEuNTM5NzJWMTIuOTY3aC4wMjkyNmEyLjc0OSwyLjc0OSwwLDAsMSwyLjQ2NzU2LTEuMzdDNTAuODc2MzMsMTEuNTk2OTQsNTIuMTcyOCwxMy4xNTE3LDUyLjE3MjgsMTUuNTUzMjJabS0xLjYzNSwwYzAtMS41NjktLjgxMDgyLTIuNjAwNDYtMi4wNDc5NC0yLjYwMDQ2LTEuMjE1MzksMC0yLjAzMjg5LDEuMDUzMjMtMi4wMzI4OSwyLjYwMDQ2LDAsMS41NjE0NS44MTc1LDIuNjA3MTUsMi4wMzI4OSwyLjYwNzE1QzQ5LjcyNywxOC4xNjAzNyw1MC41Mzc3OSwxNy4xMzY0LDUwLjUzNzc5LDE1LjU1MzIyWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTYwLjcwMjY3LDE1LjU1MzIyYzAsMi40MDgyMS0xLjI4OTM3LDMuOTU1NDUtMy4yMzQ0OSwzLjk1NTQ1YTIuNjI3MTksMi42MjcxOSwwLDAsMS0yLjQzODMtMS4zNTU4Mkg1NC45OTMxdjMuODM4NDJINTMuNDAyNFYxMS42NzhoMS41Mzk3MlYxMi45NjdoLjAyOTI2YTIuNzQ5LDIuNzQ5LDAsMCwxLDIuNDY3NTYtMS4zN0M1OS40MDU3OCwxMS41OTY5NCw2MC43MDI2NywxMy4xNTE3LDYwLjcwMjY3LDE1LjU1MzIyWm0tMS42MzU0MywwYzAtMS41NjktLjgxMDgyLTIuNjAwNDYtMi4wNDc5NC0yLjYwMDQ2LTEuMjE1MzksMC0yLjAzMjg5LDEuMDUzMjMtMi4wMzI4OSwyLjYwMDQ2LDAsMS41NjE0NS44MTc1LDIuNjA3MTUsMi4wMzI4OSwyLjYwNzE1QzU4LjI1NjQzLDE4LjE2MDM3LDU5LjA2NzI1LDE3LjEzNjQsNTkuMDY3MjUsMTUuNTUzMjJaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNjYuMzM5MSwxNi40NjZjLjExNzg2LDEuMDU0MDYsMS4xNDE4MywxLjc0NjE4LDIuNTQxMTIsMS43NDYxOCwxLjM0MDc3LDAsMi4zMDUzOS0uNjkyMTIsMi4zMDUzOS0xLjY0MjUzLDAtLjgyNS0uNTgxNzgtMS4zMTktMS45NTkzMy0xLjY1NzU4bC0xLjM3NzU1LS4zMzE4NWMtMS45NTE4MS0uNDcxNDQtMi44NTc5Mi0xLjM4NDI0LTIuODU3OTItMi44NjU0NCwwLTEuODM0LDEuNTk4MjMtMy4wOTM2NCwzLjg2Njg0LTMuMDkzNjQsMi4yNDY4OCwwLDMuNzg2NiwxLjI1OTY5LDMuODM4NDIsMy4wOTM2NEg3MS4wOTAzMmMtLjA5NjEzLTEuMDYwNzUtLjk3My0xLjcwMS0yLjI1NDQtMS43MDFzLTIuMTU4MjguNjQ3ODItMi4xNTgyOCwxLjU5MDcxYzAsLjc1MTQ3LjU2LDEuMTkzNjYsMS45MzAwOCwxLjUzMjE5bDEuMTcxMDkuMjg3NTVjMi4xODA4NS41MTU3NSwzLjA4NjEyLDEuMzkxNzYsMy4wODYxMiwyLjk0NjUyLDAsMS45ODg1OS0xLjU4MzE4LDMuMjM0MDctNC4xMDI1NywzLjIzNDA3LTIuMzU3MjIsMC0zLjk0ODc2LTEuMjE2MjMtNC4wNTE1OC0zLjEzODc4WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTc2LjI5OTYxLDkuODQ0MDd2MS44MzRoMS40NzM2OHYxLjI1OTY5SDc2LjI5OTYxVjE3LjIxYzAsLjY2MzcuMjk1MDcuOTczLjk0Mjg5Ljk3M2E0Ljk3MSw0Ljk3MSwwLDAsMCwuNTIzMjctLjAzNjc4djEuMjUyMTdhNC4zNjgzOCw0LjM2ODM4LDAsMCwxLS44ODM1NC4wNzM1NmMtMS41NjksMC0yLjE4MDg1LS41ODkzLTIuMTgwODUtMi4wOTIyNFYxMi45Mzc3MUg3My41NzQ2VjExLjY3OGgxLjEyNjc4di0xLjgzNFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik03OC42MjU5LDE1LjU1MzIyYzAtMi40MzgzLDEuNDM2MDctMy45NzA0OSwzLjY3NTQyLTMuOTcwNDksMi4yNDY4OCwwLDMuNjc2MjYsMS41MzIxOSwzLjY3NjI2LDMuOTcwNDksMCwyLjQ0NS0xLjQyMTg1LDMuOTcwNDktMy42NzYyNiwzLjk3MDQ5QzgwLjA0Nzc2LDE5LjUyMzcyLDc4LjYyNTksMTcuOTk4MjEsNzguNjI1OSwxNS41NTMyMlptNS43MzA4OSwwYzAtMS42NzI2Mi0uNzY2NTEtMi42NTk4MS0yLjA1NTQ2LTIuNjU5ODFzLTIuMDU1NDYuOTk0NzEtMi4wNTU0NiwyLjY1OTgxYzAsMS42NzkzMS43NjY1MSwyLjY1OSwyLjA1NTQ2LDIuNjU5Uzg0LjM1Njc5LDE3LjIzMjUzLDg0LjM1Njc5LDE1LjU1MzIyWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTg3LjI4OTEsMTEuNjc4aDEuNTE3MTV2MS4zMTlIODguODQzYTEuODQ4MzUsMS44NDgzNSwwLDAsMSwxLjg2NC0xLjQwMDEyLDIuNDUzMywyLjQ1MzMsMCwwLDEsLjU0NS4wNTkzNXYxLjQ4Nzg5YTIuMjIzNzIsMi4yMjM3MiwwLDAsMC0uNzE0NjktLjA5NjEzLDEuNjAyOSwxLjYwMjksMCwwLDAtMS42NTc1OCwxLjc4M3Y0LjU5NjU4SDg3LjI4OTFaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNOTguNTg2MiwxNy4xNTE0NWEzLjExMDExLDMuMTEwMTEsMCwwLDEtMy4zMzY4OSwyLjM3MjI3Yy0yLjI1NDQsMC0zLjY1MzY5LTEuNTEwNDYtMy42NTM2OS0zLjkzMzcyLDAtMi40MzA3OCwxLjQwNjgxLTQuMDA3MjcsMy41ODY4Mi00LjAwNzI3LDIuMTQ0MDcsMCwzLjQ5MjM2LDEuNDcyODQsMy40OTIzNiwzLjgyMjU0di41NDVIOTMuMjAxMzh2LjA5NjEzYTIuMDE4MzcsMi4wMTgzNywwLDAsMCwyLjA4NDcyLDIuMTk1MDYsMS43NTMyOSwxLjc1MzI5LDAsMCwwLDEuNzg5NjUtMS4wOVptLTUuMzc3My0yLjMxMjkyaDMuODc0MzdhMS44NjM2NywxLjg2MzY3LDAsMCwwLTEuOTAwODItMS45NjY4NkExLjk2MTg4LDEuOTYxODgsMCwwLDAsOTMuMjA4OSwxNC44Mzg1M1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHBhdGggZD0iTTM2LjQzNjU0LDMwLjgxMTUybC4wNjU5Mi0uODE5MzRhMy4xMzI0NSwzLjEzMjQ1LDAsMCwwLC45NTA2OC4xNTEzN2MuMjkyLDAsLjQwNDc5LS4wMjgzMi41NDYzOS0uMjI2NTZhNC41NjUxMiw0LjU2NTEyLDAsMCwwLC40MzI2Mi0yLjMxNTQzYzAtLjg0NzY2LS4yNjMxOC0xLjA5Mjc3LS45MzE2NC0xLjA5Mjc3LS4xNTA4OCwwLS4zMjAzMS4wMDk3Ny0uNTA4NzkuMDE5NTNhMTMuNzI3MTIsMTMuNzI3MTIsMCwwLDEtMS43Njk1Myw0LjEyM2wtLjc4MTc0LS40MjM4M2ExMS4wNzE0LDExLjA3MTQsMCwwLDAsMS42NDc0Ni0zLjYxNTIzLDEzLjY3NjU4LDEzLjY3NjU4LDAsMCwwLTEuNTM0MTguMjU0ODhsLS4xNjk0My0uODI5MWMuNTc0MjItLjEwMzUyLDEuMjYxMjMtLjE5NzI3LDEuOTAxMzctLjI1MzkxYTE3LjYwOSwxNy42MDksMCwwLDAsLjI5Mi0xLjg5MjU4bC45MjI4NS4xMDM1MmMtLjA4NS41NzQyMi0uMTg4NDgsMS4xNDk0MS0uMzIwMzEsMS43MTM4N2guMzY3MTljMS4xOTU4LDAsMS43Ny41OTI3NywxLjc3LDEuODU0NDlhNS44MzM2MSw1LjgzMzYxLDAsMCwxLS41NDU5LDIuNzk1OSwxLjE1NjUsMS4xNTY1LDAsMCwxLTEuMTI5ODguNjAyNTRBNS4xODE0NSw1LjE4MTQ1LDAsMCwxLDM2LjQzNjU0LDMwLjgxMTUyWm0zLjAzMTI1LTUuMDc0MjIuNjg3NS0uNDYxOTFhNS4yOTg3Miw1LjI5ODcyLDAsMCwxLDEuNjA5ODYsMy40ODQzOGwtLjkwMzgxLjE0MDYzQTQuMzk4NTEsNC4zOTg1MSwwLDAsMCwzOS40Njc3OSwyNS43MzczWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTQ0Ljg4Njc0LDMwLjk0MzM2bC0uMTg4LS44NDc2NmMuMjM1MzUuMDE5NTMuNTQ1OS4wMjgzMi43MzQzOC4wMjgzMiwxLjg2Mzc3LDAsMi41Njk4Mi0uNTI2MzcsMi41Njk4Mi0xLjMwODU5LDAtLjYyMTA5LS40MDQ3OS0uOTc4NTItMS4zMDg1OS0uOTc4NTJhNC4wMzg2NCw0LjAzODY0LDAsMCwwLTIuNTc5NTksMS4yNjE3MmwtLjcyNTEtLjMyMDMxQTUuNTIzOCw1LjUyMzgsMCwwLDEsNDQuMTksMjUuMjQ4bC44Mzc4OS4yNzI0NmEzLjY4NzQsMy42ODc0LDAsMCwwLS43MTUzMywyLjQ0ODI0LDQuODE2NjEsNC44MTY2MSwwLDAsMSwyLjU3MDMxLS44NzZjMS4yNjE3MiwwLDIuMDQzLjY0OTQxLDIuMDQzLDEuNzA0MSwwLDEuMzM2OTEtMS4wNTQ2OSwyLjE1NjI1LTMuNTg2OTEsMi4xNTYyNUM0NS4yMTYzMywzMC45NTMxMyw0NS4wMzc2MiwzMC45NDMzNiw0NC44ODY3NCwzMC45NDMzNlptLS44NzU0OS02LjI1MS4yMzUzNS0uODI5MWEyNS44ODUxNywyNS44ODUxNywwLDAsMSwzLjcwMDIuODQ3NjZsLS4yMjYwNy44MTkzNEEyMS4xNDIwNiwyMS4xNDIwNiwwLDAsMCw0NC4wMTEyNSwyNC42OTIzOFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik01MS42NTIzNiwzMC4yOTM5NWE1Ljk0NzY3LDUuOTQ3NjcsMCwwLDAsMi41MzIyMy0xLjYzODY3LDEwLjY5NDcyLDEwLjY5NDcyLDAsMCwwLTEuNzYwMjUtMS4xODU1NWwuNTE3NTgtLjY0OTQxYTExLjQ0NTA5LDExLjQ0NTA5LDAsMCwxLDEuNzg4NTcsMS4xMjg5MSw1Ljk1Mzc2LDUuOTUzNzYsMCwwLDAsLjkyMjg1LTIuMTc0OEg1My4yNTI0NmE5LjcwMjE0LDkuNzAyMTQsMCwwLDEtMi4wNTIyNSwyLjM2MzI4bC0uNjg3NS0uNTkyNzdhOC45MjM2NSw4LjkyMzY1LDAsMCwwLDIuNjE3NjgtMy41OTY2OGwuOTAzODEuMjE2OGMtLjEwMzUyLjI2MzY3LS4yMDcuNTM2MTMtLjMyOTU5Ljc5MWgyLjMzNWwuNjY4NDYuMzEwNTVhNy4xNDEsNy4xNDEsMCwwLDEtNC41MDk3Nyw1Ljc2MTcyWk01NS42MjUsMjMuNzIyNjZsLjUyNzM0LS4yNTQ4OGE1LjY3NzIyLDUuNjc3MjIsMCwwLDEsLjY2ODQ2LDEuMTU4MmwtLjU5MzI2LjI3MzQ0QTUuMTM0NjYsNS4xMzQ2NiwwLDAsMCw1NS42MjUsMjMuNzIyNjZabTEuMTc2NzYtLjA5NDczLjUzNjYyLS4yNTM5MWE2LjM1NjE0LDYuMzU2MTQsMCwwLDEsLjY4NzUsMS4xODY1MmwtLjU5MzI2LjI1MzkxQTUuMTY4NCw1LjE2ODQsMCwwLDAsNTYuODAxNzgsMjMuNjI3OTNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNjAuOTIxNDEsMzAuOTkwMjNsLS40OC0uNzYyN2EzLjk0MzgyLDMuOTQzODIsMCwwLDAsMy4zMTQtNC4xNTEzN2gtMy45NTQxdjEuODkyNThoLS45NTExN1YyNS4yNzUzOUg2MS4yMTM0VjIzLjg5MTZoLjk1MDY4djEuMzgzNzloMS43NjA3NGwuODY2MjEuMjQ1MTJDNjQuNjc3NzUsMjguMTk0MzQsNjMuNzgzNzEsMzAuMjM3Myw2MC45MjE0MSwzMC45OTAyM1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik02Ni42MjI1OCwyNS4zNDE4bC41MjczNC0uNzcyNDZhMTEuNjgzNDEsMTEuNjgzNDEsMCwwLDEsMi4zMTU0MywxLjQwMzMybC0uNjAyNTQuODA5NTdBMTEuMDUzNCwxMS4wNTM0LDAsMCwwLDY2LjYyMjU4LDI1LjM0MThabS4xNzg3MSw0LjY0MTZhNy4zMTc0OCw3LjMxNzQ4LDAsMCwwLDUuNDMyNjItMy45MTdsLjYyMTA5LjY5NzI3YTcuOTYzNTIsNy45NjM1MiwwLDAsMS01LjY5NTMxLDQuMDk0NzNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNODAuNTcwODIsMzAuNDM1NTVINzQuNjQ4OTVWMjQuODMzaDUuOTIxODhabS00Ljk4OTI2LTQuNzM2MzN2My44NzAxMmg0LjA0Nzg1VjI1LjY5OTIyWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTg5LjA0OTM0LDI3LjkyMDlIODIuMzkzMDl2LS45Nmg2LjY1NjI1WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTkxLjMxNCwyMy45MTk5MmguOTMxNjR2Mi40MTAxNmEyOS4wMTMsMjkuMDEzLDAsMCwxLDMuNTk2NjgsMS43OTg4M0w5NS4zMTUsMjguOTU3YTIyLjcyNCwyMi43MjQsMCwwLDAtMy4wNjkzNC0xLjY0NzQ2djMuNjMzNzlIOTEuMzE0Wm0yLjIxMTkxLjUwODc5LjU1NTY2LS4yNjM2N2E2LjE5NDA5LDYuMTk0MDksMCwwLDEsLjY2ODk1LDEuMjgwMjdsLS42MTIzLjI3MzQ0QTUuNTE2Miw1LjUxNjIsMCwwLDAsOTMuNTI1OSwyNC40Mjg3MVptMS4wNzMyNC0uNDA1MjcuNTY1NDMtLjI2MzY3QTYuMTA1MTQsNi4xMDUxNCwwLDAsMSw5NS44NzA2MywyNS4wNGwtLjYxMjMuMjczNDRBNi4xMjcyMyw2LjEyNzIzLDAsMCwwLDk0LjU5OTE0LDI0LjAyMzQ0WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJfR3JvdXBfIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICA8ZyBpZD0iX0dyb3VwXzIiIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgICAgPHBhdGggaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik0yNC43Njg4OCwyMC4zMDA2OGE0Ljk0ODgxLDQuOTQ4ODEsMCwwLDEsMi4zNTY1Ni00LjE1MjA2LDUuMDY1NjYsNS4wNjU2NiwwLDAsMC0zLjk5MTE2LTIuMTU3NjhjLTEuNjc5MjQtLjE3NjI2LTMuMzA3MTksMS4wMDQ4My00LjE2MjksMS4wMDQ4My0uODcyMjcsMC0yLjE4OTc3LS45ODczMy0zLjYwODUtLjk1ODE0YTUuMzE1MjksNS4zMTUyOSwwLDAsMC00LjQ3MjkyLDIuNzI3ODdjLTEuOTM0LDMuMzQ4NDItLjQ5MTQxLDguMjY5NDcsMS4zNjEyLDEwLjk3NjA4LjkyNjksMS4zMjUzNSwyLjAxMDE4LDIuODA1OCwzLjQyNzYzLDIuNzUzMywxLjM4NzA2LS4wNTc1MywxLjkwNTEtLjg4NDQ4LDMuNTc5NC0uODg0NDgsMS42NTg3NiwwLDIuMTQ0NzkuODg0NDgsMy41OTEuODUxMSwxLjQ4ODM4LS4wMjQxNiwyLjQyNjEzLTEuMzMxMjQsMy4zMjA1MS0yLjY2OTE0YTEwLjk2MiwxMC45NjIsMCwwLDAsMS41MTg0Mi0zLjA5MjUxQTQuNzgyMDUsNC43ODIwNSwwLDAsMSwyNC43Njg4OCwyMC4zMDA2OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMjIuMDM3MjUsMTIuMjEwODlhNC44NzI0OCw0Ljg3MjQ4LDAsMCwwLDEuMTE0NTItMy40OTA2Miw0Ljk1NzQ2LDQuOTU3NDYsMCwwLDAtMy4yMDc1OCwxLjY1OTYxLDQuNjM2MzQsNC42MzYzNCwwLDAsMC0xLjE0MzcxLDMuMzYxMzlBNC4wOTkwNSw0LjA5OTA1LDAsMCwwLDIyLjAzNzI1LDEyLjIxMDg5WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==" alt="App Storeからダウンロード" width="168" height="56"></a>
+<a class="more" href="#tarif">料金を見る →</a>
+</div>
+<p class="meta">はじめての年額プランは14日間無料。その後は年額3,000円、または買い切り7,000円。<br>何を読むかは、あなただけのこと。</p>
+<div class="dispo"><span class="l">対応デバイス</span><span class="chip">iPhone</span><span class="chip">iPad</span><span class="chip">Mac</span><span class="chip">Apple Vision Pro</span></div>
+</div>
+<div class="phone" role="img" aria-label="「あなたへ」画面のプレビュー"><div class="screen" aria-hidden="true">
+<div class="sbar"><span>9:41</span><i></i></div>
+<div class="mhead">
+<div class="mtitle"><b class="serif">あなたへ</b><div class="mtools"><span>絞り込む</span><div class="gear"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6E685F" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div></div></div>
+<div class="seg"><span class="">すべて</span><span class="on">未読</span><span class="">保存済み</span><span class="">あとで読む</span></div>
+<div class="mmeta">24件の記事 · スマート並べ替え</div>
+</div>
+<div class="mbody">
+<div class="sage">
+<div class="hd"><span>✦ 今日のまとめ</span><em>3トピック</em></div>
+<div class="t"><b class="serif">猛暑に備える都市</b><small>4ソース · ニュースレター + RSS</small></div>
+<div class="t"><b class="serif">電気自動車のいま</b><small>3ソース · RSS</small></div>
+<div class="gen">✦ デバイス上で生成</div>
+</div>
+<div class="grp">新着</div>
+<div class="card"><div class="top"><span class="tb n">ニュースレター</span><span class="udot"></span></div><b class="serif">5つのグラフで読む物価高</b><small>6分 · 経済</small></div>
+<div class="grp">今日</div>
+<div class="card"><div class="top"><span class="tb r">RSS</span><span class="udot"></span></div><b class="serif">夜空が明るくなっている理由</b><small>4分 · 科学</small></div>
+</div>
+<div class="tabs"><div class="on"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2l1.6 4.9L17.5 8.5l-4.9 1.6L11 15l-1.6-4.9L4.5 8.5l4.9-1.6zM18 13l.9 2.6 2.6.9-2.6.9L18 20l-.9-2.6-2.6-.9 2.6-.9z"/></svg><span class="bdg">24</span>あなたへ</div><div class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></svg>ソース</div><div class=""><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z"/></svg>保存済み</div><div class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>検索</div></div>
+</div></div>
+</section>
+<section class="sources" aria-label="あなたのソース">
+<span class="lab">あなたのソース</span>
+<span class="sp n">✉ Gmailのニュースレター</span>
+<span class="sp r">⌁ RSSフィード</span>
+<span class="sp y">▷ YouTube</span>
+<span class="sp r">OPMLの読み込みと書き出し</span>
+<p class="note">Redditのサブレディットも、URLを貼り付けるだけでRSSフィードを検出します。</p>
+</section></div>
+<section id="fonctionnalites" class="band alt"><div class="wrap"><div class="split">
+<div class="txt">
+<p class="kicker">あなたへ</p>
+<h2 class="serif">すべての未読ではなく、<br>一度に最大30件。</h2>
+<p class="lead">「あなたへ」の「未読」では、直近48時間の記事から一度に最大30件を選び、「新着」「今日」「見逃したかも」の3つのグループで表示します。タブのバッジが示すのはこの件数で、未読の総数ではありません。エンジンはあなたにとって大切なものをデバイス上で学習し、最近の読書に合わせて変わります。</p>
+<ul class="dots"><li>「今日のまとめ」：複数のソースが取り上げているトピック（通常は3つ）を、記事とともに</li><li>Apple Intelligence対応デバイスでは、要約の段落をデバイス上で生成。なくても「今日のまとめ」はそのまま使えます</li><li>朝の通知：お好みの時刻に「今朝のトピックは3件」</li><li>「興味なし」「この記事はここに合わない」「ブリーフィングから除外」：フィードバックはすべてのデバイスで同期</li></ul>
+<p class="small">要約：Apple Intelligence対応デバイスが必要です。</p>
+</div>
+<div class="bcard" aria-hidden="true">
+<div class="hd"><span>✦ 今日のまとめ</span><em>3トピック · 9件の記事</em></div>
+<div class="t"><b class="serif">猛暑に備える都市</b><small>4ソース · ニュースレター + RSS</small></div>
+<div class="t"><b class="serif">電気自動車のいま</b><small>3ソース · RSS</small></div>
+<div class="t"><b class="serif">相次ぐ月探査</b><small>2ソース · RSS + YouTube</small></div>
+<div class="ft"><span>✦ デバイス上で生成</span><span>トピックを見る ›</span></div>
+</div>
+</div></div></section>
+<section id="sujets" class="band"><div class="wrap"><div class="split">
+<div class="dcard" aria-hidden="true">
+<div class="nm"><b class="serif">月探査</b><span class="pic">▲ 急増</span></div>
+<div class="dm">14件の記事 · 5ソース · 3週間前からフォロー</div>
+<div class="dig"><div class="l">何が変わったか</div><p>3つのソースが今後の打ち上げ計画を取り上げ、2つのソースが新しい着陸機の試験を詳しく伝えています。</p></div>
+<div class="day">今日</div>
+<div class="it"><i></i><div><b class="serif">今後の打ち上げスケジュール</b><small>RSSフィード · 5分</small></div></div>
+<div class="it"><i></i><div><b class="serif">新しい着陸機についてわかっていること</b><small>ニュースレター · 7分</small></div></div>
+<div class="cl">関連キーワード：打ち上げ · 着陸機 · 月</div>
+<div class="day">昨日</div>
+<div class="it"><i class="read"></i><div><b class="serif read">なぜ再び月を目指すのか</b><small>YouTube · 12分</small></div></div>
+<div class="sh"><span>この記録を共有</span><span>テキスト · Markdown · 画像</span></div>
+</div>
+<div class="txt">
+<p class="kicker">トピックのフォロー</p>
+<h2 class="serif">トピックをフォローして、<br>変化を追う。</h2>
+<p class="lead">トピックをフォローすると、TechnoDailyがその記録をつくります。日ごとの動き、対応デバイスでは「何が変わったか」の要約、そして報道が急増したときの目印。</p>
+<p class="lead">トピックに登場する人物や組織には、過去7日間のページがあります。記録はテキスト、Markdown、画像で共有できます。あなたのソースで追う、あなただけの情報収集。何をフォローしているかは、あなたにしかわかりません。</p>
+</div>
+</div></div></section>
+<section id="mac" class="band alt"><div class="wrap"><div class="split">
+<div class="txt">
+<p class="kicker">新登場・Mac</p>
+<h2 class="serif">Macでは、<br>キーボードで。</h2>
+<p class="lead">メニューバーを備えたネイティブのMacアプリです。キーボードでタブを切り替え、記事を別ウインドウで開き、Dockのバッジで確認できます。一度の購入でiPhone、iPad、Mac、Apple Vision Proのすべてで使え、個人のiCloudで同期します。</p>
+<ul class="dots"><li>⌘1〜⌘4：あなたへ、ソース、保存済み、検索</li><li>⌘Rで更新、⌘Fで検索、⌘,で設定</li><li>記事を別ウインドウで表示（⇧⌘N）</li><li>macOS 26.1以降</li></ul>
+<div class="macbadge"><a href="https://apps.apple.com/jp/app/technodaily/id6758897742"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iSlAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE0MC4xODMyNSIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDE0MC4xODMyNSA0MCI+CiAgPHRpdGxlPkRvd25sb2FkX29uX3RoZV9NYWNfQXBwX1N0b3JlX0JhZGdlX0pQX1JHQl9ibGtfMTAwMzE3PC90aXRsZT4KICA8Zz4KICAgIDxnPgogICAgICA8cGF0aCBkPSJNMTMwLjY1Mzk1LDBIOS41MzQ2OGMtLjM2NjcsMC0uNzI5LDAtMS4wOTQ3My4wMDItLjMwNjE1LjAwMi0uNjA5ODYuMDA3ODEtLjkxODk1LjAxMjdBMTMuMjE0NzYsMTMuMjE0NzYsMCwwLDAsNS41MTcxLjE5MTQxYTYuNjY1MDksNi42NjUwOSwwLDAsMC0xLjkwMDg4LjYyN0E2LjQzNzgsNi40Mzc4LDAsMCwwLDEuOTk3NTcsMS45OTcwNyw2LjI1ODQ0LDYuMjU4NDQsMCwwLDAsLjgxOTM1LDMuNjE4MTZhNi42MDExOSw2LjYwMTE5LDAsMCwwLS42MjUsMS45MDMzMiwxMi45OTMsMTIuOTkzLDAsMCwwLS4xNzkyLDIuMDAyQy4wMDU4Nyw3LjgzMDA4LjAwNDg5LDguMTM3NywwLDguNDQ0MzRWMzEuNTU4NmMuMDA0ODkuMzEwNS4wMDU4Ny42MTEzLjAxNTE0LjkyMTlhMTIuOTkyMzIsMTIuOTkyMzIsMCwwLDAsLjE3OTIsMi4wMDE5LDYuNTg3NTYsNi41ODc1NiwwLDAsMCwuNjI1LDEuOTA0M0E2LjIwNzc4LDYuMjA3NzgsMCwwLDAsMS45OTc1NywzOC4wMDFhNi4yNzQ0Niw2LjI3NDQ2LDAsMCwwLDEuNjE4NjUsMS4xNzg3LDYuNzAwODIsNi43MDA4MiwwLDAsMCwxLjkwMDg4LjYzMDgsMTMuNDU1MTQsMTMuNDU1MTQsMCwwLDAsMi4wMDM5LjE3NjhjLjMwOTA5LjAwNjguNjEyOC4wMTA3LjkxODk1LjAxMDdDOC44MDU2Nyw0MCw5LjE2OCw0MCw5LjUzNDY4LDQwSDEzMC42NTM5NWMuMzU5NCwwLC43MjQ2LDAsMS4wODQtLjAwMi4zMDQ3LDAsLjYxNzItLjAwMzkuOTIxOS0uMDEwN2ExMy4yNzksMTMuMjc5LDAsMCwwLDItLjE3NjgsNi44MDQzMiw2LjgwNDMyLDAsMCwwLDEuOTA4Mi0uNjMwOCw2LjI3NzQyLDYuMjc3NDIsMCwwLDAsMS42MTcyLTEuMTc4Nyw2LjM5NDgyLDYuMzk0ODIsMCwwLDAsMS4xODE2LTEuNjE0Myw2LjYwNDEzLDYuNjA0MTMsMCwwLDAsLjYxOTEtMS45MDQzLDEzLjUwNjQzLDEzLjUwNjQzLDAsMCwwLC4xODU2LTIuMDAxOWMuMDAzOS0uMzEwNi4wMDM5LS42MTE0LjAwMzktLjkyMTkuMDA3OC0uMzYzMy4wMDc4LS43MjQ2LjAwNzgtMS4wOTM4VjkuNTM2MTNjMC0uMzY2MjEsMC0uNzI5NDktLjAwNzgtMS4wOTE3OSwwLS4zMDY2NCwwLS42MTQyNi0uMDAzOS0uOTIwOWExMy41MDcxLDEzLjUwNzEsMCwwLDAtLjE4NTYtMi4wMDIsNi42MTc3LDYuNjE3NywwLDAsMC0uNjE5MS0xLjkwMzMyQTYuNDY2MTksNi40NjYxOSwwLDAsMCwxMzYuNTY4LjgxODM2YTYuNzY3NTQsNi43Njc1NCwwLDAsMC0xLjkwODItLjYyNywxMy4wNDM5NCwxMy4wNDM5NCwwLDAsMC0yLS4xNzY3NmMtLjMwNDctLjAwNDg4LS42MTcyLS4wMTA3NC0uOTIxOS0uMDEyNjktLjM1OTQtLjAwMi0uNzI0Ni0uMDAyLTEuMDg0LS4wMDJaIiBzdHlsZT0iZmlsbDogI2E2YTZhNiIvPgogICAgICA8cGF0aCBkPSJNOC40NDQ4MywzOS4xMjVjLS4zMDQ2OCwwLS42MDIwNS0uMDAzOS0uOTA0MjktLjAxMDdhMTIuNjg3MTQsMTIuNjg3MTQsMCwwLDEtMS44NjkxNC0uMTYzMSw1Ljg4MzgxLDUuODgzODEsMCwwLDEtMS42NTY3NC0uNTQ3OSw1LjQwNTczLDUuNDA1NzMsMCwwLDEtMS4zOTctMS4wMTY2LDUuMzIwODIsNS4zMjA4MiwwLDAsMS0xLjAyMDUxLTEuMzk2NSw1LjcyMTg0LDUuNzIxODQsMCwwLDEtLjU0My0xLjY1NzIsMTIuNDEzMzksMTIuNDEzMzksMCwwLDEtLjE2NjUtMS44NzVjLS4wMDYzNC0uMjEwOS0uMDE0NjQtLjkxMzEtLjAxNDY0LS45MTMxVjguNDQ0MzRTLjg4MTg1LDcuNzUyOTMuODg3Nyw3LjU0OThhMTIuMzcwMzIsMTIuMzcwMzIsMCwwLDEsLjE2NTUzLTEuODcyMDcsNS43NTU1Miw1Ljc1NTUyLDAsMCwxLC41NDM0Ni0xLjY2MjFBNS4zNzM1LDUuMzczNSwwLDAsMSwyLjYxMTgzLDIuNjE3NjgsNS41NjU0Myw1LjU2NTQzLDAsMCwxLDQuMDE0MTcsMS41OTUyMWE1LjgyMzA5LDUuODIzMDksMCwwLDEsMS42NTMzMi0uNTQzOTRBMTIuNTg1ODksMTIuNTg1ODksMCwwLDEsNy41NDMuODg3MjFMOC40NDUzMi44NzVIMTMxLjczM2wuOTEzMS4wMTI3YTEyLjM4NDkyLDEyLjM4NDkyLDAsMCwxLDEuODU4NC4xNjI1OSw1LjkzODMzLDUuOTM4MzMsMCwwLDEsMS42NzA5LjU0Nzg1LDUuNTkzNzQsNS41OTM3NCwwLDAsMSwyLjQxNSwyLjQxOTkzLDUuNzYyNjcsNS43NjI2NywwLDAsMSwuNTM1MiwxLjY0ODkyLDEyLjk5NSwxMi45OTUsMCwwLDEsLjE3MzgsMS44ODcyMWMuMDAyOS4yODMyLjAwMjkuNTg3NC4wMDI5Ljg5MDE0LjAwNzkuMzc1LjAwNzkuNzMxOTMuMDA3OSwxLjA5MTc5VjMwLjQ2NDhjMCwuMzYzMywwLC43MTc4LS4wMDc5LDEuMDc1MiwwLC4zMjUyLDAsLjYyMzEtLjAwMzkuOTI5N2ExMi43MzEyNiwxMi43MzEyNiwwLDAsMS0uMTcwOSwxLjg1MzUsNS43MzksNS43MzksMCwwLDEtLjU0LDEuNjcsNS40ODAyOSw1LjQ4MDI5LDAsMCwxLTEuMDE1NiwxLjM4NTcsNS40MTI5LDUuNDEyOSwwLDAsMS0xLjM5OTQsMS4wMjI1LDUuODYxNjgsNS44NjE2OCwwLDAsMS0xLjY2OC41NDk4LDEyLjU0MjE4LDEyLjU0MjE4LDAsMCwxLTEuODY5Mi4xNjMxYy0uMjkyOS4wMDY4LS41OTk2LjAxMDctLjg5NzQuMDEwN2wtMS4wODQuMDAyWiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGQ9Ik00NC41OTIxNywxOS40Mjc1N1YxMS42MDQzNGgtLjA1MTgyTDQxLjMzNjQ1LDE5LjM0NjVINDAuMTEzNThsLTMuMjEyMjUtNy43NDIxNWgtLjA1MXY3LjgyMzIzSDM1LjM0NzQ0VjguNzk4MzZoMS45MDgyOWwzLjQzOTYxLDguMzg5OTVoLjA1ODUxbDMuNDMyOTItOC4zODk5NWgxLjkxNVYxOS40Mjc1N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik00Ny4zNzE0NCwxNy4yMjUwOGMwLTEuMzU0OTMsMS4wMzgxNS0yLjE3MzI0LDIuODgwNDEtMi4yODM1N2wyLjEyMTQ0LS4xMTgyN1YxNC4yMzRjMC0uODYxNzctLjU2NzU2LTEuMzQ4MjQtMS41MzMtMS4zNDgyNGExLjQ4MTA1LDEuNDgxMDUsMCwwLDAtMS42Mjc0NCwxLjA5MDhINDcuNzI1Yy4wNDQzLTEuNDAwMDcsMS4zNDgyNi0yLjM5MzksMy4xNTk1OS0yLjM5MzksMS44NDg5NCwwLDMuMDcxODIsMS4wMDg4OCwzLjA3MTgyLDIuNTMzNDl2NS4zMTE0N0g1Mi40MzE3OVYxOC4xNTI4OUg1Mi4zOTVhMi43NzA1MSwyLjc3MDUxLDAsMCwxLTIuNDQ1NzYsMS40MDc1OUEyLjM0OTA3LDIuMzQ5MDcsMCwwLDEsNDcuMzcxNDQsMTcuMjI1MDhabTUuMDAxODUtLjY5OTYxdi0uNTk2OGwtMS45MDgyOS4xMTc4NmMtLjk1MDM4LjA1OTM1LTEuNDg3ODUuNDcxNDMtMS40ODc4NSwxLjEzNDI2LDAsLjY3Nzg4LjU2LDEuMTIwMDUsMS40MTQyOSwxLjEyMDA1QTEuODU3NzYsMS44NTc3NiwwLDAsMCw1Mi4zNzMyOCwxNi41MjU0N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik02MC42MzU4NiwxNC4zNDQyOWExLjcxMTA4LDEuNzExMDgsMCwwLDAtMS44MjYzOC0xLjQyODQ4Yy0xLjIyMjg4LDAtMi4wMzI4NCwxLjAyMzkzLTIuMDMyODQsMi42Mzc1NiwwLDEuNjUuODE3NDgsMi42NDM4MywyLjA0NywyLjY0MzgzYTEuNjY3NiwxLjY2NzYsMCwwLDAsMS44MTIxNy0xLjM5MTcxSDYyLjE2OGEzLjA5NywzLjA5NywwLDAsMS0zLjM1ODUzLDIuNzE4MjJjLTIuMjEsMC0zLjY1MzU5LTEuNTEwNC0zLjY1MzU5LTMuOTcwMzQsMC0yLjQwOTM3LDEuNDQzNTUtMy45NzA3NSwzLjYzODU0LTMuOTcwNzVhMy4xMTUsMy4xMTUsMCwwLDEsMy4zNTkzNiwyLjc2MTY4WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTcyLjUwNDM4LDE2LjU1NDcySDY4LjQ1MjkybC0uOTczLDIuODcyODVoLTEuNzE2TDY5LjYwMTQxLDguNzk4MzZoMS43ODI5MUw3NS4yMjE4LDE5LjQyNzU3SDczLjQ3NjVaTTY4Ljg3MjUzLDE1LjIyOWgzLjIxMTQxTDcwLjUwMDgsMTAuNTY2MmgtLjA0NDNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNODMuNTA5NDUsMTUuNTUzMzZjMCwyLjQwODExLTEuMjg4OTEsMy45NTUyOS0zLjIzNCwzLjk1NTI5YTIuNjI3MTIsMi42MjcxMiwwLDAsMS0yLjQzODIzLTEuMzU1NzdoLS4wMzY3OHYzLjgzODI3SDc2LjIwOThWMTEuNjc3OWgxLjUzOTY3djEuMjg4OWguMDI5MjZhMi43NDg5MiwyLjc0ODkyLDAsMCwxLDIuNDY3NDktMS4zN0M4Mi4yMTMsMTEuNTk2ODIsODMuNTA5NDUsMTMuMTUxNTIsODMuNTA5NDUsMTUuNTUzMzZabS0xLjYzNSwwYzAtMS41NjkzMy0uODEwNzktMi42MDA3OC0yLjA0Nzg4LTIuNjAwNzgtMS4yMTUzNiwwLTIuMDMyODQsMS4wNTMxOC0yLjAzMjg0LDIuNjAwNzgsMCwxLjU2MTM5LjgxNzQ4LDIuNjA3LDIuMDMyODQsMi42MDdDODEuMDYzNjksMTguMTYwNDEsODEuODc0NDksMTcuMTM2NDgsODEuODc0NDksMTUuNTUzMzZaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNOTIuMDM4NjcsMTUuNTUzMzZjMCwyLjQwODExLTEuMjg4OTEsMy45NTUyOS0zLjIzNCwzLjk1NTI5YTIuNjI3MTIsMi42MjcxMiwwLDAsMS0yLjQzODIzLTEuMzU1NzdoLS4wMzY3OHYzLjgzODI3SDg0LjczOVYxMS42Nzc5aDEuNTM5Njd2MS4yODg5aC4wMjkyNmEyLjc0ODkzLDIuNzQ4OTMsMCwwLDEsMi40Njc0OS0xLjM3QzkwLjc0MjIzLDExLjU5NjgyLDkyLjAzODY3LDEzLjE1MTUyLDkyLjAzODY3LDE1LjU1MzM2Wm0tMS42MzUsMGMwLTEuNTY5MzMtLjgxMDc5LTIuNjAwNzgtMi4wNDc4OC0yLjYwMDc4LTEuMjE1MzYsMC0yLjAzMjg0LDEuMDUzMTgtMi4wMzI4NCwyLjYwMDc4LDAsMS41NjEzOS44MTc0OCwyLjYwNywyLjAzMjg0LDIuNjA3Qzg5LjU5MjkxLDE4LjE2MDQxLDkwLjQwMzcxLDE3LjEzNjQ4LDkwLjQwMzcxLDE1LjU1MzM2WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTk3LjY3NTc4LDE2LjQ2NjEyYy4xMTc4NiwxLjA1NCwxLjE0MTgsMS43NDYxMSwyLjU0MSwxLjc0NjExLDEuMzQwNzQsMCwyLjMwNTMzLS42OTIwOSwyLjMwNTMzLTEuNjQyNDcsMC0uODI1LS41ODE3Ny0xLjMxOS0xLjk1OTI4LTEuNjU3NTFMOTkuMTg1MzYsMTQuNThjLTEuOTUxNzYtLjQ3MTQzLTIuODU3ODQtMS4zODQxOC0yLjg1Nzg0LTIuODY1MzMsMC0xLjgzMzg4LDEuNTk4MTgtMy4wOTM1MiwzLjg2NzU3LTMuMDkzNTIsMi4yNDYsMCwzLjc4NTY2LDEuMjU5NjQsMy44Mzc0OCwzLjA5MzUyaC0xLjYwNTcxYy0uMDk2MTMtMS4wNjA3MS0uOTczLTEuNzAxLTIuMjU0MzQtMS43MDFzLTIuMTU4MjMuNjQ3NzktMi4xNTgyMywxLjU5MDY0YzAsLjc1MTQ0LjU2LDEuMTkzNjEsMS45MywxLjUzMjEzbDEuMTcxMDUuMjg3NTRjMi4xODA3OS41MTU3MywzLjA4Njg3LDEuMzkxNzEsMy4wODY4NywyLjk0NjgyLDAsMS45ODg1MS0xLjU4NCwzLjIzMzk0LTQuMTAzMjksMy4yMzM5NC0yLjM1NzE1LDAtMy45NDg2NS0xLjIxNjE4LTQuMDUxNDYtMy4xMzg2NVoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik0xMDcuNjM1MTcsOS44NDRWMTEuNjc3OWgxLjQ3MzY0djEuMjU5NjRoLTEuNDczNjRWMTcuMjFjMCwuNjYzNjcuMjk1MDYuOTcyOTQuOTQyODYuOTcyOTRhNC45NzA5LDQuOTcwOSwwLDAsMCwuNTIzMjUtLjAzNjc4djEuMjUyMTJhNC4zNjgzMSw0LjM2ODMxLDAsMCwxLS44ODM1MS4wNzM1NmMtMS41Njg5MywwLTIuMTgwNzktLjU4OTI4LTIuMTgwNzktMi4wOTIxNlYxMi45Mzc1NGgtMS4xMjY3NVYxMS42Nzc5SDEwNi4wMzdWOS44NDRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNMTA5Ljk2MTQsMTUuNTUzMzZjMC0yLjQzODYyLDEuNDM2LTMuOTcwNzUsMy42NzUzMi0zLjk3MDc1LDIuMjQ2ODIsMCwzLjY3NjE2LDEuNTMyMTMsMy42NzYxNiwzLjk3MDc1LDAsMi40NDQ4OS0xLjQyMTgyLDMuOTcwMzQtMy42NzYxNiwzLjk3MDM0QzExMS4zODMyMSwxOS41MjM3LDEwOS45NjE0LDE3Ljk5ODI1LDEwOS45NjE0LDE1LjU1MzM2Wm01LjczMDczLDBjMC0xLjY3My0uNzY2NDktMi42NjAxMi0yLjA1NTQtMi42NjAxMnMtMi4wNTU0Ljk5NDY3LTIuMDU1NCwyLjY2MDEyYzAsMS42NzkyNC43NjY0OSwyLjY1ODg3LDIuMDU1NCwyLjY1ODg3UzExNS42OTIxMiwxNy4yMzI2MSwxMTUuNjkyMTIsMTUuNTUzMzZaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNMTE4LjYyNDM2LDExLjY3NzloMS41MTcxdjEuMzE5aC4wMzY3OGExLjg0ODMsMS44NDgzLDAsMCwxLDEuODY0LTEuNDAwMDcsMi40NTMyNiwyLjQ1MzI2LDAsMCwxLC41NDUuMDU5MzVWMTMuMTQ0YTIuMjIzNjgsMi4yMjM2OCwwLDAsMC0uNzE0NjctLjA5NjEyLDEuNjAyODQsMS42MDI4NCwwLDAsMC0xLjY1NzUzLDEuNzgyODl2NC41OTY4MWgtMS41OTA2NloiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik0xMjkuOTIxMTQsMTcuMTUxNTNhMy4xMSwzLjExLDAsMCwxLTMuMzM2NzksMi4zNzIxN2MtMi4yNTQzNCwwLTMuNjUzNTktMS41MTA0LTMuNjUzNTktMy45MzM1NiwwLTIuNDMxMSwxLjQwNjc3LTQuMDA3NTMsMy41ODY3Mi00LjAwNzUzLDIuMTQ0LDAsMy40OTIyNywxLjQ3Mjc5LDMuNDkyMjcsMy44MjI4MXYuNTQ1aC01LjQ3MzI4di4wOTYxMmEyLjAxODMsMi4wMTgzLDAsMCwwLDIuMDg0NjYsMi4xOTUsMS43NTMyNCwxLjc1MzI0LDAsMCwwLDEuNzg5Ni0xLjA5Wk0xMjQuNTQ0LDE0LjgzODI4aDMuODc0MjZhMS44NjM2MSwxLjg2MzYxLDAsMCwwLTEuOTAwNzctMS45NjY3OEExLjk2MTgxLDEuOTYxODEsMCwwLDAsMTI0LjU0NCwxNC44MzgyOFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICA8L2c+CiAgICA8Zz4KICAgICAgPHBhdGggZD0iTTM2LjQzNjU0LDMwLjgxMTUybC4wNjU5Mi0uODE5MzRhMy4xMzI0NSwzLjEzMjQ1LDAsMCwwLC45NTA2OC4xNTEzN2MuMjkyLDAsLjQwNDc5LS4wMjgzMi41NDYzOS0uMjI2NTZhNC41NjUxMiw0LjU2NTEyLDAsMCwwLC40MzI2Mi0yLjMxNTQzYzAtLjg0NzY2LS4yNjMxOC0xLjA5Mjc3LS45MzE2NC0xLjA5Mjc3LS4xNTA4OCwwLS4zMjAzMS4wMDk3Ny0uNTA4NzkuMDE5NTNhMTMuNzI3MTIsMTMuNzI3MTIsMCwwLDEtMS43Njk1Myw0LjEyM2wtLjc4MTc0LS40MjM4M2ExMS4wNzE0LDExLjA3MTQsMCwwLDAsMS42NDc0Ni0zLjYxNTIzLDEzLjY3NjU4LDEzLjY3NjU4LDAsMCwwLTEuNTM0MTguMjU0ODhsLS4xNjk0My0uODI5MWMuNTc0MjItLjEwMzUyLDEuMjYxMjMtLjE5NzI3LDEuOTAxMzctLjI1MzkxYTE3LjYwOSwxNy42MDksMCwwLDAsLjI5Mi0xLjg5MjU4bC45MjI4NS4xMDM1MmMtLjA4NS41NzQyMi0uMTg4NDgsMS4xNDk0MS0uMzIwMzEsMS43MTM4N2guMzY3MTljMS4xOTU4LDAsMS43Ny41OTI3NywxLjc3LDEuODU0NDlhNS44MzM2MSw1LjgzMzYxLDAsMCwxLS41NDU5LDIuNzk1OSwxLjE1NjUsMS4xNTY1LDAsMCwxLTEuMTI5ODguNjAyNTRBNS4xODE0NSw1LjE4MTQ1LDAsMCwxLDM2LjQzNjU0LDMwLjgxMTUyWm0zLjAzMTI1LTUuMDc0MjIuNjg3NS0uNDYxOTFhNS4yOTg3Miw1LjI5ODcyLDAsMCwxLDEuNjA5ODYsMy40ODQzOGwtLjkwMzgxLjE0MDYzQTQuMzk4NTEsNC4zOTg1MSwwLDAsMCwzOS40Njc3OSwyNS43MzczWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTQ0Ljg4Njc0LDMwLjk0MzM2bC0uMTg4LS44NDc2NmMuMjM1MzUuMDE5NTMuNTQ1OS4wMjgzMi43MzQzOC4wMjgzMiwxLjg2Mzc3LDAsMi41Njk4Mi0uNTI2MzcsMi41Njk4Mi0xLjMwODU5LDAtLjYyMTA5LS40MDQ3OS0uOTc4NTItMS4zMDg1OS0uOTc4NTJhNC4wMzg2NCw0LjAzODY0LDAsMCwwLTIuNTc5NTksMS4yNjE3MmwtLjcyNTEtLjMyMDMxQTUuNTIzOCw1LjUyMzgsMCwwLDEsNDQuMTksMjUuMjQ4bC44Mzc4OS4yNzI0NmEzLjY4NzQsMy42ODc0LDAsMCwwLS43MTUzMywyLjQ0ODI0LDQuODE2NjEsNC44MTY2MSwwLDAsMSwyLjU3MDMxLS44NzZjMS4yNjE3MiwwLDIuMDQzLjY0OTQxLDIuMDQzLDEuNzA0MSwwLDEuMzM2OTEtMS4wNTQ2OSwyLjE1NjI1LTMuNTg2OTEsMi4xNTYyNUM0NS4yMTYzMywzMC45NTMxMyw0NS4wMzc2MiwzMC45NDMzNiw0NC44ODY3NCwzMC45NDMzNlptLS44NzU0OS02LjI1MS4yMzUzNS0uODI5MWEyNS44ODUxNywyNS44ODUxNywwLDAsMSwzLjcwMDIuODQ3NjZsLS4yMjYwNy44MTkzNEEyMS4xNDIwNiwyMS4xNDIwNiwwLDAsMCw0NC4wMTEyNSwyNC42OTIzOFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik01MS42NTIzNiwzMC4yOTM5NWE1Ljk0NzY3LDUuOTQ3NjcsMCwwLDAsMi41MzIyMy0xLjYzODY3LDEwLjY5NDcyLDEwLjY5NDcyLDAsMCwwLTEuNzYwMjUtMS4xODU1NWwuNTE3NTgtLjY0OTQxYTExLjQ0NTA5LDExLjQ0NTA5LDAsMCwxLDEuNzg4NTcsMS4xMjg5MSw1Ljk1Mzc2LDUuOTUzNzYsMCwwLDAsLjkyMjg1LTIuMTc0OEg1My4yNTI0NmE5LjcwMjE0LDkuNzAyMTQsMCwwLDEtMi4wNTIyNSwyLjM2MzI4bC0uNjg3NS0uNTkyNzdhOC45MjM2NSw4LjkyMzY1LDAsMCwwLDIuNjE3NjgtMy41OTY2OGwuOTAzODEuMjE2OGMtLjEwMzUyLjI2MzY3LS4yMDcuNTM2MTMtLjMyOTU5Ljc5MWgyLjMzNWwuNjY4NDYuMzEwNTVhNy4xNDEsNy4xNDEsMCwwLDEtNC41MDk3Nyw1Ljc2MTcyWk01NS42MjUsMjMuNzIyNjZsLjUyNzM0LS4yNTQ4OGE1LjY3NzIyLDUuNjc3MjIsMCwwLDEsLjY2ODQ2LDEuMTU4MmwtLjU5MzI2LjI3MzQ0QTUuMTM0NjYsNS4xMzQ2NiwwLDAsMCw1NS42MjUsMjMuNzIyNjZabTEuMTc2NzYtLjA5NDczLjUzNjYyLS4yNTM5MWE2LjM1NjE0LDYuMzU2MTQsMCwwLDEsLjY4NzUsMS4xODY1MmwtLjU5MzI2LjI1MzkxQTUuMTY4NCw1LjE2ODQsMCwwLDAsNTYuODAxNzgsMjMuNjI3OTNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNjAuOTIxNDEsMzAuOTkwMjNsLS40OC0uNzYyN2EzLjk0MzgyLDMuOTQzODIsMCwwLDAsMy4zMTQtNC4xNTEzN2gtMy45NTQxdjEuODkyNThoLS45NTExN1YyNS4yNzUzOUg2MS4yMTM0VjIzLjg5MTZoLjk1MDY4djEuMzgzNzloMS43NjA3NGwuODY2MjEuMjQ1MTJDNjQuNjc3NzUsMjguMTk0MzQsNjMuNzgzNzEsMzAuMjM3Myw2MC45MjE0MSwzMC45OTAyM1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik02Ni42MjMwNywyNS4zNDE4bC41MjY4Ni0uNzcyNDZhMTEuNjczNzksMTEuNjczNzksMCwwLDEsMi4zMTU5MiwxLjQwMzMybC0uNjAyNTQuODA5NTdBMTEuMDUzNCwxMS4wNTM0LDAsMCwwLDY2LjYyMzA3LDI1LjM0MThabS4xNzg3MSw0LjY0MTZhNy4zMTc0OCw3LjMxNzQ4LDAsMCwwLDUuNDMyNjItMy45MTdsLjYyMTA5LjY5NzI3YTcuOTYzNDMsNy45NjM0MywwLDAsMS01LjY5NTgsNC4wOTQ3M1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik04MC41NzEzMSwzMC40MzU1NUg3NC42NDk0M1YyNC44MzNoNS45MjE4OFptLTQuOTg5MjYtNC43MzYzM3YzLjg3MDEySDc5LjYyOTlWMjUuNjk5MjJaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNODkuMDQ5MzQsMjcuOTIwOUg4Mi4zOTM1N3YtLjk2aDYuNjU1NzZaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNOTEuMzE0LDIzLjkxOTkyaC45MzE2NHYyLjQxMDE2YTI5LjAxMywyOS4wMTMsMCwwLDEsMy41OTY2OCwxLjc5ODgzTDk1LjMxNSwyOC45NTdhMjIuNzI0LDIyLjcyNCwwLDAsMC0zLjA2OTM0LTEuNjQ3NDZ2My42MzM3OUg5MS4zMTRabTIuMjExOTEuNTA4NzkuNTU1NjYtLjI2MzY3YTYuMTk0MDksNi4xOTQwOSwwLDAsMSwuNjY4OTUsMS4yODAyN2wtLjYxMjMuMjczNDRBNS41MTYyLDUuNTE2MiwwLDAsMCw5My41MjU5LDI0LjQyODcxWm0xLjA3MzI0LS40MDUyNy41NjU0My0uMjYzNjdBNi4xMDUxNCw2LjEwNTE0LDAsMCwxLDk1Ljg3MDYzLDI1LjA0bC0uNjEyMy4yNzM0NEE2LjEyNzIzLDYuMTI3MjMsMCwwLDAsOTQuNTk5MTQsMjQuMDIzNDRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgPC9nPgogICAgPGcgaWQ9Il9Hcm91cF8iIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgIDxnIGlkPSJfR3JvdXBfMiIgZGF0YS1uYW1lPSImbHQ7R3JvdXAmZ3Q7Ij4KICAgICAgICA8cGF0aCBpZD0iX1BhdGhfIiBkYXRhLW5hbWU9IiZsdDtQYXRoJmd0OyIgZD0iTTI0Ljc2ODg4LDIwLjMwMDY4YTQuOTQ4ODEsNC45NDg4MSwwLDAsMSwyLjM1NjU2LTQuMTUyMDYsNS4wNjU2Niw1LjA2NTY2LDAsMCwwLTMuOTkxMTYtMi4xNTc2OGMtMS42NzkyNC0uMTc2MjYtMy4zMDcxOSwxLjAwNDgzLTQuMTYyOSwxLjAwNDgzLS44NzIyNywwLTIuMTg5NzctLjk4NzMzLTMuNjA4NS0uOTU4MTRhNS4zMTUyOSw1LjMxNTI5LDAsMCwwLTQuNDcyOTIsMi43Mjc4N2MtMS45MzQsMy4zNDg0Mi0uNDkxNDEsOC4yNjk0NywxLjM2MTIsMTAuOTc2MDguOTI2OSwxLjMyNTM1LDIuMDEwMTgsMi44MDU4LDMuNDI3NjMsMi43NTMzLDEuMzg3MDYtLjA1NzUzLDEuOTA1MS0uODg0NDgsMy41Nzk0LS44ODQ0OCwxLjY1ODc2LDAsMi4xNDQ3OS44ODQ0OCwzLjU5MS44NTExLDEuNDg4MzgtLjAyNDE2LDIuNDI2MTMtMS4zMzEyNCwzLjMyMDUxLTIuNjY5MTRhMTAuOTYyLDEwLjk2MiwwLDAsMCwxLjUxODQyLTMuMDkyNTFBNC43ODIwNSw0Ljc4MjA1LDAsMCwxLDI0Ljc2ODg4LDIwLjMwMDY4WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBpZD0iX1BhdGhfMiIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik0yMi4wMzcyNSwxMi4yMTA4OWE0Ljg3MjQ4LDQuODcyNDgsMCwwLDAsMS4xMTQ1Mi0zLjQ5MDYyLDQuOTU3NDYsNC45NTc0NiwwLDAsMC0zLjIwNzU4LDEuNjU5NjEsNC42MzYzNCw0LjYzNjM0LDAsMCwwLTEuMTQzNzEsMy4zNjEzOUE0LjA5OTA1LDQuMDk5MDUsMCwwLDAsMjIuMDM3MjUsMTIuMjEwODlaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K" alt="Mac App Storeからダウンロード" width="170" height="46"></a></div>
+</div>
+<div class="mac" aria-hidden="true"><div class="mwin">
+<div class="mbar"><span></span><b>TechnoDaily</b><span>ファイル</span><span>編集</span><span class="open">表示</span><span>記事</span><span>ウインドウ</span></div>
+<div class="menus">
+<div class="menu"><div class="mh">表示</div>
+<div class="mi"><span>あなたへ</span><kbd>⌘1</kbd></div>
+<div class="mi"><span>ソース</span><kbd>⌘2</kbd></div>
+<div class="mi"><span>保存済み</span><kbd>⌘3</kbd></div>
+<div class="mi"><span>検索</span><kbd>⌘4</kbd></div>
+<hr>
+<div class="mi"><span>更新</span><kbd>⌘R</kbd></div>
+</div>
+<div class="menu"><div class="mh">記事</div>
+<div class="mi"><span>新しいウインドウで開く</span><kbd>⇧⌘N</kbd></div>
+<div class="mi"><span>ブラウザで開く</span><kbd>⇧⌘O</kbd></div>
+</div>
+</div></div></div>
+</div></div></section>
+<section id="confidentialite" class="dark"><div class="inner">
+<p class="kicker">プライバシー</p>
+<h2 class="serif">何を読むかは、あなただけのことです。</h2>
+<div class="grid2">
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>すべてあなたの手元に</h3><p>コンテンツと読書の記録は、あなたのデバイスと個人のiCloudの中に留まります。並べ替え、グループ分け、要約はデバイス上で行います。</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>誰もあなたをプロファイリングしません</h3><p>広告なし、広告のためのプロファイルなし、広告や追跡のためのSDKなし。アカウント登録も不要です。あなたは商品ではありません。</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>メールは読み取るだけ</h3><p>Gmailは読み取り専用で、デバイス上で処理し、他の場所には保存しません。Googleが求める独立セキュリティ監査（CASA）に合格しています。</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>プライベートな同期</h3><p>デバイス間の同期は、Appleが暗号化するあなたのiCloudで。私たちはアクセスできません。</p></div>
+</div>
+<p class="learned">「アプリが学んだこと」の画面で、エンジンが読書から学んだこと、そして学ばないことを確認できます。</p>
+<p class="stats">利用統計は？ 匿名で集計され、<strong>初期設定はオフ</strong>。決めるのはあなたです。 <a href="/technodaily/confidentialite.html#ja">プライバシーポリシーを読む →</a></p>
+</div></section>
+<section id="tarif"><div class="wrap"><div class="pricing">
+<h2 class="serif">シンプルな料金。無料版はありません。</h2>
+<p class="sub2">TechnoDailyは広告ではなく、使う人に支えられています。だからこの約束を守れます。</p>
+<div class="prices">
+<div class="price main">
+<span class="tag">14日間無料</span>
+<div class="nm">年額プラン</div>
+<div class="amt"><b class="serif">3,000円</b><span>/年</span></div>
+<ul><li>✓ すべての機能</li><li>✓ はじめての登録は14日間無料</li><li>✓ iPhone、iPad、Mac、Apple Vision Pro</li></ul>
+<a class="go" href="https://apps.apple.com/jp/app/technodaily/id6758897742">無料トライアルを始める</a>
+</div>
+<div class="price">
+<div class="nm">買い切り</div>
+<div class="amt"><b class="serif">7,000円</b><span>一度だけ</span></div>
+<ul><li>✓ すべての機能を、ずっと</li><li>✓ サブスクリプションなし</li><li>✓ アップデートも含む</li></ul>
+<a class="go alt" href="https://apps.apple.com/jp/app/technodaily/id6758897742">買い切りで購入</a>
+</div></div>
+<p class="pnote">日本のApp Storeでの価格（税込、2026年9月30日時点）。iOS 26、iPadOS 26、visionOS 26以降、MacはmacOS 26.1以降。要約にはApple Intelligence対応デバイスが必要です。</p>
+</div></div></section>
+</main>
+<footer><div class="fwrap"><div class="frow">
+<div><div class="serif" style="font-size:19px;font-weight:700">TechnoDaily</div><div style="font:400 13px -apple-system,system-ui;color:#6E685F;margin-top:8px;max-width:300px">何を読むかは、あなただけのこと。</div></div>
+<div class="fcols">
+<div class="fcol"><span class="h">製品</span><a href="#fonctionnalites">機能</a><a href="#mac">Mac</a><a href="#sujets">トピックのフォロー</a><a href="#tarif">料金</a></div>
+<div class="fcol"><span class="h">法的情報</span><a href="/technodaily/confidentialite.html#ja">プライバシーポリシー</a><a href="/technodaily/conditions.html">利用規約</a><a href="/technodaily/accessibilite.html">アクセシビリティ</a></div>
+<div class="fcol"><span class="h">言語</span><a href="/technodaily/en/" hreflang="en" lang="en">English</a><a href="/technodaily/" hreflang="fr" lang="fr">Français</a><a href="/technodaily/es/" hreflang="es" lang="es">Español</a><a href="/technodaily/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a href="/technodaily/ja/" hreflang="ja" lang="ja">日本語</a></div>
+<div class="fcol"><span class="h">プレス</span><a href="/technodaily/presse/">プレスキット</a><a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a></div>
+</div></div>
+<div class="fbot"><span>© 2026 Techno &amp; Co · Paris</span><span>Apple、iPhone、iPad、Mac、Apple Vision Pro、Apple IntelligenceはApple Inc.の商標です。GmailとYouTubeはGoogle LLCの商標です。</span></div>
+</div></footer>
+<a class="mcta" href="https://apps.apple.com/jp/app/technodaily/id6758897742"><span aria-hidden="true">↓</span><span>App Storeからダウンロード</span></a>
+</body>
+</html>

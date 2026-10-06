@@ -1,595 +1,411 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>TechnoDaily : newsletters, flux RSS et YouTube dans un seul lecteur</title>
+<meta name="description" content="TechnoDaily réunit vos newsletters Gmail, vos flux RSS et vos chaînes YouTube dans un lecteur qui apprend ce qui compte pour vous, sur votre appareil. iPhone, iPad, Mac et Apple Vision Pro.">
+<link rel="canonical" href="https://www.technoandco.fr/technodaily/">
+<link rel="alternate" hreflang="en" href="https://www.technoandco.fr/technodaily/en/">
+<link rel="alternate" hreflang="fr" href="https://www.technoandco.fr/technodaily/">
+<link rel="alternate" hreflang="es" href="https://www.technoandco.fr/technodaily/es/">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.technoandco.fr/technodaily/zh/">
+<link rel="alternate" hreflang="ja" href="https://www.technoandco.fr/technodaily/ja/">
+<link rel="alternate" hreflang="x-default" href="https://www.technoandco.fr/technodaily/en/">
+<meta name="apple-itunes-app" content="app-id=6758897742">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TechnoDaily : newsletters, flux RSS et YouTube dans un seul lecteur">
+<meta property="og:description" content="TechnoDaily réunit vos newsletters Gmail, vos flux RSS et vos chaînes YouTube dans un lecteur qui apprend ce qui compte pour vous, sur votre appareil. iPhone, iPad, Mac et Apple Vision Pro.">
+<meta property="og:url" content="https://www.technoandco.fr/technodaily/">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#F3F0EA">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#F3F0EA;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:#F3F0EA;color:#221F1A;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+:lang(ja) body,:lang(ja){font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif}
+:lang(zh-Hans) body,:lang(zh-Hans){font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif}
+::selection{background:#DE943344}
+a{color:#9A5E12;text-decoration:none}
+a:hover{color:#7A4A0E}
+a:focus-visible,button:focus-visible{outline:2px solid #9A5E12;outline-offset:2px;border-radius:6px}
+img,svg{max-width:100%}
+.serif{font-family:"Iowan Old Style","New York",ui-serif,Georgia,serif}
+:lang(ja) .serif,:lang(zh-Hans) .serif{font-family:inherit}
+.skip{position:absolute;left:-9999px;top:8px;background:#221F1A;color:#F3F0EA;padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 44px}
+header{border-bottom:1px solid #E4DFD5;background:#F3F0EA}
+nav.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}
+.brand{display:flex;align-items:baseline;gap:10px;flex:none;color:#221F1A}
+.brand b{font-size:21px;font-weight:700;letter-spacing:-.01em}
+.pill-v{font:700 10.5px -apple-system,system-ui;letter-spacing:.12em;color:#9A5E12;background:rgba(222,148,51,.16);border-radius:999px;padding:3px 8px}
+.navlinks{display:flex;gap:24px;font:500 14px -apple-system,system-ui}
+.navlinks a{color:#6E685F;white-space:nowrap}
+.navright{display:flex;align-items:center;gap:14px;flex:none}
+.langs{display:flex;background:#E7E1D3;border-radius:10px;padding:3px}
+.langs a{font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 9px;border-radius:8px}
+.langs a[aria-current]{background:#FBFAF7;color:#221F1A;font-weight:700}
+.btn{display:inline-flex;justify-content:center;background:#DE9433;color:#221F1A;font:600 14px -apple-system,system-ui;padding:9px 16px;border-radius:12px}
+.btn:hover{color:#221F1A;background:#D2872A}
+.hero{display:flex;gap:56px;align-items:center;padding:76px 0 64px}
+.hero .txt{flex:1;min-width:0}
+.kicker{font:700 12px -apple-system,system-ui;letter-spacing:.16em;color:#9A5E12;text-transform:uppercase}
+:lang(ja) .kicker,:lang(zh-Hans) .kicker{letter-spacing:.06em;text-transform:none}
+h1{font-size:62px;font-weight:700;line-height:1.04;letter-spacing:-.02em;margin-top:20px}
+:lang(ja) h1,:lang(zh-Hans) h1{font-size:44px;letter-spacing:0;line-height:1.2}
+:lang(ja) p,:lang(ja) h1,:lang(ja) h2,:lang(ja) li{line-break:strict;word-break:auto-phrase}
+.sub{font-size:19px;line-height:1.6;color:#6E685F;max-width:540px;margin-top:22px}
+.cta{display:flex;align-items:center;gap:24px;margin-top:32px;flex-wrap:wrap}
+.cta a.badge img{height:56px;width:auto;display:block}
+.cta .more{font:600 15px -apple-system,system-ui}
+.meta{margin-top:24px;font:500 13.5px -apple-system,system-ui;line-height:1.7;color:#6E685F}
+.meta span.dot{color:#B5AEA3}
+.dispo{display:flex;align-items:center;gap:9px;margin-top:18px;flex-wrap:wrap}
+.dispo .l{font:700 11px -apple-system,system-ui;letter-spacing:.12em;color:#6E685F}
+.chip{font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px}
+.jaextra{margin-top:14px;font:600 14px -apple-system,system-ui;color:#4F7A4F}
+/* maquette téléphone */
+.phone{flex:none;width:332px;background:#2A2723;border-radius:46px;padding:11px;box-shadow:0 24px 60px rgba(34,31,26,.18)}
+.screen{background:#F3F0EA;border-radius:36px;overflow:hidden;height:660px;display:flex;flex-direction:column}
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 4px;font:600 12px -apple-system,system-ui}
+.sbar i{width:15px;height:9px;border:1px solid #221F1A;border-radius:3px;display:inline-block}
+.mhead{padding:10px 18px 0}
+.mtitle{display:flex;justify-content:space-between;align-items:center}
+.mtitle b{font-size:26px;font-weight:700}
+.mtools{display:flex;gap:8px;align-items:center}
+.mtools span{font:600 11.5px -apple-system,system-ui;color:#6E685F;border:1px solid #DBD5C8;border-radius:999px;padding:5px 11px;background:#FBFAF7}
+.gear{width:28px;height:28px;border-radius:50%;border:1px solid #DBD5C8;background:#FBFAF7;display:flex;align-items:center;justify-content:center}
+.seg{display:flex;background:#E7E1D3;border-radius:12px;padding:3px;margin-top:12px}
+.seg span{flex:1;text-align:center;font:600 10px -apple-system,system-ui;color:#6E685F;padding:6px 2px;white-space:nowrap;overflow:hidden}
+.seg span.on{color:#221F1A;background:#DE9433;border-radius:9px;font-weight:700}
+.mmeta{font:500 11px -apple-system,system-ui;color:#6E685F;margin-top:10px}
+.mbody{padding:10px 18px 0;display:flex;flex-direction:column;gap:9px;flex:1;overflow:hidden}
+.sage{background:#E8EAE0;border:1px solid #CED8C8;border-radius:14px;padding:12px 14px}
+.sage .hd{display:flex;justify-content:space-between;align-items:center;font:700 9.5px -apple-system,system-ui;letter-spacing:.12em;color:#4F7A4F}
+.sage .hd em{font-style:normal;color:#6E685F;letter-spacing:.08em}
+.sage .t{border-bottom:1px solid #CED8C8;padding:8px 0}
+.sage .t:last-of-type{border-bottom:none}
+.sage .t b{display:block;font-size:13.5px;font-weight:700;line-height:1.3}
+.sage .t small{display:block;font:500 10px -apple-system,system-ui;color:#6E685F;margin-top:3px}
+.sage .gen{font:600 9.5px -apple-system,system-ui;color:#4F7A4F;margin-top:2px}
+.grp{font:700 9.5px -apple-system,system-ui;letter-spacing:.12em;color:#6E685F;margin-top:2px}
+.card{background:#FEFDFB;border:1px solid #E4DFD5;border-radius:14px;padding:11px 13px}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start}
+.tb{font:700 9.5px -apple-system,system-ui;border-radius:999px;padding:3px 8px}
+.tb.n{color:#A84637;background:rgba(168,70,55,.11)}
+.tb.r{color:#4E7188;background:rgba(91,127,150,.13)}
+.tb.y{color:#C14848;background:rgba(193,72,72,.12)}
+.udot{width:8px;height:8px;border-radius:50%;background:#DE9433;margin-top:2px}
+.card b{display:block;font-size:13.5px;font-weight:700;line-height:1.3;margin-top:7px}
+.card small{display:block;font:500 10px -apple-system,system-ui;color:#6E685F;margin-top:4px}
+.tabs{display:flex;border-top:1px solid #E4DFD5;background:#FBFAF7;padding:8px 10px 16px}
+.tabs div{flex:1;text-align:center;color:#6E685F;font:600 8.5px -apple-system,system-ui;position:relative}
+.tabs div.on{color:#221F1A}
+.tabs svg{display:block;margin:0 auto 3px;width:18px;height:18px}
+.tabs .bdg{position:absolute;top:-4px;left:calc(50% + 4px);background:#DE9433;color:#221F1A;border-radius:999px;font:700 8px -apple-system,system-ui;padding:1px 5px}
+/* sections */
+.sources{display:flex;align-items:center;justify-content:center;gap:12px 14px;padding:0 0 64px;flex-wrap:wrap}
+.sources .lab{font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#6E685F;text-transform:uppercase;margin-right:6px}
+.sp{font:700 13px -apple-system,system-ui;border-radius:999px;padding:8px 16px}
+.sp.n{color:#A84637;background:rgba(168,70,55,.11)}
+.sp.r{color:#4E7188;background:rgba(91,127,150,.13)}
+.sp.y{color:#C14848;background:rgba(193,72,72,.12)}
+.sources .note{font:500 13px -apple-system,system-ui;color:#6E685F;flex-basis:100%;text-align:center}
+section.band{border-top:1px solid #E4DFD5}
+section.alt{background:#EDE8DE}
+.split{display:flex;gap:64px;align-items:center;padding:88px 0}
+.split .txt{flex:1;min-width:0}
+h2{font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:14px}
+:lang(ja) h2,:lang(zh-Hans) h2{font-size:34px;letter-spacing:0;line-height:1.25}
+.lead{font-size:16.5px;line-height:1.65;color:#6E685F;max-width:480px;margin-top:18px}
+ul.dots{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:24px;max-width:480px}
+ul.dots li{display:flex;gap:12px;align-items:baseline;font:500 15px -apple-system,system-ui;color:#4A453D}
+ul.dots li:before{content:"";width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px}
+.small{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:22px}
+.bcard{flex:none;width:480px;background:#E8EAE0;border:1px solid #CED8C8;border-radius:20px;padding:24px 26px}
+.bcard .hd{display:flex;justify-content:space-between;align-items:center;font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#4F7A4F}
+.bcard .hd em{font-style:normal;color:#6E685F;letter-spacing:.08em;font-weight:600}
+.bcard .t{padding:13px 0;border-bottom:1px solid #CED8C8}
+.bcard .t:last-of-type{border-bottom:none}
+.bcard .t b{display:block;font-size:18px;font-weight:700;line-height:1.3}
+.bcard .t small{display:block;font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:5px}
+.bcard .ft{display:flex;justify-content:space-between;align-items:center;padding-top:14px;margin-top:0;font:600 12px -apple-system,system-ui;color:#4F7A4F}
+.dcard{flex:none;width:460px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:22px 24px}
+.dcard .nm{display:flex;align-items:center;gap:10px}
+.dcard .nm b{font-size:22px;font-weight:700}
+.dcard .pic{font:700 11px -apple-system,system-ui;color:#9A5E12;background:rgba(222,148,51,.14);border-radius:999px;padding:4px 10px}
+.dcard .dm{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:5px}
+.dcard .dig{background:#161513;border-radius:16px;padding:16px 18px;margin-top:16px}
+.dcard .dig .l{font:700 10.5px -apple-system,system-ui;letter-spacing:.15em;color:#F2BA5C}
+.dcard .dig p{font:400 13.5px -apple-system,system-ui;line-height:1.6;color:#F2EEE6;margin-top:8px}
+.dcard .day{font:700 10.5px -apple-system,system-ui;letter-spacing:.14em;color:#6E685F;margin-top:16px}
+.dcard .it{display:flex;gap:11px;align-items:baseline;margin-top:10px}
+.dcard .it i{width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none}
+.dcard .it i.read{background:transparent;border:1.5px solid #DBD5C8}
+.dcard .it b{display:block;font-size:14.5px;font-weight:600;line-height:1.35}
+.dcard .it b.read{color:#6E685F}
+.dcard .it small{display:block;font:500 11.5px -apple-system,system-ui;color:#6E685F;margin-top:2px}
+.dcard .cl{font:500 11px -apple-system,system-ui;color:#6E685F;margin:10px 0 0 18px;border-left:2px solid #E4DFD5;padding-left:10px}
+.dcard .sh{display:flex;align-items:center;gap:14px;border-top:1px solid #E4DFD5;margin-top:18px;padding-top:16px;flex-wrap:wrap}
+.dcard .sh span:first-child{background:#DE9433;color:#221F1A;font:600 13px -apple-system,system-ui;padding:9px 16px;border-radius:11px}
+.dcard .sh span:last-child{font:500 12px -apple-system,system-ui;color:#6E685F}
+/* Mac */
+.mac{flex:none;width:480px}
+.mwin{background:#FBFAF7;border:1px solid #DBD5C8;border-radius:14px;box-shadow:0 18px 44px rgba(34,31,26,.12);overflow:hidden}
+.mbar{display:flex;gap:16px;align-items:center;background:#E7E1D3;padding:7px 14px;font:600 12.5px -apple-system,system-ui;color:#4A453D;flex-wrap:wrap}
+.mbar b{font-weight:700;color:#221F1A}
+.mbar span.open{background:#DE9433;color:#221F1A;border-radius:5px;padding:1px 7px}
+.menus{display:flex;gap:14px;padding:14px;align-items:flex-start;flex-wrap:wrap}
+.menu{background:#FEFDFB;border:1px solid #E4DFD5;border-radius:10px;padding:6px;min-width:200px;box-shadow:0 8px 20px rgba(34,31,26,.08)}
+.menu .mh{font:700 10.5px -apple-system,system-ui;letter-spacing:.1em;color:#6E685F;padding:4px 10px 6px;text-transform:uppercase}
+.menu .mi{display:flex;justify-content:space-between;gap:18px;font:500 13px -apple-system,system-ui;color:#221F1A;padding:5px 10px;border-radius:6px}
+.menu .mi:first-of-type{background:#DE9433}
+.menu .mi kbd{font:500 12.5px -apple-system,system-ui;color:#4A453D;background:none}
+.menu hr{border:none;border-top:1px solid #E4DFD5;margin:5px 6px}
+.macbadge{margin-top:22px}
+.macbadge img{height:46px;width:auto;display:block}
+/* confidentialité */
+.dark{background:#161513}
+.dark .inner{max-width:1000px;margin:0 auto;padding:92px 44px}
+.dark .kicker{color:#F2BA5C;text-align:center}
+.dark h2{color:#F2EEE6;text-align:center;font-size:46px}
+:lang(ja) .dark h2,:lang(zh-Hans) .dark h2{font-size:38px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
+.pc{background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px}
+.pc .ic{width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center}
+.pc .ic span{width:9px;height:9px;background:#F2BA5C;border-radius:3px;display:inline-block}
+.pc h3{font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px}
+.pc p{font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px}
+.dark .learned{text-align:center;margin-top:34px;font:400 14.5px -apple-system,system-ui;color:#C9C2B8}
+.dark .stats{text-align:center;margin-top:14px;font:400 14.5px -apple-system,system-ui;color:#A8A199}
+.dark .stats strong{color:#F2EEE6}
+.dark .stats a{color:#F2BA5C;font-weight:600}
+/* tarif */
+.pricing{padding:92px 0;text-align:center}
+.pricing .sub2{font-size:16.5px;line-height:1.6;color:#6E685F;max-width:540px;margin:16px auto 0}
+.prices{display:flex;gap:22px;justify-content:center;margin-top:48px;flex-wrap:wrap;text-align:left}
+.price{width:340px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:30px;position:relative}
+.price.main{background:#FEFDFB;border:1.5px solid #DE9433}
+.price .tag{position:absolute;top:-12px;left:28px;background:#DE9433;color:#221F1A;font:700 11px -apple-system,system-ui;letter-spacing:.1em;border-radius:999px;padding:5px 12px}
+.price .nm{font:600 14px -apple-system,system-ui;color:#6E685F}
+.price .amt{display:flex;align-items:baseline;gap:6px;margin-top:10px}
+.price .amt b{font-size:44px;font-weight:700}
+.price .amt span{font:500 15px -apple-system,system-ui;color:#6E685F}
+.price ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:18px;font:500 14px -apple-system,system-ui;color:#4A453D}
+.price .go{display:flex;justify-content:center;font:600 15px -apple-system,system-ui;padding:13px 0;border-radius:12px;margin-top:24px;color:#221F1A}
+.price.main .go{background:#DE9433}
+.price .go.alt{background:#FEFDFB;border:1px solid #DBD5C8;padding:12px 0}
+.pnote{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin:26px auto 0;max-width:760px}
+/* pied */
+footer{border-top:1px solid #E4DFD5;background:#EDE8DE}
+.fwrap{max-width:1240px;margin:0 auto;padding:44px 44px 32px}
+.frow{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.fcols{display:flex;gap:56px;flex-wrap:wrap}
+.fcol{display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui}
+.fcol .h{font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#6E685F}
+.fcol a{color:#6E685F}
+.fbot{border-top:1px solid #DBD5C8;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;font:400 12.5px -apple-system,system-ui;color:#6E685F}
+.mcta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;align-items:center;justify-content:center;gap:8px;background:#DE9433;color:#221F1A;font:700 16px -apple-system,system-ui;padding:16px 20px;box-shadow:0 -6px 20px rgba(34,31,26,.16)}
+@media (max-width:980px){
+  .hero,.split{flex-direction:column;gap:40px}
+  .hero .phone{align-self:center}
+  .bcard,.dcard,.mac{width:100%;max-width:520px}
+  .grid2{grid-template-columns:1fr}
+  h1{font-size:44px}
+  :lang(ja) h1,:lang(zh-Hans) h1{font-size:38px}
+  h2{font-size:30px}
+  :lang(ja) h2,:lang(zh-Hans) h2{font-size:27px}
+}
+@media (max-width:1180px){
+  .navlinks{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  header{position:sticky;top:0;z-index:60}
+  nav.top{padding:12px 0;gap:10px}
+  .navright .btn{display:none}
+  .langs a{padding:5px 7px}
+  .hero{padding:32px 0 40px}
+  .phone{width:min(332px,88vw)}
+  .dark .inner{padding:56px 16px}
+  .split{padding:56px 0}
+  .pricing{padding:56px 0}
+  .price{width:100%}
+  .fwrap{padding:36px 16px 96px}
+  .mcta{display:flex}
+}
+</style>
 </head>
 <body>
-<x-dc>
-<helmet>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:#F3F0EA}
-  ::selection{background:#DE943344}
-  a{color:#9A5E12;text-decoration:none}
-  a:hover{color:#7A4A0E}
-  a:focus-visible,button:focus-visible{outline:2px solid #9A5E12;outline-offset:2px;border-radius:6px}
-  @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
-  img,svg{max-width:100%}
-  @media (max-width:860px){
-    body{overflow-x:hidden}
-    nav{flex-wrap:wrap !important;row-gap:10px !important}
-    nav > div:nth-child(2){order:3;flex-basis:100% !important;flex-wrap:wrap !important;gap:14px !important;margin-top:2px}
-    [style*="max-width: 1240px"],[style*="max-width: 1000px"],[style*="max-width: 760px"]{padding-left:18px !important;padding-right:18px !important}
-    [data-screen-label="Hero"]{flex-direction:column !important;gap:36px !important}
-    [data-screen-label="Hero"] > div:last-child{align-self:center}
-    [data-screen-label="Hero"] > div:first-child > div{flex-wrap:wrap !important}
-    #fonctionnalites > div,#dossiers > div{flex-direction:column !important;gap:32px !important}
-    [style*="width: 480px"],[style*="width: 460px"],[style*="width: 340px"]{width:100% !important;max-width:100% !important}
-    [style*="width: 332px"]{width:min(332px,86vw) !important}
-    [style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr !important}
-    h1{font-size:38px !important;line-height:1.07 !important}
-    h2{font-size:28px !important}
-  }
-  @media (max-width:640px){
-    header{position:sticky;top:0;z-index:60}
-    nav{padding:12px 18px !important;gap:12px !important}
-    nav > div:nth-child(2){display:none !important}
-    nav a[data-store]{display:none !important}
-    section[id]{scroll-margin-top:68px}
-    [data-screen-label="Hero"]{padding:32px 20px 40px !important}
-    [data-screen-label="Hero"] h1{font-size:40px !important;line-height:1.05 !important}
-    [data-screen-label="Sources"]{padding:4px 20px 44px !important}
-    [style*="padding: 88px 44px"],[style*="padding: 92px 44px"]{padding:56px 20px !important}
-    h2{font-size:29px !important}
-    [data-mobile-cta]{display:flex !important}
-    footer{padding-bottom:92px !important}
-  }
-</style>
-</helmet>
-
-<div style="min-height:100vh;background:#F3F0EA;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;color:#221F1A;-webkit-font-smoothing:antialiased">
-
-  <!-- ══════════ NAV ══════════ -->
-  <header style="border-bottom:1px solid #E4DFD5;background:#F3F0EA">
-    <nav aria-label="Navigation principale" style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 44px">
-      <a href="index.html" style="display:flex;align-items:baseline;gap:10px;flex:none">
-        <span style="font-family:'New York',ui-serif,Georgia,serif;font-size:21px;font-weight:700;letter-spacing:-.01em;color:#221F1A">TechnoDaily</span>
-        <span style="font:700 10.5px -apple-system,system-ui;letter-spacing:.12em;color:#9A5E12;background:rgba(222,148,51,.16);border-radius:999px;padding:3px 8px">V2</span>
-      </a>
-      <div style="display:flex;gap:26px;font:500 14px -apple-system,system-ui">
-        <a href="#fonctionnalites" style="color:#6E685F" data-i18n="nav.feat">Fonctionnalités</a>
-        <a href="#dossiers" style="color:#6E685F" data-i18n="nav.dossiers">Dossiers de veille</a>
-        <a href="#confidentialite" style="color:#6E685F" data-i18n="nav.privacy">Confidentialité</a>
-        <a href="#tarif" style="color:#6E685F" data-i18n="nav.pricing">Tarif</a>
-      </div>
-      <div style="display:flex;align-items:center;gap:14px;flex:none">
-        <div role="group" aria-label="Langue" style="display:flex;background:#E7E1D3;border-radius:10px;padding:3px">
-          <button type="button" data-lang-btn="en" onClick="{{ setEn }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">EN</button>
-          <button type="button" data-lang-btn="fr" onClick="{{ setFr }}" style="border:none;background:#FBFAF7;font:700 12px -apple-system,system-ui;color:#221F1A;padding:5px 10px;border-radius:8px;cursor:pointer">FR</button>
-          <button type="button" data-lang-btn="es" onClick="{{ setEs }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">ES</button>
-          <button type="button" data-lang-btn="zh" onClick="{{ setZh }}" style="border:none;background:transparent;font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 10px;border-radius:8px;cursor:pointer">中文</button>
-        </div>
-        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:inline-flex;background:#DE9433;color:#221F1A;font:600 14px -apple-system,system-ui;padding:9px 16px;border-radius:12px" data-i18n="nav.dl">Télécharger</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-  <!-- ══════════ HERO ══════════ -->
-  <section data-screen-label="Hero" style="max-width:1240px;margin:0 auto;display:flex;gap:56px;align-items:center;padding:76px 44px 64px">
-    <div style="flex:1;min-width:0">
-      <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#9A5E12;text-transform:uppercase" data-i18n="hero.kicker">Nouveau · TechnoDaily V2 pour iOS 26</p>
-      <h1 style="font-family:'New York',ui-serif,Georgia,serif;font-size:62px;font-weight:700;line-height:1.04;letter-spacing:-.02em;margin-top:20px"><span data-i18n="hero.h1a">Toutes vos sources.</span><br><span data-i18n="hero.h1b">Un seul brief.</span></h1>
-      <p style="font-size:19px;line-height:1.6;color:#6E685F;max-width:520px;margin-top:22px" data-i18n="hero.sub">Newsletters Gmail, flux RSS, YouTube et Reddit, réunis dans un lecteur qui apprend vos centres d'intérêt et vous prépare chaque matin l'essentiel. Entièrement sur votre appareil.</p>
-      <div style="display:flex;align-items:center;gap:24px;margin-top:32px">
-        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:inline-block;overflow:hidden;border-radius:11px;width:203px;height:64px;flex:none"><img data-badge="1" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83" alt="Télécharger dans l'App Store" style="width:203px;height:64px;border-radius:11px;display:block"></a>
-        <a href="#tarif" style="font:600 15px -apple-system,system-ui" data-i18n="hero.cta2">Voir le tarif →</a>
-      </div>
-      <div style="display:flex;gap:18px;margin-top:24px;font:500 13px -apple-system,system-ui;color:#9B958B">
-        <span data-i18n="hero.m1">Essai gratuit de 14 jours</span><span>·</span><span data-i18n="hero.m2">19,99 €/an ensuite</span><span>·</span><span data-i18n="hero.m3">Privacy by design</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:9px;margin-top:18px">
-        <span style="font:700 11px -apple-system,system-ui;letter-spacing:.12em;color:#9B958B" data-i18n="hero.dispo">DISPONIBLE SUR</span>
-        <span style="font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px">iPhone</span>
-        <span style="font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px">iPad</span>
-        <span style="font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px">Apple Vision Pro</span>
-      </div>
-    </div>
-
-    <!-- phone mock -->
-    <div aria-hidden="true" style="flex:none;width:332px;background:#2A2723;border-radius:46px;padding:11px;box-shadow:0 24px 60px rgba(34,31,26,.18)">
-      <div style="background:#F3F0EA;border-radius:36px;overflow:hidden;height:648px;display:flex;flex-direction:column">
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 22px 4px;font:600 12px -apple-system,system-ui">
-          <span>9:41</span>
-          <span style="width:15px;height:9px;border:1px solid #221F1A;border-radius:3px;display:inline-block"></span>
-        </div>
-        <div style="padding:12px 18px 0">
-          <div style="font:700 10px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="mock.date">MARDI 7 JUILLET</div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:3px">
-            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:26px;font-weight:700" data-i18n="mock.title">Pour vous</div>
-            <span style="font:600 11.5px -apple-system,system-ui;color:#6E685F;border:1px solid #DBD5C8;border-radius:999px;padding:5px 11px;background:#FBFAF7" data-i18n="mock.refine">Affiner</span>
-          </div>
-          <div style="display:flex;background:#E7E1D3;border-radius:12px;padding:3px;margin-top:12px">
-            <span style="flex:1;text-align:center;font:600 11.5px -apple-system,system-ui;color:#6E685F;padding:6px 0" data-i18n="mock.segAll">Tout</span>
-            <span style="flex:1;text-align:center;font:700 11.5px -apple-system,system-ui;color:#221F1A;background:#DE9433;border-radius:9px;padding:6px 0" data-i18n="mock.segUnread">Non lus</span>
-            <span style="flex:1;text-align:center;font:600 11.5px -apple-system,system-ui;color:#6E685F;padding:6px 0" data-i18n="mock.segSaved">Enregistrés</span>
-            <span style="flex:1;text-align:center;font:600 11.5px -apple-system,system-ui;color:#6E685F;padding:6px 0" data-i18n="mock.segLater">À lire</span>
-          </div>
-          <div style="font:500 11px -apple-system,system-ui;color:#9B958B;margin-top:10px" data-i18n="mock.meta">12 articles · Tri intelligent</div>
-        </div>
-        <div style="padding:10px 18px 0;display:flex;flex-direction:column;gap:10px;flex:1">
-          <div style="background:#FAF1DF;border:1px solid #ECD5A8;border-radius:14px;padding:13px 14px">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <span style="font:700 9.5px -apple-system,system-ui;letter-spacing:.13em;color:#9A5E12" data-i18n="mock.resume">✦ RÉSUMÉ DU JOUR</span>
-              <span style="font:600 9.5px -apple-system,system-ui;color:#9B958B" data-i18n="mock.topics">3 SUJETS</span>
-            </div>
-            <div style="margin-top:10px;display:flex;flex-direction:column;gap:9px">
-              <div style="border-bottom:1px solid #ECD5A8;padding-bottom:9px">
-                <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:13.5px;font-weight:700;line-height:1.3" data-i18n="mock.t1">Apple ouvre Apple Intelligence aux apps tierces</div>
-                <div style="font:500 10px -apple-system,system-ui;color:#9B958B;margin-top:3px" data-i18n="mock.t1s">4 sources · Newsletters + RSS</div>
-              </div>
-              <div style="border-bottom:1px solid #ECD5A8;padding-bottom:9px">
-                <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:13.5px;font-weight:700;line-height:1.3" data-i18n="mock.t2">GPU : le cycle d'achat approche du pic</div>
-                <div style="font:500 10px -apple-system,system-ui;color:#9B958B;margin-top:3px" data-i18n="mock.t2s">3 sources · Newsletters</div>
-              </div>
-              <div style="font:500 9.5px -apple-system,system-ui;color:#9A5E12" data-i18n="mock.gen">✦ Généré sur votre iPhone</div>
-            </div>
-          </div>
-          <div style="background:#FEFDFB;border:1px solid #E4DFD5;border-radius:14px;padding:12px 13px">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start">
-              <span style="font:700 9.5px -apple-system,system-ui;color:#A84637;background:rgba(168,70,55,.11);border-radius:999px;padding:3px 8px" data-i18n="mock.badgeN">✉ Newsletter</span>
-              <span style="width:8px;height:8px;border-radius:50%;background:#DE9433;margin-top:2px"></span>
-            </div>
-            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:13.5px;font-weight:700;line-height:1.3;margin-top:8px" data-i18n="mock.a1">Stratechery : la fin du cycle des GPU ?</div>
-            <div style="font:500 10px -apple-system,system-ui;color:#9B958B;margin-top:5px"><span data-i18n="mock.a1m">Ben Thompson · 6 min · </span><span style="color:#4F7A4F;font-weight:600" data-i18n="mock.cat1">Business</span></div>
-          </div>
-          <div style="background:#FEFDFB;border:1px solid #E4DFD5;border-radius:14px;padding:12px 13px">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start">
-              <span style="font:700 9.5px -apple-system,system-ui;color:#4E7188;background:rgba(91,127,150,.13);border-radius:999px;padding:3px 8px">⌁ RSS</span>
-              <span style="width:8px;height:8px;border-radius:50%;background:#DE9433;margin-top:2px"></span>
-            </div>
-            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:13.5px;font-weight:700;line-height:1.3;margin-top:8px" data-i18n="mock.a2">Le M5 repousse les limites du silicium maison</div>
-            <div style="font:500 10px -apple-system,system-ui;color:#9B958B;margin-top:5px"><span data-i18n="mock.a2m">The Verge · 4 min · </span><span style="color:#4F7A4F;font-weight:600" data-i18n="mock.cat2">Tech</span></div>
-          </div>
-        </div>
-        <div style="display:flex;border-top:1px solid #E4DFD5;background:#FBFAF7;padding:9px 12px 16px">
-          <div style="flex:1;text-align:center;color:#9A5E12"><div style="font-size:14px">✦</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px" data-i18n="mock.tabPour">Pour vous</div></div>
-          <div style="flex:1;text-align:center;color:#9B958B"><div style="font-size:14px">✉</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px" data-i18n="mock.tabNews">Newsletters</div></div>
-          <div style="flex:1;text-align:center;color:#9B958B"><div style="font-size:14px">⌁</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px">RSS</div></div>
-          <div style="flex:1;text-align:center;color:#9B958B"><div style="font-size:14px">▷</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px">YouTube</div></div>
-          <div style="flex:1;text-align:center;color:#9B958B"><div style="font-size:14px">⚙</div><div style="font:600 8.5px -apple-system,system-ui;margin-top:2px" data-i18n="mock.tabSettings">Réglages</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ SOURCES ══════════ -->
-  <section data-screen-label="Sources" style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:14px;padding:0 44px 72px;flex-wrap:wrap">
-    <span style="font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#928C82;text-transform:uppercase;margin-right:8px" data-i18n="src.label">Vos sources</span>
-    <span style="font:700 13px -apple-system,system-ui;color:#A84637;background:rgba(168,70,55,.11);border-radius:999px;padding:8px 16px" data-i18n="src.n">✉ Newsletters Gmail</span>
-    <span style="font:700 13px -apple-system,system-ui;color:#4E7188;background:rgba(91,127,150,.13);border-radius:999px;padding:8px 16px" data-i18n="src.r">⌁ Flux RSS</span>
-    <span style="font:700 13px -apple-system,system-ui;color:#C14848;background:rgba(193,72,72,.12);border-radius:999px;padding:8px 16px">▷ YouTube</span>
-    <span style="font:700 13px -apple-system,system-ui;color:#6E685F;background:#E7E1D3;border-radius:999px;padding:8px 16px">◈ Reddit</span>
-    <span style="font:500 13px -apple-system,system-ui;color:#9B958B;margin-left:8px" data-i18n="src.opml">Import OPML en un geste</span>
-  </section>
-
-  <!-- ══════════ POUR VOUS ══════════ -->
-  <section id="fonctionnalites" data-screen-label="Pour vous" style="border-top:1px solid #E4DFD5;background:#EDE8DE">
-    <div style="max-width:1240px;margin:0 auto;display:flex;gap:64px;align-items:center;padding:88px 44px">
-      <div style="flex:1">
-        <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#9A5E12;text-transform:uppercase" data-i18n="pv.kicker">Pour vous</p>
-        <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:14px"><span data-i18n="pv.h3a">Chaque matin, l'essentiel.</span><br><span data-i18n="pv.h3b">Déjà trié.</span></h2>
-        <p style="font-size:16.5px;line-height:1.65;color:#6E685F;max-width:460px;margin-top:18px" data-i18n="pv.p">Le moteur de recommandation apprend ce qui compte pour vous, sur l'appareil, jamais dans un cloud. Le Résumé du jour regroupe les sujets chauds à travers vos sources, avec une synthèse générée par Apple Intelligence.</p>
-        <ul style="display:flex;flex-direction:column;gap:12px;margin-top:24px;max-width:460px;list-style:none">
-          <li style="display:flex;gap:12px;align-items:baseline"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px"></span><span style="font:500 15px -apple-system,system-ui;color:#4A453D" data-i18n="pv.b1">Un même geste partout : Tout · Non lus · Enregistrés · À lire</span></li>
-          <li style="display:flex;gap:12px;align-items:baseline"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px"></span><span style="font:500 15px -apple-system,system-ui;color:#4A453D" data-i18n="pv.b2">Tri intelligent ou récent : vous choisissez, l'app s'en souvient</span></li>
-          <li style="display:flex;gap:12px;align-items:baseline"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px"></span><span style="font:500 15px -apple-system,system-ui;color:#4A453D" data-i18n="pv.b3">Vos newsletters, lues là où c'est fait pour lire</span></li>
-        </ul>
-        <p style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:22px" data-i18n="pv.note">Résumés IA : nécessite un appareil compatible Apple Intelligence.</p>
-      </div>
-      <div style="flex:none;width:480px;background:#FAF1DF;border:1px solid #ECD5A8;border-radius:20px;padding:24px 26px">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <span style="font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#9A5E12" data-i18n="mock.resume">✦ RÉSUMÉ DU JOUR</span>
-          <span style="font:600 11.5px -apple-system,system-ui;color:#9B958B" data-i18n="mock.date">MARDI 7 JUILLET</span>
-        </div>
-        <div style="margin-top:16px;display:flex;flex-direction:column">
-          <div style="padding:13px 0;border-bottom:1px solid #ECD5A8">
-            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:18px;font-weight:700;line-height:1.3" data-i18n="mock.t1">Apple ouvre Apple Intelligence aux apps tierces</div>
-            <div style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:5px" data-i18n="rc.t1s">4 sources · Stratechery, The Verge, Platformer…</div>
-          </div>
-          <div style="padding:13px 0;border-bottom:1px solid #ECD5A8">
-            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:18px;font-weight:700;line-height:1.3" data-i18n="mock.t2">GPU : le cycle d'achat approche du pic</div>
-            <div style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:5px" data-i18n="rc.t2s">3 sources · Ben Evans, Stratechery…</div>
-          </div>
-          <div style="padding:13px 0">
-            <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:18px;font-weight:700;line-height:1.3" data-i18n="rc.t3">Threads franchit 250 M d'utilisateurs actifs</div>
-            <div style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:5px" data-i18n="rc.t3s">2 sources · Platformer, The Information</div>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ECD5A8;padding-top:14px;margin-top:4px">
-          <span style="font:600 12px -apple-system,system-ui;color:#9A5E12" data-i18n="mock.gen">✦ Généré sur votre iPhone</span>
-          <span style="font:500 12px -apple-system,system-ui;color:#9B958B" data-i18n="rc.sec">L'essentiel en 10 secondes</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ DOSSIERS ══════════ -->
-  <section id="dossiers" data-screen-label="Dossiers de veille" style="border-top:1px solid #E4DFD5">
-    <div style="max-width:1240px;margin:0 auto;display:flex;gap:64px;align-items:center;padding:88px 44px">
-      <div style="flex:none;width:460px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:22px 24px">
-        <div style="display:flex;align-items:center;gap:10px">
-          <span style="font-family:'New York',ui-serif,Georgia,serif;font-size:22px;font-weight:700">Apple Intelligence</span>
-          <span style="font:700 11px -apple-system,system-ui;color:#9A5E12;background:rgba(222,148,51,.14);border-radius:999px;padding:4px 10px" data-i18n="dm.pic">▲ Pic</span>
-        </div>
-        <div style="font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:5px" data-i18n="dm.meta">18 articles · 5 sources · Suivi depuis mai</div>
-        <div style="background:#161513;border-radius:16px;padding:16px 18px;margin-top:16px">
-          <div style="font:700 10.5px -apple-system,system-ui;letter-spacing:.15em;color:#F2BA5C" data-i18n="dm.changed">CE QUI A CHANGÉ</div>
-          <div style="font:400 13.5px -apple-system,system-ui;line-height:1.6;color:#F2EEE6;margin-top:8px" data-i18n="dm.digest">Apple ouvre son modèle aux apps tierces ; trois de vos sources y voient un tournant pour les développeurs. Les premiers tests évoquent une latence divisée par deux.</div>
-        </div>
-        <div style="margin-top:18px">
-          <div style="font:700 10.5px -apple-system,system-ui;letter-spacing:.14em;color:#9B958B" data-i18n="dm.today">AUJOURD'HUI</div>
-          <div style="display:flex;gap:11px;align-items:baseline;margin-top:10px"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none"></span><div><div style="font-family:'New York',ui-serif,Georgia,serif;font-size:14.5px;font-weight:600;line-height:1.35" data-i18n="dm.i1">Apple Intelligence : un an plus tard, où en est-on ?</div><div style="font:500 11.5px -apple-system,system-ui;color:#9B958B;margin-top:2px" data-i18n="dm.i1m">Stratechery · 10 min</div></div></div>
-          <div style="display:flex;gap:11px;align-items:baseline;margin-top:10px"><span style="width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none"></span><div><div style="font-family:'New York',ui-serif,Georgia,serif;font-size:14.5px;font-weight:600;line-height:1.35" data-i18n="dm.i2">Le SDK tiers arrive avec iOS 26.1</div><div style="font:500 11.5px -apple-system,system-ui;color:#9B958B;margin-top:2px" data-i18n="dm.i2m">The Verge · 4 min</div></div></div>
-          <div style="font:500 11px -apple-system,system-ui;color:#9B958B;margin:10px 0 0 18px;border-left:2px solid #E4DFD5;padding-left:10px" data-i18n="dm.cluster">Regroupé autour de : SDK · développeurs · iOS 26</div>
-          <div style="font:700 10.5px -apple-system,system-ui;letter-spacing:.14em;color:#9B958B;margin-top:16px" data-i18n="dm.yesterday">HIER</div>
-          <div style="display:flex;gap:11px;align-items:baseline;margin-top:10px"><span style="width:7px;height:7px;border-radius:50%;border:1.5px solid #DBD5C8;flex:none"></span><div><div style="font-family:'New York',ui-serif,Georgia,serif;font-size:14.5px;font-weight:600;line-height:1.35;color:#6E685F" data-i18n="dm.i3">Benchmarks : le modèle on-device rattrape GPT-4</div><div style="font:500 11.5px -apple-system,system-ui;color:#9B958B;margin-top:2px" data-i18n="dm.i3m">Ben Evans · 6 min</div></div></div>
-        </div>
-        <div style="display:flex;align-items:center;gap:14px;border-top:1px solid #E4DFD5;margin-top:18px;padding-top:16px">
-          <span style="display:inline-flex;background:#DE9433;color:#221F1A;font:600 13px -apple-system,system-ui;padding:9px 16px;border-radius:11px" data-i18n="dm.share">Partager le dossier</span>
-          <span style="font:500 12px -apple-system,system-ui;color:#9B958B" data-i18n="dm.formats">Texte · Markdown · Image</span>
-        </div>
-      </div>
-      <div style="flex:1">
-        <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#9A5E12;text-transform:uppercase" data-i18n="do.kicker">Dossiers de veille</p>
-        <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:14px"><span data-i18n="do.h3a">Suivez un sujet.</span><br><span data-i18n="do.h3b">Voyez ce qui change.</span></h2>
-        <p style="font-size:16.5px;line-height:1.65;color:#6E685F;max-width:470px;margin-top:18px" data-i18n="do.p1">Suivez un sujet et TechnoDaily en construit un dossier vivant : la frise de ce qui bouge jour après jour, une synthèse « ce qui a changé », et un repère quand la couverture s'emballe.</p>
-        <p style="font-size:16.5px;line-height:1.65;color:#6E685F;max-width:470px;margin-top:14px" data-i18n="do.p2">Partagez-le en texte, Markdown ou image. Votre veille sur vos sources : personne d'autre que vous ne sait ce que vous suivez.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════ PRIVACY ══════════ -->
-  <section id="confidentialite" data-screen-label="Privacy by design" style="background:#161513">
-    <div style="max-width:1000px;margin:0 auto;padding:92px 44px">
-      <p style="font:700 12px -apple-system,system-ui;letter-spacing:.18em;color:#F2BA5C;text-transform:uppercase;text-align:center" data-i18n="py.kicker">Privacy by design</p>
-      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:46px;font-weight:700;line-height:1.1;letter-spacing:-.015em;color:#F2EEE6;text-align:center;margin-top:16px" data-i18n="py.h3">Vos lectures ne regardent que vous.</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px">
-        <div style="background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px">
-          <div style="width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;background:#F2BA5C;border-radius:3px;display:inline-block"></span></div>
-          <div style="font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px" data-i18n="py.p1t">Tout reste sur votre appareil</div>
-          <div style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="py.p1">Vos contenus, votre activité de lecture et vos scores de recommandation ne quittent jamais l'iPhone. Aucun serveur ne les reçoit.</div>
-        </div>
-        <div style="background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px">
-          <div style="width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;background:#F2BA5C;border-radius:50%;display:inline-block"></span></div>
-          <div style="font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px" data-i18n="py.p2t">Personne ne vous profile</div>
-          <div style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="py.p2">Pas de profil publicitaire, pas de tracking, aucun SDK tiers, aucune publicité. Vous n'êtes pas le produit.</div>
-        </div>
-        <div style="background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px">
-          <div style="width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;border:1.5px solid #F2BA5C;border-radius:3px;display:inline-block"></span></div>
-          <div style="font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px" data-i18n="py.p3t">Vos e-mails, seulement lus</div>
-          <div style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="py.p3">Gmail en lecture seule, sur l'appareil, jamais stockés ailleurs. Audit de sécurité indépendant exigé par Google (CASA).</div>
-        </div>
-        <div style="background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px">
-          <div style="width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center"><span style="width:9px;height:9px;border:1.5px solid #F2BA5C;border-radius:50%;display:inline-block"></span></div>
-          <div style="font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px" data-i18n="py.p4t">Une synchronisation privée</div>
-          <div style="font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px" data-i18n="py.p4">Entre vos appareils, via votre iCloud personnel, chiffrée par Apple. Nous n'y avons pas accès.</div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:40px;font:400 14.5px -apple-system,system-ui;color:#A8A199"><span data-i18n="py.stats">Et les statistiques d'usage ? Anonymes, agrégées, </span><strong style="color:#F2EEE6" data-i18n="py.statsB">désactivées par défaut</strong><span data-i18n="py.statsC">. Vous décidez. </span><a href="confidentialite.html" style="color:#F2BA5C;font-weight:600" data-i18n="py.link">Lire la politique de confidentialité →</a></div>
-    </div>
-  </section>
-
-  <!-- ══════════ PRICING ══════════ -->
-  <section id="tarif" data-screen-label="Tarif" style="max-width:1240px;margin:0 auto;padding:92px 44px">
-    <div style="text-align:center">
-      <h2 style="font-family:'New York',ui-serif,Georgia,serif;font-size:40px;font-weight:700;letter-spacing:-.015em" data-i18n="pr.h3">Un prix simple. Pas de version gratuite.</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:#6E685F;max-width:520px;margin:16px auto 0" data-i18n="pr.sub">TechnoDaily est payé par vous, pas par la publicité. C'est ce qui rend la promesse possible.</p>
-    </div>
-    <div style="display:flex;gap:22px;justify-content:center;margin-top:48px;flex-wrap:wrap">
-      <div style="width:340px;background:#FEFDFB;border:1.5px solid #DE9433;border-radius:20px;padding:30px 30px;position:relative">
-        <span style="position:absolute;top:-12px;left:28px;background:#DE9433;color:#221F1A;font:700 11px -apple-system,system-ui;letter-spacing:.1em;border-radius:999px;padding:5px 12px" data-i18n="pr.trialBadge">ESSAI 14 JOURS</span>
-        <div style="font:600 14px -apple-system,system-ui;color:#6E685F" data-i18n="pr.annual">Annuel</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-top:10px"><span style="font-family:'New York',ui-serif,Georgia,serif;font-size:44px;font-weight:700" data-i18n="pr.price">19,99 €</span><span style="font:500 15px -apple-system,system-ui;color:#9B958B" data-i18n="pr.year">/an</span></div>
-        <div style="display:flex;flex-direction:column;gap:9px;margin-top:18px;font:500 14px -apple-system,system-ui;color:#4A453D">
-          <span data-i18n="pr.a1">✓ Toutes les fonctionnalités</span>
-          <span data-i18n="pr.a2">✓ 14 jours gratuits, sans engagement</span>
-          <span data-i18n="pr.a3">✓ iPhone, iPad et Apple Vision Pro</span>
-        </div>
-        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:flex;justify-content:center;background:#DE9433;color:#221F1A;font:600 15px -apple-system,system-ui;padding:13px 0;border-radius:12px;margin-top:24px" data-i18n="pr.cta">Commencer l'essai</a>
-      </div>
-      <div style="width:340px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:30px 30px">
-        <div style="font:600 14px -apple-system,system-ui;color:#6E685F" data-i18n="pr.life">À vie</div>
-        <div style="display:flex;align-items:baseline;gap:6px;margin-top:10px"><span style="font-family:'New York',ui-serif,Georgia,serif;font-size:44px;font-weight:700" data-i18n="pr.priceLife">49,99 €</span><span style="font:500 15px -apple-system,system-ui;color:#9B958B" data-i18n="pr.once">une fois</span></div>
-        <div style="display:flex;flex-direction:column;gap:9px;margin-top:18px;font:500 14px -apple-system,system-ui;color:#4A453D">
-          <span data-i18n="pr.l1">✓ Tout, pour toujours</span>
-          <span data-i18n="pr.l2">✓ Aucun abonnement</span>
-          <span data-i18n="pr.l3">✓ Les mises à jour incluses</span>
-        </div>
-        <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" style="display:flex;justify-content:center;background:#FEFDFB;border:1px solid #DBD5C8;color:#221F1A;font:600 15px -apple-system,system-ui;padding:12px 0;border-radius:12px;margin-top:24px" data-i18n="pr.ctaLife">Acheter à vie</a>
-      </div>
-    </div>
-    <p style="text-align:center;font:500 12.5px -apple-system,system-ui;color:#9B958B;margin-top:26px" data-i18n="pr.note">Prix France, TVA incluse · Sur l'App Store · iOS 26, iPadOS 26, visionOS 26 · Résumés IA : nécessite un appareil compatible Apple Intelligence</p>
-  </section>
-  </main>
-
-  <!-- ══════════ FOOTER ══════════ -->
-  <footer data-screen-label="Footer" style="border-top:1px solid #E4DFD5;background:#EDE8DE">
-    <div style="max-width:1240px;margin:0 auto;padding:44px 44px 32px">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap">
-        <div>
-          <div style="font-family:'New York',ui-serif,Georgia,serif;font-size:19px;font-weight:700">TechnoDaily</div>
-          <div style="font:400 13px -apple-system,system-ui;color:#6E685F;margin-top:8px;max-width:300px" data-i18n="ft.tagline">Privacy by design. Vos lectures ne regardent que vous.</div>
-        </div>
-        <div style="display:flex;gap:64px;flex-wrap:wrap">
-          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui">
-            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.product">PRODUIT</span>
-            <a href="#fonctionnalites" style="color:#6E685F" data-i18n="nav.feat">Fonctionnalités</a>
-            <a href="#dossiers" style="color:#6E685F" data-i18n="nav.dossiers">Dossiers de veille</a>
-            <a href="#tarif" style="color:#6E685F" data-i18n="nav.pricing">Tarif</a>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui">
-            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.legal">LÉGAL</span>
-            <a href="confidentialite.html" style="color:#6E685F" data-i18n="ft.privacy">Politique de confidentialité</a>
-            <a href="conditions.html" style="color:#6E685F" data-i18n="ft.terms">Conditions d'utilisation</a>
-            <a href="accessibilite.html" style="color:#6E685F" data-i18n="ft.access">Politique d'accessibilité</a>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui;align-items:flex-start">
-            <span style="font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#9B958B" data-i18n="ft.lang">LANGUES</span>
-            <button type="button" onClick="{{ setEn }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">English</button>
-            <button type="button" onClick="{{ setFr }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">Français</button>
-            <button type="button" onClick="{{ setEs }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">Español</button>
-            <button type="button" onClick="{{ setZh }}" style="border:none;background:transparent;font:500 13.5px -apple-system,system-ui;color:#6E685F;cursor:pointer;padding:0;text-align:left">中文</button>
-          </div>
-        </div>
-      </div>
-      <div style="border-top:1px solid #DBD5C8;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 12.5px -apple-system,system-ui;color:#9B958B">
-        <span>© 2026 TechnoAndCo · contact@technoandco.fr</span>
-        <span data-i18n="ft.marks">Apple, iPhone et Apple Intelligence sont des marques d'Apple Inc.</span>
-      </div>
-    </div>
-  </footer>
-  <a href="https://apps.apple.com/fr/app/technodaily/id6758897742?itsct=apps_box_badge&amp;itscg=30200" data-store="1" data-mobile-cta aria-label="Télécharger dans l'App Store" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;align-items:center;justify-content:center;gap:8px;background:#DE9433;color:#221F1A;font:700 16px -apple-system,system-ui;padding:16px 20px;box-shadow:0 -6px 20px rgba(34,31,26,.16)"><span style="font-size:15px">↓</span><span data-i18n="cta.mobile">Télécharger sur l'App Store</span></a>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header><div class="wrap">
+<nav class="top" aria-label="Navigation principale">
+<a class="brand" href="/technodaily/"><b class="serif">TechnoDaily</b><span class="pill-v">2.5</span></a>
+<div class="navlinks">
+<a href="#fonctionnalites">Fonctionnalités</a>
+<a href="#mac">Mac</a>
+<a href="#sujets">Sujets suivis</a>
+<a href="#confidentialite">Confidentialité</a>
+<a href="#tarif">Tarif</a>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fr&quot;,&quot;en&quot;,&quot;es&quot;,&quot;zh&quot;],&quot;default&quot;:&quot;fr&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Langue&quot;},&quot;appStoreId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;6758897742&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;App Store&quot;}}">
-class Component extends DCLogic {
-  dicts() {
-    return {
-      en: {
-        'nav.feat': 'Features', 'nav.dossiers': 'Tracked topics', 'nav.privacy': 'Privacy', 'nav.pricing': 'Pricing', 'nav.dl': 'Download', 'cta.mobile': 'Download on the App Store',
-        'hero.kicker': 'New · TechnoDaily V2 for iOS 26',
-        'hero.h1a': 'All your sources.', 'hero.h1b': 'One single brief.',
-        'hero.sub': 'Gmail newsletters, RSS feeds, YouTube and Reddit, together in one reader that learns your interests and prepares the essentials for you every morning. Entirely on your device.',
-        'hero.cta2': 'See pricing →', 'hero.m1': '14-day free trial', 'hero.m2': 'Then €19.99/year', 'hero.m3': 'Privacy by design', 'hero.dispo': 'AVAILABLE ON',
-        'mock.date': 'TUESDAY, JULY 7', 'mock.title': 'For You', 'mock.refine': 'Refine',
-        'mock.segAll': 'All', 'mock.segUnread': 'Unread', 'mock.segSaved': 'Saved', 'mock.segLater': 'To read',
-        'mock.meta': '12 articles · Smart sort', 'mock.resume': '✦ DAILY BRIEF', 'mock.topics': '3 TOPICS',
-        'mock.t1': 'Apple opens Apple Intelligence to third-party apps', 'mock.t1s': '4 sources · Newsletters + RSS',
-        'mock.t2': 'GPUs: the buying cycle nears its peak', 'mock.t2s': '3 sources · Newsletters',
-        'mock.gen': '✦ Generated on your iPhone', 'mock.badgeN': '✉ Newsletter',
-        'mock.a1': 'Stratechery: the end of the GPU cycle?', 'mock.a1m': 'Ben Thompson · 6 min · ', 'mock.cat1': 'Business',
-        'mock.a2': 'The M5 pushes in-house silicon further', 'mock.a2m': 'The Verge · 4 min · ', 'mock.cat2': 'Tech',
-        'mock.tabPour': 'For You', 'mock.tabNews': 'Newsletters', 'mock.tabSettings': 'Settings',
-        'src.label': 'Your sources', 'src.n': '✉ Gmail newsletters', 'src.r': '⌁ RSS feeds', 'src.opml': 'OPML import in one step',
-        'pv.kicker': 'For You', 'pv.h3a': 'Every morning, the essentials.', 'pv.h3b': 'Already sorted.',
-        'pv.p': 'The recommendation engine learns what matters to you, on the device, never in a cloud. The Daily Brief groups the hot topics across your sources, with a summary generated by Apple Intelligence.',
-        'pv.b1': 'One grammar everywhere: All · Unread · Saved · To read',
-        'pv.b2': 'Smart or recent sort: you choose, the app remembers',
-        'pv.b3': 'Your newsletters, read where reading belongs',
-        'pv.note': 'AI summaries: requires an Apple Intelligence-compatible device.',
-        'rc.t1s': '4 sources · Stratechery, The Verge, Platformer…', 'rc.t2s': '3 sources · Ben Evans, Stratechery…',
-        'rc.t3': 'Threads passes 250M active users', 'rc.t3s': '2 sources · Platformer, The Information',
-        'rc.sec': 'The essentials in 10 seconds',
-        'do.kicker': 'Tracked topics', 'do.h3a': 'Follow a topic.', 'do.h3b': 'See what changes.',
-        'do.p1': 'Follow a topic and TechnoDaily builds a living dossier: a day-by-day timeline of what moves, a "what changed" summary, and a cue when coverage spikes.',
-        'do.p2': 'Share it as text, Markdown or image. Your watch, on your sources: nobody but you knows what you follow.',
-        'dm.pic': '▲ Spike', 'dm.meta': '18 articles · 5 sources · Followed since May', 'dm.changed': 'WHAT CHANGED',
-        'dm.digest': 'Apple opens its model to third-party apps; three of your sources call it a turning point for developers. Early tests report latency cut in half.',
-        'dm.today': 'TODAY', 'dm.i1': 'Apple Intelligence, one year on: where do we stand?', 'dm.i1m': 'Stratechery · 10 min',
-        'dm.i2': 'The third-party SDK lands with iOS 26.1', 'dm.i2m': 'The Verge · 4 min',
-        'dm.cluster': 'Grouped around: SDK · developers · iOS 26', 'dm.yesterday': 'YESTERDAY',
-        'dm.i3': 'Benchmarks: the on-device model catches up with GPT-4', 'dm.i3m': 'Ben Evans · 6 min',
-        'dm.share': 'Share the dossier', 'dm.formats': 'Text · Markdown · Image',
-        'py.kicker': 'Privacy by design', 'py.h3': "Your reading is nobody's business but yours.",
-        'py.p1t': 'Everything stays on your device', 'py.p1': 'Your content, reading activity and recommendation scores never leave the iPhone. No server receives them.',
-        'py.p2t': 'Nobody profiles you', 'py.p2': 'No ad profile, no tracking, no third-party SDK, no ads. You are not the product.',
-        'py.p3t': 'Your emails, only read', 'py.p3': 'Gmail read-only, on the device, never stored elsewhere. Independent security audit required by Google (CASA).',
-        'py.p4t': 'A private sync', 'py.p4': 'Between your devices, through your personal iCloud, encrypted by Apple. We have no access to it.',
-        'py.stats': 'And usage statistics? Anonymous, aggregated, ', 'py.statsB': 'off by default', 'py.statsC': '. You decide. ',
-        'py.link': 'Read the privacy policy →',
-        'pr.h3': 'Simple pricing. No free tier.',
-        'pr.sub': 'TechnoDaily is paid by you, not by advertising. That is what makes the promise possible.',
-        'pr.trialBadge': '14-DAY TRIAL', 'pr.annual': 'Annual', 'pr.price': '€19.99', 'pr.year': '/year',
-        'pr.a1': '✓ Every feature', 'pr.a2': '✓ 14 days free, no commitment', 'pr.a3': '✓ iPhone, iPad and Apple Vision Pro',
-        'pr.cta': 'Start the trial', 'pr.life': 'Lifetime', 'pr.priceLife': '€49.99', 'pr.once': 'one time',
-        'pr.l1': '✓ Everything, forever', 'pr.l2': '✓ No subscription', 'pr.l3': '✓ Updates included',
-        'pr.ctaLife': 'Buy lifetime',
-        'pr.note': 'Prices incl. VAT · On the App Store · iOS 26, iPadOS 26, visionOS 26 · AI summaries: requires an Apple Intelligence-compatible device',
-        'ft.tagline': "Privacy by design. Your reading is nobody's business but yours.",
-        'ft.product': 'PRODUCT', 'ft.legal': 'LEGAL', 'ft.lang': 'LANGUAGES',
-        'ft.privacy': 'Privacy policy', 'ft.terms': 'Terms of use', 'ft.access': 'Accessibility policy',
-        'ft.marks': 'Apple, iPhone and Apple Intelligence are trademarks of Apple Inc.'
-      },
-      es: {
-        'nav.feat': 'Funciones', 'nav.dossiers': 'Temas seguidos', 'nav.privacy': 'Privacidad', 'nav.pricing': 'Precio', 'nav.dl': 'Descargar', 'cta.mobile': 'Descargar en el App Store',
-        'hero.kicker': 'Nuevo · TechnoDaily V2 para iOS 26',
-        'hero.h1a': 'Todas tus fuentes.', 'hero.h1b': 'Un solo brief.',
-        'hero.sub': 'Newsletters de Gmail, feeds RSS, YouTube y Reddit, reunidos en un lector que aprende tus intereses y te prepara lo esencial cada mañana. Todo en tu dispositivo.',
-        'hero.cta2': 'Ver el precio →', 'hero.m1': 'Prueba gratis de 14 días', 'hero.m2': 'Después 19,99 €/año', 'hero.m3': 'Privacy by design', 'hero.dispo': 'DISPONIBLE EN',
-        'mock.date': 'MARTES 7 DE JULIO', 'mock.title': 'Para ti', 'mock.refine': 'Afinar',
-        'mock.segAll': 'Todo', 'mock.segUnread': 'No leídos', 'mock.segSaved': 'Guardados', 'mock.segLater': 'Para leer',
-        'mock.meta': '12 artículos · Orden inteligente', 'mock.resume': '✦ RESUMEN DEL DÍA', 'mock.topics': '3 TEMAS',
-        'mock.t1': 'Apple abre Apple Intelligence a las apps de terceros', 'mock.t1s': '4 fuentes · Newsletters + RSS',
-        'mock.t2': 'GPU: el ciclo de compra se acerca al pico', 'mock.t2s': '3 fuentes · Newsletters',
-        'mock.gen': '✦ Generado en tu iPhone', 'mock.badgeN': '✉ Newsletter',
-        'mock.a1': 'Stratechery: ¿el fin del ciclo de las GPU?', 'mock.a1m': 'Ben Thompson · 6 min · ', 'mock.cat1': 'Business',
-        'mock.a2': 'El M5 lleva más lejos el silicio propio', 'mock.a2m': 'The Verge · 4 min · ', 'mock.cat2': 'Tech',
-        'mock.tabPour': 'Para ti', 'mock.tabNews': 'Newsletters', 'mock.tabSettings': 'Ajustes',
-        'src.label': 'Tus fuentes', 'src.n': '✉ Newsletters de Gmail', 'src.r': '⌁ Feeds RSS', 'src.opml': 'Importación OPML en un gesto',
-        'pv.kicker': 'Para ti', 'pv.h3a': 'Cada mañana, lo esencial.', 'pv.h3b': 'Ya ordenado.',
-        'pv.p': 'El motor de recomendación aprende lo que te importa, en el dispositivo, nunca en una nube. El Resumen del día agrupa los temas calientes de tus fuentes, con una síntesis generada por Apple Intelligence.',
-        'pv.b1': 'El mismo gesto en todas partes: Todo · No leídos · Guardados · Para leer',
-        'pv.b2': 'Orden inteligente o reciente: tú eliges, la app lo recuerda',
-        'pv.b3': 'Tus newsletters, leídas donde se lee de verdad',
-        'pv.note': 'Resúmenes con IA: requiere un dispositivo compatible con Apple Intelligence.',
-        'rc.t1s': '4 fuentes · Stratechery, The Verge, Platformer…', 'rc.t2s': '3 fuentes · Ben Evans, Stratechery…',
-        'rc.t3': 'Threads supera los 250 M de usuarios activos', 'rc.t3s': '2 fuentes · Platformer, The Information',
-        'rc.sec': 'Lo esencial en 10 segundos',
-        'do.kicker': 'Temas seguidos', 'do.h3a': 'Sigue un tema.', 'do.h3b': 'Ve qué cambia.',
-        'do.p1': 'Sigue un tema y TechnoDaily crea un dossier vivo: la línea de tiempo de lo que se mueve día a día, un resumen de «qué ha cambiado» y un aviso cuando la cobertura se dispara.',
-        'do.p2': 'Compártelo en texto, Markdown o imagen. Tu seguimiento, en tus fuentes: nadie más que tú sabe qué sigues.',
-        'dm.pic': '▲ Pico', 'dm.meta': '18 artículos · 5 fuentes · Seguido desde mayo', 'dm.changed': 'QUÉ HA CAMBIADO',
-        'dm.digest': 'Apple abre su modelo a las apps de terceros; tres de tus fuentes lo ven como un punto de inflexión para los desarrolladores. Las primeras pruebas hablan de una latencia reducida a la mitad.',
-        'dm.today': 'HOY', 'dm.i1': 'Apple Intelligence: un año después, ¿dónde estamos?', 'dm.i1m': 'Stratechery · 10 min',
-        'dm.i2': 'El SDK de terceros llega con iOS 26.1', 'dm.i2m': 'The Verge · 4 min',
-        'dm.cluster': 'Agrupado en torno a: SDK · desarrolladores · iOS 26', 'dm.yesterday': 'AYER',
-        'dm.i3': 'Benchmarks: el modelo on-device alcanza a GPT-4', 'dm.i3m': 'Ben Evans · 6 min',
-        'dm.share': 'Compartir el dossier', 'dm.formats': 'Texto · Markdown · Imagen',
-        'py.kicker': 'Privacy by design', 'py.h3': 'Tu lectura solo te concierne a ti.',
-        'py.p1t': 'Todo se queda en tu dispositivo', 'py.p1': 'Tus contenidos, tu actividad de lectura y tus puntuaciones nunca salen del iPhone. Ningún servidor los recibe.',
-        'py.p2t': 'Nadie te perfila', 'py.p2': 'Sin perfil publicitario, sin rastreo, sin SDK de terceros, sin anuncios. No eres el producto.',
-        'py.p3t': 'Tus correos, solo leídos', 'py.p3': 'Gmail en modo solo lectura, en el dispositivo, nunca almacenados en otro lugar. Auditoría de seguridad independiente exigida por Google (CASA).',
-        'py.p4t': 'Una sincronización privada', 'py.p4': 'Entre tus dispositivos, a través de tu iCloud personal, cifrada por Apple. No tenemos acceso.',
-        'py.stats': '¿Y las estadísticas de uso? Anónimas, agregadas, ', 'py.statsB': 'desactivadas por defecto', 'py.statsC': '. Tú decides. ',
-        'py.link': 'Leer la política de privacidad →',
-        'pr.h3': 'Un precio simple. Sin versión gratuita.',
-        'pr.sub': 'TechnoDaily lo pagas tú, no la publicidad. Eso hace posible la promesa.',
-        'pr.trialBadge': 'PRUEBA 14 DÍAS', 'pr.annual': 'Anual', 'pr.price': '19,99 €', 'pr.year': '/año',
-        'pr.a1': '✓ Todas las funciones', 'pr.a2': '✓ 14 días gratis, sin compromiso', 'pr.a3': '✓ iPhone, iPad y Apple Vision Pro',
-        'pr.cta': 'Empezar la prueba', 'pr.life': 'De por vida', 'pr.priceLife': '49,99 €', 'pr.once': 'una vez',
-        'pr.l1': '✓ Todo, para siempre', 'pr.l2': '✓ Sin suscripción', 'pr.l3': '✓ Actualizaciones incluidas',
-        'pr.ctaLife': 'Comprar de por vida',
-        'pr.note': 'Precios con IVA · En el App Store · iOS 26, iPadOS 26, visionOS 26 · Resúmenes con IA: requiere un dispositivo compatible con Apple Intelligence',
-        'ft.tagline': 'Privacy by design. Tu lectura solo te concierne a ti.',
-        'ft.product': 'PRODUCTO', 'ft.legal': 'LEGAL', 'ft.lang': 'IDIOMAS',
-        'ft.privacy': 'Política de privacidad', 'ft.terms': 'Condiciones de uso', 'ft.access': 'Política de accesibilidad',
-        'ft.marks': 'Apple, iPhone y Apple Intelligence son marcas de Apple Inc.'
-      },
-      zh: {
-        'nav.feat': '功能', 'nav.dossiers': '主题追踪', 'nav.privacy': '隐私', 'nav.pricing': '价格', 'nav.dl': '下载', 'cta.mobile': '在 App Store 下载',
-        'hero.kicker': '全新 · TechnoDaily V2，适用于 iOS 26',
-        'hero.h1a': '你的所有信息源。', 'hero.h1b': '一份简报。',
-        'hero.sub': 'Gmail 新闻通讯、RSS 订阅源、YouTube 与 Reddit，汇聚在一个懂你兴趣的阅读器里，每天早晨为你准备好最重要的内容。完全在你的设备上运行。',
-        'hero.cta2': '查看价格 →', 'hero.m1': '14 天免费试用', 'hero.m2': '之后每年 19,99 €', 'hero.m3': '隐私优先设计', 'hero.dispo': '适用于',
-        'mock.date': '7月7日 星期二', 'mock.title': '为你推荐', 'mock.refine': '筛选',
-        'mock.segAll': '全部', 'mock.segUnread': '未读', 'mock.segSaved': '已保存', 'mock.segLater': '稍后读',
-        'mock.meta': '12 篇 · 智能排序', 'mock.resume': '✦ 每日摘要', 'mock.topics': '3 个主题',
-        'mock.t1': 'Apple 向第三方应用开放 Apple Intelligence', 'mock.t1s': '4 个来源 · 新闻通讯 + RSS',
-        'mock.t2': 'GPU 采购周期临近峰值', 'mock.t2s': '3 个来源 · 新闻通讯',
-        'mock.gen': '✦ 在你的 iPhone 上生成', 'mock.badgeN': '✉ 新闻通讯',
-        'mock.a1': 'Stratechery：GPU 周期的终点？', 'mock.a1m': 'Ben Thompson · 6 分钟 · ', 'mock.cat1': '商业',
-        'mock.a2': 'M5 再次突破自研芯片的极限', 'mock.a2m': 'The Verge · 4 分钟 · ', 'mock.cat2': '科技',
-        'mock.tabPour': '为你推荐', 'mock.tabNews': '新闻通讯', 'mock.tabSettings': '设置',
-        'src.label': '你的信息源', 'src.n': '✉ Gmail 新闻通讯', 'src.r': '⌁ RSS 订阅源', 'src.opml': '一键导入 OPML',
-        'pv.kicker': '为你推荐', 'pv.h3a': '每天早晨，只看重点。', 'pv.h3b': '已为你排好。',
-        'pv.p': '推荐引擎在设备端学习你在意的内容，绝不上传云端。每日摘要把你各个信息源里的热点话题聚合起来，并由 Apple Intelligence 生成综述。',
-        'pv.b1': '处处同一套操作：全部 · 未读 · 已保存 · 稍后读',
-        'pv.b2': '智能或最新排序：你来选择，应用会记住',
-        'pv.b3': '你的新闻通讯，在真正适合阅读的地方阅读',
-        'pv.note': 'AI 摘要：需要支持 Apple Intelligence 的设备。',
-        'rc.t1s': '4 个来源 · Stratechery、The Verge、Platformer…', 'rc.t2s': '3 个来源 · Ben Evans、Stratechery…',
-        'rc.t3': 'Threads 月活用户突破 2.5 亿', 'rc.t3s': '2 个来源 · Platformer、The Information',
-        'rc.sec': '10 秒读完重点',
-        'do.kicker': '主题追踪', 'do.h3a': '关注一个主题。', 'do.h3b': '看清它的变化。',
-        'do.p1': '关注一个主题，TechnoDaily 会为它建立一份动态档案：逐日时间线、一段「有何变化」的摘要，以及报道热度骤增时的提示。',
-        'do.p2': '以文本、Markdown 或图片分享。基于你自己的信息源：除了你，没有人知道你在关注什么。',
-        'dm.pic': '▲ 热度', 'dm.meta': '18 篇 · 5 个来源 · 自 5 月起关注', 'dm.changed': '有何变化',
-        'dm.digest': 'Apple 向第三方应用开放其模型；你的三个信息源都认为这是开发者的转折点。首批测试显示延迟减半。',
-        'dm.today': '今天', 'dm.i1': 'Apple Intelligence 一周年：进展如何？', 'dm.i1m': 'Stratechery · 10 分钟',
-        'dm.i2': '第三方 SDK 将随 iOS 26.1 到来', 'dm.i2m': 'The Verge · 4 分钟',
-        'dm.cluster': '聚合关键词：SDK · 开发者 · iOS 26', 'dm.yesterday': '昨天',
-        'dm.i3': '基准测试：端侧模型追上 GPT-4', 'dm.i3m': 'Ben Evans · 6 分钟',
-        'dm.share': '分享档案', 'dm.formats': '文本 · Markdown · 图片',
-        'py.kicker': '隐私优先设计', 'py.h3': '你的阅读只属于你自己。',
-        'py.p1t': '一切都留在你的设备上', 'py.p1': '你的内容、阅读活动和推荐评分从不离开 iPhone。没有任何服务器接收它们。',
-        'py.p2t': '没有人给你建立画像', 'py.p2': '没有广告画像，没有追踪，没有第三方 SDK，没有广告。你不是商品。',
-        'py.p3t': '你的邮件，只读不存', 'py.p3': 'Gmail 仅以只读方式在设备端读取，绝不存储在别处。已通过 Google 要求的独立安全审计（CASA）。',
-        'py.p4t': '私密同步', 'py.p4': '通过你的个人 iCloud 在设备间同步，由 Apple 加密。我们无法访问。',
-        'py.stats': '使用统计呢？匿名、聚合，', 'py.statsB': '默认关闭', 'py.statsC': '。由你决定。 ',
-        'py.link': '阅读隐私政策 →',
-        'pr.h3': '价格简单，没有免费版。',
-        'pr.sub': 'TechnoDaily 由你付费，而不是由广告付费。这正是承诺得以成立的原因。',
-        'pr.trialBadge': '14 天试用', 'pr.annual': '年度订阅', 'pr.price': '19,99 €', 'pr.year': '/年',
-        'pr.a1': '✓ 全部功能', 'pr.a2': '✓ 14 天免费，随时取消', 'pr.a3': '✓ iPhone、iPad 与 Apple Vision Pro',
-        'pr.cta': '开始试用', 'pr.life': '终身买断', 'pr.priceLife': '49,99 €', 'pr.once': '一次付清',
-        'pr.l1': '✓ 一次拥有，永久使用', 'pr.l2': '✓ 无需订阅', 'pr.l3': '✓ 含后续更新',
-        'pr.ctaLife': '购买终身版',
-        'pr.note': '价格含税 · 于 App Store 提供 · iOS 26、iPadOS 26、visionOS 26 · AI 摘要：需要支持 Apple Intelligence 的设备',
-        'ft.tagline': '隐私优先设计。你的阅读只属于你自己。',
-        'ft.product': '产品', 'ft.legal': '法律', 'ft.lang': '语言',
-        'ft.privacy': '隐私政策', 'ft.terms': '使用条款', 'ft.access': '无障碍政策',
-        'ft.marks': 'Apple、iPhone 与 Apple Intelligence 是 Apple Inc. 的商标。'
-      }
-    };
-  }
-
-  applyLang(l) {
-    const dict = this.dicts()[l] || {};
-    document.documentElement.lang = ({ fr: 'fr', en: 'en', es: 'es', zh: 'zh-Hans' })[l] || 'fr';
-    if (!this._defaults) {
-      this._defaults = new Map();
-      document.querySelectorAll('[data-i18n]').forEach((n) => { this._defaults.set(n, n.textContent); });
-    }
-    document.querySelectorAll('[data-i18n]').forEach((n) => {
-      const k = n.getAttribute('data-i18n');
-      const fallback = this._defaults.get(n);
-      n.textContent = (l === 'fr') ? fallback : (dict[k] != null ? dict[k] : fallback);
-    });
-    const id = this.props.appStoreId ?? '6758897742';
-    const cc = ({ fr: 'fr', en: 'us', es: 'es', zh: 'cn' })[l] || 'fr';
-    const url = 'https://apps.apple.com/' + cc + '/app/technodaily/id' + id + '?itsct=apps_box_badge&itscg=30200';
-    document.querySelectorAll('a[data-store]').forEach((a) => { a.setAttribute('href', url); });
-    const loc = ({ fr: 'fr-fr', en: 'en-us', es: 'es-es', zh: 'zh-cn' })[l] || 'fr-fr';
-    const alts = { fr: "Télécharger dans l'App Store", en: 'Download on the App Store', es: 'Descargar en el App Store', zh: '在 App Store 下载' };
-    document.querySelectorAll('img[data-badge]').forEach((img) => {
-      img.setAttribute('src', 'https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/' + loc + '?size=250x83');
-      img.setAttribute('alt', alts[l] || alts.fr);
-    });
-    document.querySelectorAll('[data-lang-btn]').forEach((b) => {
-      const on = b.getAttribute('data-lang-btn') === l;
-      b.style.background = on ? '#FBFAF7' : 'transparent';
-      b.style.color = on ? '#221F1A' : '#6E685F';
-      b.style.fontWeight = on ? '700' : '600';
-    });
-    this._lang = l;
-    try { localStorage.setItem('td_lang', l); } catch (e) {}
-  }
-
-  detectLang() {
-    try {
-      const langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
-      for (const raw of langs) {
-        const t = (raw || '').toLowerCase();
-        if (t.startsWith('fr')) return 'fr';
-        if (t.startsWith('es')) return 'es';
-        if (t.startsWith('zh')) return 'zh';
-        if (t.startsWith('en')) return 'en';
-      }
-    } catch (e) {}
-    return null;
-  }
-
-  componentDidMount() {
-    let l = null;
-    try { l = localStorage.getItem('td_lang'); } catch (e) {}
-    if (!l && this.props.lang) l = this.props.lang;
-    if (!l) l = this.detectLang();
-    if (!l || !['fr', 'en', 'es', 'zh'].includes(l)) l = 'en';
-    this.applyLang(l);
-  }
-
-  renderVals() {
-    return {
-      setFr: () => this.applyLang('fr'),
-      setEn: () => this.applyLang('en'),
-      setEs: () => this.applyLang('es'),
-      setZh: () => this.applyLang('zh')
-    };
-  }
-}
-</script>
+<div class="navright">
+<div class="langs" role="group" aria-label="Langue">
+<a href="/technodaily/en/" hreflang="en" lang="en">EN</a>
+<a href="/technodaily/" hreflang="fr" lang="fr" aria-current="page">FR</a>
+<a href="/technodaily/es/" hreflang="es" lang="es">ES</a>
+<a href="/technodaily/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+<a href="/technodaily/ja/" hreflang="ja" lang="ja">日本語</a>
+</div>
+<a class="btn" href="https://apps.apple.com/fr/app/technodaily/id6758897742">Télécharger</a>
+</div></nav></div></header>
+<main id="contenu">
+<div class="wrap"><section class="hero">
+<div class="txt">
+<p class="kicker">Nouveau · 2.5 : japonais, Mac</p>
+<h1 class="serif">Toutes vos sources.<br>Un seul brief.</h1>
+<p class="sub">Vos newsletters Gmail, vos flux RSS et vos chaînes YouTube, réunis dans un lecteur qui apprend ce qui compte pour vous, sur votre appareil. Chaque jour, les sujets dont parlent plusieurs de vos sources et, dans Pour vous, une sélection de 30 lectures au plus.</p>
+<div class="cta">
+<a class="badge" href="https://apps.apple.com/fr/app/technodaily/id6758897742"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0ibGl2ZXR5cGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyNi41MDc1MSIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDEyNi41MDc1MSA0MCI+CiAgPHRpdGxlPkRvd25sb2FkX29uX3RoZV9BcHBfU3RvcmVfQmFkZ2VfRlJfUkdCX2Jsa18xMDA1MTc8L3RpdGxlPgogIDxnPgogICAgPGc+CiAgICAgIDxwYXRoIGQ9Ik0xMTYuOTc4MjEsMEg5LjUzNDY4Yy0uMzY2NywwLS43MjksMC0xLjA5NDczLjAwMi0uMzA2MTUuMDAyLS42MDk4Ni4wMDc4MS0uOTE4OTUuMDEyN0ExMy4yMTQ3NiwxMy4yMTQ3NiwwLDAsMCw1LjUxNzEuMTkxNDFhNi42NjUwOSw2LjY2NTA5LDAsMCwwLTEuOTAwODguNjI3QTYuNDM3NzksNi40Mzc3OSwwLDAsMCwxLjk5NzU3LDEuOTk3MDcsNi4yNTg0NCw2LjI1ODQ0LDAsMCwwLC44MTkzNSwzLjYxODE2YTYuNjAxMTksNi42MDExOSwwLDAsMC0uNjI1LDEuOTAzMzIsMTIuOTkzLDEyLjk5MywwLDAsMC0uMTc5MiwyLjAwMkMuMDA1ODcsNy44MzAwOC4wMDQ4OSw4LjEzNzcsMCw4LjQ0NDM0VjMxLjU1ODZjLjAwNDg5LjMxMDUuMDA1ODcuNjExMy4wMTUxNS45MjE5YTEyLjk5MjMyLDEyLjk5MjMyLDAsMCwwLC4xNzkyLDIuMDAxOSw2LjU4NzU2LDYuNTg3NTYsMCwwLDAsLjYyNSwxLjkwNDNBNi4yMDc3OCw2LjIwNzc4LDAsMCwwLDEuOTk3NTcsMzguMDAxYTYuMjc0NDUsNi4yNzQ0NSwwLDAsMCwxLjYxODY1LDEuMTc4Nyw2LjcwMDgyLDYuNzAwODIsMCwwLDAsMS45MDA4OC42MzA4LDEzLjQ1NTE0LDEzLjQ1NTE0LDAsMCwwLDIuMDAzOS4xNzY4Yy4zMDkwOS4wMDY4LjYxMjguMDEwNy45MTg5NS4wMTA3QzguODA1NjcsNDAsOS4xNjgsNDAsOS41MzQ2OCw0MEgxMTYuOTc4MjFjLjM1OTQsMCwuNzI0NiwwLDEuMDg0LS4wMDIuMzA0NywwLC42MTcyLS4wMDM5LjkyMTktLjAxMDdhMTMuMjc5LDEzLjI3OSwwLDAsMCwyLS4xNzY4LDYuODA0MzIsNi44MDQzMiwwLDAsMCwxLjkwODItLjYzMDgsNi4yNzc0Miw2LjI3NzQyLDAsMCwwLDEuNjE3Mi0xLjE3ODcsNi4zOTQ4Miw2LjM5NDgyLDAsMCwwLDEuMTgxNi0xLjYxNDMsNi42MDQxMyw2LjYwNDEzLDAsMCwwLC42MTkxLTEuOTA0MywxMy41MDY0MSwxMy41MDY0MSwwLDAsMCwuMTg1Ni0yLjAwMTljLjAwMzktLjMxMDYuMDAzOS0uNjExNC4wMDM5LS45MjE5LjAwNzgtLjM2MzMuMDA3OC0uNzI0Ni4wMDc4LTEuMDkzOFY5LjUzNjEzYzAtLjM2NjIxLDAtLjcyOTQ5LS4wMDc4LTEuMDkxNzksMC0uMzA2NjQsMC0uNjE0MjYtLjAwMzktLjkyMDlhMTMuNTA3MDksMTMuNTA3MDksMCwwLDAtLjE4NTYtMi4wMDIsNi42MTc3LDYuNjE3NywwLDAsMC0uNjE5MS0xLjkwMzMyLDYuNDY2MTksNi40NjYxOSwwLDAsMC0yLjc5ODgtMi43OTk4LDYuNzY3NTMsNi43Njc1MywwLDAsMC0xLjkwODItLjYyNywxMy4wNDM5NCwxMy4wNDM5NCwwLDAsMC0yLS4xNzY3NmMtLjMwNDctLjAwNDg4LS42MTcyLS4wMTA3NC0uOTIxOS0uMDEyNjktLjM1OTQtLjAwMi0uNzI0Ni0uMDAyLTEuMDg0LS4wMDJaIiBzdHlsZT0iZmlsbDogI2E2YTZhNiIvPgogICAgICA8cGF0aCBkPSJNOC40NDQ4MiwzOS4xMjVjLS4zMDQ2NywwLS42MDItLjAwMzktLjkwNDI4LS4wMTA3YTEyLjY4NzE0LDEyLjY4NzE0LDAsMCwxLTEuODY5MTQtLjE2MzEsNS44ODM4MSw1Ljg4MzgxLDAsMCwxLTEuNjU2NzQtLjU0NzksNS40MDU3Myw1LjQwNTczLDAsMCwxLTEuMzk3LTEuMDE2Niw1LjMyMDgyLDUuMzIwODIsMCwwLDEtMS4wMjA1MS0xLjM5NjUsNS43MjE4Niw1LjcyMTg2LDAsMCwxLS41NDMtMS42NTcyLDEyLjQxMzUxLDEyLjQxMzUxLDAsMCwxLS4xNjY1LTEuODc1Yy0uMDA2MzQtLjIxMDktLjAxNDY0LS45MTMxLS4wMTQ2NC0uOTEzMVY4LjQ0NDM0Uy44ODE4NSw3Ljc1MjkzLjg4NzcsNy41NDk4YTEyLjM3MTM4LDEyLjM3MTM4LDAsMCwxLC4xNjU1Mi0xLjg3MjA3LDUuNzU1NzcsNS43NTU3NywwLDAsMSwuNTQzNDctMS42NjIxQTUuMzczNjUsNS4zNzM2NSwwLDAsMSwyLjYxMTgyLDIuNjE3NjgsNS41NjU2Miw1LjU2NTYyLDAsMCwxLDQuMDE0MTcsMS41OTUyMWE1LjgyMzA5LDUuODIzMDksMCwwLDEsMS42NTMzMi0uNTQzOTRBMTIuNTg1NzksMTIuNTg1NzksMCwwLDEsNy41NDMuODg3MjFMOC40NDUzMi44NzVoMTA5LjYxMmwuOTEzMS4wMTI3YTEyLjM4NDkzLDEyLjM4NDkzLDAsMCwxLDEuODU4NC4xNjI1OSw1LjkzODMzLDUuOTM4MzMsMCwwLDEsMS42NzA5LjU0Nzg1LDUuNTkzNzUsNS41OTM3NSwwLDAsMSwyLjQxNSwyLjQxOTkzLDUuNzYyNjcsNS43NjI2NywwLDAsMSwuNTM1MiwxLjY0ODkyLDEyLjk5NSwxMi45OTUsMCwwLDEsLjE3MzgsMS44ODcyMWMuMDAyOS4yODMyLjAwMjkuNTg3NC4wMDI5Ljg5MDE0LjAwNzkuMzc1LjAwNzkuNzMxOTMuMDA3OSwxLjA5MTc5VjMwLjQ2NDhjMCwuMzYzMywwLC43MTc4LS4wMDc5LDEuMDc1MiwwLC4zMjUyLDAsLjYyMzEtLjAwMzkuOTI5N2ExMi43MzEyNiwxMi43MzEyNiwwLDAsMS0uMTcwOSwxLjg1MzUsNS43MzksNS43MzksMCwwLDEtLjU0LDEuNjcsNS40ODAyOSw1LjQ4MDI5LDAsMCwxLTEuMDE1NiwxLjM4NTcsNS40MTI5LDUuNDEyOSwwLDAsMS0xLjM5OTQsMS4wMjI1LDUuODYxNjgsNS44NjE2OCwwLDAsMS0xLjY2OC41NDk4LDEyLjU0MjE4LDEyLjU0MjE4LDAsMCwxLTEuODY5Mi4xNjMxYy0uMjkyOS4wMDY4LS41OTk2LjAxMDctLjg5NzQuMDEwN2wtMS4wODQuMDAyWiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxnIGlkPSJfR3JvdXBfIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICAgIDxnIGlkPSJfR3JvdXBfMiIgZGF0YS1uYW1lPSImbHQ7R3JvdXAmZ3Q7Ij4KICAgICAgICAgIDxnIGlkPSJfR3JvdXBfMyIgZGF0YS1uYW1lPSImbHQ7R3JvdXAmZ3Q7Ij4KICAgICAgICAgICAgPHBhdGggaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik0yNC43NzE4LDIwLjMwMDY4YTQuOTQ4ODEsNC45NDg4MSwwLDAsMSwyLjM1NjU2LTQuMTUyMDYsNS4wNjU2Niw1LjA2NTY2LDAsMCwwLTMuOTkxMTYtMi4xNTc2OGMtMS42NzkyNC0uMTc2MjYtMy4zMDcxOSwxLjAwNDgzLTQuMTYyOSwxLjAwNDgzLS44NzIyNywwLTIuMTg5NzctLjk4NzMzLTMuNjA4NS0uOTU4MTRhNS4zMTUyOSw1LjMxNTI5LDAsMCwwLTQuNDcyOTIsMi43Mjc4N2MtMS45MzQsMy4zNDg0Mi0uNDkxNDEsOC4yNjk0NywxLjM2MTIsMTAuOTc2MDguOTI2OSwxLjMyNTM1LDIuMDEwMTgsMi44MDU4LDMuNDI3NjMsMi43NTMzLDEuMzg3MDYtLjA1NzUzLDEuOTA1MS0uODg0NDgsMy41Nzk0LS44ODQ0OCwxLjY1ODc2LDAsMi4xNDQ3OS44ODQ0OCwzLjU5MS44NTExLDEuNDg4MzgtLjAyNDE2LDIuNDI2MTMtMS4zMzEyNCwzLjMyMDUxLTIuNjY5MTRBMTAuOTYyLDEwLjk2MiwwLDAsMCwyNy42OTEsMjQuNjk5ODUsNC43ODIwNSw0Ljc4MjA1LDAsMCwxLDI0Ljc3MTgsMjAuMzAwNjhaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgICA8cGF0aCBpZD0iX1BhdGhfMiIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik0yMi4wNDAxNywxMi4yMTA4OWE0Ljg3MjQ4LDQuODcyNDgsMCwwLDAsMS4xMTQ1Mi0zLjQ5MDYyLDQuOTU3NDYsNC45NTc0NiwwLDAsMC0zLjIwNzU4LDEuNjU5NjEsNC42MzYzNCw0LjYzNjM0LDAsMCwwLTEuMTQzNzEsMy4zNjEzOUE0LjA5OTA1LDQuMDk5MDUsMCwwLDAsMjIuMDQwMTcsMTIuMjEwODlaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgICAgPC9nPgogICAgICA8ZyBpZD0iX0dyb3VwXzQiIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgICAgPGc+CiAgICAgICAgICA8cGF0aCBkPSJNMzUuNjU1MjgsMTQuNzAxNjZWOS41NzgxM2gtMS44NzdWOC43MzQ4Nmg0LjY3Njc2di44NDMyNkgzNi41ODJ2NS4xMjM1NFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNNDIuNzY0NjYsMTMuNDg1ODRhMS44MjgsMS44MjgsMCwwLDEtMS45NTExNywxLjMwMjczLDIuMDQ1MzEsMi4wNDUzMSwwLDAsMS0yLjA4MDA4LTIuMzI0MjIsMi4wNzY4NSwyLjA3Njg1LDAsMCwxLDIuMDc2MTctMi4zNTI1NGMxLjI1MjkzLDAsMi4wMDg3OS44NTYsMi4wMDg3OSwyLjI3di4zMTAwNkgzOS42Mzg2OHYuMDQ5OGExLjE5MDIsMS4xOTAyLDAsMCwwLDEuMTk5MjIsMS4yOSwxLjA3OTM0LDEuMDc5MzQsMCwwLDAsMS4wNzEyOS0uNTQ1OVptLTMuMTI2LTEuNDUxMTdINDEuOTEzMWExLjA4NjQ3LDEuMDg2NDcsMCwwLDAtMS4xMDg0LTEuMTY2NUExLjE1MTYyLDEuMTUxNjIsMCwwLDAsMzkuNjM4NjgsMTIuMDM0NjdaTTQwLjI3NTQsOS40NDU4bDEuMDM4MDktMS40MjIzNmgxLjA0Mkw0MS4xOTMzNyw5LjQ0NThaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgPHBhdGggZD0iTTQ0LjA1Mjc0LDguNDQwOTJoLjg4ODY3djYuMjYwNzRoLS44ODg2N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNNTAuMjA4LDEzLjQ4NTg0YTEuODI4LDEuODI4LDAsMCwxLTEuOTUxMTcsMS4zMDI3MywyLjA0NTMxLDIuMDQ1MzEsMCwwLDEtMi4wODAwOC0yLjMyNDIyLDIuMDc2ODUsMi4wNzY4NSwwLDAsMSwyLjA3NjE3LTIuMzUyNTRjMS4yNTI5MywwLDIuMDA4NzkuODU2LDIuMDA4NzksMi4yN3YuMzEwMDZINDcuMDgydi4wNDk4YTEuMTkwMiwxLjE5MDIsMCwwLDAsMS4xOTkyMiwxLjI5LDEuMDc5MzQsMS4wNzkzNCwwLDAsMCwxLjA3MTI5LS41NDU5Wm0tMy4xMjYtMS40NTExN2gyLjI3NDQxYTEuMDg2NDcsMS4wODY0NywwLDAsMC0xLjEwODQtMS4xNjY1QTEuMTUxNjIsMS4xNTE2MiwwLDAsMCw0Ny4wODIsMTIuMDM0NjdabS42MzY3Mi0yLjU4ODg3LDEuMDM4MDktMS40MjIzNmgxLjA0Mkw0OC42MzY3Myw5LjQ0NThaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgPHBhdGggZD0iTTU0LjQwMzMzLDExLjY3MDQxYTEuMDA1NDYsMS4wMDU0NiwwLDAsMC0xLjA2MzQ4LS43NjQ2NWMtLjc0NDE0LDAtMS4xOTkyMi41NzAzMS0xLjE5OTIyLDEuNTI5NzksMCwuOTc2MDcuNDU5LDEuNTU5MDgsMS4xOTkyMiwxLjU1OTA4YS45Nzg3My45Nzg3MywwLDAsMCwxLjA2MzQ4LS43NDAyM2guODY0MjZhMS43NjIsMS43NjIsMCwwLDEtMS45MjI4NSwxLjUzNDE4LDIuMDY3OTEsMi4wNjc5MSwwLDAsMS0yLjExMzI4LTIuMzUzLDIuMDUzMDUsMi4wNTMwNSwwLDAsMSwyLjEwODQtMi4zMjM3MywxLjc3NzMxLDEuNzc3MzEsMCwwLDEsMS45Mjc3MywxLjU1ODU5WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik01Ni40NDcyOCw4LjQ0MDkyaC44ODA4NnYyLjQ4MTQ1aC4wNzAzMWExLjM4NTYsMS4zODU2LDAsMCwxLDEuMzczLS44MDY2NCwxLjQ4MzM5LDEuNDgzMzksMCwwLDEsMS41NTA3OCwxLjY3ODcxdjIuOTA3MjNoLS44ODk2NXYtMi42ODhjMC0uNzE5MjQtLjMzNS0xLjA4MzUtLjk2Mjg5LTEuMDgzNWExLjA1MTk0LDEuMDUxOTQsMCwwLDAtMS4xMzM3OSwxLjE0MTZ2Mi42Mjk4OGgtLjg4ODY3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik02MS40Mzk0NiwxMy40MjgyMmMwLS44MTA1NS42MDM1Mi0xLjI3NzgzLDEuNjc0OC0xLjM0NDI0bDEuMjE5NzMtLjA3MDMxVjExLjYyNWMwLS40NzU1OS0uMzE0NDUtLjc0NDE0LS45MjE4OC0uNzQ0MTQtLjQ5NjA5LDAtLjgzOTg0LjE4MjEzLS45Mzg0OC41MDA0OWgtLjg2MDM1Yy4wOTA4Mi0uNzczNDQuODE4MzYtMS4yNjk1MywxLjgzOTg0LTEuMjY5NTMsMS4xMjg5MSwwLDEuNzY1MTQuNTYyLDEuNzY1MTQsMS41MTMxOHYzLjA3NjY2aC0uODU1di0uNjMyODFINjQuMjkzYTEuNTE1LDEuNTE1LDAsMCwxLTEuMzUyNTQuNzA3QTEuMzYwMjYsMS4zNjAyNiwwLDAsMSw2MS40Mzk0NiwxMy40MjgyMlptMi44OTQ1My0uMzg0NzdWMTIuNjY3bC0xLjA5OTYxLjA3MDMxYy0uNjIwMTIuMDQxNS0uOTAxMzcuMjUyNDQtLjkwMTM3LjY0OTQxLDAsLjQwNTI3LjM1MTU2LjY0MTExLjgzNS42NDExMUExLjA2MTUsMS4wNjE1LDAsMCwwLDY0LjMzNCwxMy4wNDM0NloiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNNjYuNjA5ODcsMTAuMTk4NzNoLjg1NTQ3di42OTA0M2guMDY2NDFhMS4yMjA5MiwxLjIyMDkyLDAsMCwxLDEuMjE1ODItLjc2NTE0LDEuODY4MzYsMS44NjgzNiwwLDAsMSwuMzk2NDguMDM3MTF2Ljg3N2EyLjQzNDQyLDIuNDM0NDIsMCwwLDAtLjQ5NjA5LS4wNTM3MUExLjA1NTA3LDEuMDU1MDcsMCwwLDAsNjcuNDk4NTUsMTIuMDQzdjIuNjU4NjloLS44ODg2N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8cGF0aCBkPSJNNjkuOTYxNDQsMTUuMTUyMzRoLjkwOTE4Yy4wNzUyLjMyNjY2LjQ1MTE3LjUzNzYsMS4wNTA3OC41Mzc2Ljc0MDIzLDAsMS4xNzg3MS0uMzUxNTYsMS4xNzg3MS0uOTQ2Nzh2LS44NjQyNkg3My4wMzM3YTEuNTE0MzMsMS41MTQzMywwLDAsMS0xLjM4OTY1Ljc1NjM1Yy0xLjE0OTQxLDAtMS44NjAzNS0uODg4NjctMS44NjAzNS0yLjIzNjgyLDAtMS4zNzMuNzE4NzUtMi4yNzQ0MSwxLjg2OTE0LTIuMjc0NDFhMS41NjA0NSwxLjU2MDQ1LDAsMCwxLDEuNDE0MDYuNzkzOTVoLjA3MDMxdi0uNzE5MjRoLjg1MTU2djQuNTRjMCwxLjAyOTc5LS44MDY2NCwxLjY4MzExLTIuMDgwMDgsMS42ODMxMUM3MC43ODM3LDE2LjQyMTg4LDcwLjA1NjE2LDE1LjkxNzQ4LDY5Ljk2MTQ0LDE1LjE1MjM0Wm0zLjE1NTI3LTIuNzU4M2MwLS44OTctLjQ2Mzg3LTEuNDcxNjgtMS4yMjA3LTEuNDcxNjgtLjc2NDY1LDAtMS4xOTQzNC41NzQ3MS0xLjE5NDM0LDEuNDcxNjgsMCwuODk3NDYuNDI5NjksMS40NzIxNywxLjE5NDM0LDEuNDcyMTdDNzIuNjU3NzMsMTMuODY2MjEsNzMuMTE2NzEsMTMuMjk1OSw3My4xMTY3MSwxMi4zOTRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgPHBhdGggZD0iTTc5LjIxMjQxLDEzLjQ4NTg0YTEuODI4LDEuODI4LDAsMCwxLTEuOTUxMTcsMS4zMDI3MywyLjA0NTMxLDIuMDQ1MzEsMCwwLDEtMi4wODAwOC0yLjMyNDIyLDIuMDc2ODUsMi4wNzY4NSwwLDAsMSwyLjA3NjE3LTIuMzUyNTRjMS4yNTI5MywwLDIuMDA4NzkuODU2LDIuMDA4NzksMi4yN3YuMzEwMDZINzYuMDg2NDR2LjA0OThhMS4xOTAyLDEuMTkwMiwwLDAsMCwxLjE5OTIyLDEuMjksMS4wNzkzNCwxLjA3OTM0LDAsMCwwLDEuMDcxMjktLjU0NTlabS0zLjEyNi0xLjQ1MTE3aDIuMjc0NDFhMS4wODY0NywxLjA4NjQ3LDAsMCwwLTEuMTA4NC0xLjE2NjVBMS4xNTE2MiwxLjE1MTYyLDAsMCwwLDc2LjA4NjQ0LDEyLjAzNDY3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik04MC40NTk0OCwxMC4xOTg3M0g4MS4zMTV2LjY5MDQzaC4wNjY0MWExLjIyMDkyLDEuMjIwOTIsMCwwLDEsMS4yMTU4Mi0uNzY1MTQsMS44NjgzNiwxLjg2ODM2LDAsMCwxLC4zOTY0OC4wMzcxMXYuODc3YTIuNDM0NDIsMi40MzQ0MiwwLDAsMC0uNDk2MDktLjA1MzcxQTEuMDU1MDcsMS4wNTUwNywwLDAsMCw4MS4zNDgxNSwxMi4wNDN2Mi42NTg2OWgtLjg4ODY3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik04Ni4xOTU4MSwxMi40NDgyNGMwLTEuNDIyODUuNzMxNDUtMi4zMjQyMiwxLjg2OTE0LTIuMzI0MjJhMS40ODQsMS40ODQsMCwwLDEsMS4zODA4Ni43OWguMDY2NDFWOC40NDA5MmguODg4Njd2Ni4yNjA3NGgtLjg1MTU2di0uNzExNDNIODkuNDc5YTEuNTYyODQsMS41NjI4NCwwLDAsMS0xLjQxNDA2Ljc4NTY0Qzg2LjkxOTQ0LDE0Ljc3NTg4LDg2LjE5NTgxLDEzLjg3NDUxLDg2LjE5NTgxLDEyLjQ0ODI0Wm0uOTE4LDBjMCwuOTU1MDguNDUwMiwxLjUyOTc5LDEuMjAzMTMsMS41Mjk3OS43NDksMCwxLjIxMTkxLS41ODMsMS4yMTE5MS0xLjUyNTg4LDAtLjkzODQ4LS40Njc3Ny0xLjUyOTc5LTEuMjExOTEtMS41Mjk3OUM4Ny41Njg4NiwxMC45MjIzNiw4Ny4xMTM3OCwxMS41MDEsODcuMTEzNzgsMTIuNDQ4MjRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgPHBhdGggZD0iTTkxLjYwMjA2LDEzLjQyODIyYzAtLjgxMDU1LjYwMzUyLTEuMjc3ODMsMS42NzQ4LTEuMzQ0MjRsMS4yMTk3My0uMDcwMzFWMTEuNjI1YzAtLjQ3NTU5LS4zMTQ0NS0uNzQ0MTQtLjkyMTg3LS43NDQxNC0uNDk2MDksMC0uODM5ODQuMTgyMTMtLjkzODQ4LjUwMDQ5aC0uODYwMzVjLjA5MDgyLS43NzM0NC44MTgzNi0xLjI2OTUzLDEuODM5ODQtMS4yNjk1MywxLjEyODkxLDAsMS43NjU2My41NjIsMS43NjU2MywxLjUxMzE4djMuMDc2NjZoLS44NTU0N3YtLjYzMjgxaC0uMDcwMzFhMS41MTUsMS41MTUsMCwwLDEtMS4zNTI1NC43MDdBMS4zNjAyNiwxLjM2MDI2LDAsMCwxLDkxLjYwMjA2LDEzLjQyODIyWm0yLjg5NDUzLS4zODQ3N1YxMi42NjdMOTMuMzk3LDEyLjczNzNjLS42MjAxMi4wNDE1LS45MDEzNy4yNTI0NC0uOTAxMzcuNjQ5NDEsMCwuNDA1MjcuMzUxNTYuNjQxMTEuODM1LjY0MTExQTEuMDYxNSwxLjA2MTUsMCwwLDAsOTQuNDk2NTksMTMuMDQzNDZaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgPHBhdGggZD0iTTk2Ljc3MywxMC4xOTg3M2guODU1NDd2LjcxNTMzaC4wNjY0MWExLjM0OCwxLjM0OCwwLDAsMSwxLjM0Mzc1LS44MDIyNSwxLjQ2NDU2LDEuNDY0NTYsMCwwLDEsMS41NTg1OSwxLjY3NDh2Mi45MTVoLS44ODg2N1YxMi4wMDk3N2MwLS43MjM2My0uMzE0NDUtMS4wODM1LS45NzE2OC0xLjA4MzVhMS4wMzI5NCwxLjAzMjk0LDAsMCwwLTEuMDc1MiwxLjE0MTExdjIuNjM0MjhIOTYuNzczWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgIDxwYXRoIGQ9Ik0xMDMuNjE3NjksMTAuMTExODJjMS4wMTI3LDAsMS42NzQ4LjQ3MTE5LDEuNzYxNzIsMS4yNjUxNGgtLjg1MjU0Yy0uMDgyLS4zMzA1Ny0uNDA1MjctLjU0MTUtLjkwOTE4LS41NDE1LS40OTYwOSwwLS44NzMuMjM1MzUtLjg3My41ODY5MSwwLC4yNjkuMjI3NTQuNDM4NDguNzE1ODIuNTUwMjlsLjc0OC4xNzMzNGMuODU2NDUuMTk4NzMsMS4yNTc4MS41NjY4OSwxLjI1NzgxLDEuMjI4NTIsMCwuODQ3NjYtLjc5LDEuNDE0MDYtMS44NjUyMywxLjQxNDA2LTEuMDcxMjksMC0xLjc2OTUzLS40ODM4OS0xLjg0ODYzLTEuMjgxNzRoLjg4OTY1YS45MTM2NS45MTM2NSwwLDAsMCwuOTc5NDkuNTYyYy41NTM3MSwwLC45NDcyNy0uMjQ4Ljk0NzI3LS42MDc5MSwwLS4yNjg1NS0uMjEwOTQtLjQ0MjM4LS42NjIxMS0uNTQ5OGwtLjc4NTE2LS4xODIxM2MtLjg1NjQ1LS4yMDI2NC0xLjI1MjkzLS41ODY5MS0xLjI1MjkzLTEuMjU2ODRDMTAxLjg2ODY2LDEwLjY3MzgzLDEwMi42MDAxMSwxMC4xMTE4MiwxMDMuNjE3NjksMTAuMTExODJaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDwvZz4KICAgICAgPC9nPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGQ9Ik0zNS4xOTgyNSwxOC4wNjY4OWgxLjg1OTM4VjMwLjQ4NTM1SDM1LjE5ODI1WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTM5LjI5Nzg2LDIyLjYxMDg0bDEuMDE1NjMtNC41NDM5NWgxLjgwNjY0bC0xLjIzMDQ3LDQuNTQzOTVaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNDkuMTQ2NDksMjcuMTI4OTFINDQuNDEzMWwtMS4xMzY3MiwzLjM1NjQ1SDQxLjI3MTQ5bDQuNDgzNC0xMi40MTg0NmgyLjA4M2w0LjQ4MzQsMTIuNDE4NDZINTAuMjgyMjRabS00LjI0MzE2LTEuNTQ4ODNoMy43NTJsLTEuODQ5NjEtNS40NDc3NWgtLjA1MTc2WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTYyLjAwMjk0LDI1Ljk1OWMwLDIuODEzNDgtMS41MDU4Niw0LjYyMTA5LTMuNzc4MzIsNC42MjEwOWEzLjA2OTMsMy4wNjkzLDAsMCwxLTIuODQ4NjMtMS41ODRoLS4wNDN2NC40ODQzOGgtMS44NTg0VjIxLjQzMTE1aDEuNzk4ODNWMjIuOTM3aC4wMzQxOGEzLjIxMTYyLDMuMjExNjIsMCwwLDEsMi44ODI4MS0xLjYwMDU5QzYwLjQ4ODI5LDIxLjMzNjQzLDYyLjAwMjk0LDIzLjE1MjgzLDYyLjAwMjk0LDI1Ljk1OVptLTEuOTEwMTYsMGMwLTEuODMzNS0uOTQ3MjctMy4wMzg1Ny0yLjM5MjU4LTMuMDM4NTctMS40MTk5MiwwLTIuMzc1LDEuMjMwNDctMi4zNzUsMy4wMzg1NywwLDEuODI0MjIuOTU1MDgsMy4wNDU5LDIuMzc1LDMuMDQ1OUM1OS4xNDU1MiwyOS4wMDQ4OCw2MC4wOTI3OCwyNy44MDg1OSw2MC4wOTI3OCwyNS45NTlaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNzEuOTY3MywyNS45NTljMCwyLjgxMzQ4LTEuNTA1ODYsNC42MjEwOS0zLjc3ODMyLDQuNjIxMDlhMy4wNjkzLDMuMDY5MywwLDAsMS0yLjg0ODYzLTEuNTg0aC0uMDQzdjQuNDg0MzhINjMuNDM5NDZWMjEuNDMxMTVINjUuMjM3OFYyMi45MzdINjUuMjcyYTMuMjExNjIsMy4yMTE2MiwwLDAsMSwyLjg4MjgxLTEuNjAwNTlDNzAuNDUyNjUsMjEuMzM2NDMsNzEuOTY3MywyMy4xNTI4Myw3MS45NjczLDI1Ljk1OVptLTEuOTEwMTYsMGMwLTEuODMzNS0uOTQ3MjctMy4wMzg1Ny0yLjM5MjU4LTMuMDM4NTctMS40MTk5MiwwLTIuMzc1LDEuMjMwNDctMi4zNzUsMy4wMzg1NywwLDEuODI0MjIuOTU1MDgsMy4wNDU5LDIuMzc1LDMuMDQ1OUM2OS4xMDk4NywyOS4wMDQ4OCw3MC4wNTcxNCwyNy44MDg1OSw3MC4wNTcxNCwyNS45NTlaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNzguNTUzMjMsMjcuMDI1MzljLjEzNzcsMS4yMzE0NSwxLjMzNCwyLjA0LDIuOTY4NzUsMi4wNCwxLjU2NjQxLDAsMi42OTMzNi0uODA4NTksMi42OTMzNi0xLjkxODk1LDAtLjk2Mzg3LS42Nzk2OS0xLjU0MS0yLjI4OTA2LTEuOTM2NTJsLTEuNjA5MzctLjM4ODE4Qzc4LjAzNjYzLDI0LjI3MSw3Ni45NzgsMjMuMjA0NTksNzYuOTc4LDIxLjQ3NDEyYzAtMi4xNDI1OCwxLjg2NzE5LTMuNjE0MjYsNC41MTg1NS0zLjYxNDI2LDIuNjI0LDAsNC40MjI4NSwxLjQ3MTY4LDQuNDgzNCwzLjYxNDI2SDg0LjEwNGMtLjExMjMtMS4yMzkyNi0xLjEzNjcyLTEuOTg3My0yLjYzMzc5LTEuOTg3M3MtMi41MjE0OC43NTY4NC0yLjUyMTQ4LDEuODU4NGMwLC44Nzc5My42NTQzLDEuMzk0NTMsMi4yNTQ4OCwxLjc5bDEuMzY4MTYuMzM1OTRjMi41NDc4NS42MDI1NCwzLjYwNjQ1LDEuNjI2NDYsMy42MDY0NSwzLjQ0Mjg3LDAsMi4zMjMyNC0xLjg1MDU5LDMuNzc4MzItNC43OTM5NSwzLjc3ODMyLTIuNzUzOTEsMC00LjYxMzI4LTEuNDIwOS00LjczMzQtMy42NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNOTAuMTksMTkuMjg4NTd2Mi4xNDI1OGgxLjcyMTY4djEuNDcxNjhIOTAuMTl2NC45OTE3YzAsLjc3NTM5LjM0NDczLDEuMTM2NzIsMS4xMDE1NiwxLjEzNjcyYTUuODA3NTIsNS44MDc1MiwwLDAsMCwuNjExMzMtLjA0M3YxLjQ2Mjg5YTUuMTAzNTEsNS4xMDM1MSwwLDAsMS0xLjAzMjIzLjA4NTk0Yy0xLjgzMywwLTIuNTQ3ODUtLjY4ODQ4LTIuNTQ3ODUtMi40NDQzNFYyMi45MDI4M0g4Ny4wMDYzNlYyMS40MzExNWgxLjMxNjQxVjE5LjI4ODU3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTkyLjkwNzczLDI1Ljk1OWMwLTIuODQ5MTIsMS42Nzc3My00LjYzOTE2LDQuMjkzOTUtNC42MzkxNiwyLjYyNSwwLDQuMjk0OTIsMS43OSw0LjI5NDkyLDQuNjM5MTYsMCwyLjg1NjQ1LTEuNjYxMTMsNC42Mzg2Ny00LjI5NDkyLDQuNjM4NjdDOTQuNTY4ODYsMzAuNTk3NjYsOTIuOTA3NzMsMjguODE1NDMsOTIuOTA3NzMsMjUuOTU5Wm02LjY5NTMxLDBjMC0xLjk1NDU5LS44OTU1MS0zLjEwNzkxLTIuNDAxMzctMy4xMDc5MXMtMi40MDAzOSwxLjE2MjExLTIuNDAwMzksMy4xMDc5MWMwLDEuOTYxOTEuODk0NTMsMy4xMDY0NSwyLjQwMDM5LDMuMTA2NDVTOTkuNjAzLDI3LjkyMDksOTkuNjAzLDI1Ljk1OVoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik0xMDMuMDI4ODIsMjEuNDMxMTVoMS43NzI0NnYxLjU0MWguMDQzYTIuMTU5NCwyLjE1OTQsMCwwLDEsMi4xNzc3My0xLjYzNTc0LDIuODY2MTYsMi44NjYxNiwwLDAsMSwuNjM2NzIuMDY5MzRWMjMuMTQ0YTIuNTk3OTQsMi41OTc5NCwwLDAsMC0uODM1LS4xMTIzLDEuODcyOCwxLjg3MjgsMCwwLDAtMS45MzY1MiwyLjA4MzV2NS4zNzAxMmgtMS44NTg0WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTExNi4yMjYwOCwyNy44MjYxN2MtLjI1LDEuNjQzNTUtMS44NTA1OSwyLjc3MTQ4LTMuODk4NDQsMi43NzE0OC0yLjYzMzc5LDAtNC4yNjg1NS0xLjc2NDY1LTQuMjY4NTUtNC41OTU3LDAtMi44NDAzMywxLjY0MzU1LTQuNjgyMTMsNC4xOTA0My00LjY4MjEzLDIuNTA0ODgsMCw0LjA4MDA4LDEuNzIwNyw0LjA4MDA4LDQuNDY2MzF2LjYzNjcyaC02LjM5NDUzdi4xMTIzYTIuMzU4LDIuMzU4LDAsMCwwLDIuNDM1NTUsMi41NjQ0NSwyLjA0ODM0LDIuMDQ4MzQsMCwwLDAsMi4wOTA4Mi0xLjI3MzQ0Wk0xMDkuOTQzODYsMjUuMTI0aDQuNTI2MzdhMi4xNzc0NCwyLjE3NzQ0LDAsMCwwLTIuMjIwNy0yLjI5ODM0QTIuMjkyMTQsMi4yOTIxNCwwLDAsMCwxMDkuOTQzODYsMjUuMTI0WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="Télécharger dans l&#x27;App Store" width="168" height="56"></a>
+<a class="more" href="#tarif">Voir le tarif →</a>
+</div>
+<p class="meta">14 jours gratuits pour un premier abonnement, puis 19,99 € par an, ou 49,99 € à vie.<br>Vos lectures ne regardent que vous.</p>
+<div class="dispo"><span class="l">DISPONIBLE SUR</span><span class="chip">iPhone</span><span class="chip">iPad</span><span class="chip">Mac</span><span class="chip">Apple Vision Pro</span></div>
+</div>
+<div class="phone" role="img" aria-label="Aperçu de l&#x27;écran Pour vous"><div class="screen" aria-hidden="true">
+<div class="sbar"><span>9:41</span><i></i></div>
+<div class="mhead">
+<div class="mtitle"><b class="serif">Pour vous</b><div class="mtools"><span>Affiner</span><div class="gear"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6E685F" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div></div></div>
+<div class="seg"><span class="">Tout</span><span class="on">Non lus</span><span class="">Enregistrés</span><span class="">À lire</span></div>
+<div class="mmeta">24 articles · Tri intelligent</div>
+</div>
+<div class="mbody">
+<div class="sage">
+<div class="hd"><span>✦ RÉSUMÉ DU JOUR</span><em>3 SUJETS</em></div>
+<div class="t"><b class="serif">Les villes face aux vagues de chaleur</b><small>4 sources · Newsletters + RSS</small></div>
+<div class="t"><b class="serif">Où en est la voiture électrique</b><small>3 sources · RSS</small></div>
+<div class="gen">✦ Généré sur votre appareil</div>
+</div>
+<div class="grp">À L&#x27;INSTANT</div>
+<div class="card"><div class="top"><span class="tb n">Newsletter</span><span class="udot"></span></div><b class="serif">Cinq graphiques pour comprendre l&#x27;inflation</b><small>6 min · Économie</small></div>
+<div class="grp">AUJOURD&#x27;HUI</div>
+<div class="card"><div class="top"><span class="tb r">RSS</span><span class="udot"></span></div><b class="serif">Pourquoi le ciel nocturne s&#x27;éclaircit</b><small>4 min · Science</small></div>
+</div>
+<div class="tabs"><div class="on"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2l1.6 4.9L17.5 8.5l-4.9 1.6L11 15l-1.6-4.9L4.5 8.5l4.9-1.6zM18 13l.9 2.6 2.6.9-2.6.9L18 20l-.9-2.6-2.6-.9 2.6-.9z"/></svg><span class="bdg">24</span>Pour vous</div><div class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></svg>Sources</div><div class=""><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z"/></svg>Enregistrés</div><div class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>Rechercher</div></div>
+</div></div>
+</section>
+<section class="sources" aria-label="Vos sources">
+<span class="lab">Vos sources</span>
+<span class="sp n">✉ Newsletters Gmail</span>
+<span class="sp r">⌁ Flux RSS</span>
+<span class="sp y">▷ YouTube</span>
+<span class="sp r">Import et export OPML</span>
+<p class="note">Un subreddit ? Collez son adresse, l&#x27;app trouve son flux RSS.</p>
+</section></div>
+<section id="fonctionnalites" class="band alt"><div class="wrap"><div class="split">
+<div class="txt">
+<p class="kicker">Pour vous</p>
+<h2 class="serif">Une sélection du jour.<br>Pas une pile.</h2>
+<p class="lead">Dans Pour vous, la vue « Non lus » montre au plus 30 lectures à la fois, choisies parmi les dernières 48 heures et rangées en trois groupes : À l&#x27;instant, Aujourd&#x27;hui, Vous avez manqué. Le badge de l&#x27;onglet compte cette sélection, jamais le volume. Le moteur apprend ce qui compte pour vous, sur l&#x27;appareil, et suit vos lectures du moment.</p>
+<ul class="dots"><li>Le Résumé du jour : les sujets dont parlent plusieurs de vos sources, en général trois, avec leurs articles</li><li>Avec Apple Intelligence, un paragraphe de synthèse généré sur l&#x27;appareil ; sans, le Résumé du jour est là quand même</li><li>Une notification le matin, à l&#x27;heure de votre choix : « 3 sujets ce matin »</li><li>« Pas intéressé », « Cet article n&#x27;a rien à faire ici », « Exclure du brief » : vos corrections, sur tous vos appareils</li></ul>
+<p class="small">Résumés : appareil compatible Apple Intelligence.</p>
+</div>
+<div class="bcard" aria-hidden="true">
+<div class="hd"><span>✦ RÉSUMÉ DU JOUR</span><em>3 SUJETS · 9 ARTICLES</em></div>
+<div class="t"><b class="serif">Les villes face aux vagues de chaleur</b><small>4 sources · Newsletters + RSS</small></div>
+<div class="t"><b class="serif">Où en est la voiture électrique</b><small>3 sources · RSS</small></div>
+<div class="t"><b class="serif">Les missions vers la Lune se multiplient</b><small>2 sources · RSS + YouTube</small></div>
+<div class="ft"><span>✦ Généré sur votre appareil</span><span>Voir le sujet ›</span></div>
+</div>
+</div></div></section>
+<section id="sujets" class="band"><div class="wrap"><div class="split">
+<div class="dcard" aria-hidden="true">
+<div class="nm"><b class="serif">Missions lunaires</b><span class="pic">▲ Pic</span></div>
+<div class="dm">14 articles · 5 sources · suivi depuis 3 semaines</div>
+<div class="dig"><div class="l">CE QUI A CHANGÉ</div><p>Trois de vos sources reviennent sur le calendrier des prochains lancements ; deux détaillent les essais du nouvel atterrisseur.</p></div>
+<div class="day">AUJOURD&#x27;HUI</div>
+<div class="it"><i></i><div><b class="serif">Le calendrier des prochains lancements</b><small>Flux RSS · 5 min</small></div></div>
+<div class="it"><i></i><div><b class="serif">Ce que l&#x27;on sait du nouvel atterrisseur</b><small>Newsletter · 7 min</small></div></div>
+<div class="cl">Regroupé autour de : lancement · atterrisseur · Lune</div>
+<div class="day">HIER</div>
+<div class="it"><i class="read"></i><div><b class="serif read">Pourquoi retourner sur la Lune</b><small>YouTube · 12 min</small></div></div>
+<div class="sh"><span>Partager le dossier</span><span>Texte · Markdown · Image</span></div>
+</div>
+<div class="txt">
+<p class="kicker">Sujets suivis</p>
+<h2 class="serif">Suivez un sujet.<br>Voyez ce qui change.</h2>
+<p class="lead">Suivez un sujet et TechnoDaily en tient le dossier : ce qui bouge jour après jour, une synthèse « ce qui a changé » sur les appareils compatibles, et un repère quand la couverture s&#x27;emballe.</p>
+<p class="lead">Les personnes et organisations d&#x27;un sujet ont leur page, sur sept jours. Partagez le dossier en texte, en Markdown ou en image. Votre veille sur vos sources : personne d&#x27;autre que vous ne sait ce que vous suivez.</p>
+</div>
+</div></div></section>
+<section id="mac" class="band alt"><div class="wrap"><div class="split">
+<div class="txt">
+<p class="kicker">Nouveau · Mac</p>
+<h2 class="serif">Sur Mac,<br>au clavier.</h2>
+<p class="lead">Une app Mac native, avec sa barre de menus : passez d&#x27;un onglet à l&#x27;autre au clavier, ouvrez un article dans sa propre fenêtre, retrouvez un badge dans le Dock. Le même achat vaut pour iPhone, iPad, Mac et Apple Vision Pro, et tout se synchronise par votre iCloud personnel.</p>
+<ul class="dots"><li>⌘1 à ⌘4 : Pour vous, Sources, Enregistrés, Rechercher</li><li>⌘R pour actualiser, ⌘F pour chercher, ⌘, pour les réglages</li><li>Un article dans sa propre fenêtre (⇧⌘N)</li><li>macOS 26.1 ou plus récent</li></ul>
+<div class="macbadge"><a href="https://apps.apple.com/fr/app/technodaily/id6758897742"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0ibGl2ZXR5cGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE1Ni4xMDA1NCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDE1Ni4xMDA1NCA0MCI+CiAgPHRpdGxlPkRvd25sb2FkX29uX3RoZV9NYWNfQXBwX1N0b3JlX0JhZGdlX0ZSX1JHQl9ibGtfMTAwMjE3PC90aXRsZT4KICA8Zz4KICAgIDxnPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBkPSJNMTQ2LjU3MTIzLDBIOS41MzQ2OGMtLjM2NjcsMC0uNzI5LDAtMS4wOTQ3My4wMDItLjMwNjE1LjAwMi0uNjA5ODYuMDA3ODEtLjkxODk1LjAxMjdBMTMuMjE0NzYsMTMuMjE0NzYsMCwwLDAsNS41MTcxLjE5MTQxYTYuNjY1MDksNi42NjUwOSwwLDAsMC0xLjkwMDg4LjYyN0E2LjQzNzgsNi40Mzc4LDAsMCwwLDEuOTk3NTcsMS45OTcwNyw2LjI1ODQ0LDYuMjU4NDQsMCwwLDAsLjgxOTM1LDMuNjE4MTZhNi42MDExOSw2LjYwMTE5LDAsMCwwLS42MjUsMS45MDMzMiwxMi45OTMsMTIuOTkzLDAsMCwwLS4xNzkyLDIuMDAyQy4wMDU4Nyw3LjgzMDA4LjAwNDg5LDguMTM3NywwLDguNDQ0MzRWMzEuNTU4NmMuMDA0ODkuMzEwNS4wMDU4Ny42MTEzLjAxNTE0LjkyMTlhMTIuOTkyMzIsMTIuOTkyMzIsMCwwLDAsLjE3OTIsMi4wMDE5LDYuNTg3NTYsNi41ODc1NiwwLDAsMCwuNjI1LDEuOTA0M0E2LjIwNzc4LDYuMjA3NzgsMCwwLDAsMS45OTc1NywzOC4wMDFhNi4yNzQ0Niw2LjI3NDQ2LDAsMCwwLDEuNjE4NjUsMS4xNzg3LDYuNzAwODIsNi43MDA4MiwwLDAsMCwxLjkwMDg4LjYzMDgsMTMuNDU1MTQsMTMuNDU1MTQsMCwwLDAsMi4wMDM5LjE3NjhjLjMwOTA5LjAwNjguNjEyOC4wMTA3LjkxODk1LjAxMDdDOC44MDU2Nyw0MCw5LjE2OCw0MCw5LjUzNDY4LDQwSDE0Ni41NzEyM2MuMzU5NCwwLC43MjQ2LDAsMS4wODQtLjAwMi4zMDQ3LDAsLjYxNzItLjAwMzkuOTIxOS0uMDEwN2ExMy4yNzksMTMuMjc5LDAsMCwwLDItLjE3NjgsNi44MDQzMiw2LjgwNDMyLDAsMCwwLDEuOTA4Mi0uNjMwOCw2LjI3NzQyLDYuMjc3NDIsMCwwLDAsMS42MTcyLTEuMTc4Nyw2LjM5NDgyLDYuMzk0ODIsMCwwLDAsMS4xODE2LTEuNjE0Myw2LjYwNDEzLDYuNjA0MTMsMCwwLDAsLjYxOTEtMS45MDQzLDEzLjUwNjQzLDEzLjUwNjQzLDAsMCwwLC4xODU2LTIuMDAxOWMuMDAzOS0uMzEwNi4wMDM5LS42MTE0LjAwMzktLjkyMTkuMDA3OC0uMzYzMy4wMDc4LS43MjQ2LjAwNzgtMS4wOTM4VjkuNTM2MTNjMC0uMzY2MjEsMC0uNzI5NDktLjAwNzgtMS4wOTE3OSwwLS4zMDY2NCwwLS42MTQyNi0uMDAzOS0uOTIwOWExMy41MDcxLDEzLjUwNzEsMCwwLDAtLjE4NTYtMi4wMDIsNi42MTc3LDYuNjE3NywwLDAsMC0uNjE5MS0xLjkwMzMyLDYuNDY2MTksNi40NjYxOSwwLDAsMC0yLjc5ODgtMi43OTk4LDYuNzY3NTQsNi43Njc1NCwwLDAsMC0xLjkwODItLjYyNywxMy4wNDM5NCwxMy4wNDM5NCwwLDAsMC0yLS4xNzY3NmMtLjMwNDctLjAwNDg4LS42MTcyLS4wMTA3NC0uOTIxOS0uMDEyNjktLjM1OTQtLjAwMi0uNzI0Ni0uMDAyLTEuMDg0LS4wMDJaIiBzdHlsZT0iZmlsbDogI2E2YTZhNiIvPgogICAgICAgIDxwYXRoIGQ9Ik04LjQ0NDgzLDM5LjEyNWMtLjMwNDY4LDAtLjYwMjA1LS4wMDM5LS45MDQyOS0uMDEwN2ExMi42ODcxNCwxMi42ODcxNCwwLDAsMS0xLjg2OTE0LS4xNjMxLDUuODgzODEsNS44ODM4MSwwLDAsMS0xLjY1Njc0LS41NDc5LDUuNDA1NzMsNS40MDU3MywwLDAsMS0xLjM5Ny0xLjAxNjYsNS4zMjA4Miw1LjMyMDgyLDAsMCwxLTEuMDIwNTEtMS4zOTY1LDUuNzIxODQsNS43MjE4NCwwLDAsMS0uNTQzLTEuNjU3MiwxMi40MTMzOSwxMi40MTMzOSwwLDAsMS0uMTY2NS0xLjg3NWMtLjAwNjM0LS4yMTA5LS4wMTQ2NC0uOTEzMS0uMDE0NjQtLjkxMzFWOC40NDQzNFMuODgxODUsNy43NTI5My44ODc3LDcuNTQ5OGExMi4zNzAzMiwxMi4zNzAzMiwwLDAsMSwuMTY1NTMtMS44NzIwNyw1Ljc1NTUyLDUuNzU1NTIsMCwwLDEsLjU0MzQ2LTEuNjYyMUE1LjM3MzUsNS4zNzM1LDAsMCwxLDIuNjExODMsMi42MTc2OCw1LjU2NTQzLDUuNTY1NDMsMCwwLDEsNC4wMTQxNywxLjU5NTIxYTUuODIzMDksNS44MjMwOSwwLDAsMSwxLjY1MzMyLS41NDM5NEExMi41ODU4OSwxMi41ODU4OSwwLDAsMSw3LjU0My44ODcyMUw4LjQ0NTMyLjg3NWgxMzkuMjA1bC45MTMxLjAxMjdhMTIuMzg0OTMsMTIuMzg0OTMsMCwwLDEsMS44NTg0LjE2MjU5LDUuOTM4MzMsNS45MzgzMywwLDAsMSwxLjY3MDkuNTQ3ODUsNS41OTM3NCw1LjU5Mzc0LDAsMCwxLDIuNDE1LDIuNDE5OTMsNS43NjI2Nyw1Ljc2MjY3LDAsMCwxLC41MzUyLDEuNjQ4OTIsMTIuOTk1LDEyLjk5NSwwLDAsMSwuMTczOCwxLjg4NzIxYy4wMDI5LjI4MzIuMDAyOS41ODc0LjAwMjkuODkwMTQuMDA3OS4zNzUuMDA3OS43MzE5My4wMDc5LDEuMDkxNzlWMzAuNDY0OGMwLC4zNjMzLDAsLjcxNzgtLjAwNzksMS4wNzUyLDAsLjMyNTIsMCwuNjIzMS0uMDAzOS45Mjk3YTEyLjczMTI3LDEyLjczMTI3LDAsMCwxLS4xNzA5LDEuODUzNSw1LjczOSw1LjczOSwwLDAsMS0uNTQsMS42Nyw1LjQ4MDI5LDUuNDgwMjksMCwwLDEtMS4wMTU2LDEuMzg1Nyw1LjQxMjksNS40MTI5LDAsMCwxLTEuMzk5NCwxLjAyMjUsNS44NjE2OCw1Ljg2MTY4LDAsMCwxLTEuNjY4LjU0OTgsMTIuNTQyMTgsMTIuNTQyMTgsMCwwLDEtMS44NjkyLjE2MzFjLS4yOTI5LjAwNjgtLjU5OTYuMDEwNy0uODk3NC4wMTA3bC0xLjA4NC4wMDJaIi8+CiAgICAgIDwvZz4KICAgICAgPGcgaWQ9Il9Hcm91cF8iIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgICAgPGcgaWQ9Il9Hcm91cF8yIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICAgICAgPGcgaWQ9Il9Hcm91cF8zIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICAgICAgICA8ZyBpZD0iX0dyb3VwXzQiIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgICAgICAgICAgPHBhdGggaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik0yNC43Njg4OCwyMC4zMDA2OGE0Ljk0ODgxLDQuOTQ4ODEsMCwwLDEsMi4zNTY1Ni00LjE1MjA2LDUuMDY1NjYsNS4wNjU2NiwwLDAsMC0zLjk5MTE2LTIuMTU3NjhjLTEuNjc5MjQtLjE3NjI2LTMuMzA3MTksMS4wMDQ4My00LjE2MjksMS4wMDQ4My0uODcyMjcsMC0yLjE4OTc3LS45ODczMy0zLjYwODUtLjk1ODE0YTUuMzE1MjksNS4zMTUyOSwwLDAsMC00LjQ3MjkyLDIuNzI3ODdjLTEuOTM0LDMuMzQ4NDItLjQ5MTQxLDguMjY5NDcsMS4zNjEyLDEwLjk3NjA4LjkyNjksMS4zMjUzNSwyLjAxMDE4LDIuODA1OCwzLjQyNzYzLDIuNzUzMywxLjM4NzA2LS4wNTc1MywxLjkwNTEtLjg4NDQ4LDMuNTc5NC0uODg0NDgsMS42NTg3NiwwLDIuMTQ0NzkuODg0NDgsMy41OTEuODUxMSwxLjQ4ODM4LS4wMjQxNiwyLjQyNjEzLTEuMzMxMjQsMy4zMjA1MS0yLjY2OTE0YTEwLjk2MiwxMC45NjIsMCwwLDAsMS41MTg0Mi0zLjA5MjUxQTQuNzgyMDUsNC43ODIwNSwwLDAsMSwyNC43Njg4OCwyMC4zMDA2OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICAgICAgPHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMjIuMDM3MjUsMTIuMjEwODlhNC44NzI0OCw0Ljg3MjQ4LDAsMCwwLDEuMTE0NTItMy40OTA2Miw0Ljk1NzQ2LDQuOTU3NDYsMCwwLDAtMy4yMDc1OCwxLjY1OTYxLDQuNjM2MzQsNC42MzYzNCwwLDAsMC0xLjE0MzcxLDMuMzYxMzlBNC4wOTkwNSw0LjA5OTA1LDAsMCwwLDIyLjAzNzI1LDEyLjIxMDg5WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgICAgPC9nPgogICAgICAgICAgPC9nPgogICAgICAgICAgPGc+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik00Ni4xNDg5NSwzMC40OTYwOVYyMS4zNTY0NUg0Ni4wODg0bC0zLjc0MzE2LDkuMDQ0OTJINDAuOTE2NTJsLTMuNzUyOTMtOS4wNDQ5MkgzNy4xMDR2OS4xMzk2NUgzNS4zNDgxNnYtMTIuNDE4aDIuMjI5NDlsNC4wMTg1NSw5LjgwMTc2aC4wNjgzNmw0LjAxMDc0LTkuODAxNzZoMi4yMzczdjEyLjQxOFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik00OS4zOTYsMjcuOTIyODVjMC0xLjU4MywxLjIxMjg5LTIuNTM5MDYsMy4zNjUyMy0yLjY2OGwyLjQ3ODUyLS4xMzc3di0uNjg4NDhjMC0xLjAwNjg0LS42NjMwOS0xLjU3NTItMS43OTEtMS41NzUyYTEuNzMwMzUsMS43MzAzNSwwLDAsMC0xLjkwMTM3LDEuMjc0NDFINDkuODA5MWMuMDUxNzYtMS42MzU3NCwxLjU3NTItMi43OTY4NywzLjY5MTQxLTIuNzk2ODcsMi4xNjAxNiwwLDMuNTg4ODcsMS4xNzg3MSwzLjU4ODg3LDIuOTZ2Ni4yMDUwOEg1NS4zMDgxM1YyOS4wMDY4NGgtLjA0M2EzLjIzNjgzLDMuMjM2ODMsMCwwLDEtMi44NTc0MiwxLjY0NDUzQTIuNzQ0NDcsMi43NDQ0NywwLDAsMSw0OS4zOTYsMjcuOTIyODVabTUuODQzNzUtLjgxNzM4VjI2LjQwODJsLTIuMjI5NDkuMTM3N2MtMS4xMTAzNS4wNjkzNC0xLjczODI4LjU1MDc4LTEuNzM4MjgsMS4zMjUyLDAsLjc5Mi42NTQzLDEuMzA4NTksMS42NTIzNCwxLjMwODU5QTIuMTcwNDYsMi4xNzA0NiwwLDAsMCw1NS4yMzk3NywyNy4xMDU0N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik02NC44OTMwOSwyNC41NTc2MmExLjk5OTA5LDEuOTk5MDksMCwwLDAtMi4xMzM3OS0xLjY2ODk1Yy0xLjQyODcxLDAtMi4zNzUsMS4xOTYyOS0yLjM3NSwzLjA4MTA1LDAsMS45Mjc3My45NTUwOCwzLjA4ODg3LDIuMzkxNiwzLjA4ODg3YTEuOTQ4MjksMS45NDgyOSwwLDAsMCwyLjExNzE5LTEuNjI2aDEuNzlBMy42MTgzNSwzLjYxODM1LDAsMCwxLDYyLjc1OTMsMzAuNjA4NGMtMi41ODIsMC00LjI2ODU1LTEuNzY0NjUtNC4yNjg1NS00LjYzODY3LDAtMi44MTQ0NSwxLjY4NjUyLTQuNjM4NjcsNC4yNTEtNC42Mzg2N2EzLjYzOTMxLDMuNjM5MzEsMCwwLDEsMy45MjQ4LDMuMjI2NTZaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgICA8cGF0aCBkPSJNNzguNzU5MywyNy4xMzk2NUg3NC4wMjU5bC0xLjEzNjcyLDMuMzU2NDVINzAuODg0M2w0LjQ4MzQtMTIuNDE4aDIuMDgzbDQuNDgzNCwxMi40MThINzkuODk1Wm0tNC4yNDMxNi0xLjU0ODgzaDMuNzUybC0xLjg0OTYxLTUuNDQ3MjdoLS4wNTE3NloiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik05MS42MTY3MiwyNS45Njk3M2MwLDIuODEzNDgtMS41MDU4Niw0LjYyMTA5LTMuNzc4MzIsNC42MjEwOWEzLjA2OTMsMy4wNjkzLDAsMCwxLTIuODQ4NjMtMS41ODRoLS4wNDN2NC40ODQzOEg4My4wODg0VjIxLjQ0MjM4aDEuNzk4ODN2MS41MDU4NmguMDM0MThhMy4yMTE2MSwzLjIxMTYxLDAsMCwxLDIuODgyODEtMS42MDA1OUM5MC4xMDIwNywyMS4zNDc2Niw5MS42MTY3MiwyMy4xNjQwNiw5MS42MTY3MiwyNS45Njk3M1ptLTEuOTEwMTYsMGMwLTEuODMzLS45NDcyNy0zLjAzODA5LTIuMzkyNTgtMy4wMzgwOS0xLjQxOTkyLDAtMi4zNzUsMS4yMzA0Ny0yLjM3NSwzLjAzODA5LDAsMS44MjQyMi45NTUwOCwzLjA0NTksMi4zNzUsMy4wNDU5Qzg4Ljc1OTMsMjkuMDE1NjMsODkuNzA2NTYsMjcuODE5MzQsODkuNzA2NTYsMjUuOTY5NzNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMTAxLjU4MTU2LDI1Ljk2OTczYzAsMi44MTM0OC0xLjUwNTg2LDQuNjIxMDktMy43NzgzMiw0LjYyMTA5YTMuMDY5MywzLjA2OTMsMCwwLDEtMi44NDg2My0xLjU4NGgtLjA0M3Y0LjQ4NDM4aC0xLjg1ODRWMjEuNDQyMzhoMS43OTg4M3YxLjUwNTg2aC4wMzQxOGEzLjIxMTYyLDMuMjExNjIsMCwwLDEsMi44ODI4MS0xLjYwMDU5QzEwMC4wNjY5MSwyMS4zNDc2NiwxMDEuNTgxNTYsMjMuMTY0MDYsMTAxLjU4MTU2LDI1Ljk2OTczWm0tMS45MTAxNiwwYzAtMS44MzMtLjk0NzI3LTMuMDM4MDktMi4zOTI1OC0zLjAzODA5LTEuNDE5OTIsMC0yLjM3NSwxLjIzMDQ3LTIuMzc1LDMuMDM4MDksMCwxLjgyNDIyLjk1NTA4LDMuMDQ1OSwyLjM3NSwzLjA0NTlDOTguNzI0MTQsMjkuMDE1NjMsOTkuNjcxNDEsMjcuODE5MzQsOTkuNjcxNDEsMjUuOTY5NzNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMTA4LjE2NzUsMjcuMDM2MTNjLjEzNzcsMS4yMzE0NSwxLjMzNCwyLjA0LDIuOTY4NzUsMi4wNCwxLjU2NjQxLDAsMi42OTMzNi0uODA4NTksMi42OTMzNi0xLjkxODk1LDAtLjk2Mzg3LS42Nzk2OS0xLjU0MS0yLjI4OTA2LTEuOTM2NTJsLTEuNjA5MzctLjM4NzdjLTIuMjgwMjctLjU1MDc4LTMuMzM4ODctMS42MTcxOS0zLjMzODg3LTMuMzQ3NjYsMC0yLjE0MjU4LDEuODY3MTktMy42MTQyNiw0LjUxODU1LTMuNjE0MjYsMi42MjQsMCw0LjQyMjg1LDEuNDcxNjgsNC40ODM0LDMuNjE0MjZoLTEuODc2Yy0uMTEyMy0xLjIzOTI2LTEuMTM2NzItMS45ODczLTIuNjMzNzktMS45ODczcy0yLjUyMTQ5Ljc1Njg0LTIuNTIxNDksMS44NTg0YzAsLjg3NzkzLjY1NDMxLDEuMzk0NTMsMi4yNTQ4OSwxLjc5bDEuMzY4MTYuMzM1OTRjMi41NDc4NS42MDI1NCwzLjYwNjQ1LDEuNjI2LDMuNjA2NDUsMy40NDIzOCwwLDIuMzIzMjQtMS44NTA1OSwzLjc3ODMyLTQuNzkzOTUsMy43NzgzMi0yLjc1MzkxLDAtNC42MTMyOC0xLjQyMDktNC43MzM0LTMuNjY3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICAgICAgPHBhdGggZD0iTTExOS44MDMyNCwxOS4yOTk4djIuMTQyNThoMS43MjE2OHYxLjQ3MTY4aC0xLjcyMTY4djQuOTkxMjFjMCwuNzc1MzkuMzQ0NzMsMS4xMzY3MiwxLjEwMTU2LDEuMTM2NzJhNS44MDc1Miw1LjgwNzUyLDAsMCwwLC42MTEzMy0uMDQzdjEuNDYyODlhNS4xMDM1MSw1LjEwMzUxLDAsMCwxLTEuMDMyMjMuMDg1OTRjLTEuODMzLDAtMi41NDc4NS0uNjg4NDgtMi41NDc4NS0yLjQ0NDM0VjIyLjkxNDA2aC0xLjMxNjQxVjIxLjQ0MjM4aDEuMzE2NDFWMTkuMjk5OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMjIuNTIxLDI1Ljk2OTczYzAtMi44NDg2MywxLjY3NzczLTQuNjM4NjcsNC4yOTM5NS00LjYzODY3LDIuNjI1LDAsNC4yOTQ5MiwxLjc5LDQuMjk0OTIsNC42Mzg2NywwLDIuODU2NDUtMS42NjExMyw0LjYzODY3LTQuMjk0OTIsNC42Mzg2N0MxMjQuMTgyMTUsMzAuNjA4NCwxMjIuNTIxLDI4LjgyNjE3LDEyMi41MjEsMjUuOTY5NzNabTYuNjk1MzEsMGMwLTEuOTU0MS0uODk1NTEtMy4xMDc0Mi0yLjQwMTM3LTMuMTA3NDJzLTIuNDAxMzcsMS4xNjIxMS0yLjQwMTM3LDMuMTA3NDJjMCwxLjk2MTkxLjg5NTUxLDMuMTA2NDUsMi40MDEzNywzLjEwNjQ1UzEyOS4yMTYzMywyNy45MzE2NCwxMjkuMjE2MzMsMjUuOTY5NzNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMTMyLjY0MzA5LDIxLjQ0MjM4aDEuNzcyNDZ2MS41NDFoLjA0M2EyLjE1OTQsMi4xNTk0LDAsMCwxLDIuMTc3NzMtMS42MzU3NCwyLjg2NjE2LDIuODY2MTYsMCwwLDEsLjYzNjcyLjA2OTM0djEuNzM4MjhhMi41OTgsMi41OTgsMCwwLDAtLjgzNS0uMTEyMywxLjg3MjY0LDEuODcyNjQsMCwwLDAtMS45MzY1MSwyLjA4M3Y1LjM3MDEyaC0xLjg1ODRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMTQ1Ljg0MDM1LDI3LjgzNjkxYy0uMjUsMS42NDM1NS0xLjg1MDU5LDIuNzcxNDgtMy44OTg0NCwyLjc3MTQ4LTIuNjMzNzksMC00LjI2ODU1LTEuNzY0NjUtNC4yNjg1NS00LjU5NTcsMC0yLjgzOTg0LDEuNjQzNTUtNC42ODE2NCw0LjE5MDQzLTQuNjgxNjQsMi41MDQ4OCwwLDQuMDgwMDgsMS43MjA3LDQuMDgwMDgsNC40NjU4MnYuNjM2NzJoLTYuMzk0NTN2LjExMjNhMi4zNTgsMi4zNTgsMCwwLDAsMi40MzU1NSwyLjU2NDQ1LDIuMDQ4MzQsMi4wNDgzNCwwLDAsMCwyLjA5MDgyLTEuMjczNDRabS02LjI4MjIzLTIuNzAyMTVoNC41MjYzN2EyLjE3NzMsMi4xNzczLDAsMCwwLTIuMjIwNy0yLjI5Nzg1QTIuMjkyLDIuMjkyLDAsMCwwLDEzOS41NTgxMywyNS4xMzQ3N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgICA8L2c+CiAgICA8L2c+CiAgICA8ZyBpZD0iX0dyb3VwXzUiIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgIDxnPgogICAgICAgIDxwYXRoIGQ9Ik0zNy4xODQ1OSwxNC43MDE2NlY5LjU3ODEzaC0xLjg3N1Y4LjczNDg2aDQuNjc2NzZ2Ljg0MzI2aC0xLjg3M3Y1LjEyMzU0WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNNDQuMjk0LDEzLjQ4NTg0YTEuODI4LDEuODI4LDAsMCwxLTEuOTUxMTcsMS4zMDI3MywyLjA0NTMxLDIuMDQ1MzEsMCwwLDEtMi4wODAwOC0yLjMyNDIyLDIuMDc2ODUsMi4wNzY4NSwwLDAsMSwyLjA3NjE3LTIuMzUyNTRjMS4yNTI5MywwLDIuMDA4NzkuODU2LDIuMDA4NzksMi4yN3YuMzEwMDZINDEuMTY4di4wNDk4YTEuMTkwMiwxLjE5MDIsMCwwLDAsMS4xOTkyMiwxLjI5LDEuMDc5MzQsMS4wNzkzNCwwLDAsMCwxLjA3MTI5LS41NDU5Wm0tMy4xMjYtMS40NTExN0g0My40NDI0YTEuMDg2NDcsMS4wODY0NywwLDAsMC0xLjEwODQtMS4xNjY1QTEuMTUxNjIsMS4xNTE2MiwwLDAsMCw0MS4xNjgsMTIuMDM0NjdabS42MzY3Mi0yLjU4ODg3LDEuMDM4MDktMS40MjIzNmgxLjA0Mkw0Mi43MjI2OCw5LjQ0NThaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik00NS41ODIwNSw4LjQ0MDkyaC44ODg2N3Y2LjI2MDc0aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik01MS43MzczMiwxMy40ODU4NGExLjgyOCwxLjgyOCwwLDAsMS0xLjk1MTE3LDEuMzAyNzMsMi4wNDUzMSwyLjA0NTMxLDAsMCwxLTIuMDgwMDgtMi4zMjQyMiwyLjA3Njg1LDIuMDc2ODUsMCwwLDEsMi4wNzYxNy0yLjM1MjU0YzEuMjUyOTMsMCwyLjAwODc5Ljg1NiwyLjAwODc5LDIuMjd2LjMxMDA2SDQ4LjYxMTM1di4wNDk4YTEuMTkwMiwxLjE5MDIsMCwwLDAsMS4xOTkyMiwxLjI5LDEuMDc5MzQsMS4wNzkzNCwwLDAsMCwxLjA3MTI5LS41NDU5Wm0tMy4xMjYtMS40NTExN2gyLjI3NDQxYTEuMDg2NDcsMS4wODY0NywwLDAsMC0xLjEwODQtMS4xNjY1QTEuMTUxNjIsMS4xNTE2MiwwLDAsMCw0OC42MTEzNSwxMi4wMzQ2N1ptLjYzNjcyLTIuNTg4ODcsMS4wMzgwOS0xLjQyMjM2aDEuMDQyTDUwLjE2Niw5LjQ0NThaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik01NS45MzI2NCwxMS42NzA0MWExLjAwNTQ2LDEuMDA1NDYsMCwwLDAtMS4wNjM0OC0uNzY0NjVjLS43NDQxNCwwLTEuMTk5MjIuNTcwMzEtMS4xOTkyMiwxLjUyOTc5LDAsLjk3NjA3LjQ1OSwxLjU1OTA4LDEuMTk5MjIsMS41NTkwOGEuOTc4NzMuOTc4NzMsMCwwLDAsMS4wNjM0OC0uNzQwMjNoLjg2NDI2QTEuNzYyLDEuNzYyLDAsMCwxLDU0Ljg3NCwxNC43ODg1N2EyLjA2NzkxLDIuMDY3OTEsMCwwLDEtMi4xMTMyOC0yLjM1MywyLjA1MzA1LDIuMDUzMDUsMCwwLDEsMi4xMDg0LTIuMzIzNzMsMS43NzczMSwxLjc3NzMxLDAsMCwxLDEuOTI3NzMsMS41NTg1OVoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTU3Ljk3NjU4LDguNDQwOTJoLjg4MDg2djIuNDgxNDVoLjA3MDMxYTEuMzg1NiwxLjM4NTYsMCwwLDEsMS4zNzMtLjgwNjY0LDEuNDgzMzksMS40ODMzOSwwLDAsMSwxLjU1MDc4LDEuNjc4NzF2Mi45MDcyM2gtLjg4OTY1di0yLjY4OGMwLS43MTkyNC0uMzM1LTEuMDgzNS0uOTYyODktMS4wODM1YTEuMDUxOTQsMS4wNTE5NCwwLDAsMC0xLjEzMzc5LDEuMTQxNnYyLjYyOTg4aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik02Mi45Njg3NywxMy40MjgyMmMwLS44MTA1NS42MDM1Mi0xLjI3NzgzLDEuNjc0OC0xLjM0NDI0bDEuMjE5NzMtLjA3MDMxVjExLjYyNWMwLS40NzU1OS0uMzE0NDUtLjc0NDE0LS45MjE4Ny0uNzQ0MTQtLjQ5NjA5LDAtLjgzOTg0LjE4MjEzLS45Mzg0OC41MDA0OUg2My4xNDI2Yy4wOTA4Mi0uNzczNDQuODE4MzYtMS4yNjk1MywxLjgzOTg0LTEuMjY5NTMsMS4xMjg5MSwwLDEuNzY1NjMuNTYyLDEuNzY1NjMsMS41MTMxOHYzLjA3NjY2SDY1Ljg5MjZ2LS42MzI4MWgtLjA3MDMxYTEuNTE1LDEuNTE1LDAsMCwxLTEuMzUyNTQuNzA3QTEuMzYwMjYsMS4zNjAyNiwwLDAsMSw2Mi45Njg3NywxMy40MjgyMlptMi44OTQ1My0uMzg0NzdWMTIuNjY3bC0xLjA5OTYxLjA3MDMxYy0uNjIwMTIuMDQxNS0uOTAxMzcuMjUyNDQtLjkwMTM3LjY0OTQxLDAsLjQwNTI3LjM1MTU2LjY0MTExLjgzNS42NDExMUExLjA2MTUsMS4wNjE1LDAsMCwwLDY1Ljg2MzMsMTMuMDQzNDZaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik02OC4xMzk2NywxMC4xOTg3M2guODU1NDd2LjY5MDQzaC4wNjY0MWExLjIyMDkyLDEuMjIwOTIsMCwwLDEsMS4yMTU4Mi0uNzY1MTQsMS44NjgzNiwxLjg2ODM2LDAsMCwxLC4zOTY0OC4wMzcxMXYuODc3YTIuNDM0NDIsMi40MzQ0MiwwLDAsMC0uNDk2MDktLjA1MzcxQTEuMDU1MDcsMS4wNTUwNywwLDAsMCw2OS4wMjgzNCwxMi4wNDN2Mi42NTg2OWgtLjg4ODY3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNNzEuNDkxMjMsMTUuMTUyMzRoLjkwOTE4Yy4wNzUyLjMyNjY2LjQ1MTE3LjUzNzYsMS4wNTA3OC41Mzc2Ljc0MDIzLDAsMS4xNzg3MS0uMzUxNTYsMS4xNzg3MS0uOTQ2Nzh2LS44NjQyNkg3NC41NjM1YTEuNTE0MzMsMS41MTQzMywwLDAsMS0xLjM4OTY1Ljc1NjM1Yy0xLjE0OTQxLDAtMS44NjAzNS0uODg4NjctMS44NjAzNS0yLjIzNjgyLDAtMS4zNzMuNzE4NzUtMi4yNzQ0MSwxLjg2OTE0LTIuMjc0NDFhMS41NjA0NSwxLjU2MDQ1LDAsMCwxLDEuNDE0MDYuNzkzOTVINzQuNjY3di0uNzE5MjRoLjg1MTU2djQuNTRjMCwxLjAyOTc5LS44MDY2NCwxLjY4MzExLTIuMDgwMDgsMS42ODMxMUM3Mi4zMTM1LDE2LjQyMTg4LDcxLjU4NiwxNS45MTc0OCw3MS40OTEyMywxNS4xNTIzNFpNNzQuNjQ2NSwxMi4zOTRjMC0uODk3LS40NjM4Ny0xLjQ3MTY4LTEuMjIwNy0xLjQ3MTY4LS43NjQ2NSwwLTEuMTk0MzQuNTc0NzEtMS4xOTQzNCwxLjQ3MTY4LDAsLjg5NzQ2LjQyOTY5LDEuNDcyMTcsMS4xOTQzNCwxLjQ3MjE3Qzc0LjE4NzUyLDEzLjg2NjIxLDc0LjY0NjUsMTMuMjk1OSw3NC42NDY1LDEyLjM5NFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTgwLjc0MjIxLDEzLjQ4NTg0QTEuODI4LDEuODI4LDAsMCwxLDc4Ljc5MSwxNC43ODg1NywyLjA0NTMxLDIuMDQ1MzEsMCwwLDEsNzYuNzExLDEyLjQ2NDM2YTIuMDc2ODUsMi4wNzY4NSwwLDAsMSwyLjA3NjE3LTIuMzUyNTRjMS4yNTI5MywwLDIuMDA4NzkuODU2LDIuMDA4NzksMi4yN3YuMzEwMDZINzcuNjE2MjN2LjA0OThhMS4xOTAyLDEuMTkwMiwwLDAsMCwxLjE5OTIyLDEuMjksMS4wNzkzNCwxLjA3OTM0LDAsMCwwLDEuMDcxMjktLjU0NTlabS0zLjEyNi0xLjQ1MTE3aDIuMjc0NDFhMS4wODY0NywxLjA4NjQ3LDAsMCwwLTEuMTA4NC0xLjE2NjVBMS4xNTE2MiwxLjE1MTYyLDAsMCwwLDc3LjYxNjIzLDEyLjAzNDY3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNODEuOTg5MjgsMTAuMTk4NzNoLjg1NTQ3di42OTA0M2guMDY2NDFhMS4yMjIsMS4yMjIsMCwwLDEsMS4yMTYzMS0uNzY1MTQsMS44NjgzNiwxLjg2ODM2LDAsMCwxLC4zOTY0OC4wMzcxMXYuODc3YTIuNDM0NDIsMi40MzQ0MiwwLDAsMC0uNDk2MDktLjA1MzcxLDEuMDU1NDksMS4wNTU0OSwwLDAsMC0xLjE0OTksMS4wNTg1OXYyLjY1ODY5aC0uODg4NjdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik04Ny43MjYwOSwxMi40NDgyNGMwLTEuNDIyODUuNzMxNDUtMi4zMjQyMiwxLjg2OTE0LTIuMzI0MjJhMS40ODQsMS40ODQsMCwwLDEsMS4zODA4Ni43OWguMDY2NDFWOC40NDA5MmguODg4Njd2Ni4yNjA3NGgtLjg1MTU2di0uNzExNDNIOTEuMDA5M2ExLjU2Mjg0LDEuNTYyODQsMCwwLDEtMS40MTQwNi43ODU2NEM4OC40NDk3MywxNC43NzU4OCw4Ny43MjYwOSwxMy44NzQ1MSw4Ny43MjYwOSwxMi40NDgyNFptLjkxOCwwYzAsLjk1NTA4LjQ1MDIsMS41Mjk3OSwxLjIwMzEzLDEuNTI5NzkuNzQ5LDAsMS4yMTE5MS0uNTgzLDEuMjExOTEtMS41MjU4OCwwLS45Mzg0OC0uNDY3NzctMS41Mjk3OS0xLjIxMTkxLTEuNTI5NzlDODkuMDk5MTQsMTAuOTIyMzYsODguNjQ0MDYsMTEuNTAxLDg4LjY0NDA2LDEyLjQ0ODI0WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNOTMuMTMyMzQsMTMuNDI4MjJjMC0uODEwNTUuNjAzNTItMS4yNzc4MywxLjY3NDgtMS4zNDQyNGwxLjIxOTczLS4wNzAzMVYxMS42MjVjMC0uNDc1NTktLjMxNDQ1LS43NDQxNC0uOTIxODctLjc0NDE0LS40OTYwOSwwLS44Mzk4NC4xODIxMy0uOTM4NDguNTAwNDloLS44NjAzNWMuMDkwODItLjc3MzQ0LjgxODM2LTEuMjY5NTMsMS44Mzk4NC0xLjI2OTUzLDEuMTI4OTEsMCwxLjc2NTYzLjU2MiwxLjc2NTYzLDEuNTEzMTh2My4wNzY2NmgtLjg1NTQ3di0uNjMyODFoLS4wNzAzMWExLjUxNSwxLjUxNSwwLDAsMS0xLjM1MjU0LjcwN0ExLjM2MDI2LDEuMzYwMjYsMCwwLDEsOTMuMTMyMzQsMTMuNDI4MjJabTIuODk0NTMtLjM4NDc3VjEyLjY2N2wtMS4wOTk2MS4wNzAzMWMtLjYyMDEyLjA0MTUtLjkwMTM3LjI1MjQ0LS45MDEzNy42NDk0MSwwLC40MDUyNy4zNTE1Ni42NDExMS44MzUuNjQxMTFBMS4wNjE1LDEuMDYxNSwwLDAsMCw5Ni4wMjY4OCwxMy4wNDM0NloiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggZD0iTTk4LjMwMzI0LDEwLjE5ODczaC44NTU0N3YuNzE1MzNoLjA2NjQxYTEuMzQ4LDEuMzQ4LDAsMCwxLDEuMzQzNzUtLjgwMjI1LDEuNDY0NTYsMS40NjQ1NiwwLDAsMSwxLjU1ODU5LDEuNjc0OHYyLjkxNWgtLjg4ODY3VjEyLjAwOTc3YzAtLjcyMzYzLS4zMTQ0NS0xLjA4MzUtLjk3MTY4LTEuMDgzNWExLjAzMjk0LDEuMDMyOTQsMCwwLDAtMS4wNzUyLDEuMTQxMTF2Mi42MzQyOGgtLjg4ODY3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNMTA1LjE0OCwxMC4xMTE4MmMxLjAxMjcsMCwxLjY3NDguNDcxMTksMS43NjE3MiwxLjI2NTE0aC0uODUyNTRjLS4wODItLjMzMDU3LS40MDUyNy0uNTQxNS0uOTA5MTgtLjU0MTUtLjQ5NjA5LDAtLjg3My4yMzUzNS0uODczLjU4NjkxLDAsLjI2OS4yMjc1NC40Mzg0OC43MTU4Mi41NTAyOWwuNzQ4LjE3MzM0Yy44NTY0NS4xOTg3MywxLjI1NzgxLjU2Njg5LDEuMjU3ODEsMS4yMjg1MiwwLC44NDc2Ni0uNzksMS40MTQwNi0xLjg2NTIzLDEuNDE0MDYtMS4wNzEyOSwwLTEuNzY5NTMtLjQ4Mzg5LTEuODQ4NjMtMS4yODE3NGguODg5NjVhLjkxMzY1LjkxMzY1LDAsMCwwLC45Nzk0OS41NjJjLjU1MzcxLDAsLjk0NzI3LS4yNDguOTQ3MjctLjYwNzkxLDAtLjI2ODU1LS4yMTA5NC0uNDQyMzgtLjY2MjExLS41NDk4bC0uNzg1MTYtLjE4MjEzYy0uODU2NDUtLjIwMjY0LTEuMjUyOTMtLjU4NjkxLTEuMjUyOTMtMS4yNTY4NEMxMDMuMzk4OTUsMTAuNjczODMsMTA0LjEzMDM5LDEwLjExMTgyLDEwNS4xNDgsMTAuMTExODJaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik0xMTAuNjc3MjcsOC40NDA5MmguODg4Njd2Ni4yNjA3NGgtLjg4ODY3WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNMTE2LjgzMjU0LDEzLjQ4NTg0YTEuODI4LDEuODI4LDAsMCwxLTEuOTUxMTcsMS4zMDI3MywyLjA0NTMxLDIuMDQ1MzEsMCwwLDEtMi4wODAwOC0yLjMyNDIyLDIuMDc2ODUsMi4wNzY4NSwwLDAsMSwyLjA3NjE3LTIuMzUyNTRjMS4yNTI5MywwLDIuMDA4NzkuODU2LDIuMDA4NzksMi4yN3YuMzEwMDZoLTMuMTc5Njl2LjA0OThhMS4xOTAyLDEuMTkwMiwwLDAsMCwxLjE5OTIyLDEuMjksMS4wNzkzNCwxLjA3OTM0LDAsMCwwLDEuMDcxMjktLjU0NTlabS0zLjEyNi0xLjQ1MTE3SDExNS45ODFhMS4wODY0NywxLjA4NjQ3LDAsMCwwLTEuMTA4NC0xLjE2NjVBMS4xNTE2MiwxLjE1MTYyLDAsMCwwLDExMy43MDY1NiwxMi4wMzQ2N1oiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="Télécharger dans le Mac App Store" width="170" height="46"></a></div>
+</div>
+<div class="mac" aria-hidden="true"><div class="mwin">
+<div class="mbar"><span></span><b>TechnoDaily</b><span>Fichier</span><span>Édition</span><span class="open">Présentation</span><span>Article</span><span>Fenêtre</span></div>
+<div class="menus">
+<div class="menu"><div class="mh">Présentation</div>
+<div class="mi"><span>Pour vous</span><kbd>⌘1</kbd></div>
+<div class="mi"><span>Sources</span><kbd>⌘2</kbd></div>
+<div class="mi"><span>Enregistrés</span><kbd>⌘3</kbd></div>
+<div class="mi"><span>Rechercher</span><kbd>⌘4</kbd></div>
+<hr>
+<div class="mi"><span>Actualiser</span><kbd>⌘R</kbd></div>
+</div>
+<div class="menu"><div class="mh">Article</div>
+<div class="mi"><span>Ouvrir dans une nouvelle fenêtre</span><kbd>⇧⌘N</kbd></div>
+<div class="mi"><span>Ouvrir dans le navigateur</span><kbd>⇧⌘O</kbd></div>
+</div>
+</div></div></div>
+</div></div></section>
+<section id="confidentialite" class="dark"><div class="inner">
+<p class="kicker">Confidentialité</p>
+<h2 class="serif">Vos lectures ne regardent que vous.</h2>
+<div class="grid2">
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>Tout reste chez vous</h3><p>Vos contenus et votre activité de lecture restent sur vos appareils et dans votre iCloud personnel. Le classement, les regroupements et les résumés sont calculés sur l&#x27;appareil.</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>Personne ne vous profile</h3><p>Pas de publicité, pas de profil publicitaire, aucun SDK publicitaire ni de pistage, pas de compte à créer. Vous n&#x27;êtes pas le produit.</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>Vos e-mails, seulement lus</h3><p>Gmail en lecture seule, traité sur l&#x27;appareil, jamais stocké ailleurs. TechnoDaily a passé l&#x27;audit de sécurité indépendant exigé par Google (CASA).</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>Une synchronisation privée</h3><p>Entre vos appareils, par votre iCloud personnel, chiffré par Apple. Nous n&#x27;y avons pas accès.</p></div>
+</div>
+<p class="learned">Un écran, « Ce que l&#x27;app a appris », montre ce que le moteur a retenu de vos lectures, et ce qu&#x27;il n&#x27;apprend pas.</p>
+<p class="stats">Et les statistiques d&#x27;usage ? Anonymes, agrégées, <strong>désactivées par défaut</strong>. Vous décidez.  <a href="/technodaily/confidentialite.html">Lire la politique de confidentialité →</a></p>
+</div></section>
+<section id="tarif"><div class="wrap"><div class="pricing">
+<h2 class="serif">Un prix simple. Pas de version gratuite.</h2>
+<p class="sub2">TechnoDaily est payé par vous, pas par la publicité. C&#x27;est ce qui rend la promesse possible.</p>
+<div class="prices">
+<div class="price main">
+<span class="tag">ESSAI 14 JOURS</span>
+<div class="nm">Annuel</div>
+<div class="amt"><b class="serif">19,99 €</b><span>/an</span></div>
+<ul><li>✓ Toutes les fonctionnalités</li><li>✓ 14 jours gratuits pour un premier abonnement</li><li>✓ iPhone, iPad, Mac et Apple Vision Pro</li></ul>
+<a class="go" href="https://apps.apple.com/fr/app/technodaily/id6758897742">Commencer l&#x27;essai</a>
+</div>
+<div class="price">
+<div class="nm">À vie</div>
+<div class="amt"><b class="serif">49,99 €</b><span>une fois</span></div>
+<ul><li>✓ Tout, pour toujours</li><li>✓ Aucun abonnement</li><li>✓ Les mises à jour incluses</li></ul>
+<a class="go alt" href="https://apps.apple.com/fr/app/technodaily/id6758897742">Acheter à vie</a>
+</div></div>
+<p class="pnote">Prix en France, TTC, relevés sur l&#x27;App Store le 30/09/2026. iOS 26, iPadOS 26, visionOS 26 ou plus récent ; Mac : macOS 26.1 ou plus récent. Résumés : appareil compatible Apple Intelligence.</p>
+</div></div></section>
+</main>
+<footer><div class="fwrap"><div class="frow">
+<div><div class="serif" style="font-size:19px;font-weight:700">TechnoDaily</div><div style="font:400 13px -apple-system,system-ui;color:#6E685F;margin-top:8px;max-width:300px">Vos lectures ne regardent que vous.</div></div>
+<div class="fcols">
+<div class="fcol"><span class="h">PRODUIT</span><a href="#fonctionnalites">Fonctionnalités</a><a href="#mac">Mac</a><a href="#sujets">Sujets suivis</a><a href="#tarif">Tarif</a></div>
+<div class="fcol"><span class="h">LÉGAL</span><a href="/technodaily/confidentialite.html">Politique de confidentialité</a><a href="/technodaily/conditions.html">Conditions d&#x27;utilisation</a><a href="/technodaily/accessibilite.html">Politique d&#x27;accessibilité</a></div>
+<div class="fcol"><span class="h">LANGUES</span><a href="/technodaily/en/" hreflang="en" lang="en">English</a><a href="/technodaily/" hreflang="fr" lang="fr">Français</a><a href="/technodaily/es/" hreflang="es" lang="es">Español</a><a href="/technodaily/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a href="/technodaily/ja/" hreflang="ja" lang="ja">日本語</a></div>
+<div class="fcol"><span class="h">PRESSE</span><a href="/technodaily/presse/">Kit presse</a><a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a></div>
+</div></div>
+<div class="fbot"><span>© 2026 Techno &amp; Co · Paris</span><span>Apple, iPhone, iPad, Mac, Apple Vision Pro et Apple Intelligence sont des marques d&#x27;Apple Inc. Gmail et YouTube sont des marques de Google LLC.</span></div>
+</div></footer>
+<a class="mcta" href="https://apps.apple.com/fr/app/technodaily/id6758897742"><span aria-hidden="true">↓</span><span>Télécharger sur l&#x27;App Store</span></a>
 </body>
 </html>

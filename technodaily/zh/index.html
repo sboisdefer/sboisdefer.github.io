@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechnoDaily：RSS 阅读器，也读新闻通讯</title>
+<meta name="description" content="把你订阅的网站汇集在一处：多个来源都在报道的话题汇入“每日摘要”，“为你推荐”一次最多 30 篇。适用于 iPhone、iPad、Mac 与 Apple Vision Pro。">
+<link rel="canonical" href="https://www.technoandco.fr/technodaily/zh/">
+<link rel="alternate" hreflang="en" href="https://www.technoandco.fr/technodaily/en/">
+<link rel="alternate" hreflang="fr" href="https://www.technoandco.fr/technodaily/">
+<link rel="alternate" hreflang="es" href="https://www.technoandco.fr/technodaily/es/">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.technoandco.fr/technodaily/zh/">
+<link rel="alternate" hreflang="ja" href="https://www.technoandco.fr/technodaily/ja/">
+<link rel="alternate" hreflang="x-default" href="https://www.technoandco.fr/technodaily/en/">
+<meta name="apple-itunes-app" content="app-id=6758897742">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TechnoDaily：RSS 阅读器，也读新闻通讯">
+<meta property="og:description" content="把你订阅的网站汇集在一处：多个来源都在报道的话题汇入“每日摘要”，“为你推荐”一次最多 30 篇。适用于 iPhone、iPad、Mac 与 Apple Vision Pro。">
+<meta property="og:url" content="https://www.technoandco.fr/technodaily/zh/">
+<meta property="og:locale" content="zh_CN">
+<meta name="theme-color" content="#F3F0EA">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#F3F0EA;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:#F3F0EA;color:#221F1A;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+:lang(ja) body,:lang(ja){font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif}
+:lang(zh-Hans) body,:lang(zh-Hans){font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif}
+::selection{background:#DE943344}
+a{color:#9A5E12;text-decoration:none}
+a:hover{color:#7A4A0E}
+a:focus-visible,button:focus-visible{outline:2px solid #9A5E12;outline-offset:2px;border-radius:6px}
+img,svg{max-width:100%}
+.serif{font-family:"Iowan Old Style","New York",ui-serif,Georgia,serif}
+:lang(ja) .serif,:lang(zh-Hans) .serif{font-family:inherit}
+.skip{position:absolute;left:-9999px;top:8px;background:#221F1A;color:#F3F0EA;padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:12px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 44px}
+header{border-bottom:1px solid #E4DFD5;background:#F3F0EA}
+nav.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}
+.brand{display:flex;align-items:baseline;gap:10px;flex:none;color:#221F1A}
+.brand b{font-size:21px;font-weight:700;letter-spacing:-.01em}
+.pill-v{font:700 10.5px -apple-system,system-ui;letter-spacing:.12em;color:#9A5E12;background:rgba(222,148,51,.16);border-radius:999px;padding:3px 8px}
+.navlinks{display:flex;gap:24px;font:500 14px -apple-system,system-ui}
+.navlinks a{color:#6E685F;white-space:nowrap}
+.navright{display:flex;align-items:center;gap:14px;flex:none}
+.langs{display:flex;background:#E7E1D3;border-radius:10px;padding:3px}
+.langs a{font:600 12px -apple-system,system-ui;color:#6E685F;padding:5px 9px;border-radius:8px}
+.langs a[aria-current]{background:#FBFAF7;color:#221F1A;font-weight:700}
+.btn{display:inline-flex;justify-content:center;background:#DE9433;color:#221F1A;font:600 14px -apple-system,system-ui;padding:9px 16px;border-radius:12px}
+.btn:hover{color:#221F1A;background:#D2872A}
+.hero{display:flex;gap:56px;align-items:center;padding:76px 0 64px}
+.hero .txt{flex:1;min-width:0}
+.kicker{font:700 12px -apple-system,system-ui;letter-spacing:.16em;color:#9A5E12;text-transform:uppercase}
+:lang(ja) .kicker,:lang(zh-Hans) .kicker{letter-spacing:.06em;text-transform:none}
+h1{font-size:62px;font-weight:700;line-height:1.04;letter-spacing:-.02em;margin-top:20px}
+:lang(ja) h1,:lang(zh-Hans) h1{font-size:44px;letter-spacing:0;line-height:1.2}
+:lang(ja) p,:lang(ja) h1,:lang(ja) h2,:lang(ja) li{line-break:strict;word-break:auto-phrase}
+.sub{font-size:19px;line-height:1.6;color:#6E685F;max-width:540px;margin-top:22px}
+.cta{display:flex;align-items:center;gap:24px;margin-top:32px;flex-wrap:wrap}
+.cta a.badge img{height:56px;width:auto;display:block}
+.cta .more{font:600 15px -apple-system,system-ui}
+.meta{margin-top:24px;font:500 13.5px -apple-system,system-ui;line-height:1.7;color:#6E685F}
+.meta span.dot{color:#B5AEA3}
+.dispo{display:flex;align-items:center;gap:9px;margin-top:18px;flex-wrap:wrap}
+.dispo .l{font:700 11px -apple-system,system-ui;letter-spacing:.12em;color:#6E685F}
+.chip{font:600 12.5px -apple-system,system-ui;color:#4A453D;border:1px solid #DBD5C8;background:#FBFAF7;border-radius:999px;padding:6px 13px}
+.jaextra{margin-top:14px;font:600 14px -apple-system,system-ui;color:#4F7A4F}
+/* maquette téléphone */
+.phone{flex:none;width:332px;background:#2A2723;border-radius:46px;padding:11px;box-shadow:0 24px 60px rgba(34,31,26,.18)}
+.screen{background:#F3F0EA;border-radius:36px;overflow:hidden;height:660px;display:flex;flex-direction:column}
+.sbar{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 4px;font:600 12px -apple-system,system-ui}
+.sbar i{width:15px;height:9px;border:1px solid #221F1A;border-radius:3px;display:inline-block}
+.mhead{padding:10px 18px 0}
+.mtitle{display:flex;justify-content:space-between;align-items:center}
+.mtitle b{font-size:26px;font-weight:700}
+.mtools{display:flex;gap:8px;align-items:center}
+.mtools span{font:600 11.5px -apple-system,system-ui;color:#6E685F;border:1px solid #DBD5C8;border-radius:999px;padding:5px 11px;background:#FBFAF7}
+.gear{width:28px;height:28px;border-radius:50%;border:1px solid #DBD5C8;background:#FBFAF7;display:flex;align-items:center;justify-content:center}
+.seg{display:flex;background:#E7E1D3;border-radius:12px;padding:3px;margin-top:12px}
+.seg span{flex:1;text-align:center;font:600 10px -apple-system,system-ui;color:#6E685F;padding:6px 2px;white-space:nowrap;overflow:hidden}
+.seg span.on{color:#221F1A;background:#DE9433;border-radius:9px;font-weight:700}
+.mmeta{font:500 11px -apple-system,system-ui;color:#6E685F;margin-top:10px}
+.mbody{padding:10px 18px 0;display:flex;flex-direction:column;gap:9px;flex:1;overflow:hidden}
+.sage{background:#E8EAE0;border:1px solid #CED8C8;border-radius:14px;padding:12px 14px}
+.sage .hd{display:flex;justify-content:space-between;align-items:center;font:700 9.5px -apple-system,system-ui;letter-spacing:.12em;color:#4F7A4F}
+.sage .hd em{font-style:normal;color:#6E685F;letter-spacing:.08em}
+.sage .t{border-bottom:1px solid #CED8C8;padding:8px 0}
+.sage .t:last-of-type{border-bottom:none}
+.sage .t b{display:block;font-size:13.5px;font-weight:700;line-height:1.3}
+.sage .t small{display:block;font:500 10px -apple-system,system-ui;color:#6E685F;margin-top:3px}
+.sage .gen{font:600 9.5px -apple-system,system-ui;color:#4F7A4F;margin-top:2px}
+.grp{font:700 9.5px -apple-system,system-ui;letter-spacing:.12em;color:#6E685F;margin-top:2px}
+.card{background:#FEFDFB;border:1px solid #E4DFD5;border-radius:14px;padding:11px 13px}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start}
+.tb{font:700 9.5px -apple-system,system-ui;border-radius:999px;padding:3px 8px}
+.tb.n{color:#A84637;background:rgba(168,70,55,.11)}
+.tb.r{color:#4E7188;background:rgba(91,127,150,.13)}
+.tb.y{color:#C14848;background:rgba(193,72,72,.12)}
+.udot{width:8px;height:8px;border-radius:50%;background:#DE9433;margin-top:2px}
+.card b{display:block;font-size:13.5px;font-weight:700;line-height:1.3;margin-top:7px}
+.card small{display:block;font:500 10px -apple-system,system-ui;color:#6E685F;margin-top:4px}
+.tabs{display:flex;border-top:1px solid #E4DFD5;background:#FBFAF7;padding:8px 10px 16px}
+.tabs div{flex:1;text-align:center;color:#6E685F;font:600 8.5px -apple-system,system-ui;position:relative}
+.tabs div.on{color:#221F1A}
+.tabs svg{display:block;margin:0 auto 3px;width:18px;height:18px}
+.tabs .bdg{position:absolute;top:-4px;left:calc(50% + 4px);background:#DE9433;color:#221F1A;border-radius:999px;font:700 8px -apple-system,system-ui;padding:1px 5px}
+/* sections */
+.sources{display:flex;align-items:center;justify-content:center;gap:12px 14px;padding:0 0 64px;flex-wrap:wrap}
+.sources .lab{font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#6E685F;text-transform:uppercase;margin-right:6px}
+.sp{font:700 13px -apple-system,system-ui;border-radius:999px;padding:8px 16px}
+.sp.n{color:#A84637;background:rgba(168,70,55,.11)}
+.sp.r{color:#4E7188;background:rgba(91,127,150,.13)}
+.sp.y{color:#C14848;background:rgba(193,72,72,.12)}
+.sources .note{font:500 13px -apple-system,system-ui;color:#6E685F;flex-basis:100%;text-align:center}
+section.band{border-top:1px solid #E4DFD5}
+section.alt{background:#EDE8DE}
+.split{display:flex;gap:64px;align-items:center;padding:88px 0}
+.split .txt{flex:1;min-width:0}
+h2{font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-.015em;margin-top:14px}
+:lang(ja) h2,:lang(zh-Hans) h2{font-size:34px;letter-spacing:0;line-height:1.25}
+.lead{font-size:16.5px;line-height:1.65;color:#6E685F;max-width:480px;margin-top:18px}
+ul.dots{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:24px;max-width:480px}
+ul.dots li{display:flex;gap:12px;align-items:baseline;font:500 15px -apple-system,system-ui;color:#4A453D}
+ul.dots li:before{content:"";width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none;position:relative;top:-2px}
+.small{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:22px}
+.bcard{flex:none;width:480px;background:#E8EAE0;border:1px solid #CED8C8;border-radius:20px;padding:24px 26px}
+.bcard .hd{display:flex;justify-content:space-between;align-items:center;font:700 11.5px -apple-system,system-ui;letter-spacing:.14em;color:#4F7A4F}
+.bcard .hd em{font-style:normal;color:#6E685F;letter-spacing:.08em;font-weight:600}
+.bcard .t{padding:13px 0;border-bottom:1px solid #CED8C8}
+.bcard .t:last-of-type{border-bottom:none}
+.bcard .t b{display:block;font-size:18px;font-weight:700;line-height:1.3}
+.bcard .t small{display:block;font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:5px}
+.bcard .ft{display:flex;justify-content:space-between;align-items:center;padding-top:14px;margin-top:0;font:600 12px -apple-system,system-ui;color:#4F7A4F}
+.dcard{flex:none;width:460px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:22px 24px}
+.dcard .nm{display:flex;align-items:center;gap:10px}
+.dcard .nm b{font-size:22px;font-weight:700}
+.dcard .pic{font:700 11px -apple-system,system-ui;color:#9A5E12;background:rgba(222,148,51,.14);border-radius:999px;padding:4px 10px}
+.dcard .dm{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin-top:5px}
+.dcard .dig{background:#161513;border-radius:16px;padding:16px 18px;margin-top:16px}
+.dcard .dig .l{font:700 10.5px -apple-system,system-ui;letter-spacing:.15em;color:#F2BA5C}
+.dcard .dig p{font:400 13.5px -apple-system,system-ui;line-height:1.6;color:#F2EEE6;margin-top:8px}
+.dcard .day{font:700 10.5px -apple-system,system-ui;letter-spacing:.14em;color:#6E685F;margin-top:16px}
+.dcard .it{display:flex;gap:11px;align-items:baseline;margin-top:10px}
+.dcard .it i{width:7px;height:7px;border-radius:50%;background:#DE9433;flex:none}
+.dcard .it i.read{background:transparent;border:1.5px solid #DBD5C8}
+.dcard .it b{display:block;font-size:14.5px;font-weight:600;line-height:1.35}
+.dcard .it b.read{color:#6E685F}
+.dcard .it small{display:block;font:500 11.5px -apple-system,system-ui;color:#6E685F;margin-top:2px}
+.dcard .cl{font:500 11px -apple-system,system-ui;color:#6E685F;margin:10px 0 0 18px;border-left:2px solid #E4DFD5;padding-left:10px}
+.dcard .sh{display:flex;align-items:center;gap:14px;border-top:1px solid #E4DFD5;margin-top:18px;padding-top:16px;flex-wrap:wrap}
+.dcard .sh span:first-child{background:#DE9433;color:#221F1A;font:600 13px -apple-system,system-ui;padding:9px 16px;border-radius:11px}
+.dcard .sh span:last-child{font:500 12px -apple-system,system-ui;color:#6E685F}
+/* Mac */
+.mac{flex:none;width:480px}
+.mwin{background:#FBFAF7;border:1px solid #DBD5C8;border-radius:14px;box-shadow:0 18px 44px rgba(34,31,26,.12);overflow:hidden}
+.mbar{display:flex;gap:16px;align-items:center;background:#E7E1D3;padding:7px 14px;font:600 12.5px -apple-system,system-ui;color:#4A453D;flex-wrap:wrap}
+.mbar b{font-weight:700;color:#221F1A}
+.mbar span.open{background:#DE9433;color:#221F1A;border-radius:5px;padding:1px 7px}
+.menus{display:flex;gap:14px;padding:14px;align-items:flex-start;flex-wrap:wrap}
+.menu{background:#FEFDFB;border:1px solid #E4DFD5;border-radius:10px;padding:6px;min-width:200px;box-shadow:0 8px 20px rgba(34,31,26,.08)}
+.menu .mh{font:700 10.5px -apple-system,system-ui;letter-spacing:.1em;color:#6E685F;padding:4px 10px 6px;text-transform:uppercase}
+.menu .mi{display:flex;justify-content:space-between;gap:18px;font:500 13px -apple-system,system-ui;color:#221F1A;padding:5px 10px;border-radius:6px}
+.menu .mi:first-of-type{background:#DE9433}
+.menu .mi kbd{font:500 12.5px -apple-system,system-ui;color:#4A453D;background:none}
+.menu hr{border:none;border-top:1px solid #E4DFD5;margin:5px 6px}
+.macbadge{margin-top:22px}
+.macbadge img{height:46px;width:auto;display:block}
+/* confidentialité */
+.dark{background:#161513}
+.dark .inner{max-width:1000px;margin:0 auto;padding:92px 44px}
+.dark .kicker{color:#F2BA5C;text-align:center}
+.dark h2{color:#F2EEE6;text-align:center;font-size:46px}
+:lang(ja) .dark h2,:lang(zh-Hans) .dark h2{font-size:38px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
+.pc{background:#201E1B;border:1px solid #322E29;border-radius:16px;padding:24px 26px}
+.pc .ic{width:26px;height:26px;border-radius:9px;background:rgba(242,186,92,.14);display:flex;align-items:center;justify-content:center}
+.pc .ic span{width:9px;height:9px;background:#F2BA5C;border-radius:3px;display:inline-block}
+.pc h3{font:700 16px -apple-system,system-ui;color:#F2EEE6;margin-top:14px}
+.pc p{font:400 14px -apple-system,system-ui;line-height:1.6;color:#A8A199;margin-top:8px}
+.dark .learned{text-align:center;margin-top:34px;font:400 14.5px -apple-system,system-ui;color:#C9C2B8}
+.dark .stats{text-align:center;margin-top:14px;font:400 14.5px -apple-system,system-ui;color:#A8A199}
+.dark .stats strong{color:#F2EEE6}
+.dark .stats a{color:#F2BA5C;font-weight:600}
+/* tarif */
+.pricing{padding:92px 0;text-align:center}
+.pricing .sub2{font-size:16.5px;line-height:1.6;color:#6E685F;max-width:540px;margin:16px auto 0}
+.prices{display:flex;gap:22px;justify-content:center;margin-top:48px;flex-wrap:wrap;text-align:left}
+.price{width:340px;background:#FBFAF7;border:1px solid #E4DFD5;border-radius:20px;padding:30px;position:relative}
+.price.main{background:#FEFDFB;border:1.5px solid #DE9433}
+.price .tag{position:absolute;top:-12px;left:28px;background:#DE9433;color:#221F1A;font:700 11px -apple-system,system-ui;letter-spacing:.1em;border-radius:999px;padding:5px 12px}
+.price .nm{font:600 14px -apple-system,system-ui;color:#6E685F}
+.price .amt{display:flex;align-items:baseline;gap:6px;margin-top:10px}
+.price .amt b{font-size:44px;font-weight:700}
+.price .amt span{font:500 15px -apple-system,system-ui;color:#6E685F}
+.price ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:18px;font:500 14px -apple-system,system-ui;color:#4A453D}
+.price .go{display:flex;justify-content:center;font:600 15px -apple-system,system-ui;padding:13px 0;border-radius:12px;margin-top:24px;color:#221F1A}
+.price.main .go{background:#DE9433}
+.price .go.alt{background:#FEFDFB;border:1px solid #DBD5C8;padding:12px 0}
+.pnote{font:500 12.5px -apple-system,system-ui;color:#6E685F;margin:26px auto 0;max-width:760px}
+/* pied */
+footer{border-top:1px solid #E4DFD5;background:#EDE8DE}
+.fwrap{max-width:1240px;margin:0 auto;padding:44px 44px 32px}
+.frow{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+.fcols{display:flex;gap:56px;flex-wrap:wrap}
+.fcol{display:flex;flex-direction:column;gap:9px;font:500 13.5px -apple-system,system-ui}
+.fcol .h{font:700 11px -apple-system,system-ui;letter-spacing:.13em;color:#6E685F}
+.fcol a{color:#6E685F}
+.fbot{border-top:1px solid #DBD5C8;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;font:400 12.5px -apple-system,system-ui;color:#6E685F}
+.mcta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;align-items:center;justify-content:center;gap:8px;background:#DE9433;color:#221F1A;font:700 16px -apple-system,system-ui;padding:16px 20px;box-shadow:0 -6px 20px rgba(34,31,26,.16)}
+@media (max-width:980px){
+  .hero,.split{flex-direction:column;gap:40px}
+  .hero .phone{align-self:center}
+  .bcard,.dcard,.mac{width:100%;max-width:520px}
+  .grid2{grid-template-columns:1fr}
+  h1{font-size:44px}
+  :lang(ja) h1,:lang(zh-Hans) h1{font-size:38px}
+  h2{font-size:30px}
+  :lang(ja) h2,:lang(zh-Hans) h2{font-size:27px}
+}
+@media (max-width:1180px){
+  .navlinks{display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  header{position:sticky;top:0;z-index:60}
+  nav.top{padding:12px 0;gap:10px}
+  .navright .btn{display:none}
+  .langs a{padding:5px 7px}
+  .hero{padding:32px 0 40px}
+  .phone{width:min(332px,88vw)}
+  .dark .inner{padding:56px 16px}
+  .split{padding:56px 0}
+  .pricing{padding:56px 0}
+  .price{width:100%}
+  .fwrap{padding:36px 16px 96px}
+  .mcta{display:flex}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">跳到正文</a>
+<header><div class="wrap">
+<nav class="top" aria-label="主导航">
+<a class="brand" href="/technodaily/zh/"><b class="serif">TechnoDaily</b><span class="pill-v">2.5</span></a>
+<div class="navlinks">
+<a href="#fonctionnalites">功能</a>
+<a href="#mac">Mac</a>
+<a href="#sujets">关注的主题</a>
+<a href="#confidentialite">隐私</a>
+<a href="#tarif">价格</a>
+</div>
+<div class="navright">
+<div class="langs" role="group" aria-label="语言">
+<a href="/technodaily/en/" hreflang="en" lang="en">EN</a>
+<a href="/technodaily/" hreflang="fr" lang="fr">FR</a>
+<a href="/technodaily/es/" hreflang="es" lang="es">ES</a>
+<a href="/technodaily/zh/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page">中文</a>
+<a href="/technodaily/ja/" hreflang="ja" lang="ja">日本語</a>
+</div>
+<a class="btn" href="https://apps.apple.com/cn/app/technodaily/id6758897742">下载</a>
+</div></nav></div></header>
+<main id="contenu">
+<div class="wrap"><section class="hero">
+<div class="txt">
+<p class="kicker">全新 2.5：支持日语，推出 Mac 版</p>
+<h1 class="serif">所有资讯来源，<br>一份简报。</h1>
+<p class="sub">TechnoDaily 是一款 RSS 阅读器：把你订阅的网站汇集在一处，在你的设备上学习什么对你重要。多个来源都在报道的话题汇入“每日摘要”；“为你推荐”一次最多 30 篇。</p>
+<div class="cta">
+<a class="badge" href="https://apps.apple.com/cn/app/technodaily/id6758897742"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ05TQyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTA4Ljg1MTU3IiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTA4Ljg1MTU3IDQwIj4KICA8dGl0bGU+RG93bmxvYWRfb25fdGhlX0FwcF9TdG9yZV9CYWRnZV9DTlNDX1JHQl9ibGtfMDkyOTE3PC90aXRsZT4KICA8Zz4KICAgIDxnPgogICAgICA8cGF0aCBkPSJNOTkuMzIyMjcsMEg5LjUzNDY4Yy0uMzY2NywwLS43MjksMC0xLjA5NDczLjAwMi0uMzA2MTUuMDAyLS42MDk4Ni4wMDc4MS0uOTE4OTUuMDEyN0ExMy4yMTQ3NiwxMy4yMTQ3NiwwLDAsMCw1LjUxNzEuMTkxNDFhNi42NjUwOSw2LjY2NTA5LDAsMCwwLTEuOTAwODguNjI3QTYuNDM3NzksNi40Mzc3OSwwLDAsMCwxLjk5NzU3LDEuOTk3MDcsNi4yNTg0NCw2LjI1ODQ0LDAsMCwwLC44MTkzNSwzLjYxODE2YTYuNjAxMTksNi42MDExOSwwLDAsMC0uNjI1LDEuOTAzMzIsMTIuOTkzLDEyLjk5MywwLDAsMC0uMTc5MiwyLjAwMkMuMDA1ODcsNy44MzAwOC4wMDQ4OSw4LjEzNzcsMCw4LjQ0NDM0VjMxLjU1ODZjLjAwNDg5LjMxMDUuMDA1ODcuNjExMy4wMTUxNS45MjE5YTEyLjk5MjMyLDEyLjk5MjMyLDAsMCwwLC4xNzkyLDIuMDAxOSw2LjU4NzU2LDYuNTg3NTYsMCwwLDAsLjYyNSwxLjkwNDNBNi4yMDc3OCw2LjIwNzc4LDAsMCwwLDEuOTk3NTcsMzguMDAxYTYuMjc0NDUsNi4yNzQ0NSwwLDAsMCwxLjYxODY1LDEuMTc4Nyw2LjcwMDgyLDYuNzAwODIsMCwwLDAsMS45MDA4OC42MzA4LDEzLjQ1NTE0LDEzLjQ1NTE0LDAsMCwwLDIuMDAzOS4xNzY4Yy4zMDkwOS4wMDY4LjYxMjguMDEwNy45MTg5NS4wMTA3QzguODA1NjcsNDAsOS4xNjgsNDAsOS41MzQ2OCw0MEg5OS4zMjIyN2MuMzU5NCwwLC43MjQ2LDAsMS4wODQtLjAwMi4zMDQ3LDAsLjYxNzItLjAwMzkuOTIxOS0uMDEwN2ExMy4yNzksMTMuMjc5LDAsMCwwLDItLjE3NjgsNi44MDQzMiw2LjgwNDMyLDAsMCwwLDEuOTA4Mi0uNjMwOCw2LjI3NzQyLDYuMjc3NDIsMCwwLDAsMS42MTcyLTEuMTc4Nyw2LjM5NDgyLDYuMzk0ODIsMCwwLDAsMS4xODE2LTEuNjE0Myw2LjYwNDEzLDYuNjA0MTMsMCwwLDAsLjYxOTEtMS45MDQzLDEzLjUwNjQzLDEzLjUwNjQzLDAsMCwwLC4xODU2LTIuMDAxOWMuMDAzOS0uMzEwNi4wMDM5LS42MTE0LjAwMzktLjkyMTkuMDA3OC0uMzYzMy4wMDc4LS43MjQ2LjAwNzgtMS4wOTM4VjkuNTM2MTNjMC0uMzY2MjEsMC0uNzI5NDktLjAwNzgtMS4wOTE3OSwwLS4zMDY2NCwwLS42MTQyNi0uMDAzOS0uOTIwOWExMy41MDcxLDEzLjUwNzEsMCwwLDAtLjE4NTYtMi4wMDIsNi42MTc3LDYuNjE3NywwLDAsMC0uNjE5MS0xLjkwMzMyLDYuNDY2MTksNi40NjYxOSwwLDAsMC0yLjc5ODgtMi43OTk4LDYuNzY3NTQsNi43Njc1NCwwLDAsMC0xLjkwODItLjYyNywxMy4wNDM5NCwxMy4wNDM5NCwwLDAsMC0yLS4xNzY3NmMtLjMwNDctLjAwNDg4LS42MTcyLS4wMTA3NC0uOTIxOS0uMDEyNjlDMTAwLjA0Njg3LDAsOTkuNjgxNjcsMCw5OS4zMjIyNywwWiIgc3R5bGU9ImZpbGw6ICNhNmE2YTYiLz4KICAgICAgPHBhdGggZD0iTTguNDQ0ODMsMzkuMTI1Yy0uMzA0NjgsMC0uNjAyLS4wMDM5LS45MDQyOS0uMDEwN2ExMi42ODcxNCwxMi42ODcxNCwwLDAsMS0xLjg2OTE0LS4xNjMxLDUuODgzODEsNS44ODM4MSwwLDAsMS0xLjY1Njc0LS41NDc5LDUuNDA1NzMsNS40MDU3MywwLDAsMS0xLjM5Ny0xLjAxNjYsNS4zMjA4Miw1LjMyMDgyLDAsMCwxLTEuMDIwNTEtMS4zOTY1LDUuNzIxODYsNS43MjE4NiwwLDAsMS0uNTQzLTEuNjU3MiwxMi40MTM1MSwxMi40MTM1MSwwLDAsMS0uMTY2NS0xLjg3NWMtLjAwNjM0LS4yMTA5LS4wMTQ2NC0uOTEzMS0uMDE0NjQtLjkxMzFWOC40NDQzNFMuODgxODUsNy43NTI5My44ODc3LDcuNTQ5OGExMi4zNzAzOSwxMi4zNzAzOSwwLDAsMSwuMTY1NTMtMS44NzIwNyw1Ljc1NTUsNS43NTU1LDAsMCwxLC41NDM0Ni0xLjY2MjFBNS4zNzM0OSw1LjM3MzQ5LDAsMCwxLDIuNjExODMsMi42MTc2OCw1LjU2NTQzLDUuNTY1NDMsMCwwLDEsNC4wMTQxNywxLjU5NTIxYTUuODIzMDksNS44MjMwOSwwLDAsMSwxLjY1MzMyLS41NDM5NEExMi41ODU4OSwxMi41ODU4OSwwLDAsMSw3LjU0My44ODcyMUw4LjQ0NTMyLjg3NWg5MS45NTZsLjkxMzEuMDEyN2ExMi4zODQ5MywxMi4zODQ5MywwLDAsMSwxLjg1ODQuMTYyNTksNS45MzgzMyw1LjkzODMzLDAsMCwxLDEuNjcwOS41NDc4NSw1LjU5Mzc0LDUuNTkzNzQsMCwwLDEsMi40MTUsMi40MTk5M0E1Ljc2MjY3LDUuNzYyNjcsMCwwLDEsMTA3Ljc5NCw1LjY2N2ExMi45OTUsMTIuOTk1LDAsMCwxLC4xNzM4LDEuODg3MjFjLjAwMjkuMjgzMi4wMDI5LjU4NzQuMDAyOS44OTAxNC4wMDc5LjM3NS4wMDc5LjczMTkzLjAwNzksMS4wOTE3OVYzMC40NjQ4YzAsLjM2MzMsMCwuNzE3OC0uMDA3OSwxLjA3NTIsMCwuMzI1MiwwLC42MjMxLS4wMDM5LjkyOTdhMTIuNzMxMjYsMTIuNzMxMjYsMCwwLDEtLjE3MDksMS44NTM1LDUuNzM5LDUuNzM5LDAsMCwxLS41NCwxLjY3LDUuNDgwMjksNS40ODAyOSwwLDAsMS0xLjAxNTYsMS4zODU3LDUuNDEyOSw1LjQxMjksMCwwLDEtMS4zOTk0LDEuMDIyNSw1Ljg2MTY4LDUuODYxNjgsMCwwLDEtMS42NjguNTQ5OCwxMi41NDIxOCwxMi41NDIxOCwwLDAsMS0xLjg2OTIuMTYzMWMtLjI5MjkuMDA2OC0uNTk5Ni4wMTA3LS44OTc0LjAxMDdsLTEuMDg0LjAwMloiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cGF0aCBkPSJNNDEuMTY3NDIsMTYuNTU0NjJIMzcuMTE1ODVsLS45NzMsMi44NzNIMzQuNDI2NzhMMzguMjY0MzcsOC43OTgzN2gxLjc4M2wzLjgzNzU5LDEwLjYyOTIySDQyLjEzOTU3Wm0tMy42MzItMS4zMjU3M0g0MC43NDdsLTEuNTgzMTgtNC42NjI2MWgtLjA0NDNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNTIuMTcyOCwxNS41NTMyMmMwLDIuNDA4MjEtMS4yODg5NSwzLjk1NTQ1LTMuMjM0MDcsMy45NTU0NWEyLjYyNzE5LDIuNjI3MTksMCwwLDEtMi40MzgzLTEuMzU1ODJoLS4wMzY3OHYzLjgzODQySDQ0Ljg3Mjk0VjExLjY3OGgxLjUzOTcyVjEyLjk2N2guMDI5MjZhMi43NDksMi43NDksMCwwLDEsMi40Njc1Ni0xLjM3QzUwLjg3NjMzLDExLjU5Njk0LDUyLjE3MjgsMTMuMTUxNyw1Mi4xNzI4LDE1LjU1MzIyWm0tMS42MzUsMGMwLTEuNTY5LS44MTA4Mi0yLjYwMDQ2LTIuMDQ3OTQtMi42MDA0Ni0xLjIxNTM5LDAtMi4wMzI4OSwxLjA1MzIzLTIuMDMyODksMi42MDA0NiwwLDEuNTYxNDUuODE3NSwyLjYwNzE1LDIuMDMyODksMi42MDcxNUM0OS43MjcsMTguMTYwMzcsNTAuNTM3NzksMTcuMTM2NCw1MC41Mzc3OSwxNS41NTMyMloiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik02MC43MDI2NywxNS41NTMyMmMwLDIuNDA4MjEtMS4yODkzNywzLjk1NTQ1LTMuMjM0NDksMy45NTU0NWEyLjYyNzE5LDIuNjI3MTksMCwwLDEtMi40MzgzLTEuMzU1ODJINTQuOTkzMXYzLjgzODQySDUzLjQwMjRWMTEuNjc4aDEuNTM5NzJWMTIuOTY3aC4wMjkyNmEyLjc0OSwyLjc0OSwwLDAsMSwyLjQ2NzU2LTEuMzdDNTkuNDA1NzgsMTEuNTk2OTQsNjAuNzAyNjcsMTMuMTUxNyw2MC43MDI2NywxNS41NTMyMlptLTEuNjM1NDMsMGMwLTEuNTY5LS44MTA4Mi0yLjYwMDQ2LTIuMDQ3OTQtMi42MDA0Ni0xLjIxNTM5LDAtMi4wMzI4OSwxLjA1MzIzLTIuMDMyODksMi42MDA0NiwwLDEuNTYxNDUuODE3NSwyLjYwNzE1LDIuMDMyODksMi42MDcxNUM1OC4yNTY0MywxOC4xNjAzNyw1OS4wNjcyNSwxNy4xMzY0LDU5LjA2NzI1LDE1LjU1MzIyWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTY2LjMzOTEsMTYuNDY2Yy4xMTc4NiwxLjA1NDA2LDEuMTQxODMsMS43NDYxOCwyLjU0MTEyLDEuNzQ2MTgsMS4zNDA3NywwLDIuMzA1MzktLjY5MjEyLDIuMzA1MzktMS42NDI1MywwLS44MjUtLjU4MTc4LTEuMzE5LTEuOTU5MzMtMS42NTc1OGwtMS4zNzc1NS0uMzMxODVjLTEuOTUxODEtLjQ3MTQ0LTIuODU3OTItMS4zODQyNC0yLjg1NzkyLTIuODY1NDQsMC0xLjgzNCwxLjU5ODIzLTMuMDkzNjQsMy44NjY4NC0zLjA5MzY0LDIuMjQ2ODgsMCwzLjc4NjYsMS4yNTk2OSwzLjgzODQyLDMuMDkzNjRINzEuMDkwMzJjLS4wOTYxMy0xLjA2MDc1LS45NzMtMS43MDEtMi4yNTQ0LTEuNzAxcy0yLjE1ODI4LjY0NzgyLTIuMTU4MjgsMS41OTA3MWMwLC43NTE0Ny41NiwxLjE5MzY2LDEuOTMwMDgsMS41MzIxOWwxLjE3MTA5LjI4NzU1YzIuMTgwODUuNTE1NzUsMy4wODYxMiwxLjM5MTc2LDMuMDg2MTIsMi45NDY1MiwwLDEuOTg4NTktMS41ODMxOCwzLjIzNDA3LTQuMTAyNTcsMy4yMzQwNy0yLjM1NzIyLDAtMy45NDg3Ni0xLjIxNjIzLTQuMDUxNTgtMy4xMzg3OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik03Ni4yOTk2MSw5Ljg0NDA3djEuODM0aDEuNDczNjh2MS4yNTk2OUg3Ni4yOTk2MVYxNy4yMWMwLC42NjM3LjI5NTA3Ljk3My45NDI4OS45NzNhNC45NzEsNC45NzEsMCwwLDAsLjUyMzI3LS4wMzY3OHYxLjI1MjE3YTQuMzY4MzgsNC4zNjgzOCwwLDAsMS0uODgzNTQuMDczNTZjLTEuNTY5LDAtMi4xODA4NS0uNTg5My0yLjE4MDg1LTIuMDkyMjRWMTIuOTM3NzFINzMuNTc0NlYxMS42NzhoMS4xMjY3OHYtMS44MzRaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNzguNjI1OSwxNS41NTMyMmMwLTIuNDM4MywxLjQzNjA3LTMuOTcwNDksMy42NzU0Mi0zLjk3MDQ5LDIuMjQ2ODgsMCwzLjY3NjI2LDEuNTMyMTksMy42NzYyNiwzLjk3MDQ5LDAsMi40NDUtMS40MjE4NSwzLjk3MDQ5LTMuNjc2MjYsMy45NzA0OUM4MC4wNDc3NiwxOS41MjM3Miw3OC42MjU5LDE3Ljk5ODIxLDc4LjYyNTksMTUuNTUzMjJabTUuNzMwODksMGMwLTEuNjcyNjItLjc2NjUxLTIuNjU5ODEtMi4wNTU0Ni0yLjY1OTgxcy0yLjA1NTQ2Ljk5NDcxLTIuMDU1NDYsMi42NTk4MWMwLDEuNjc5MzEuNzY2NTEsMi42NTksMi4wNTU0NiwyLjY1OVM4NC4zNTY3OSwxNy4yMzI1Myw4NC4zNTY3OSwxNS41NTMyMloiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik04Ny4yODkxLDExLjY3OGgxLjUxNzE1djEuMzE5SDg4Ljg0M2ExLjg0ODM1LDEuODQ4MzUsMCwwLDEsMS44NjQtMS40MDAxMiwyLjQ1MzMsMi40NTMzLDAsMCwxLC41NDUuMDU5MzV2MS40ODc4OWEyLjIyMzcyLDIuMjIzNzIsMCwwLDAtLjcxNDY5LS4wOTYxMywxLjYwMjksMS42MDI5LDAsMCwwLTEuNjU3NTgsMS43ODN2NC41OTY1OEg4Ny4yODkxWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTk4LjU4NjIsMTcuMTUxNDVhMy4xMTAxMSwzLjExMDExLDAsMCwxLTMuMzM2ODksMi4zNzIyN2MtMi4yNTQ0LDAtMy42NTM2OS0xLjUxMDQ2LTMuNjUzNjktMy45MzM3MiwwLTIuNDMwNzgsMS40MDY4MS00LjAwNzI3LDMuNTg2ODItNC4wMDcyNywyLjE0NDA3LDAsMy40OTIzNiwxLjQ3Mjg0LDMuNDkyMzYsMy44MjI1NHYuNTQ1SDkzLjIwMTM4di4wOTYxM2EyLjAxODM3LDIuMDE4MzcsMCwwLDAsMi4wODQ3MiwyLjE5NTA2LDEuNzUzMjksMS43NTMyOSwwLDAsMCwxLjc4OTY1LTEuMDlabS01LjM3NzMtMi4zMTI5MmgzLjg3NDM3YTEuODYzNjcsMS44NjM2NywwLDAsMC0xLjkwMDgyLTEuOTY2ODZBMS45NjE4OCwxLjk2MTg4LDAsMCwwLDkzLjIwODksMTQuODM4NTNaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGQ9Ik0zNC40Mjg3MywyNC4wNGg3LjQ2MTQzdi43ODAyN0gzOC4zNDMyOHYxLjEwMzUycS43NjI0NS4zNTMsMS41MzQ2Ny43NzgzMi43NzIuNDI0OCwxLjU2Mi45MTIxMWwtLjQ1OTQ3LjcxNjhxLS44MTMtLjUxODU1LTEuNDYwOTQtLjkxNDA2LS42NDgxOS0uMzk1NTEtMS4xNzYyNy0uNjU3MjN2NC42MDg0aC0uNzkwNTNWMjQuODIwMzFoLTMuMTI0WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTQzLjk1NjA3LDI0LjI3NDQxaDEuNTYydi0uNjI5ODhoLjc3MnYuNjI5ODhoMS40NDcyN3YuNzE2OEg0Ni4yOTAwNnYuNjEwMzVoMS44MjQyMnEtLjAxODMxLS40NDk3MS0uMDM2NjItLjkzOTQ1LS4wMTktLjQ4OTI2LS4wMTg1NS0xLjAyNjM3aC43NjcwOXEwLC41NDYzOS4wMTYxMSwxLjAzMTI1dC4wMzQ2Ny45MzQ1N2gyLjAzMDc2di43MjY1Nkg0OC45MTM1OXEuMDM2NjIuNTA1MzcuMDk0MjQuOTIyODVjLjAzODA5LjI3OTMuMDcyNzUuNTI4MzIuMTAzNTIuNzQ5YTEuNjU2NTksMS42NTY1OSwwLDAsMSwuMDU1MTguMjIzNjNjLjAxMjIxLjA3MTI5LjAyNDQxLjE0NDUzLjAzNjYyLjIxNzc3QTguMDc0NDksOC4wNzQ0OSwwLDAsMCw0OS41NDMsMjcuNTgycS4xNTE2MS0uNDU0MS4yNzU4OC0uOTczNjNsLjcwMzEzLjMyMTI5YTkuNzM4Myw5LjczODMsMCwwLDEtMS4wMDYzNSwyLjU3ODEzYy4wMjQ0MS4wNjA1NS4wNTEyNy4xMjMuMDgwNTcuMTg1NTVxLjA0MzIxLjA5Mzc1LjA4OTM2LjE4MTY0LjI4OTMxLjU3NDIyLjQ1OTQ3LjU3NDIyLjExNSwwLC4yNjY2LTEuMjA4bC42NzUyOS4zNTg0cS0uMjg5MzEsMS42NzcyNS0uODU0NDksMS42NzY3Ni0uNDI3NzMsMC0uOTY5NzMtLjc1MzkxYTIuMTMzMiwyLjEzMzIsMCwwLDEtLjE4OC0uMzU4NCw1LjEyLDUuMTIsMCwwLDEtMS40MDE4NiwxLjIwNDFsLS40MzYtLjYyODkxYTQuMTkxODcsNC4xOTE4NywwLDAsMCwxLjQ4ODI4LTEuNDAyMzRxLS4wODI3Ni0uMjcxLS4xNjc0OC0uNTU3NjItLjA4NS0uMjg3MTEtLjE0NS0uNTk5NjFhMTIuNjA1LDEyLjYwNSwwLDAsMS0uMjYxNzItMS44NTE1Nkg0My41MTk1NXYtLjcyNjU2aDEuOTk4NTR2LS42MTAzNWgtMS41NjJabTMuNzgxMjUsNS4yODgwOVYzMC4yNTJxLS4zMDMyMi4wMzY2Mi0uNjEzMjguMDY4MzZjLS4yMDY1NC4wMjE0OC0uNDE2LjA0NDkyLS42MjcuMDY5MzR2Ljk1MTE3aC0uNzcydi0uODU0NDlxLS40MzY1Mi4wMzY2Mi0uODg3MjEuMDY4MzZjLS4yOTk4LjAyMTQ4LS42MDUuMDQ5OC0uOTE0MDYuMDgzbC0uMTAxMDctLjc0NDE0cS41MDk3Ny0uMDE5Ljk3ODUyLS4wNTI3My40Njg3NS0uMDM1MTYuOTIzODMtLjA2MjVWMjkuMTU4Mkg0NC4xOTA0NWwtLjE2MTEzLS42Mjk4OGE1LjIxMzI3LDUuMjEzMjcsMCwwLDAsLjU1NjE1LS44ODY3MmgtLjgwODU5di0uNzAzMTJoMS4xMTYyMWExLjczMzI1LDEuNzMzMjUsMCwwLDAsLjA5NjY4LS4yNjg1NXEuMDM2NjItLjEzNDc3LjA5MTgtLjI4NzExbC43NTM0Mi4xMzM3OWMtLjAzMDI3LjA4NS0uMDU0NjkuMTYxMTMtLjA3MzI0LjIyNzU0YS45OTI0Ni45OTI0NiwwLDAsMS0uMDc4MTIuMTk0MzRoMi4wOTAzM3YuNzAzMTNINDUuNDAzMzRxLS4xMjM3OC4yNDktLjI1MDQ5LjQ2dC0uMjM2ODIuNDA5MThoLjgwOTA4VjI3Ljk1NDFoLjc3MnYuNTU2NjRoMS4xOTQzNHYuNjQ3NDZINDYuNDk3MDl2LjUzNzExYy4yMTA5NC0uMDE3NTguNDIwNDEtLjAzOTA2LjYyNy0uMDYxNTJRNDcuNDMzODYsMjkuNTk4NjMsNDcuNzM3MzIsMjkuNTYyNVptMS4zNDYxOS01LjQ1OS41ODM1LS4zOTQ1M2ExMi41NTU5NCwxMi41NTU5NCwwLDAsMSwuOTc5LDEuMjM2MzNsLS41OTI3Ny40MjE4OHEtLjE3OTQ0LS4yODQxOC0uNDIwNDEtLjYwMzUyUTQ5LjM5MTEzLDI0LjQ0NDM0LDQ5LjA4MzUyLDI0LjEwMzUyWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJfR3JvdXBfIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICA8ZyBpZD0iX0dyb3VwXzIiIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgICAgPHBhdGggaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik0yNC43Njg4OCwyMC4zMDA2OGE0Ljk0ODgxLDQuOTQ4ODEsMCwwLDEsMi4zNTY1Ni00LjE1MjA2LDUuMDY1NjYsNS4wNjU2NiwwLDAsMC0zLjk5MTE2LTIuMTU3NjhjLTEuNjc5MjQtLjE3NjI2LTMuMzA3MTksMS4wMDQ4My00LjE2MjksMS4wMDQ4My0uODcyMjcsMC0yLjE4OTc3LS45ODczMy0zLjYwODUtLjk1ODE0YTUuMzE1MjksNS4zMTUyOSwwLDAsMC00LjQ3MjkyLDIuNzI3ODdjLTEuOTM0LDMuMzQ4NDItLjQ5MTQxLDguMjY5NDcsMS4zNjEyLDEwLjk3NjA4LjkyNjksMS4zMjUzNSwyLjAxMDE4LDIuODA1OCwzLjQyNzYzLDIuNzUzMywxLjM4NzA2LS4wNTc1MywxLjkwNTEtLjg4NDQ4LDMuNTc5NC0uODg0NDgsMS42NTg3NiwwLDIuMTQ0NzkuODg0NDgsMy41OTEuODUxMSwxLjQ4ODM4LS4wMjQxNiwyLjQyNjEzLTEuMzMxMjQsMy4zMjA1MS0yLjY2OTE0YTEwLjk2MiwxMC45NjIsMCwwLDAsMS41MTg0Mi0zLjA5MjUxQTQuNzgyMDUsNC43ODIwNSwwLDAsMSwyNC43Njg4OCwyMC4zMDA2OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMjIuMDM3MjUsMTIuMjEwODlhNC44NzI0OCw0Ljg3MjQ4LDAsMCwwLDEuMTE0NTItMy40OTA2Miw0Ljk1NzQ2LDQuOTU3NDYsMCwwLDAtMy4yMDc1OCwxLjY1OTYxLDQuNjM2MzQsNC42MzYzNCwwLDAsMC0xLjE0MzcxLDMuMzYxMzlBNC4wOTkwNSw0LjA5OTA1LDAsMCwwLDIyLjAzNzI1LDEyLjIxMDg5WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==" alt="在 App Store 下载" width="168" height="56"></a>
+<a class="more" href="#tarif">查看价格 →</a>
+</div>
+<p class="meta">首次开通年度订阅可免费试用 14 天。之后每年 ¥128，或一次性买断 ¥298。<br>你的阅读只属于你。</p>
+<div class="dispo"><span class="l">适用于</span><span class="chip">iPhone</span><span class="chip">iPad</span><span class="chip">Mac</span><span class="chip">Apple Vision Pro</span></div>
+</div>
+<div class="phone" role="img" aria-label="“为你推荐”页面预览"><div class="screen" aria-hidden="true">
+<div class="sbar"><span>9:41</span><i></i></div>
+<div class="mhead">
+<div class="mtitle"><b class="serif">为你推荐</b><div class="mtools"><span>筛选</span><div class="gear"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6E685F" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div></div></div>
+<div class="seg"><span class="">全部</span><span class="on">未读</span><span class="">已保存</span><span class="">稍后阅读</span></div>
+<div class="mmeta">24 篇文章 · 智能排序</div>
+</div>
+<div class="mbody">
+<div class="sage">
+<div class="hd"><span>✦ 每日摘要</span><em>3 个话题</em></div>
+<div class="t"><b class="serif">城市如何应对高温</b><small>4 个来源 · RSS</small></div>
+<div class="t"><b class="serif">电动汽车的现状</b><small>3 个来源 · RSS</small></div>
+</div>
+<div class="grp">最新消息</div>
+<div class="card"><div class="top"><span class="tb r">RSS</span><span class="udot"></span></div><b class="serif">五张图看懂物价</b><small>6 分钟 · 经济</small></div>
+<div class="grp">今天</div>
+<div class="card"><div class="top"><span class="tb r">RSS</span><span class="udot"></span></div><b class="serif">为什么夜空越来越亮</b><small>4 分钟 · 科学</small></div>
+</div>
+<div class="tabs"><div class="on"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2l1.6 4.9L17.5 8.5l-4.9 1.6L11 15l-1.6-4.9L4.5 8.5l4.9-1.6zM18 13l.9 2.6 2.6.9-2.6.9L18 20l-.9-2.6-2.6-.9 2.6-.9z"/></svg><span class="bdg">24</span>为你推荐</div><div class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></svg>来源</div><div class=""><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z"/></svg>已保存</div><div class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>搜索</div></div>
+</div></div>
+</section>
+<section class="sources" aria-label="你的来源">
+<span class="lab">你的来源</span>
+<span class="sp r">⌁ RSS 订阅源</span>
+<span class="sp r">OPML 导入与导出</span>
+<p class="note">如果你能访问相应服务，也可以连接 Gmail 阅读新闻通讯，或连接 YouTube 查看订阅频道。</p>
+</section></div>
+<section id="fonctionnalites" class="band alt"><div class="wrap"><div class="split">
+<div class="txt">
+<p class="kicker">为你推荐</p>
+<h2 class="serif">一份精选，<br>而不是一堆未读。</h2>
+<p class="lead">在“为你推荐”的“未读”视图中，一次最多 30 篇，选自最近 48 小时，分为“最新消息”“今天”“您可能错过了”三组。标签页角标统计的是这份精选，而不是总量。推荐引擎在你的设备上学习，并跟随你近期的阅读。</p>
+<ul class="dots"><li>“每日摘要”：多个来源共同报道的话题（通常为 3 个）及其文章</li><li>不需要 Apple Intelligence 也能使用“每日摘要”</li><li>晨间通知：在你选择的时间提醒你“今晨 3 个话题”</li><li>“不感兴趣”“这篇文章不属于此主题”“从简报中排除”：你的纠正在所有设备间同步</li></ul>
+<p class="small">设备端 AI 摘要需要支持 Apple Intelligence、且该功能在你所在地区可用的设备。</p>
+</div>
+<div class="bcard" aria-hidden="true">
+<div class="hd"><span>每日摘要</span><em>3 个话题 · 9 篇文章</em></div>
+<div class="t"><b class="serif">城市如何应对高温</b><small>4 个来源 · RSS</small></div>
+<div class="t"><b class="serif">电动汽车的现状</b><small>3 个来源 · RSS</small></div>
+<div class="t"><b class="serif">月球探测任务增多</b><small>2 个来源 · RSS</small></div>
+<div class="ft"><span></span><span>查看主题 ›</span></div>
+</div>
+</div></div></section>
+<section id="sujets" class="band"><div class="wrap"><div class="split">
+<div class="dcard" aria-hidden="true">
+<div class="nm"><b class="serif">月球探测</b><span class="pic">▲ 激增</span></div>
+<div class="dm">14 篇文章 · 5 个来源 · 已关注 3 周</div>
+<div class="day">今天</div>
+<div class="it"><i></i><div><b class="serif">接下来的发射时间表</b><small>RSS · 5 分钟</small></div></div>
+<div class="it"><i></i><div><b class="serif">关于新着陆器，我们知道什么</b><small>RSS · 7 分钟</small></div></div>
+<div class="cl">围绕以下主题：发射 · 着陆器 · 月球</div>
+<div class="day">昨天</div>
+<div class="it"><i class="read"></i><div><b class="serif read">为什么要重返月球</b><small>RSS · 12 分钟</small></div></div>
+<div class="sh"><span>分享档案</span><span>文本 · Markdown · 图片</span></div>
+</div>
+<div class="txt">
+<p class="kicker">关注的主题</p>
+<h2 class="serif">关注一个主题，<br>看清它的变化。</h2>
+<p class="lead">关注一个主题，TechnoDaily 会为它建立一份档案：逐日呈现的动态，以及报道量激增时的提示。</p>
+<p class="lead">主题中出现的人物和机构，都有最近 7 天的页面。档案可以文本、Markdown 或图片分享。基于你自己的来源：除了你，没有人知道你在关注什么。</p>
+</div>
+</div></div></section>
+<section id="mac" class="band alt"><div class="wrap"><div class="split">
+<div class="txt">
+<p class="kicker">全新 · Mac</p>
+<h2 class="serif">在 Mac 上，<br>用键盘阅读。</h2>
+<p class="lead">原生 Mac 应用，带菜单栏：用键盘切换标签页，在独立窗口中打开文章，程序坞图标显示数量标记。一次购买，iPhone、iPad、Mac 与 Apple Vision Pro 通用，并通过你的个人 iCloud 同步。</p>
+<ul class="dots"><li>⌘1 至 ⌘4：为你推荐、来源、已保存、搜索</li><li>⌘R 刷新，⌘F 搜索，⌘, 打开设置</li><li>文章可在独立窗口中打开（⇧⌘N）</li><li>macOS 26.1 及更高版本</li></ul>
+<div class="macbadge"><a href="https://apps.apple.com/cn/app/technodaily/id6758897742"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ05TQyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwLjE4MzI1IiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTQwLjE4MzI1IDQwIj4KICA8dGl0bGU+RG93bmxvYWRfb25fdGhlX01hY19BcHBfU3RvcmVfQmFkZ2VfQ05TQ19SR0JfYmxrXzA5MjkxNzwvdGl0bGU+CiAgPGc+CiAgICA8Zz4KICAgICAgPHBhdGggZD0iTTEzMC42NTM5NSwwSDkuNTM0NjhjLS4zNjY3LDAtLjcyOSwwLTEuMDk0NzMuMDAyLS4zMDYxNS4wMDItLjYwOTg2LjAwNzgxLS45MTg5NS4wMTI3QTEzLjIxNDc2LDEzLjIxNDc2LDAsMCwwLDUuNTE3MS4xOTE0MWE2LjY2NTA5LDYuNjY1MDksMCwwLDAtMS45MDA4OC42MjdBNi40Mzc4LDYuNDM3OCwwLDAsMCwxLjk5NzU3LDEuOTk3MDcsNi4yNTg0NCw2LjI1ODQ0LDAsMCwwLC44MTkzNSwzLjYxODE2YTYuNjAxMTksNi42MDExOSwwLDAsMC0uNjI1LDEuOTAzMzIsMTIuOTkzLDEyLjk5MywwLDAsMC0uMTc5MiwyLjAwMkMuMDA1ODcsNy44MzAwOC4wMDQ4OSw4LjEzNzcsMCw4LjQ0NDM0VjMxLjU1ODZjLjAwNDg5LjMxMDUuMDA1ODcuNjExMy4wMTUxNC45MjE5YTEyLjk5MjMyLDEyLjk5MjMyLDAsMCwwLC4xNzkyLDIuMDAxOSw2LjU4NzU2LDYuNTg3NTYsMCwwLDAsLjYyNSwxLjkwNDNBNi4yMDc3OCw2LjIwNzc4LDAsMCwwLDEuOTk3NTcsMzguMDAxYTYuMjc0NDYsNi4yNzQ0NiwwLDAsMCwxLjYxODY1LDEuMTc4Nyw2LjcwMDgyLDYuNzAwODIsMCwwLDAsMS45MDA4OC42MzA4LDEzLjQ1NTE0LDEzLjQ1NTE0LDAsMCwwLDIuMDAzOS4xNzY4Yy4zMDkwOS4wMDY4LjYxMjguMDEwNy45MTg5NS4wMTA3QzguODA1NjcsNDAsOS4xNjgsNDAsOS41MzQ2OCw0MEgxMzAuNjUzOTVjLjM1OTQsMCwuNzI0NiwwLDEuMDg0LS4wMDIuMzA0NywwLC42MTcyLS4wMDM5LjkyMTktLjAxMDdhMTMuMjc5LDEzLjI3OSwwLDAsMCwyLS4xNzY4LDYuODA0MzIsNi44MDQzMiwwLDAsMCwxLjkwODItLjYzMDgsNi4yNzc0Miw2LjI3NzQyLDAsMCwwLDEuNjE3Mi0xLjE3ODcsNi4zOTQ4Miw2LjM5NDgyLDAsMCwwLDEuMTgxNi0xLjYxNDMsNi42MDQxMyw2LjYwNDEzLDAsMCwwLC42MTkxLTEuOTA0MywxMy41MDY0MywxMy41MDY0MywwLDAsMCwuMTg1Ni0yLjAwMTljLjAwMzktLjMxMDYuMDAzOS0uNjExNC4wMDM5LS45MjE5LjAwNzgtLjM2MzMuMDA3OC0uNzI0Ni4wMDc4LTEuMDkzOFY5LjUzNjEzYzAtLjM2NjIxLDAtLjcyOTQ5LS4wMDc4LTEuMDkxNzksMC0uMzA2NjQsMC0uNjE0MjYtLjAwMzktLjkyMDlhMTMuNTA3MSwxMy41MDcxLDAsMCwwLS4xODU2LTIuMDAyLDYuNjE3Nyw2LjYxNzcsMCwwLDAtLjYxOTEtMS45MDMzMkE2LjQ2NjE5LDYuNDY2MTksMCwwLDAsMTM2LjU2OC44MTgzNmE2Ljc2NzU0LDYuNzY3NTQsMCwwLDAtMS45MDgyLS42MjcsMTMuMDQzOTQsMTMuMDQzOTQsMCwwLDAtMi0uMTc2NzZjLS4zMDQ3LS4wMDQ4OC0uNjE3Mi0uMDEwNzQtLjkyMTktLjAxMjY5LS4zNTk0LS4wMDItLjcyNDYtLjAwMi0xLjA4NC0uMDAyWiIgc3R5bGU9ImZpbGw6ICNhNmE2YTYiLz4KICAgICAgPHBhdGggZD0iTTguNDQ0ODMsMzkuMTI1Yy0uMzA0NjgsMC0uNjAyMDUtLjAwMzktLjkwNDI5LS4wMTA3YTEyLjY4NzE0LDEyLjY4NzE0LDAsMCwxLTEuODY5MTQtLjE2MzEsNS44ODM4MSw1Ljg4MzgxLDAsMCwxLTEuNjU2NzQtLjU0NzksNS40MDU3Myw1LjQwNTczLDAsMCwxLTEuMzk3LTEuMDE2Niw1LjMyMDgyLDUuMzIwODIsMCwwLDEtMS4wMjA1MS0xLjM5NjUsNS43MjE4NCw1LjcyMTg0LDAsMCwxLS41NDMtMS42NTcyLDEyLjQxMzM5LDEyLjQxMzM5LDAsMCwxLS4xNjY1LTEuODc1Yy0uMDA2MzQtLjIxMDktLjAxNDY0LS45MTMxLS4wMTQ2NC0uOTEzMVY4LjQ0NDM0Uy44ODE4NSw3Ljc1MjkzLjg4NzcsNy41NDk4YTEyLjM3MDMyLDEyLjM3MDMyLDAsMCwxLC4xNjU1My0xLjg3MjA3LDUuNzU1NTIsNS43NTU1MiwwLDAsMSwuNTQzNDYtMS42NjIxQTUuMzczNSw1LjM3MzUsMCwwLDEsMi42MTE4MywyLjYxNzY4LDUuNTY1NDMsNS41NjU0MywwLDAsMSw0LjAxNDE3LDEuNTk1MjFhNS44MjMwOSw1LjgyMzA5LDAsMCwxLDEuNjUzMzItLjU0Mzk0QTEyLjU4NTg5LDEyLjU4NTg5LDAsMCwxLDcuNTQzLjg4NzIxTDguNDQ1MzIuODc1SDEzMS43MzNsLjkxMzEuMDEyN2ExMi4zODQ5MiwxMi4zODQ5MiwwLDAsMSwxLjg1ODQuMTYyNTksNS45MzgzMyw1LjkzODMzLDAsMCwxLDEuNjcwOS41NDc4NSw1LjU5Mzc0LDUuNTkzNzQsMCwwLDEsMi40MTUsMi40MTk5Myw1Ljc2MjY3LDUuNzYyNjcsMCwwLDEsLjUzNTIsMS42NDg5MiwxMi45OTUsMTIuOTk1LDAsMCwxLC4xNzM4LDEuODg3MjFjLjAwMjkuMjgzMi4wMDI5LjU4NzQuMDAyOS44OTAxNC4wMDc5LjM3NS4wMDc5LjczMTkzLjAwNzksMS4wOTE3OVYzMC40NjQ4YzAsLjM2MzMsMCwuNzE3OC0uMDA3OSwxLjA3NTIsMCwuMzI1MiwwLC42MjMxLS4wMDM5LjkyOTdhMTIuNzMxMjYsMTIuNzMxMjYsMCwwLDEtLjE3MDksMS44NTM1LDUuNzM5LDUuNzM5LDAsMCwxLS41NCwxLjY3LDUuNDgwMjksNS40ODAyOSwwLDAsMS0xLjAxNTYsMS4zODU3LDUuNDEyOSw1LjQxMjksMCwwLDEtMS4zOTk0LDEuMDIyNSw1Ljg2MTY4LDUuODYxNjgsMCwwLDEtMS42NjguNTQ5OCwxMi41NDIxOCwxMi41NDIxOCwwLDAsMS0xLjg2OTIuMTYzMWMtLjI5MjkuMDA2OC0uNTk5Ni4wMTA3LS44OTc0LjAxMDdsLTEuMDg0LjAwMloiLz4KICAgIDwvZz4KICAgIDxnPgogICAgICA8cGF0aCBkPSJNNDQuNTkyMTcsMTkuNDI3NTdWMTEuNjA0MzRoLS4wNTE4Mkw0MS4zMzY0NSwxOS4zNDY1SDQwLjExMzU4bC0zLjIxMjI1LTcuNzQyMTVoLS4wNTF2Ny44MjMyM0gzNS4zNDc0NFY4Ljc5ODM2aDEuOTA4MjlsMy40Mzk2MSw4LjM4OTk1aC4wNTg1MWwzLjQzMjkyLTguMzg5OTVoMS45MTVWMTkuNDI3NTdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNDcuMzcxNDQsMTcuMjI1MDhjMC0xLjM1NDkzLDEuMDM4MTUtMi4xNzMyNCwyLjg4MDQxLTIuMjgzNTdsMi4xMjE0NC0uMTE4MjdWMTQuMjM0YzAtLjg2MTc3LS41Njc1Ni0xLjM0ODI0LTEuNTMzLTEuMzQ4MjRhMS40ODEwNSwxLjQ4MTA1LDAsMCwwLTEuNjI3NDQsMS4wOTA4SDQ3LjcyNWMuMDQ0My0xLjQwMDA3LDEuMzQ4MjYtMi4zOTM5LDMuMTU5NTktMi4zOTM5LDEuODQ4OTQsMCwzLjA3MTgyLDEuMDA4ODgsMy4wNzE4MiwyLjUzMzQ5djUuMzExNDdINTIuNDMxNzlWMTguMTUyODlINTIuMzk1YTIuNzcwNTEsMi43NzA1MSwwLDAsMS0yLjQ0NTc2LDEuNDA3NTlBMi4zNDkwNywyLjM0OTA3LDAsMCwxLDQ3LjM3MTQ0LDE3LjIyNTA4Wm01LjAwMTg1LS42OTk2MXYtLjU5NjhsLTEuOTA4MjkuMTE3ODZjLS45NTAzOC4wNTkzNS0xLjQ4Nzg1LjQ3MTQzLTEuNDg3ODUsMS4xMzQyNiwwLC42Nzc4OC41NiwxLjEyMDA1LDEuNDE0MjksMS4xMjAwNUExLjg1Nzc2LDEuODU3NzYsMCwwLDAsNTIuMzczMjgsMTYuNTI1NDdaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNNjAuNjM1ODYsMTQuMzQ0MjlhMS43MTEwOCwxLjcxMTA4LDAsMCwwLTEuODI2MzgtMS40Mjg0OGMtMS4yMjI4OCwwLTIuMDMyODQsMS4wMjM5My0yLjAzMjg0LDIuNjM3NTYsMCwxLjY1LjgxNzQ4LDIuNjQzODMsMi4wNDcsMi42NDM4M2ExLjY2NzYsMS42Njc2LDAsMCwwLDEuODEyMTctMS4zOTE3MUg2Mi4xNjhhMy4wOTcsMy4wOTcsMCwwLDEtMy4zNTg1MywyLjcxODIyYy0yLjIxLDAtMy42NTM1OS0xLjUxMDQtMy42NTM1OS0zLjk3MDM0LDAtMi40MDkzNywxLjQ0MzU1LTMuOTcwNzUsMy42Mzg1NC0zLjk3MDc1YTMuMTE1LDMuMTE1LDAsMCwxLDMuMzU5MzYsMi43NjE2OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik03Mi41MDQzOCwxNi41NTQ3Mkg2OC40NTI5MmwtLjk3MywyLjg3Mjg1aC0xLjcxNkw2OS42MDE0MSw4Ljc5ODM2aDEuNzgyOTFMNzUuMjIxOCwxOS40Mjc1N0g3My40NzY1Wk02OC44NzI1MywxNS4yMjloMy4yMTE0MUw3MC41MDA4LDEwLjU2NjJoLS4wNDQzWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTgzLjUwOTQ1LDE1LjU1MzM2YzAsMi40MDgxMS0xLjI4ODkxLDMuOTU1MjktMy4yMzQsMy45NTUyOWEyLjYyNzEyLDIuNjI3MTIsMCwwLDEtMi40MzgyMy0xLjM1NTc3aC0uMDM2Nzh2My44MzgyN0g3Ni4yMDk4VjExLjY3NzloMS41Mzk2N3YxLjI4ODloLjAyOTI2YTIuNzQ4OTIsMi43NDg5MiwwLDAsMSwyLjQ2NzQ5LTEuMzdDODIuMjEzLDExLjU5NjgyLDgzLjUwOTQ1LDEzLjE1MTUyLDgzLjUwOTQ1LDE1LjU1MzM2Wm0tMS42MzUsMGMwLTEuNTY5MzMtLjgxMDc5LTIuNjAwNzgtMi4wNDc4OC0yLjYwMDc4LTEuMjE1MzYsMC0yLjAzMjg0LDEuMDUzMTgtMi4wMzI4NCwyLjYwMDc4LDAsMS41NjEzOS44MTc0OCwyLjYwNywyLjAzMjg0LDIuNjA3QzgxLjA2MzY5LDE4LjE2MDQxLDgxLjg3NDQ5LDE3LjEzNjQ4LDgxLjg3NDQ5LDE1LjU1MzM2WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTkyLjAzODY3LDE1LjU1MzM2YzAsMi40MDgxMS0xLjI4ODkxLDMuOTU1MjktMy4yMzQsMy45NTUyOWEyLjYyNzEyLDIuNjI3MTIsMCwwLDEtMi40MzgyMy0xLjM1NTc3aC0uMDM2Nzh2My44MzgyN0g4NC43MzlWMTEuNjc3OWgxLjUzOTY3djEuMjg4OWguMDI5MjZhMi43NDg5MywyLjc0ODkzLDAsMCwxLDIuNDY3NDktMS4zN0M5MC43NDIyMywxMS41OTY4Miw5Mi4wMzg2NywxMy4xNTE1Miw5Mi4wMzg2NywxNS41NTMzNlptLTEuNjM1LDBjMC0xLjU2OTMzLS44MTA3OS0yLjYwMDc4LTIuMDQ3ODgtMi42MDA3OC0xLjIxNTM2LDAtMi4wMzI4NCwxLjA1MzE4LTIuMDMyODQsMi42MDA3OCwwLDEuNTYxMzkuODE3NDgsMi42MDcsMi4wMzI4NCwyLjYwN0M4OS41OTI5MSwxOC4xNjA0MSw5MC40MDM3MSwxNy4xMzY0OCw5MC40MDM3MSwxNS41NTMzNloiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgIDxwYXRoIGQ9Ik05Ny42NzU3OCwxNi40NjYxMmMuMTE3ODYsMS4wNTQsMS4xNDE4LDEuNzQ2MTEsMi41NDEsMS43NDYxMSwxLjM0MDc0LDAsMi4zMDUzMy0uNjkyMDksMi4zMDUzMy0xLjY0MjQ3LDAtLjgyNS0uNTgxNzctMS4zMTktMS45NTkyOC0xLjY1NzUxTDk5LjE4NTM2LDE0LjU4Yy0xLjk1MTc2LS40NzE0My0yLjg1Nzg0LTEuMzg0MTgtMi44NTc4NC0yLjg2NTMzLDAtMS44MzM4OCwxLjU5ODE4LTMuMDkzNTIsMy44Njc1Ny0zLjA5MzUyLDIuMjQ2LDAsMy43ODU2NiwxLjI1OTY0LDMuODM3NDgsMy4wOTM1MmgtMS42MDU3MWMtLjA5NjEzLTEuMDYwNzEtLjk3My0xLjcwMS0yLjI1NDM0LTEuNzAxcy0yLjE1ODIzLjY0Nzc5LTIuMTU4MjMsMS41OTA2NGMwLC43NTE0NC41NiwxLjE5MzYxLDEuOTMsMS41MzIxM2wxLjE3MTA1LjI4NzU0YzIuMTgwNzkuNTE1NzMsMy4wODY4NywxLjM5MTcxLDMuMDg2ODcsMi45NDY4MiwwLDEuOTg4NTEtMS41ODQsMy4yMzM5NC00LjEwMzI5LDMuMjMzOTQtMi4zNTcxNSwwLTMuOTQ4NjUtMS4yMTYxOC00LjA1MTQ2LTMuMTM4NjVaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNMTA3LjYzNTE3LDkuODQ0VjExLjY3NzloMS40NzM2NHYxLjI1OTY0aC0xLjQ3MzY0VjE3LjIxYzAsLjY2MzY3LjI5NTA2Ljk3Mjk0Ljk0Mjg2Ljk3Mjk0YTQuOTcwOSw0Ljk3MDksMCwwLDAsLjUyMzI1LS4wMzY3OHYxLjI1MjEyYTQuMzY4MzEsNC4zNjgzMSwwLDAsMS0uODgzNTEuMDczNTZjLTEuNTY4OTMsMC0yLjE4MDc5LS41ODkyOC0yLjE4MDc5LTIuMDkyMTZWMTIuOTM3NTRoLTEuMTI2NzVWMTEuNjc3OUgxMDYuMDM3VjkuODQ0WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTEwOS45NjE0LDE1LjU1MzM2YzAtMi40Mzg2MiwxLjQzNi0zLjk3MDc1LDMuNjc1MzItMy45NzA3NSwyLjI0NjgyLDAsMy42NzYxNiwxLjUzMjEzLDMuNjc2MTYsMy45NzA3NSwwLDIuNDQ0ODktMS40MjE4MiwzLjk3MDM0LTMuNjc2MTYsMy45NzAzNEMxMTEuMzgzMjEsMTkuNTIzNywxMDkuOTYxNCwxNy45OTgyNSwxMDkuOTYxNCwxNS41NTMzNlptNS43MzA3MywwYzAtMS42NzMtLjc2NjQ5LTIuNjYwMTItMi4wNTU0LTIuNjYwMTJzLTIuMDU1NC45OTQ2Ny0yLjA1NTQsMi42NjAxMmMwLDEuNjc5MjQuNzY2NDksMi42NTg4NywyLjA1NTQsMi42NTg4N1MxMTUuNjkyMTIsMTcuMjMyNjEsMTE1LjY5MjEyLDE1LjU1MzM2WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTExOC42MjQzNiwxMS42Nzc5aDEuNTE3MXYxLjMxOWguMDM2NzhhMS44NDgzLDEuODQ4MywwLDAsMSwxLjg2NC0xLjQwMDA3LDIuNDUzMjYsMi40NTMyNiwwLDAsMSwuNTQ1LjA1OTM1VjEzLjE0NGEyLjIyMzY4LDIuMjIzNjgsMCwwLDAtLjcxNDY3LS4wOTYxMiwxLjYwMjg0LDEuNjAyODQsMCwwLDAtMS42NTc1MywxLjc4Mjg5djQuNTk2ODFoLTEuNTkwNjZaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgICA8cGF0aCBkPSJNMTI5LjkyMTE0LDE3LjE1MTUzYTMuMTEsMy4xMSwwLDAsMS0zLjMzNjc5LDIuMzcyMTdjLTIuMjU0MzQsMC0zLjY1MzU5LTEuNTEwNC0zLjY1MzU5LTMuOTMzNTYsMC0yLjQzMTEsMS40MDY3Ny00LjAwNzUzLDMuNTg2NzItNC4wMDc1MywyLjE0NCwwLDMuNDkyMjcsMS40NzI3OSwzLjQ5MjI3LDMuODIyODF2LjU0NWgtNS40NzMyOHYuMDk2MTJhMi4wMTgzLDIuMDE4MywwLDAsMCwyLjA4NDY2LDIuMTk1LDEuNzUzMjQsMS43NTMyNCwwLDAsMCwxLjc4OTYtMS4wOVpNMTI0LjU0NCwxNC44MzgyOGgzLjg3NDI2YTEuODYzNjEsMS44NjM2MSwwLDAsMC0xLjkwMDc3LTEuOTY2NzhBMS45NjE4MSwxLjk2MTgxLDAsMCwwLDEyNC41NDQsMTQuODM4MjhaIiBzdHlsZT0iZmlsbDogI2ZmZiIvPgogICAgPC9nPgogICAgPGc+CiAgICAgIDxwYXRoIGQ9Ik0zNC40Mjg3MywyNC4wNGg3LjQ2MTQzdi43ODAyN0gzOC4zNDMyOHYxLjEwMzUycS43NjI0NS4zNTMsMS41MzQ2Ny43NzgzMi43NzIuNDI0OCwxLjU2Mi45MTIxMWwtLjQ1OTQ3LjcxNjhxLS44MTMtLjUxODU1LTEuNDYwOTQtLjkxNDA2LS42NDgxOS0uMzk1NTEtMS4xNzYyNy0uNjU3MjN2NC42MDg0aC0uNzkwNTNWMjQuODIwMzFoLTMuMTI0WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPHBhdGggZD0iTTQzLjk1NjA3LDI0LjI3NDQxaDEuNTYydi0uNjI5ODhoLjc3MnYuNjI5ODhoMS40NDcyN3YuNzE2OEg0Ni4yOTAwNnYuNjEwMzVoMS44MjQyMnEtLjAxODMxLS40NDk3MS0uMDM2NjItLjkzOTQ1LS4wMTktLjQ4OTI2LS4wMTg1NS0xLjAyNjM3aC43NjcwOXEwLC41NDYzOS4wMTYxMSwxLjAzMTI1dC4wMzQ2Ny45MzQ1N2gyLjAzMDc2di43MjY1Nkg0OC45MTM1OXEuMDM2NjIuNTA1MzcuMDk0MjQuOTIyODVjLjAzODA5LjI3OTMuMDcyNzUuNTI4MzIuMTAzNTIuNzQ5YTEuNjU2NTksMS42NTY1OSwwLDAsMSwuMDU1MTguMjIzNjNjLjAxMjIxLjA3MTI5LjAyNDQxLjE0NDUzLjAzNjYyLjIxNzc3QTguMDc0NDksOC4wNzQ0OSwwLDAsMCw0OS41NDMsMjcuNTgycS4xNTE2MS0uNDU0MS4yNzU4OC0uOTczNjNsLjcwMzEzLjMyMTI5YTkuNzM4Myw5LjczODMsMCwwLDEtMS4wMDYzNSwyLjU3ODEzYy4wMjQ0MS4wNjA1NS4wNTEyNy4xMjMuMDgwNTcuMTg1NTVxLjA0MzIxLjA5Mzc1LjA4OTM2LjE4MTY0LjI4OTMxLjU3NDIyLjQ1OTQ3LjU3NDIyLjExNSwwLC4yNjY2LTEuMjA4bC42NzUyOS4zNTg0cS0uMjg5MzEsMS42NzcyNS0uODU0NDksMS42NzY3Ni0uNDI3NzMsMC0uOTY5NzMtLjc1MzkxYTIuMTMzMiwyLjEzMzIsMCwwLDEtLjE4OC0uMzU4NCw1LjEyLDUuMTIsMCwwLDEtMS40MDE4NiwxLjIwNDFsLS40MzYtLjYyODkxYTQuMTkxODcsNC4xOTE4NywwLDAsMCwxLjQ4ODI4LTEuNDAyMzRxLS4wODI3Ni0uMjcxLS4xNjc0OC0uNTU3NjItLjA4NS0uMjg3MTEtLjE0NS0uNTk5NjFhMTIuNjA1LDEyLjYwNSwwLDAsMS0uMjYxNzItMS44NTE1Nkg0My41MTk1NXYtLjcyNjU2aDEuOTk4NTR2LS42MTAzNWgtMS41NjJabTMuNzgxMjUsNS4yODgwOVYzMC4yNTJxLS4zMDMyMi4wMzY2Mi0uNjEzMjguMDY4MzZjLS4yMDY1NC4wMjE0OC0uNDE2LjA0NDkyLS42MjcuMDY5MzR2Ljk1MTE3aC0uNzcydi0uODU0NDlxLS40MzY1Mi4wMzY2Mi0uODg3MjEuMDY4MzZjLS4yOTk4LjAyMTQ4LS42MDUuMDQ5OC0uOTE0MDYuMDgzbC0uMTAxMDctLjc0NDE0cS41MDk3Ny0uMDE5Ljk3ODUyLS4wNTI3My40Njg3NS0uMDM1MTYuOTIzODMtLjA2MjVWMjkuMTU4Mkg0NC4xOTA0NWwtLjE2MTEzLS42Mjk4OGE1LjIxMzI3LDUuMjEzMjcsMCwwLDAsLjU1NjE1LS44ODY3MmgtLjgwODU5di0uNzAzMTJoMS4xMTYyMWExLjczMzI1LDEuNzMzMjUsMCwwLDAsLjA5NjY4LS4yNjg1NXEuMDM2NjItLjEzNDc3LjA5MTgtLjI4NzExbC43NTM0Mi4xMzM3OWMtLjAzMDI3LjA4NS0uMDU0NjkuMTYxMTMtLjA3MzI0LjIyNzU0YS45OTI0Ni45OTI0NiwwLDAsMS0uMDc4MTIuMTk0MzRoMi4wOTAzM3YuNzAzMTNINDUuNDAzMzRxLS4xMjM3OC4yNDktLjI1MDQ5LjQ2dC0uMjM2ODIuNDA5MThoLjgwOTA4VjI3Ljk1NDFoLjc3MnYuNTU2NjRoMS4xOTQzNHYuNjQ3NDZINDYuNDk3MDl2LjUzNzExYy4yMTA5NC0uMDE3NTguNDIwNDEtLjAzOTA2LjYyNy0uMDYxNTJRNDcuNDMzODYsMjkuNTk4NjMsNDcuNzM3MzIsMjkuNTYyNVptMS4zNDYxOS01LjQ1OS41ODM1LS4zOTQ1M2ExMi41NTU5NCwxMi41NTU5NCwwLDAsMSwuOTc5LDEuMjM2MzNsLS41OTI3Ny40MjE4OHEtLjE3OTQ0LS4yODQxOC0uNDIwNDEtLjYwMzUyUTQ5LjM5MTEzLDI0LjQ0NDM0LDQ5LjA4MzUyLDI0LjEwMzUyWiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgIDwvZz4KICAgIDxnIGlkPSJfR3JvdXBfIiBkYXRhLW5hbWU9IiZsdDtHcm91cCZndDsiPgogICAgICA8ZyBpZD0iX0dyb3VwXzIiIGRhdGEtbmFtZT0iJmx0O0dyb3VwJmd0OyI+CiAgICAgICAgPHBhdGggaWQ9Il9QYXRoXyIgZGF0YS1uYW1lPSImbHQ7UGF0aCZndDsiIGQ9Ik0yNC43Njg4OCwyMC4zMDA2OGE0Ljk0ODgxLDQuOTQ4ODEsMCwwLDEsMi4zNTY1Ni00LjE1MjA2LDUuMDY1NjYsNS4wNjU2NiwwLDAsMC0zLjk5MTE2LTIuMTU3NjhjLTEuNjc5MjQtLjE3NjI2LTMuMzA3MTksMS4wMDQ4My00LjE2MjksMS4wMDQ4My0uODcyMjcsMC0yLjE4OTc3LS45ODczMy0zLjYwODUtLjk1ODE0YTUuMzE1MjksNS4zMTUyOSwwLDAsMC00LjQ3MjkyLDIuNzI3ODdjLTEuOTM0LDMuMzQ4NDItLjQ5MTQxLDguMjY5NDcsMS4zNjEyLDEwLjk3NjA4LjkyNjksMS4zMjUzNSwyLjAxMDE4LDIuODA1OCwzLjQyNzYzLDIuNzUzMywxLjM4NzA2LS4wNTc1MywxLjkwNTEtLjg4NDQ4LDMuNTc5NC0uODg0NDgsMS42NTg3NiwwLDIuMTQ0NzkuODg0NDgsMy41OTEuODUxMSwxLjQ4ODM4LS4wMjQxNiwyLjQyNjEzLTEuMzMxMjQsMy4zMjA1MS0yLjY2OTE0YTEwLjk2MiwxMC45NjIsMCwwLDAsMS41MTg0Mi0zLjA5MjUxQTQuNzgyMDUsNC43ODIwNSwwLDAsMSwyNC43Njg4OCwyMC4zMDA2OFoiIHN0eWxlPSJmaWxsOiAjZmZmIi8+CiAgICAgICAgPHBhdGggaWQ9Il9QYXRoXzIiIGRhdGEtbmFtZT0iJmx0O1BhdGgmZ3Q7IiBkPSJNMjIuMDM3MjUsMTIuMjEwODlhNC44NzI0OCw0Ljg3MjQ4LDAsMCwwLDEuMTE0NTItMy40OTA2Miw0Ljk1NzQ2LDQuOTU3NDYsMCwwLDAtMy4yMDc1OCwxLjY1OTYxLDQuNjM2MzQsNC42MzYzNCwwLDAsMC0xLjE0MzcxLDMuMzYxMzlBNC4wOTkwNSw0LjA5OTA1LDAsMCwwLDIyLjAzNzI1LDEyLjIxMDg5WiIgc3R5bGU9ImZpbGw6ICNmZmYiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==" alt="在 Mac App Store 下载" width="170" height="46"></a></div>
+</div>
+<div class="mac" aria-hidden="true"><div class="mwin">
+<div class="mbar"><span></span><b>TechnoDaily</b><span>文件</span><span>编辑</span><span class="open">显示</span><span>文章</span><span>窗口</span></div>
+<div class="menus">
+<div class="menu"><div class="mh">显示</div>
+<div class="mi"><span>为你推荐</span><kbd>⌘1</kbd></div>
+<div class="mi"><span>来源</span><kbd>⌘2</kbd></div>
+<div class="mi"><span>已保存</span><kbd>⌘3</kbd></div>
+<div class="mi"><span>搜索</span><kbd>⌘4</kbd></div>
+<hr>
+<div class="mi"><span>刷新</span><kbd>⌘R</kbd></div>
+</div>
+<div class="menu"><div class="mh">文章</div>
+<div class="mi"><span>在新窗口中打开</span><kbd>⇧⌘N</kbd></div>
+<div class="mi"><span>在浏览器中打开</span><kbd>⇧⌘O</kbd></div>
+</div>
+</div></div></div>
+</div></div></section>
+<section id="confidentialite" class="dark"><div class="inner">
+<p class="kicker">隐私</p>
+<h2 class="serif">你的阅读只属于你。</h2>
+<div class="grid2">
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>一切都留在你这里</h3><p>你的内容和阅读活动保留在你的设备和你的个人 iCloud 中；排序、话题聚合与摘要都在设备端完成。</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>没有人给你建立画像</h3><p>没有广告，没有广告画像，没有广告或追踪类 SDK，无需注册账户。你不是产品。</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>邮件只读取，不存储</h3><p>如连接 Gmail：只读访问，在设备端处理，绝不存储到别处；已通过 Google 要求的独立安全审计（CASA）。</p></div>
+<div class="pc"><div class="ic" aria-hidden="true"><span></span></div><h3>私密的同步</h3><p>通过你的个人 iCloud 在设备间同步，由 Apple 加密。我们无法访问。</p></div>
+</div>
+<p class="learned">“应用学到了什么”页面会告诉你：引擎从你的阅读中学到了什么，以及它不会学习什么。</p>
+<p class="stats">使用统计呢？匿名、聚合，<strong>默认关闭</strong>，由你决定。 <a href="/technodaily/confidentialite.html#zh">阅读隐私政策 →</a></p>
+</div></section>
+<section id="tarif"><div class="wrap"><div class="pricing">
+<h2 class="serif">价格简单，没有免费版。</h2>
+<p class="sub2">TechnoDaily 由你付费，而不是由广告付费。这正是承诺得以成立的原因。</p>
+<div class="prices">
+<div class="price main">
+<span class="tag">试用 14 天</span>
+<div class="nm">年度订阅</div>
+<div class="amt"><b class="serif">¥128</b><span>/年</span></div>
+<ul><li>✓ 全部功能</li><li>✓ 首次开通可免费试用 14 天</li><li>✓ iPhone、iPad、Mac 与 Apple Vision Pro</li></ul>
+<a class="go" href="https://apps.apple.com/cn/app/technodaily/id6758897742">开始免费试用</a>
+</div>
+<div class="price">
+<div class="nm">终身版</div>
+<div class="amt"><b class="serif">¥298</b><span>一次买断</span></div>
+<ul><li>✓ 永久使用全部功能</li><li>✓ 无需订阅</li><li>✓ 含后续更新</li></ul>
+<a class="go alt" href="https://apps.apple.com/cn/app/technodaily/id6758897742">一次性买断</a>
+</div></div>
+<p class="pnote">中国大陆 App Store 价格（人民币，含税，2026 年 9 月 30 日）。iOS 26、iPadOS 26、visionOS 26 及更高版本；Mac 需 macOS 26.1 及更高版本。</p>
+<p class="pnote">连接 Gmail 与 YouTube 需要能够访问相应服务；设备端 AI 摘要需要支持 Apple Intelligence、且该功能在你所在地区可用的设备。</p>
+</div></div></section>
+</main>
+<footer><div class="fwrap"><div class="frow">
+<div><div class="serif" style="font-size:19px;font-weight:700">TechnoDaily</div><div style="font:400 13px -apple-system,system-ui;color:#6E685F;margin-top:8px;max-width:300px">你的阅读只属于你。</div></div>
+<div class="fcols">
+<div class="fcol"><span class="h">产品</span><a href="#fonctionnalites">功能</a><a href="#mac">Mac</a><a href="#sujets">关注的主题</a><a href="#tarif">价格</a></div>
+<div class="fcol"><span class="h">法律</span><a href="/technodaily/confidentialite.html#zh">隐私政策</a><a href="/technodaily/conditions.html">使用条款</a><a href="/technodaily/accessibilite.html">无障碍政策</a></div>
+<div class="fcol"><span class="h">语言</span><a href="/technodaily/en/" hreflang="en" lang="en">English</a><a href="/technodaily/" hreflang="fr" lang="fr">Français</a><a href="/technodaily/es/" hreflang="es" lang="es">Español</a><a href="/technodaily/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a href="/technodaily/ja/" hreflang="ja" lang="ja">日本語</a></div>
+<div class="fcol"><span class="h">媒体</span><a href="/technodaily/presse/">媒体资料</a><a href="mailto:contact@technoandco.fr">contact@technoandco.fr</a></div>
+</div></div>
+<div class="fbot"><span>© 2026 Techno &amp; Co · Paris</span><span>Apple、iPhone、iPad、Mac、Apple Vision Pro 与 Apple Intelligence 是 Apple Inc. 的商标。Gmail 与 YouTube 是 Google LLC 的商标。</span></div>
+</div></footer>
+<a class="mcta" href="https://apps.apple.com/cn/app/technodaily/id6758897742"><span aria-hidden="true">↓</span><span>在 App Store 下载</span></a>
+</body>
+</html>
