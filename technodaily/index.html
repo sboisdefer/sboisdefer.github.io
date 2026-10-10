@@ -18,6 +18,13 @@
 <meta property="og:description" content="TechnoDaily réunit vos newsletters Gmail, vos flux RSS et vos chaînes YouTube dans un lecteur qui apprend ce qui compte pour vous, sur votre appareil. iPhone, iPad, Mac et Apple Vision Pro.">
 <meta property="og:url" content="https://www.technoandco.fr/technodaily/">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://www.technoandco.fr/technodaily/img/og-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TechnoDaily sur Mac, iPhone Duo et iPhone : la même sélection du jour sur les trois écrans">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.technoandco.fr/technodaily/img/og-fr.jpg">
+<meta name="twitter:image:alt" content="TechnoDaily sur Mac, iPhone Duo et iPhone : la même sélection du jour sur les trois écrans">
 <meta name="theme-color" content="#F3F0EA">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -242,6 +249,12 @@ footer{border-top:1px solid #E4DFD5;background:#EDE8DE}
   .fwrap{padding:36px 16px 96px}
   .mcta{display:flex}
 }
+
+.hero.multi{gap:48px}
+.hero.multi .shot{width:min(640px,55%)}
+.hero.multi picture{display:block}
+@media (max-width:980px){.hero.multi .shot{width:100%}}
+@media (max-width:640px){.hero.multi{gap:36px}.hero.multi .shot{width:min(340px,86vw)}}
 </style>
 </head>
 <body>
@@ -267,7 +280,7 @@ footer{border-top:1px solid #E4DFD5;background:#EDE8DE}
 <a class="btn" href="https://apps.apple.com/app/apple-store/id6758897742?pt=127864350&ct=site-fr&mt=8">Télécharger</a>
 </div></nav></div></header>
 <main id="contenu">
-<div class="wrap"><section class="hero">
+<div class="wrap"><section class="hero multi">
 <div class="txt">
 <p class="kicker">Nouveau · 2.5 : japonais, Mac</p>
 <h1 class="serif">Toutes vos sources.<br>Un seul brief.</h1>
@@ -279,7 +292,7 @@ footer{border-top:1px solid #E4DFD5;background:#EDE8DE}
 <p class="meta">14 jours gratuits pour un premier abonnement, puis 19,99 € par an, ou 49,99 € à vie.<br>Vos lectures ne regardent que vous.</p>
 <div class="dispo"><span class="l">DISPONIBLE SUR</span><span class="chip">iPhone</span><span class="chip">iPad</span><span class="chip">Mac</span><span class="chip">Apple Vision Pro</span></div>
 </div>
-<figure class="shot"><img src="/technodaily/img/duo-ferme-fr.jpg" alt="TechnoDaily sur iPhone Duo fermé : l&#x27;écran Pour vous et le Résumé du jour" width="380" height="519" decoding="async"></figure>
+<figure class="shot"><picture><source media="(min-width: 641px)" srcset="/technodaily/img/trois-fr.jpg" width="1100" height="640"><img src="/technodaily/img/duo-ferme-fr.jpg" alt="TechnoDaily : l&#x27;écran Pour vous et le Résumé du jour" width="380" height="519" decoding="async"></picture></figure>
 </section>
 <section class="sources" aria-label="Vos sources">
 <span class="lab">Vos sources</span>
